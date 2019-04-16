@@ -12,6 +12,7 @@ reportFile = cs.REPORT_PATH
 ProRegTest = common.ProProjectRegression()
 
 caseFile = os.getcwd()+'/case/proProjectRegression.ini'
+
 """1. 执行测试用例"""
 # ProRegTest.execute_case_proprojectreg(caseFile)
 

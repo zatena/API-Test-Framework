@@ -15,6 +15,7 @@ import random, string
 import util.others as others
 import datetime
 
+
 logging = log.track_log()
 summary_report = []
 single_start = datetime.datetime.now()
@@ -36,9 +37,10 @@ qiniu_key = None
 qiniu_upkey = None
 delivery_name = others.get_filename(cs.DELIVERY_PATH)
 asset_id = None
-
-
-""" 接口404时，返回未处理？？？"""
+income_id = None
+balance = None
+withdraw_id = None
+pro_withdraw_id = None
 
 
 class ApiTest:
@@ -122,11 +124,11 @@ class ProProjectRegression:
         :param filename: 用例文件名称
         :return: 测试结果的报告模板
         企业项目发布流程回归测试
-        Note： python没有Null，用None代表Null
         """
         global summary_report, single_start, single_end, content, message, result, code
         global project_id, quote_id, project_name, confirm_id, sub_projectId, contract_id, plan_id
-        global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id
+        global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id, income_id
+        global balance, withdraw_id, pro_withdraw_id
         report_title = cs.REPORT_TITLE
         rc.get_config(filename)
         case_list = eval(rc.get_title_list())
@@ -136,22 +138,17 @@ class ProProjectRegression:
         total_start = others.get_now()[0]
         project_name = "测试项目" + ''.join(random.sample(string.ascii_letters + string.digits, 4))
 
-
-        # try:
         for i in range(0, all_result):
             title = case_list[i]
             number = str(rc.get_data(title, key=cs.NUMBER))
             name = str(rc.get_data(title, key=cs.NAME))
             data = eval(rc.get_data(title, key=cs.DATA))
-            # data = json.dumps(_data, indent=4, sort_keys=False, ensure_ascii=False)
             api_url = str(rc.get_data(title, key=cs.URL))
             method = str(rc.get_data(title, key=cs.METHOD))
             headers = eval(rc.get_data(title, key=cs.HEADERS))
-            # _headers = json.dumps(headers, indent=2, sort_keys=False, ensure_ascii=False)
             url = cs.BASEURL + api_url
             run_time = str(others.get_mills(single_start, single_end)) + 'ms'
             delivery_time = str(others.get_future(60))
-            # project_name = "测试项目" + ''.join(random.sample(string.ascii_letters + string.digits, 4))
 
             if number == '1':
                 data['projectName'] = project_name
@@ -205,7 +202,6 @@ class ProProjectRegression:
                 url = url % (quote_id,project_id)
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-            # 确认函请求data里的时间戳还没处理？？
             if number == '9':
                 single_start = others.get_now()[0]
                 data['id'] = project_id
@@ -246,6 +242,7 @@ class ProProjectRegression:
                 data['projectId'] = sub_projectId
                 data['planStartTime'] = str(others.get_now())[2]
                 data['planEndTime'] = delivery_time
+                data['vProjectId'] = cs.VPROJECT_ID
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
             if number == '15':
@@ -292,14 +289,18 @@ class ProProjectRegression:
                     plan_id = content['result']['planList'][0]['id']
                 else:
                     pass
-            # 此接口需要调用两次才成功，和开发确认为什么？
             if number == '22':
+                single_start = others.get_now()[0]
+                data['projectId'] = sub_projectId
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '23':
                 single_start = others.get_now()[0]
                 data['projectId'] = sub_projectId
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-            if number == '23':
+            if number == '24':
                 single_start = others.get_now()[0]
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
@@ -318,7 +319,7 @@ class ProProjectRegression:
             #         qiniu_upkey = content.get('key')
             #     else:
             #         pass
-            if number == '25':
+            if number == '26':
                 single_start = others.get_now()[0]
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
@@ -326,41 +327,164 @@ class ProProjectRegression:
                     asset_id = content['result']['resourceList'][0]['id']
                 else:
                     pass
-            if number == '26':
+            if number == '27':
                 single_start = others.get_now()[0]
                 data['assetId'] = asset_id
                 data['planId'] = plan_id
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-            if number == '27':
+            if number == '28':
                 single_start = others.get_now()[0]
                 data['projectId'] = sub_projectId
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-            if number == '28':
+            if number == '29':
                 single_start = others.get_now()[0]
                 data['contractId'] = contract_id
                 data['planId'] = plan_id
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-            if number == '29':
+            if number == '30':
                 single_start = others.get_now()[0]
                 data['proProjectId'] = sub_projectId
                 data['planId'] = plan_id
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-            if number == '30':
+            if number == '31':
                 single_start = others.get_now()[0]
                 url = url % sub_projectId
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-            if number == '31':
+            if number == '32':
                 single_start = others.get_now()[0]
                 url = url % sub_projectId
                 data['proProjectId'] = sub_projectId
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 single_end = others.get_now()[0]
-
+            if number == '33':
+                single_start = others.get_now()[0]
+                data['projectId'] = project_id
+                data['productList'][0]['id'] = asset_id
+                data['productList'][0]['assetId'] = asset_id
+                data['productList'][0]['proProjectId'] = project_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '34':
+                single_start = others.get_now()[0]
+                data['projectId'] = project_id
+                data['reportList'][0]['id'] = asset_id
+                data['reportList'][0]['assetId'] = asset_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '35':
+                single_start = others.get_now()[0]
+                data['projectId'] = project_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+                if content['code'] == '108117':
+                    content['message'] = 'success'
+                    content['result'] = '异常操作流程：error code-108117项目没有设置账期和收款金额，不能开启账期'
+                else:
+                    pass
+            if number == '36':
+                single_start = others.get_now()[0]
+                data['id'] = project_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '37':
+                single_start = others.get_now()[0]
+                data['projectId'] = project_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '38':
+                single_start = others.get_now()[0]
+                url = url % project_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '39':
+                single_start = others.get_now()[0]
+                data['vProjectId'] = cs.VPROJECT_ID
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '40':
+                single_start = others.get_now()[0]
+                url = url % cs.VPROJECT_ID
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                if content['code'] == '0':
+                    income_id = content['result'][0]['id']
+                else:
+                    pass
+                single_end = others.get_now()[0]
+            if number == '41':
+                single_start = others.get_now()[0]
+                data['id'] = income_id
+                data['vProjectId'] = cs.VPROJECT_ID
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '42':
+                single_start = others.get_now()[0]
+                data['projectIds'][0] = sub_projectId
+                data['vProjectId'] = cs.VPROJECT_ID
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '43':
+                single_start = others.get_now()[0]
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+                if content['code'] == '0':
+                    balance = content['result']['balance']
+                else:
+                    pass
+            if number == '44':
+                if balance > 100:
+                    single_start = others.get_now()[0]
+                    content = request.get_message(method=method, url=url, data=data, headers=headers)
+                    single_end = others.get_now()[0]
+                    if content['code'] == '0':
+                        withdraw_id = content['result']['withdrawId']
+                    else:
+                        pass
+                else:
+                    pass
+            if number == '45':
+                single_start = others.get_now()[0]
+                url = url % withdraw_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '46':
+                single_start = others.get_now()[0]
+                data['proProjectIds'][0] = sub_projectId
+                data['withdrawId'] = withdraw_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '47':
+                single_start = others.get_now()[0]
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+                if content['code'] == '0':
+                    rows = len(content['result']['list'])
+                    for row in range(rows):
+                        if content['result']['list'][row]['projectName'] == project_name + "子项目":
+                            pro_withdraw_id = content['result']['list'][row]['projectWithdrawId']
+                else:
+                    pass
+            if number == '48':
+                single_start = others.get_now()[0]
+                url = url % pro_withdraw_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '49':
+                single_start = others.get_now()[0]
+                url = url % pro_withdraw_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+            if number == '50':
+                single_start = others.get_now()[0]
+                url = url % project_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+                single_end = others.get_now()[0]
+                # if content['result']['projectStatus'] == 8:
+                #     logging.info("企业项目完结")
             try:
                 if content != None:
                     if content['result'] != None:
@@ -370,6 +494,7 @@ class ProProjectRegression:
                     else:
                         code = content['code']
                         message = content['message']
+                        result = None
                 else:
                     message = None
 
@@ -379,10 +504,10 @@ class ProProjectRegression:
                     pass_result = pass_result + 1
                     log_message = "message:%s\n" % message + "result:%s\n" % result
                 else:
-                    logging.info("企业项目发布流程回归测试失败:%s" %name)
+                    logging.info("企业项目发布流程回归测试失败:%s" % name)
                     test_status = "失败"
                     fail_result = fail_result + 1
-                    log_message = "code:%s\n" % code + "message:%s\n" %message + "result:%s\n" % result
+                    log_message = "code:%s\n" % code + "message:%s\n" % message + "result:%s\n" % result
 
             except Exception as e:
                 logging.error("无返回结果%s" % e)
@@ -395,8 +520,6 @@ class ProProjectRegression:
         report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
                                       total_run_time)
         return report_model
-        # except Exception as e:
-        #     logging.error("执行失败，%s" %e)
 
     def build_report_proprojectreg(self, filename):
         test_report = self.execute_case_proprojectreg(filename)
@@ -409,7 +532,5 @@ class ProProjectRegression:
         file = os.path.join(reportfile, reports[-1])
         email.email(file)
 
-# a = ProProjectRegression()
-# casefile = os.getcwd() +'/case/proProjectRegression_origin.ini'
-# a.build_report_proprojectreg(casefile)
+
 

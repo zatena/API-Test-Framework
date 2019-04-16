@@ -3,7 +3,9 @@
 # 基础包：配置服务
 
 import configparser
+import core.mylog as log
 
+logging = log.track_log()
 config = configparser.RawConfigParser()
 
 
@@ -18,7 +20,7 @@ def get_config(filename):
         config.read(filename)
         return True
     except Exception as e:
-        print("获取配置文件失败，%s" % e)
+        logging.error("获取配置文件失败，%s" % e)
 
 
 def get_data(title, key):
@@ -32,7 +34,7 @@ def get_data(title, key):
         value = config.get(title,key)
         return value
     except Exception as e:
-        print("获取参数失败，%s" % e)
+        logging.error("获取参数失败，%s" % e)
 
 
 def get_title_list():
@@ -46,7 +48,7 @@ def get_title_list():
         title = config.sections()
         return str(title).encode("utf-8").decode("utf-8")
     except Exception as e:
-        print("获取title list，%s" % e)
+        logging.error("获取title list，%s" % e)
 
 
 def get_key_list():
@@ -59,7 +61,7 @@ def get_key_list():
         key_list = config.options()
         return str(key_list)
     except Exception as e:
-        print("获取key list，%s" % e)
+        logging.error("获取key list，%s" % e)
 
 
 

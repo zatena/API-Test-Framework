@@ -30,6 +30,7 @@ NAME = 'name'
 NUMBER = 'number'
 CODE = 'code'
 HEADERS = 'headers'
+VPROJECT_ID = 2927
 
 
 # 邮件常量
@@ -41,5 +42,10 @@ MAIL_SENDER = 'zhengjingjing@tezign.com'
 MAIL_RECEIVER = 'zhengjingjing@tezign.com'
 SUBJECT = '接口自动化测试报告'
 
+# 数据库常量
+DB_HOST = '123.57.137.216'
+DB_USER = 'test'
+DB_PASSWORD = 'tezign'
+DB_NAME = 'tezign_uat'
 
 

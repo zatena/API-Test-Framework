@@ -12,6 +12,7 @@ reportFile = cs.REPORT_PATH
 ApiTest = common.ApiTest()
 
 caseFile = os.getcwd()+'/case/searchProProject.ini'
+
 """1. 执行测试用例"""
 # ApiTest.execute_case(caseFile)
 

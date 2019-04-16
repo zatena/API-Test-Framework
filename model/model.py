@@ -6,7 +6,8 @@
 指明测试报告模板的对象
 """
 
-class ReportModel():
+
+class ReportModel:
     sum_report = []
     name = ''
     all_test = 0
