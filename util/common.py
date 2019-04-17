@@ -119,7 +119,7 @@ class ProProjectRegression:
     def __init__(self):
         pass
 
-    def execute_case_proprojectreg(self, filename):
+    def execute_case_proproject(self, filename):
         """
         :param filename: 用例文件名称
         :return: 测试结果的报告模板
@@ -129,7 +129,7 @@ class ProProjectRegression:
         global project_id, quote_id, project_name, confirm_id, sub_projectId, contract_id, plan_id
         global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id, income_id
         global balance, withdraw_id, pro_withdraw_id
-        report_title = cs.REPORT_TITLE
+        report_title = cs.PRO_REPORT_TITLE
         rc.get_config(filename)
         case_list = eval(rc.get_title_list())
         all_result = len(case_list)
@@ -137,6 +137,7 @@ class ProProjectRegression:
         fail_result = 0
         total_start = others.get_now()[0]
         project_name = "测试项目" + ''.join(random.sample(string.ascii_letters + string.digits, 4))
+        delivery_time = str(others.get_future(60))
 
         for i in range(0, all_result):
             title = case_list[i]
@@ -147,8 +148,6 @@ class ProProjectRegression:
             method = str(rc.get_data(title, key=cs.METHOD))
             headers = eval(rc.get_data(title, key=cs.HEADERS))
             url = cs.BASEURL + api_url
-            run_time = str(others.get_mills(single_start, single_end)) + 'ms'
-            delivery_time = str(others.get_future(60))
 
             if number == '1':
                 data['projectName'] = project_name
@@ -512,6 +511,7 @@ class ProProjectRegression:
             except Exception as e:
                 logging.error("无返回结果%s" % e)
                 log_message = e
+            run_time = str(others.get_mills(single_start, single_end)) + 'ms'
             summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, log_message)
 
         total_end = others.get_now()[0]
@@ -521,12 +521,12 @@ class ProProjectRegression:
                                       total_run_time)
         return report_model
 
-    def build_report_proprojectreg(self, filename):
-        test_report = self.execute_case_proprojectreg(filename)
+    def build_report_proproject(self, filename):
+        test_report = self.execute_case_proproject(filename)
         self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
                                 test_report.fail_test, test_report.skip_test, test_report.total_run_time)
 
-    def send_email_proprojectreg(self, reportfile):
+    def send_email_proproject(self, reportfile):
         reports = os.listdir(reportfile)
         reports.sort(key=lambda fn: os.path.getatime(reportfile+'/'+fn))
         file = os.path.join(reportfile, reports[-1])
