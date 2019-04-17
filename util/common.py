@@ -129,6 +129,7 @@ class ProProjectRegression:
         global project_id, quote_id, project_name, confirm_id, sub_projectId, contract_id, plan_id
         global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id, income_id
         global balance, withdraw_id, pro_withdraw_id
+
         report_title = cs.PRO_REPORT_TITLE
         rc.get_config(filename)
         case_list = eval(rc.get_title_list())
@@ -209,6 +210,7 @@ class ProProjectRegression:
                     pass
             if number == '13':
                 data['confirmId'] = confirm_id
+                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
             if number == '14':
                 data['projectId'] = sub_projectId
                 data['planStartTime'] = str(others.get_now())[2]
@@ -402,7 +404,7 @@ class ProProjectRegression:
                     logging.info("企业项目发布流程回归测试通过:%s" % name)
                     test_status = "成功"
                     pass_result = pass_result + 1
-                    log_message = "message:%s\n" % message + "result:%s\n" % result
+                    log_message = "result:%s\n" % result
                 else:
                     logging.info("企业项目发布流程回归测试失败:%s" % name)
                     test_status = "失败"
@@ -412,12 +414,11 @@ class ProProjectRegression:
             except Exception as e:
                 logging.error("无返回结果%s" % e)
                 log_message = e
-            run_time = content['run_time']
-            # run_time = str(others.get_mills(single_start, single_end)) + 'ms'
+            run_time = str(content['run_time'])+'s'
             summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, log_message)
 
         total_end = others.get_now()[0]
-        total_run_time = str(others.get_mills(total_start, total_end)) + 'ms'
+        total_run_time = str(others.get_mills(total_start, total_end)) + 's'
         skip_result = all_result-(pass_result + fail_result)
         report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
                                       total_run_time)
