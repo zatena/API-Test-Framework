@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="变更企业项目回归测试方法和报告名称" />
+    <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,13 +128,31 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-724244103">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/mydb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
+            <state relative-caret-position="480">
               <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding>
                 <element signature="e#53#75#0" expanded="true" />
@@ -146,8 +164,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/others.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="285">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#52#83#0" expanded="true" />
               </folding>
@@ -158,8 +176,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3075">
-              <caret line="214" column="49" lean-forward="true" selection-start-line="214" selection-start-column="49" selection-end-line="214" selection-end-column="49" />
+            <state relative-caret-position="2205">
+              <caret line="214" column="49" selection-start-line="214" selection-start-column="49" selection-end-line="214" selection-end-column="49" />
               <folding>
                 <element signature="e#52#78#0" expanded="true" />
                 <element signature="e#874#3709#0" />
@@ -171,8 +189,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+            <state relative-caret-position="178">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
             </state>
           </provider>
         </entry>
@@ -180,7 +198,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/myrequest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
+            <state relative-caret-position="1005">
               <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <element signature="e#69#84#0" expanded="true" />
@@ -204,8 +222,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1880">
-              <caret line="610" column="9" lean-forward="true" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
+            <state relative-caret-position="9150">
+              <caret line="610" column="9" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -213,7 +231,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/项目状态扩展优化.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
+            <state relative-caret-position="60">
               <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
             </state>
           </provider>
@@ -222,7 +240,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/case/searchProProject.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="405">
               <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
             </state>
           </provider>
@@ -366,28 +384,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="API-Test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
@@ -397,6 +399,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -562,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555502554489</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="变更企业项目回归测试方法和报告名称">
+      <created>1555505716240</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1555505716240</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -575,9 +585,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="810" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3190272" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32331902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -591,7 +601,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.32961586" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.5365552" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.5352518" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49785408" weight="0.3283767" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32961586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -846,9 +856,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <element signature="e#54#68#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,9 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
           <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-          <folding>
-            <element signature="e#54#73#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -905,6 +909,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/mydb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="e#53#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/others.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#52#83#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/util/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2205">
+          <caret line="214" column="49" selection-start-line="214" selection-start-column="49" selection-end-line="214" selection-end-column="49" />
+          <folding>
+            <element signature="e#52#78#0" expanded="true" />
+            <element signature="e#874#3709#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/myrequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#69#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -915,26 +960,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/mydb.py">
+    <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding>
-            <element signature="e#53#75#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="9150">
+          <caret line="610" column="9" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/项目状态扩展优化.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
+        <state relative-caret-position="60">
           <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/searchProProject.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="405">
           <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
         </state>
       </provider>
@@ -946,48 +988,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/myrequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#69#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1880">
-          <caret line="610" column="9" lean-forward="true" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/others.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#52#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/util/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3075">
-          <caret line="214" column="49" lean-forward="true" selection-start-line="214" selection-start-column="49" selection-end-line="214" selection-end-column="49" />
-          <folding>
-            <element signature="e#52#78#0" expanded="true" />
-            <element signature="e#874#3709#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+        <state relative-caret-position="178">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
         </state>
       </provider>
     </entry>
