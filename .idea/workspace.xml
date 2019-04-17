@@ -21,6 +21,20 @@
     <SUITE FILE_PATH="coverage/demo$MYLog.coverage" NAME="MYLog Coverage Results" MODIFIED="1552560286231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/API_Test_Framework$common.coverage" NAME="common Coverage Results" MODIFIED="1554209445474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-2097271760">
       <usages-collector id="statistics.lifecycle.project">
@@ -131,18 +145,29 @@
     <session id="-724244103">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -150,19 +175,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/mydb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-              <folding>
-                <element signature="e#53#75#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/others.py">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/util/others.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
@@ -174,10 +187,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util/common.py">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/util/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2205">
-              <caret line="214" column="49" selection-start-line="214" selection-start-column="49" selection-end-line="214" selection-end-column="49" />
+            <state relative-caret-position="66">
+              <caret line="202" selection-start-line="202" selection-end-line="203" />
               <folding>
                 <element signature="e#52#78#0" expanded="true" />
                 <element signature="e#874#3709#0" />
@@ -186,19 +199,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="118">
+              <caret line="100" column="5" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/myrequest.py">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/myrequest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
+            <state relative-caret-position="1020">
               <caret line="68" selection-start-line="68" selection-end-line="68" />
               <folding>
                 <element signature="e#69#84#0" expanded="true" />
@@ -208,9 +221,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.py">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="210">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#53#81#0" expanded="true" />
@@ -219,8 +232,17 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/proProjectRegression.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="9150">
               <caret line="610" column="9" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
@@ -229,7 +251,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/项目状态扩展优化.ini">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/项目状态扩展优化.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
@@ -238,7 +260,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/case/searchProProject.ini">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/searchProProject.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
@@ -247,10 +269,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run_proproject_regression.py">
+        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/run_proproject_regression.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="345">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -373,7 +395,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="810" />
@@ -389,11 +411,32 @@
           <expand>
             <path>
               <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test" type="462c0819:PsiDirectoryNode" />
+              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
+              <item name="case" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
+              <item name="report" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
+              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -407,7 +450,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -572,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555505716240</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md">
+      <created>1555506081008</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1555506081008</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -585,9 +635,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="810" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32331902" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553648" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -601,14 +651,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.32961586" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.5352518" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.12763321" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49785408" weight="0.3283767" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32961586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
     <layout-to-restore>
@@ -668,61 +718,65 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="新增底层mydb方法，补充case,修复执行case的bug,去掉无效的测试报告。" />
     <MESSAGE value="提交接口自动化测试框架和企业项目回归测试用例" />
     <MESSAGE value="变更企业项目回归测试方法和报告名称" />
-    <option name="LAST_COMMIT_MESSAGE" value="变更企业项目回归测试方法和报告名称" />
+    <MESSAGE value="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/case/publish_report.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/case/publish_report.py</url>
           <line>15</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/case/publish_report.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/case/publish_report.py</url>
           <line>16</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/case/publish_report.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/case/publish_report.py</url>
           <line>17</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core/myrequest.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/core/myrequest.py</url>
           <line>47</line>
           <option name="timeStamp" value="157" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/util/common.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
           <line>231</line>
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/util/common.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
           <line>233</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/util/common.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
           <line>232</line>
           <option name="timeStamp" value="161" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/util/common.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
           <line>234</line>
           <option name="timeStamp" value="162" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core/myrequest.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/core/myrequest.py</url>
           <line>68</line>
           <option name="timeStamp" value="164" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/util/common.py</url>
+          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
           <line>150</line>
           <option name="timeStamp" value="165" />
         </line-breakpoint>
@@ -819,7 +873,7 @@
     <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告_20190315.html" />
     <entry file="file://$PROJECT_DIR$/case/publish_report.py" />
     <entry file="file://$PROJECT_DIR$/case/case001.py" />
-    <entry file="file://$PROJECT_DIR$/core/__init__.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告20190325.html" />
@@ -838,42 +892,42 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告20190326.html" />
-    <entry file="file://$PROJECT_DIR$/util/__init__.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/util/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/3dcb80b0dcb3d70ec1293f4ff5056f1a.jpg">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/data/3dcb80b0dcb3d70ec1293f4ff5056f1a.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告20190402.html" />
-    <entry file="file://$PROJECT_DIR$/case/__init__.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/case/proProjectRegression_origin.ini" />
-    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/scrapy.cfg">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/myemail.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/myemail.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/mylog.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/mylog.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/myconfig.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/myconfig.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
           <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
@@ -881,37 +935,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/template">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/model/template">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
           <caret line="7137" column="32" selection-start-line="7137" selection-start-column="30" selection-end-line="7137" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/model.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/model/model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/report.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/model/report.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-260">
           <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/constants.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/mydb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/mydb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="495">
           <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
           <folding>
             <element signature="e#53#75#0" expanded="true" />
@@ -919,7 +966,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/others.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/myrequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#69#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#53#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/proProjectRegression.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9150">
+          <caret line="610" column="9" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/项目状态扩展优化.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/searchProProject.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="100" column="5" selection-start-line="100" selection-start-column="5" selection-end-line="100" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/run_proproject_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/util/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="202" selection-start-line="202" selection-end-line="203" />
+          <folding>
+            <element signature="e#52#78#0" expanded="true" />
+            <element signature="e#874#3709#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/util/others.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
@@ -929,69 +1042,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util/common.py">
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
-          <caret line="214" column="49" selection-start-line="214" selection-start-column="49" selection-end-line="214" selection-end-column="49" />
-          <folding>
-            <element signature="e#52#78#0" expanded="true" />
-            <element signature="e#874#3709#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/myrequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
-          <folding>
-            <element signature="e#69#84#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#53#81#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9150">
-          <caret line="610" column="9" selection-start-line="610" selection-start-column="9" selection-end-line="610" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/项目状态扩展优化.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/case/searchProProject.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_proproject_regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="135">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
