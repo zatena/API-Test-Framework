@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="变更企业项目回归测试方法和报告名称">
-      <change afterPath="$PROJECT_DIR$/report/企业项目流程回归测试.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report/接口自动化测试报告20190417.html" afterDir="false" />
+    <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/myrequest.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/myrequest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,13 +85,13 @@
           <entry key="dummy" value="5" />
           <entry key="ini" value="1806" />
           <entry key="py" value="8783" />
-          <entry key="txt" value="124" />
+          <entry key="txt" value="127" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Ini" value="1806" />
-          <entry key="PLAIN_TEXT" value="129" />
+          <entry key="PLAIN_TEXT" value="132" />
           <entry key="Python" value="9312" />
         </counts>
       </usages-collector>
@@ -159,7 +155,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/util/common.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
+            <state relative-caret-position="121">
               <caret line="414" column="23" selection-start-line="414" selection-start-column="23" selection-end-line="414" selection-end-column="23" />
               <folding>
                 <element signature="e#52#78#0" expanded="true" />
@@ -539,12 +535,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555485733354</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="变更企业项目回归测试方法和报告名称">
+      <created>1555488148239</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555488148239</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3190272" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -890,7 +892,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util/common.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="121">
           <caret line="414" column="23" selection-start-line="414" selection-start-column="23" selection-end-line="414" selection-end-column="23" />
           <folding>
             <element signature="e#52#78#0" expanded="true" />
