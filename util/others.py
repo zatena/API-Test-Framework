@@ -17,8 +17,7 @@ def get_now():
 
 
 def get_mills(starttime, endtime):
-    micros = (endtime - starttime).microseconds
-    delta = micros/1000
+    delta = (endtime - starttime).seconds
     return delta
 
 
