@@ -46,9 +46,9 @@ def get_message(method, url, data, headers):
 
     try:
         if method == ('post' or 'POST'):
-            result = requests.post(url, data, headers=headers)
+            result = requests.post(url, data, headers=headers, timeout=3)
         if method == ('get' or 'GET'):
-            result = requests.get(url, data, headers=headers)
+            result = requests.get(url, data, headers=headers, timeout=3)
         if method == ('put' or 'PUT'):
             result = requests.put(url, data, headers=headers)
         if method == ('patch' or 'PATCH'):
@@ -56,6 +56,7 @@ def get_message(method, url, data, headers):
         if method == ('options' or 'OPTIONS'):
             result = requests.options(url, headers=headers)
 
+        run_time = result.elapsed.total_seconds()
         response = result.json()
         code = response.get('code')
         if code == 500:
@@ -65,7 +66,7 @@ def get_message(method, url, data, headers):
         else:
             results = response.get('result')
         message = response.get('message')
-        content = {'code': code, 'message': message, 'result': results}
+        content = {'code': code, 'message': message, 'result': results, 'run_time':run_time}
         return content
     except Exception as e:
         logging.error("请求失败%s" % e)
