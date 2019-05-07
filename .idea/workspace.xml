@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md">
       <change beforePath="$PROJECT_DIR$/../API-Test-Framework/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API-Test-Framework/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API-Test-Framework/case/proProjectRegression.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../API-Test-Framework/case/proProjectRegression.ini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,6 +147,7 @@
     <session id="-724244103">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.opened" value="2" />
@@ -169,99 +169,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="ini" value="2" />
           <entry key="py" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="Ini" value="2" />
           <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.checkout.local" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/util/others.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-              <folding>
-                <element signature="e#52#83#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/util/common.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="150" column="38" lean-forward="true" selection-start-line="150" selection-start-column="38" selection-end-line="150" selection-end-column="38" />
-              <folding>
-                <element signature="e#52#78#0" expanded="true" />
-                <element signature="e#874#3709#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/core/myrequest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
-              <folding>
-                <element signature="e#69#84#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#53#81#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/proProjectRegression.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="589" column="9" lean-forward="true" selection-start-line="589" selection-start-column="9" selection-end-line="589" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/项目状态扩展优化.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
+            <state relative-caret-position="-1414">
+              <caret line="562" column="58" selection-start-line="562" selection-start-column="58" selection-end-line="562" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -271,15 +202,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../API-Test-Framework/run_proproject_regression.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -340,6 +262,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="dev_ci" />
+        <entry key="$PROJECT_DIR$/../API-Test-Framework" value="dev_ci" />
       </map>
     </option>
   </component>
@@ -429,26 +352,6 @@
               <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
               <item name="case" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="API-Test-Framework" type="b2602c69:ProjectViewProjectNode" />
-              <item name="API-Test-Framework" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -486,17 +389,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.企业项目流程回归测试.html">
+  <component name="RunManager" selected="JavaScript Debug.接口自动化测试报告20190416.html">
+    <configuration name="接口自动化测试报告20190402.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190402.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="接口自动化测试报告20190408.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190408.html">
+      <method v="2" />
+    </configuration>
     <configuration name="接口自动化测试报告20190409.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190409.html">
       <method v="2" />
     </configuration>
     <configuration name="接口自动化测试报告20190416.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190416.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="接口自动化测试报告20190417.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190417.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="企业项目流程回归测试.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/企业项目流程回归测试.html">
       <method v="2" />
     </configuration>
     <configuration name="run_proproject_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -522,19 +425,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.run_proproject_regression" />
+      <item itemvalue="JavaScript Debug.接口自动化测试报告20190402.html" />
+      <item itemvalue="JavaScript Debug.接口自动化测试报告20190408.html" />
       <item itemvalue="JavaScript Debug.接口自动化测试报告20190409.html" />
       <item itemvalue="JavaScript Debug.接口自动化测试报告20190416.html" />
-      <item itemvalue="Python.run_proproject_regression" />
-      <item itemvalue="JavaScript Debug.接口自动化测试报告20190417.html" />
-      <item itemvalue="JavaScript Debug.企业项目流程回归测试.html" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.企业项目流程回归测试.html" />
-        <item itemvalue="Python.run_proproject_regression" />
-        <item itemvalue="JavaScript Debug.接口自动化测试报告20190417.html" />
         <item itemvalue="JavaScript Debug.接口自动化测试报告20190416.html" />
         <item itemvalue="JavaScript Debug.接口自动化测试报告20190409.html" />
+        <item itemvalue="JavaScript Debug.接口自动化测试报告20190408.html" />
+        <item itemvalue="JavaScript Debug.接口自动化测试报告20190402.html" />
+        <item itemvalue="Python.run_proproject_regression" />
       </list>
     </recent_temporary>
   </component>
@@ -633,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555506081008</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md">
+      <created>1556179502992</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556179502993</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -647,9 +557,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553648" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553648" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -662,8 +571,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.32961586" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.28376704" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.28376704" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.28376704" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49785408" weight="0.3283767" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32961586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -756,41 +665,6 @@
           <url>file://$PROJECT_DIR$/../API-Test-Framework/case/publish_report.py</url>
           <line>17</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../API-Test-Framework/core/myrequest.py</url>
-          <line>47</line>
-          <option name="timeStamp" value="157" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
-          <line>231</line>
-          <option name="timeStamp" value="159" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
-          <line>233</line>
-          <option name="timeStamp" value="160" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
-          <line>232</line>
-          <option name="timeStamp" value="161" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
-          <line>234</line>
-          <option name="timeStamp" value="162" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../API-Test-Framework/core/myrequest.py</url>
-          <line>68</line>
-          <option name="timeStamp" value="164" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../API-Test-Framework/util/common.py</url>
-          <line>150</line>
-          <option name="timeStamp" value="165" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1005,13 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/searchProProject.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../API-Test-Framework/run_proproject_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1054,10 +921,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/searchProProject.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../API-Test-Framework/case/proProjectRegression.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="589" column="9" lean-forward="true" selection-start-line="589" selection-start-column="9" selection-end-line="589" selection-end-column="9" />
+        <state relative-caret-position="-1414">
+          <caret line="562" column="58" selection-start-line="562" selection-start-column="58" selection-end-line="562" selection-end-column="58" />
         </state>
       </provider>
     </entry>
