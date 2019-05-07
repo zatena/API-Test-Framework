@@ -46,9 +46,9 @@ def get_message(method, url, data, headers):
 
     try:
         if method == ('post' or 'POST'):
-            result = requests.post(url, data, headers=headers, timeout=3)
+            result = requests.post(url, data, headers=headers, timeout=10)
         if method == ('get' or 'GET'):
-            result = requests.get(url, data, headers=headers, timeout=3)
+            result = requests.get(url, data, headers=headers, timeout=10)
         if method == ('put' or 'PUT'):
             result = requests.put(url, data, headers=headers)
         if method == ('patch' or 'PATCH'):
