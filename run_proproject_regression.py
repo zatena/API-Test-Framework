@@ -5,7 +5,11 @@
 import util.common as common
 import constants as cs
 import os
+import sys
 
+# 设置默认编码为 utf8
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 reportFile = cs.REPORT_PATH
 

@@ -2,19 +2,20 @@
 # -*- coding: UTF-8 -*-
 # 主要公用方法
 
-import core.myconfig as rc
-import os
-import core.myrequest as request
-import json
-import constants as cs
-import core.mylog as log
-import core.myemail as email
-import model.report as mr
-import model.model as mm
-import random, string
-import util.others as others
 import datetime
+import json
+import os
+import random
+import string
 
+import constants as cs
+import core.myconfig as rc
+import core.myemail as email
+import core.mylog as log
+import core.myrequest as request
+import model.model as mm
+import model.report as mr
+import util.others as others
 
 logging = log.track_log()
 summary_report = []
@@ -86,17 +87,17 @@ class ApiTest:
                 logging.info("接口测试失败")
                 test_status = "失败"
                 fail_result = fail_result + 1
-                log_message = "预期code:%s \n" %expect_code + "实际code:%s \n" % actual_code + "预期结果和实际结果不一致"
+                log_message = "预期code:%s \n" % expect_code + "实际code:%s \n" % actual_code + "预期结果和实际结果不一致"
             else:
                 logging.info("接口测试成功")
                 test_status = "成功"
                 pass_result = pass_result + 1
-                log_message = "预期code:%s\n" %expect_code + "实际code:%s\n" % actual_code + "预期结果和实际结果相同"
+                log_message = "预期code:%s\n" % expect_code + "实际code:%s\n" % actual_code + "预期结果和实际结果相同"
             summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, log_message)
 
         total_end = others.get_now()[0]
         total_run_time = str(others.get_mills(total_start, total_end)) + 'ms'
-        skip_result = all_result-(pass_result + fail_result)
+        skip_result = all_result - (pass_result + fail_result)
         report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
                                       total_run_time)
         return report_model
@@ -104,11 +105,11 @@ class ApiTest:
     def build_report(self, filename):
         test_report = self.execute_case(filename)
         self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                  test_report.fail_test, test_report.skip_test, test_report.total_run_time)
+                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time)
 
     def send_email(self, reportfile):
         reports = os.listdir(reportfile)
-        reports.sort(key=lambda fn: os.path.getatime(reportfile+'/'+fn))
+        reports.sort(key=lambda fn: os.path.getatime(reportfile + '/' + fn))
         file = os.path.join(reportfile, reports[-1])
         email.email(file)
 
@@ -154,6 +155,12 @@ class ProProjectRegression:
                 data['projectName'] = project_name
                 data['deliveryTime'] = delivery_time
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
+
+                logging.info("解析出来的企业项目信息 %s" % content)
+
+                if content is None:
+                    raise ValueError('返回值为空。。。%s' % content)
+
                 if content['code'] == '0':
                     project_id = content['result']['projectId']
                 else:
@@ -165,7 +172,7 @@ class ProProjectRegression:
                 data['projectId'] = project_id
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
             if number == '4':
-                url = url %project_id
+                url = url % project_id
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
                 if content['code'] == '0':
                     quote_id = content["result"]["quoteInfo"]["id"]
@@ -184,7 +191,7 @@ class ProProjectRegression:
             if number == '8':
                 project_id = project_id
                 quote_id = quote_id
-                url = url % (quote_id,project_id)
+                url = url % (quote_id, project_id)
                 content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
             if number == '9':
                 data['id'] = project_id
@@ -414,12 +421,13 @@ class ProProjectRegression:
             except Exception as e:
                 logging.error("无返回结果%s" % e)
                 log_message = e
-            run_time = str(content['run_time'])+'s'
+            if content is not None:
+                run_time = str(content['run_time']) + 's'
             summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, log_message)
 
         total_end = others.get_now()[0]
         total_run_time = str(others.get_mills(total_start, total_end)) + 's'
-        skip_result = all_result-(pass_result + fail_result)
+        skip_result = all_result - (pass_result + fail_result)
         report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
                                       total_run_time)
         return report_model
@@ -427,13 +435,10 @@ class ProProjectRegression:
     def build_report_proproject(self, filename):
         test_report = self.execute_case_proproject(filename)
         self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                test_report.fail_test, test_report.skip_test, test_report.total_run_time)
+                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time)
 
     def send_email_proproject(self, reportfile):
         reports = os.listdir(reportfile)
-        reports.sort(key=lambda fn: os.path.getatime(reportfile+'/'+fn))
+        reports.sort(key=lambda fn: os.path.getatime(reportfile + '/' + fn))
         file = os.path.join(reportfile, reports[-1])
         email.email(file)
-
-
-
