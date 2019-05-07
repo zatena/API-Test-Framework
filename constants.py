@@ -3,11 +3,9 @@
 # 通用包：常量
 
 import os
-import importlib, sys
-importlib.reload(sys)
+import sys
+reload(sys)
 import time
-import random
-import string
 
 BASEURL = "http://47.93.82.56:8080"
 
