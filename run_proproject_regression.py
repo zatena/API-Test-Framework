@@ -21,7 +21,7 @@ caseFile = os.getcwd()+'/case/proProjectRegression.ini'
 # ProRegTest.execute_case_proproject(caseFile)
 
 """2. 生成测试报告"""
-# ProRegTest.build_report_proproject(caseFile)
+ProRegTest.build_report_proproject(caseFile)
 
 """3. 发送测试报告"""
 # ProRegTest.send_email_proproject(reportFile)
