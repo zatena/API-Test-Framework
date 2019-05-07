@@ -51,4 +51,3 @@ DB_PASSWORD = 'tezign'
 DB_NAME = 'tezign_uat'
 
 
-
