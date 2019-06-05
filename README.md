@@ -10,8 +10,6 @@ Need python3 to run the automation scripts, also need some other libs, such as:
 $ pip3 install -r requirements.txt
 
 
-Run the scripts
-
 You can run the "run_regression_" scripts, and the report.html will be created automatically
 
 
