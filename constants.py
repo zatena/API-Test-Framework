@@ -5,7 +5,6 @@
 import importlib
 import os
 import sys
-
 importlib.reload(sys)
 import time
 
@@ -20,6 +19,7 @@ CASE_PATH = os.getcwd()+'/case/项目状态扩展优化.ini'
 REPORT_TITLE = "接口自动化测试报告" + time.strftime('%Y%m%d',time.localtime(time.time()))
 PRO_REPORT_TITLE = "企业项目流程回归测试"
 COMMON_REPORT_TITLE = "普通项目流程回归测试"
+TEST_REPORT_TITLE = "大平台业务接口自动化测试报告"
 
 # 测试结果常量
 

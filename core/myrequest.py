@@ -3,11 +3,21 @@
 # 基础包：请求服务，目前只支持带token的请求
 
 import requests
+import traceback
 import core.mylog as log
 
 logging = log.track_log()
+
 result = ''
 results = ''
+
+response_result = {
+    "code": -1,
+    "message": "error",
+    "result": None,
+    "status_code": None
+}
+
 
 def api(method, url, data, headers):
     """
@@ -21,16 +31,16 @@ def api(method, url, data, headers):
     global result
 
     try:
-        if method == ('post' or "POST"):
-            result = requests.post(url, data, headers=headers)
-        if method == ('get' or 'GET'):
-            result = requests.get(url, data, headers=headers)
-
+        if method.upper() == "POST":
+            result = requests.post(url, data, headers=headers,)
+        if method.upper() == "GET":
+            result = requests.get(url, headers=headers)
         response = result.json()
-        code = response.get('code')
-        return code
+        # code = response.get('code')
+        return response
     except Exception as e:
         logging.error("请求失败%s" % e)
+        traceback.print_exc()
 
 
 def get_message(method, url, data, headers):
@@ -45,31 +55,29 @@ def get_message(method, url, data, headers):
     global result, results
 
     try:
-        if method == ('post' or 'POST'):
+        if method.upper() == "POST":
             result = requests.post(url, data, headers=headers, timeout=10)
-        if method == ('get' or 'GET'):
+        if method.upper() == "GET":
             result = requests.get(url, data, headers=headers, timeout=10)
-        if method == ('put' or 'PUT'):
+        if method.upper() == "PUT":
             result = requests.put(url, data, headers=headers)
-        if method == ('patch' or 'PATCH'):
+        if method.upper() == "PATCH":
             result = requests.patch(url, data, headers=headers)
-        if method == ('options' or 'OPTIONS'):
+        if method.upper() == "OPTIONS":
             result = requests.options(url, headers=headers)
 
         run_time = result.elapsed.total_seconds()
+        response_code = result.status_code
+        response_result['run_time'] = round(run_time * 1000, 3)
+        if response_code > 200:
+            response_result['status_code'] = response_code
+            return response_result
         response = result.json()
-        code = response.get('code')
-        if code == 500:
-            results = None
-        elif code == 0:
-            results = response.get('result')
-        else:
-            results = response.get('result')
-        message = response.get('message')
-        content = {'code': code, 'message': message, 'result': results, 'run_time':run_time}
-        return content
+        response['run_time'] = round(run_time * 1000, 3)
+        return response
     except Exception as e:
-        logging.error("请求失败%s" % e)
+        logging.error("*******************请求发生异常*******************\n %s" % e)
+        traceback.print_exc()
 
 
 def get_mfd(method, url, data, headers):
@@ -89,8 +97,4 @@ def get_mfd(method, url, data, headers):
         return response
     except Exception as e:
         logging.error("请求失败%s" % e)
-
-
-
-
-
+        traceback.print_exc()
