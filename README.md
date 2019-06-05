@@ -15,14 +15,14 @@ Run the scripts
 You can run the "run_regression_" scripts, and the report.html will be created automatically
 
 
-$ git clone git@git.tezign.com:Tester/API-Test-Framework.git
-$ whoami 
-$ pwd
-$ #切换成虚拟环境并构建依赖
-$ virtualenv -p /usr/bin/python3 venv
-$ source venv/bin/activate
-$ pip3 install -r requirements.txt
-$ # 执行回归测试脚本
-$ python3 run_regression.py
+git clone git@git.tezign.com:Tester/API-Test-Framework.git
+whoami 
+pwd
+#切换成虚拟环境并构建依赖
+virtualenv -p /usr/bin/python3 venv
+source venv/bin/activate
+pip3 install -r requirements.txt
+# 执行回归测试脚本
+python3 run_regression.py
 
 
