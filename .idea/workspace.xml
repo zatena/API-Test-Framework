@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/myresponse.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_regression.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/API-Test-Framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/API-Test-Framework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="Merge branch 'dev_init' into dev_ci&#10;             &#10;             # Conflicts:&#10;             #&#9;.idea/workspace.xml&#10;             #&#9;README.md">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/aa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/tezign _sharinggroup.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/tezign_aa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/tezign_bb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/tezign_designergroup.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/tezin_proregression.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/report/大平台业务接口自动化测试报告.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/proProjectRegression.ini" beforeDir="false" afterPath="$PROJECT_DIR$/case/proProjectRegression.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/searchProProject.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/myconfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/myconfig.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/mydb.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/mydb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/myemail.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/myemail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/mylog.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/mylog.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/myrequest.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/myrequest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/report.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/template" beforeDir="false" afterPath="$PROJECT_DIR$/model/template" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/企业项目流程回归测试.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/接口自动化测试报告20190416.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/接口自动化测试报告20190417.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_proproject_regression.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/others.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/others.py" afterDir="false" />
     </list>
     <list id="eaca3557-0576-40fd-839c-284607b1c2ba" name="tmp" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -126,37 +112,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run_regression.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding>
                 <element signature="e#96#105#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="210">
-                <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/report.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
-              <folding>
-                <element signature="e#55#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -193,11 +155,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/requirements.txt">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -360,10 +317,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="76" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="827" />
+    <option name="height" value="821" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -647,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555506081008</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md">
+      <created>1559707115021</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1559707115021</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -663,14 +628,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="821" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.89518416" visible="true" weight="0.26108727" />
-      <window_info id="Structure" order="1" sideWeight="0.10481586" side_tool="true" visible="true" weight="0.26108727" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.87808895" visible="true" weight="0.26108727" />
+      <window_info id="Structure" order="1" sideWeight="0.12191104" side_tool="true" visible="true" weight="0.26108727" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719547" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" weight="0.3526912" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" weight="0.3512748" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.36376405" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -679,7 +644,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.38915664" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.28432733" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.24783148" />
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49785408" weight="0.3272727" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32961586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -689,31 +654,6 @@
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49906892" weight="0.3297568" />
       <window_info anchor="right" id="Coverage" order="5" sideWeight="0.5009311" side_tool="true" weight="0.3297568" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25751072" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3272472" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" weight="0.38483146" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.23735955" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.38915664" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.28432733" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49785408" weight="0.3272727" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32961586" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
-      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1228,6 +1168,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="390">
+            <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1235,16 +1185,6 @@
           <folding>
             <element signature="e#96#105#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
