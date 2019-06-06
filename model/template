@@ -6984,9 +6984,10 @@
                 </div>
                 <div class="ibox-content">
                     <div class="input-group panel-heading" style="width: 100%; background-color: #1ab394; margin-bottom: 10px; text-align: left; font-family: Consolas;">
+
                         <label style="color: snow">测试场景:</label>
                         <select class="chosen-select form-control" data-placeholder="----------" style="width: 300px;" name="filterScenario" id="filterScenario">
-                            <option value="">----------</option>
+                             <option value="">----------</option>
                         </select>
                         <label style="color: snow">测试接口:</label>
                         <select class="chosen-select form-control" data-placeholder="----------" style="width: 300px;" name="filterClass" id="filterClass">
@@ -6996,6 +6997,7 @@
                         <select class="chosen-select form-control" data-placeholder="----------" style="width: 300px;" name="filterResult" id="filterResult">
                             <option value="">----------</option>
                         </select>
+
                         <div style="float: right">
                             <label class="form-control">
                                 <span class="text-navy">用例数: </span><span class="text-navy b-r" id="filterAll"></span><span> | </span>
@@ -7103,9 +7105,9 @@
         $("#filterFail").text(resultData["testFail"]);
         $("#filterSkip").text(resultData["testSkip"]);
         $("#filterCoverage").text(resultData["testCoverage"]);
-        var scenarioNames = [];
         var classNames = [];
         var results = [];
+        var scenarioNames = [];
         $.each(resultData["testResult"], function (i, n) {
             if (classNames.indexOf(n["serviceName"]) == -1) {
                 classNames.push(n["serviceName"]);
@@ -7113,29 +7115,35 @@
             if (results.indexOf(n["status"]) == -1) {
                 results.push(n["status"]);
             }
+
+            if (scenarioNames.indexOf(n["scenario"]) == -1) {
+                scenarioNames.push(n["scenario"]);
+            }
         });
 
-        $.each(scenarioNames, function (i, n) {
-            $("#filterScenario").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
-        });
         $.each(classNames, function (i, n) {
             $("#filterClass").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
         });
         $.each(results, function (i, n) {
             $("#filterResult").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
         });
+
+        $.each(scenarioNames, function (i, n) {
+            $("#filterScenario").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
+         });
+
         $("#filterScenario").chosen({search_contains: true});
         $("#filterClass").chosen({search_contains: true});
         $("#filterResult").chosen({search_contains: true});
 
-        function generateResult(serviceName, caseResult) {
+        function generateResult(scenario,serviceName, caseResult) {
             $("#detailBody").children().remove();
             var filterAll = 0;
             var filterOk = 0;
             var filterFail = 0;
             var filterSkip = 0;
             $.each(resultData["testResult"], function (i, n) {
-                if ((serviceName == "" || n["serviceName"] == serviceName) && (caseResult == "" || n["status"] == caseResult)) {
+                if ((scenario == "" || n["scenario"] == scenario) && (serviceName == "" || n["serviceName"] == serviceName) && (caseResult == "" || n["status"] == caseResult)) {
                     filterAll += 1;
                     var status = "";
                     if (n["status"] == '成功') {
@@ -7169,26 +7177,26 @@
 
         }
 
-        generateResult("", "");
-        $("#filterScenario").on('change', function () {
-            var scenarioName = $("#filterScenario").val();
-            var serviceName = $("#filterClass").val();
-            var caseResult = $("#filterResult").val();
-            generateResult(serviceName, caseResult);
-        });
+        generateResult("","", "");
 
-        $("#filterClass").on('change', function () {
-            var scenarioName = $("#filterScenario").val();
+        $("#filterScenario").on('change', function () {
+            var scenario = $("#filterScenario").val();
             var serviceName = $("#filterClass").val();
             var caseResult = $("#filterResult").val();
-            generateResult(serviceName, caseResult);
+            generateResult(scenario,serviceName, caseResult);
+        });
+        $("#filterClass").on('change', function () {
+            var scenario = $("#filterScenario").val();
+            var serviceName = $("#filterClass").val();
+            var caseResult = $("#filterResult").val();
+            generateResult(scenario,serviceName, caseResult);
         });
 
         $("#filterResult").on('change', function () {
-            var scenarioName = $("#filterScenario").val();
+            var scenario = $("#filterScenario").val();
             var serviceName = $("#filterClass").val();
             var caseResult = $("#filterResult").val();
-            generateResult(serviceName, caseResult);
+            generateResult(scenario,serviceName, caseResult);
         });
 
         //$(".chosen-select").trigger("chosen:updated");

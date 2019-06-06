@@ -1005,7 +1005,6 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "result.SIZE":1,
                                    "code": "0"
                             }
                      }

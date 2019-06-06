@@ -13,8 +13,9 @@ logging = log.track_log()
 
 
 def email(reportfile):
-    mail_file = open(reportfile,'rb').read()
-    att = MIMEText(mail_file,'html','utf-8')
+
+    # mail_file = open(reportfile,'rb').read()
+    att = MIMEText(reportfile, 'html', 'utf-8')
     att['ContentType'] = 'application/octet-stream'
     att['Content-Disposition'] = 'attachment:filename="测试报告'
 
