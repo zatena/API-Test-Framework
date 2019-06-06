@@ -6,7 +6,9 @@ import pymysql.cursors
 import core.mylog as log
 
 logging = log.track_log()
+
 con = None
+
 
 def connect_db(host, user, password, db, charset='utf8'):
     """
@@ -22,6 +24,7 @@ def connect_db(host, user, password, db, charset='utf8'):
         con = pymysql.connect(host=host, user=user, password=password, db=db, charset=charset,
                              cursorclass=pymysql.cursors.DictCursor)
     return con
+
 
 def execute_sql(sql):
     """
@@ -39,7 +42,11 @@ def execute_sql(sql):
         logging.error("执行sql失败:%s" % e)
         con.rollback()
 
+
 def close_db():
     """关闭MySQL"""
     global con
     con.close()
+
+
+
