@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/tezign _sharinggroup.json" beforeDir="false" afterPath="$PROJECT_DIR$/case/tezig_sharinggroup.json" afterDir="false" />
@@ -13,6 +14,15 @@
       <change beforePath="$PROJECT_DIR$/run_regression.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_regression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/report/接口自动化测试报告20190326.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/myhtmlparser.py" afterDir="false" />
+=======
+    <list default="true" id="fd9c2657-1708-4e10-9b06-dfcdfe9f105c" name="Default Changelist" comment="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/API-Test-Framework.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/proProjectRegression.ini" beforeDir="false" afterPath="$PROJECT_DIR$/case/proProjectRegression.ini" afterDir="false" />
+>>>>>>> tezign/dev_ci
     </list>
     <list id="eaca3557-0576-40fd-839c-284607b1c2ba" name="tmp" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,24 +33,27 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/demo$send_email.coverage" NAME="send_email Coverage Results" MODIFIED="1551860591943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/API_Test_Framework$mylog.coverage" NAME="mylog Coverage Results" MODIFIED="1559121336571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/API_Test_Framework$mylog__1_.coverage" NAME="mylog (1) Coverage Results" MODIFIED="1559121518901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/demo$TestReport.coverage" NAME="TestReport Coverage Results" MODIFIED="1552573541004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
-    <SUITE FILE_PATH="coverage/API_Test_Framework$others.coverage" NAME="others Coverage Results" MODIFIED="1558521210503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
-    <SUITE FILE_PATH="coverage/API_Test_Framework$mydb.coverage" NAME="mydb Coverage Results" MODIFIED="1559047415147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/demo$MYLog.coverage" NAME="MYLog Coverage Results" MODIFIED="1552560286231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/demo$requests.coverage" NAME="requests Coverage Results" MODIFIED="1552484506453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
     <SUITE FILE_PATH="coverage/demo$run.coverage" NAME="run Coverage Results" MODIFIED="1552980883180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/API_Test_Framework$myresponse.coverage" NAME="myresponse Coverage Results" MODIFIED="1558321149576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/demo$TestReport.coverage" NAME="TestReport Coverage Results" MODIFIED="1552573541004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/demo$common.coverage" NAME="common Coverage Results" MODIFIED="1552573565255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/API_Test_Framework$run_proproject_regression.coverage" NAME="run_proproject_regression Coverage Results" MODIFIED="1559833963214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+=======
+    <SUITE FILE_PATH="coverage/API_Test_Framework$run_proproject_regression.coverage" NAME="run_proproject_regression Coverage Results" MODIFIED="1555491238417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> tezign/dev_ci
     <SUITE FILE_PATH="coverage/demo$interface_html.coverage" NAME="interface_html Coverage Results" MODIFIED="1549855291049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/API_Test_Framework$run.coverage" NAME="run Coverage Results" MODIFIED="1558423548949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/API_Test_Framework$run.coverage" NAME="run Coverage Results" MODIFIED="1553611892844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/demo$common_method.coverage" NAME="common_method Coverage Results" MODIFIED="1549855167114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Case" />
+<<<<<<< HEAD
     <SUITE FILE_PATH="coverage/API_Test_Framework$common.coverage" NAME="common Coverage Results" MODIFIED="1558364948886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="316" />
+=======
+    <SUITE FILE_PATH="coverage/demo$MYLog.coverage" NAME="MYLog Coverage Results" MODIFIED="1552560286231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/API_Test_Framework$common.coverage" NAME="common Coverage Results" MODIFIED="1554209445474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/util" />
+>>>>>>> tezign/dev_ci
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -56,6 +69,7 @@
     <expand />
     <select />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="-1373382323">
       <usages-collector id="statistics.lifecycle.project">
@@ -119,8 +133,17 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="205">
               <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+=======
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_proproject_regression.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+>>>>>>> tezign/dev_ci
               <folding>
-                <element signature="e#96#105#0" expanded="true" />
+                <element signature="e#53#62#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,17 +152,25 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/myhtmlparser.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="118">
               <caret line="7045" column="45" selection-start-line="7045" selection-start-column="45" selection-end-line="7045" selection-end-column="45" />
               <folding>
                 <marker date="1559833963205" expanded="true" signature="173780:173785" ph="..." />
                 <marker date="1559833963205" expanded="true" signature="174685:174693" ph="..." />
+=======
+            <state relative-caret-position="60">
+              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+              <folding>
+                <element signature="e#52#67#0" expanded="true" />
+>>>>>>> tezign/dev_ci
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/util/common.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="160">
@@ -171,6 +202,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="172">
               <caret line="85" column="36" selection-start-line="85" selection-start-column="36" selection-end-line="85" selection-end-column="36" />
+=======
+        <entry file="file://$PROJECT_DIR$/constants.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+>>>>>>> tezign/dev_ci
               <folding>
                 <element signature="e#55#64#0" expanded="true" />
               </folding>
@@ -179,6 +216,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/core/myemail.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
@@ -186,10 +224,17 @@
               <folding>
                 <element signature="e#54#68#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="191">
+              <caret line="901" column="9" selection-start-line="901" selection-start-column="9" selection-end-line="901" selection-end-column="9" />
+>>>>>>> tezign/dev_ci
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/email/message.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -213,6 +258,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
               <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+>>>>>>> tezign/dev_ci
             </state>
           </provider>
         </entry>
@@ -228,6 +280,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
       <find>4</find>
       <find>25</find>
       <find>21</find>
@@ -258,6 +311,38 @@
       <find>filterClass</find>
       <find>execute_case_regression</find>
       <find>details</find>
+=======
+      <find>APITestReport</find>
+      <find>db</find>
+      <find>os</find>
+      <find>null</find>
+      <find>dumps</find>
+      <find>project_name</find>
+      <find>资源上传到七牛服务器</find>
+      <find>plan_id</find>
+      <find>sub</find>
+      <find>module</find>
+      <find>print</find>
+      <find>excReport</find>
+      <find>vprojectId</find>
+      <find>projectName</find>
+      <find>REPORT_TITLE</find>
+      <find>run_time</find>
+      <find>delivery_time</find>
+      <find>execute_case_proproject</find>
+      <find>configparser</find>
+      <find>try:</find>
+      <find>except Exception as</find>
+      <find>企业项目发布流程回归测试失败:</find>
+      <find>args</find>
+      <find>logging</find>
+      <find>获取参数失败，</find>
+      <find>请求失败HTTPConnectionPool</find>
+      <find>venv</find>
+      <find>bonjour-py</find>
+      <find>reload</find>
+      <find>iml</find>
+>>>>>>> tezign/dev_ci
     </findStrings>
     <replaceStrings>
       <replace>passresult</replace>
@@ -266,11 +351,6 @@
       <replace>reportResult</replace>
       <replace>log_message</replace>
       <replace>None</replace>
-      <replace>&quot;&quot;</replace>
-      <replace>null</replace>
-      <replace>2316</replace>
-      <replace>fail_result</replace>
-      <replace>1168</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -287,6 +367,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/demo/settings.py" />
+        <option value="$PROJECT_DIR$/demo/pipelines.py" />
+        <option value="$PROJECT_DIR$/interface_html.py" />
+        <option value="$PROJECT_DIR$/Case/common_method.py" />
+        <option value="$PROJECT_DIR$/Core/readConfig.py" />
+        <option value="$PROJECT_DIR$/Core/sendEmail.py" />
+        <option value="$PROJECT_DIR$/Case/publish_report.py" />
+        <option value="$PROJECT_DIR$/execute_case.py" />
+        <option value="$PROJECT_DIR$/send_email.py" />
+        <option value="$PROJECT_DIR$/Case/case0001.ini" />
+        <option value="$PROJECT_DIR$/Core/requests.py" />
+        <option value="$PROJECT_DIR$/Utils/common.py" />
+        <option value="$PROJECT_DIR$/model/TemplateServerModel.py" />
+>>>>>>> tezign/dev_ci
         <option value="$PROJECT_DIR$/core/readConfig.py" />
         <option value="$PROJECT_DIR$/core/requests.py" />
         <option value="$PROJECT_DIR$/core/runRequests.py" />
@@ -301,16 +397,22 @@
         <option value="$PROJECT_DIR$/case/case0001.ini" />
         <option value="$PROJECT_DIR$/core/MYRequest.py" />
         <option value="$PROJECT_DIR$/core/MYLog.py" />
+        <option value="$PROJECT_DIR$/core/myemail.py" />
         <option value="$PROJECT_DIR$/case/发布企业项目.ini" />
         <option value="$PROJECT_DIR$/case/项目状态扩展优化.ini" />
+        <option value="$PROJECT_DIR$/model/report.py" />
         <option value="$PROJECT_DIR$/case/searchProProject.ini" />
         <option value="$PROJECT_DIR$/case/proProjectRegression_origin.ini" />
+        <option value="$PROJECT_DIR$/core/mylog.py" />
         <option value="$PROJECT_DIR$/model/model.py" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/core/mydb.py" />
+        <option value="$PROJECT_DIR$/core/myconfig.py" />
+        <option value="$PROJECT_DIR$/util/others.py" />
         <option value="$PROJECT_DIR$/case/proProjectRegression.ini" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/case/proProjectRegression.ini" />
+        <option value="$PROJECT_DIR$/core/myrequest.py" />
         <option value="$PROJECT_DIR$/venv/lib/python2.7/site-packages/sitecustomize.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/case/unselect.json" />
         <option value="$PROJECT_DIR$/case/tezign_unselect.json" />
         <option value="$PROJECT_DIR$/run_proproject_regression.py" />
@@ -338,20 +440,23 @@
         <option value="$PROJECT_DIR$/util/common.py" />
         <option value="$PROJECT_DIR$/model/report.py" />
         <option value="$PROJECT_DIR$/core/myhtmlparser.py" />
+=======
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/run_proproject_regression.py" />
+        <option value="$PROJECT_DIR$/util/common.py" />
+        <option value="$PROJECT_DIR$/util/common.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
+        <option value="$PROJECT_DIR$/constants.py" />
+        <option value="$PROJECT_DIR$/case/proProjectRegression.ini" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+>>>>>>> tezign/dev_ci
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="76" />
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="821" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -359,6 +464,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -400,6 +506,9 @@
           <select />
         </subPane>
       </pane>
+=======
+      <pane id="ProjectPane" />
+>>>>>>> tezign/dev_ci
       <pane id="Scope" />
     </panes>
   </component>
@@ -412,14 +521,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/model" />
+      <recent name="$PROJECT_DIR$/case" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Case" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/case" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/model" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Case" />
     </key>
   </component>
@@ -436,73 +545,20 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.run_proproject_regression">
+<<<<<<< HEAD
     <configuration name="大平台业务接口自动化测试报告.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/大平台业务接口自动化测试报告.html">
+=======
+    <configuration name="接口自动化测试报告20190409.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190409.html">
+>>>>>>> tezign/dev_ci
       <method v="2" />
     </configuration>
-    <configuration name="mydb" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="API-Test-Framework" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/mydb.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+    <configuration name="接口自动化测试报告20190416.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190416.html">
       <method v="2" />
     </configuration>
-    <configuration name="mylog (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="API-Test-Framework" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/mylog_hold.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+    <configuration name="接口自动化测试报告20190417.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/接口自动化测试报告20190417.html">
       <method v="2" />
     </configuration>
-    <configuration name="mylog" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="API-Test-Framework" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/mylog.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+    <configuration name="企业项目流程回归测试.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/API-Test-Framework/report/企业项目流程回归测试.html">
       <method v="2" />
     </configuration>
     <configuration name="run_proproject_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -518,7 +574,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_regression.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_proproject_regression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -528,19 +584,26 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.接口自动化测试报告20190409.html" />
+      <item itemvalue="JavaScript Debug.接口自动化测试报告20190416.html" />
+      <item itemvalue="JavaScript Debug.接口自动化测试报告20190417.html" />
+      <item itemvalue="JavaScript Debug.企业项目流程回归测试.html" />
       <item itemvalue="Python.run_proproject_regression" />
-      <item itemvalue="JavaScript Debug.大平台业务接口自动化测试报告.html" />
-      <item itemvalue="Python.mydb" />
-      <item itemvalue="Python.mylog" />
-      <item itemvalue="Python.mylog (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.run_proproject_regression" />
+<<<<<<< HEAD
         <item itemvalue="JavaScript Debug.大平台业务接口自动化测试报告.html" />
         <item itemvalue="Python.mylog (1)" />
         <item itemvalue="Python.mylog" />
         <item itemvalue="Python.mydb" />
+=======
+        <item itemvalue="JavaScript Debug.企业项目流程回归测试.html" />
+        <item itemvalue="JavaScript Debug.接口自动化测试报告20190417.html" />
+        <item itemvalue="JavaScript Debug.接口自动化测试报告20190416.html" />
+        <item itemvalue="JavaScript Debug.接口自动化测试报告20190409.html" />
+>>>>>>> tezign/dev_ci
       </list>
     </recent_temporary>
   </component>
@@ -554,7 +617,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1534732116538</updated>
-      <workItem from="1557210513126" duration="756000" />
+      <workItem from="1557210513126" duration="1591000" />
+      <workItem from="1557735422551" duration="982000" />
+      <workItem from="1559785406050" duration="135000" />
     </task>
     <task id="LOCAL-00001" summary="提交接口自动化测试框架和企业项目回归测试用例">
       <created>1554215729422</created>
@@ -640,6 +705,7 @@
       <option name="project" value="LOCAL" />
       <updated>1555506081008</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00013" summary="Merge branch 'dev_init' into dev_ci&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;README.md">
       <created>1559707115021</created>
       <option name="number" value="00013" />
@@ -655,10 +721,13 @@
       <updated>1559716588582</updated>
     </task>
     <option name="localTasksCounter" value="15" />
+=======
+    <option name="localTasksCounter" value="13" />
+>>>>>>> tezign/dev_ci
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6050000" />
+    <option name="totallyTimeSpent" value="8002000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -670,8 +739,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8579767" visible="true" weight="0.24105866" />
       <window_info id="Structure" order="1" sideWeight="0.14202334" side_tool="true" weight="0.24105866" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -679,24 +750,38 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32713756" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" visible="true" weight="0.44981414" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3630731" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22161172" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283767" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" weight="0.41759604" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.55244756" />
+>>>>>>> tezign/dev_ci
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32871014" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32961586" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.38915664" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" visible="true" weight="0.3887755" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.24783148" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.34081632" />
+>>>>>>> tezign/dev_ci
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49785408" weight="0.3272727" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32961586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.3297568" />
-      <window_info anchor="right" id="Database" order="4" sideWeight="0.49906892" weight="0.3297568" />
-      <window_info anchor="right" id="Coverage" order="5" sideWeight="0.5009311" side_tool="true" weight="0.3297568" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
     <layout-to-restore>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8579767" visible="true" weight="0.24105866" />
       <window_info id="Structure" order="1" sideWeight="0.14202334" side_tool="true" visible="true" weight="0.24105866" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -712,14 +797,37 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" weight="0.24783148" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2539342" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283767" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49785408" weight="0.41759604" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.55244756" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32961586" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49928468" weight="0.3958042" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.32961586" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49785408" visible="true" weight="0.4" />
+>>>>>>> tezign/dev_ci
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49785408" weight="0.3272727" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32961586" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+<<<<<<< HEAD
       <window_info anchor="right" id="SciView" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Database" order="4" sideWeight="0.49906892" weight="0.3297568" />
       <window_info anchor="right" id="Coverage" order="5" sideWeight="0.5009311" side_tool="true" weight="0.3297568" />
+=======
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3297568" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
+>>>>>>> tezign/dev_ci
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -760,9 +868,20 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -793,6 +912,7 @@
           <line>17</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
+<<<<<<< HEAD
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/core/myhtmlparser.py</url>
           <line>7044</line>
@@ -813,6 +933,8 @@
           <line>84</line>
           <option name="timeStamp" value="190" />
         </line-breakpoint>
+=======
+>>>>>>> tezign/dev_ci
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -829,36 +951,6 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>method.upper() == &quot;POST&quot;</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>method.upper()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>method</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>headers</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>_data</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>url</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
         <expression-string>rc.get_data(title, key=cs.NAME)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -871,6 +963,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/hooks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -976,56 +1069,129 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/report/大平台业务接口自动化测试报告.html">
+=======
+    <entry file="file://$PROJECT_DIR$/constants.ini" />
+    <entry file="file://$PROJECT_DIR$/util/DateEnconding.py" />
+    <entry file="file://$PROJECT_DIR$/report/测试1_report.html" />
+    <entry file="file://$PROJECT_DIR$/report/TestReport_20190312235321.html" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/posixpath.py" />
+    <entry file="file://$PROJECT_DIR$/report/查询所有的企业项目_report.html" />
+    <entry file="file://$PROJECT_DIR$/report/获得项目所有推送记录_report.html" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/configparser.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/api.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/logging/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/send_email.py" />
+    <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告_20190315.html" />
+    <entry file="file://$PROJECT_DIR$/case/publish_report.py" />
+    <entry file="file://$PROJECT_DIR$/case/case001.py" />
+    <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告20190325.html" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py" />
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/ast.py" />
+    <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告20190326.html" />
+    <entry file="file://$PROJECT_DIR$/data/3dcb80b0dcb3d70ec1293f4ff5056f1a.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/接口自动化测试报告20190402.html" />
+    <entry file="file://$PROJECT_DIR$/case/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/proProjectRegression_origin.ini" />
+    <entry file="file://$PROJECT_DIR$/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/myemail.py">
+>>>>>>> tezign/dev_ci
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="7061" column="45333" selection-start-line="7061" selection-start-column="45333" selection-end-line="7061" selection-end-column="45333" />
+        <state relative-caret-position="240">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/core/mylog_hold.py">
+=======
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/template">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="172">
+          <caret line="7137" column="32" selection-start-line="7137" selection-start-column="30" selection-end-line="7137" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/report.py">
+>>>>>>> tezign/dev_ci
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-260">
+          <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/mydb.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="495">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
           <folding>
             <element signature="e#53#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
+=======
+    <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3493">
-          <caret line="110" column="25" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#53#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/项目状态扩展优化.ini">
+>>>>>>> tezign/dev_ci
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/case/searchProProject.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="17" />
+        <state relative-caret-position="405">
+          <caret line="27" selection-start-line="27" selection-end-line="27" selection-end-column="136" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/core/myconfig.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="25" selection-start-line="25" selection-end-line="29" selection-end-column="7" />
           <folding>
             <element signature="e#54#73#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/util/others.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#52#83#0" expanded="true" />
+>>>>>>> tezign/dev_ci
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/core/mylog.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1037,11 +1203,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+=======
+    <entry file="file://$PROJECT_DIR$/core/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/mylog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="1418" column="33" selection-start-line="1418" selection-start-column="29" selection-end-line="1418" selection-end-column="33" />
+>>>>>>> tezign/dev_ci
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/log/2019:05:29.log">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-2289">
           <caret line="10" column="70" lean-forward="true" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
         </state>
@@ -1060,10 +1246,30 @@
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
             <element signature="e#69#97#0" expanded="true" />
+=======
+        <state relative-caret-position="234">
+          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <element signature="e#54#73#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/site-packages/sitecustomize.py" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/site-packages/backports/configparser/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/_abcoll.py" />
+    <entry file="file://$PROJECT_DIR$/core/myrequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="e#69#84#0" expanded="true" />
+>>>>>>> tezign/dev_ci
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1125,9 +1331,14 @@
           </folding>
         </state>
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/util/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> tezign/dev_ci
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/myrequest.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="610">
           <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
           <folding>
@@ -1141,11 +1352,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12">
           <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+=======
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/importlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="40" lean-forward="true" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+>>>>>>> tezign/dev_ci
         </state>
       </provider>
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/html/parser.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="163">
           <caret line="109" selection-start-line="109" selection-end-line="109" />
         </state>
@@ -1177,10 +1400,34 @@
             <element signature="e#1031#2038#0" />
             <element signature="e#2054#3061#0" />
             <element signature="e#3077#4096#0" />
+=======
+        <state relative-caret-position="135">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_proproject_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="16" column="46" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding>
+            <element signature="e#53#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/util/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding>
+            <element signature="e#52#67#0" expanded="true" />
+>>>>>>> tezign/dev_ci
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/python_stubs/-1199943126/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1233,6 +1480,29 @@
           <folding>
             <element signature="e#96#105#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="e#52#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/case/proProjectRegression.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="901" column="9" selection-start-line="901" selection-start-column="9" selection-end-line="901" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+>>>>>>> tezign/dev_ci
         </state>
       </provider>
     </entry>
