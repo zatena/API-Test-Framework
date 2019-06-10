@@ -6,19 +6,20 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 from email.mime.multipart import MIMEMultipart
-import core.mylog as log
 import constants as cs
+import core.mylog as log
 
 logging = log.track_log()
 
 
 def email(reportfile):
-    mail_file = open(reportfile,'rb').read()
-    att = MIMEText(mail_file,'html','utf-8')
-    att['ContentType'] = 'application/octest-stream'
+
+    # mail_file = open(reportfile,'rb').read()
+    att = MIMEText(reportfile, 'html', 'utf-8')
+    att['ContentType'] = 'application/octet-stream'
     att['Content-Disposition'] = 'attachment:filename="测试报告'
 
-    message = MIMEMultipart()
+    message = MIMEMultipart('related')
     message['From'] = Header(cs.MAIL_SENDER,'utf-8')
     message['To'] = Header(cs.MAIL_RECEIVER,'utf-8')
     message['Subject'] = Header('接口自动化测试报告','utf-8')
@@ -29,8 +30,9 @@ def email(reportfile):
         smtp.connect(cs.MAIL_HOST, 25)
         smtp.login(cs.MAIL_USER, cs.MAIL_PASS)
         smtp.sendmail(cs.MAIL_SENDER, cs.MAIL_RECEIVER, message.as_string())
-        logging.info("发送邮件成功")
-        smtp.quit()
+        logging.info("**********发送邮件成功**********")
     except smtplib.SMTPException as e:
-        logging.error("发送邮件失败 %s", e)
+        logging.error("**********发送邮件失败:%s**********", e)
+    finally:
+        smtp.quit()
 

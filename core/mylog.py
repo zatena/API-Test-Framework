@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 # 基础包：日志服务
 
-
 import logging
 
 """日志级别分别为：DEBUG,INFO,WARNING,ERROR,CRITICAL"""

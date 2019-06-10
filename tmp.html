@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${ENV, var="JOB_NAME"}-第${BUILD_NUMBER}次构建日志</title>
+</head>
+
+<body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"
+      ffset="0">
+<table width="100%" cellpadding="0" cellspacing="0"
+       style="font-size: 30px; font-family: Tahoma, Arial, Helvetica, sans-serif">
+    <tr>
+        <td><br/>
+            <b><font color="#0B610B" size="4">构建信息</font></b>
+            <hr style="height:1px;border:none;border-top:2px dashed #CDBA96;"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+
+                <li>项目名称 ： ${PROJECT_NAME}</li>
+                <li>构建编号 ： 第${BUILD_NUMBER}次构建</li>
+                <li>Git URL ： ${GIT_URL}</li>
+                <li>Git 分支 ： ${GIT_BRANCH}</li>
+                <li>触发 原因： ${CAUSE}</li>
+                <li>构建 日志： <a href="${BUILD_URL}console">点击查看构建日志</a></li>
+                <li>构建 Url ： <a href="${BUILD_URL}">点击查看构建页面</a></li>
+                <li>项目 Url ： <a href="${PROJECT_URL}">点击查看构建项目页面</a></li>
+                <b><font color="#FF0000" size="4">
+                    <li>报 告： <a href="${PROJECT_URL}Workspace/report/企业项目流程回归测试.html">点击查看测试报告</a></li>
+                </font></b>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><b><font color="#0B610B" size="4">变更集</font></b>
+            <hr style="height:1px;border:none;border-top:2px dashed #CDBA96;"/>
+        </td>
+    </tr>
+
+    <tr>
+        <td>${JELLY_SCRIPT,template="html"}<br/>
+            <hr size="2" width="100%" align="center"/>
+        </td>
+    </tr>
+
+
+</table>
+</body>
+</html>

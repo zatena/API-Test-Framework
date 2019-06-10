@@ -2,21 +2,26 @@
 # -*- coding: UTF-8 -*-
 # 主要公用方法
 
-import core.myconfig as rc
-import os
-import core.myrequest as request
-import json
-import constants as cs
-import core.mylog as log
-import core.myemail as email
-import model.report as mr
-import model.model as mm
-import random, string
-import util.others as others
 import datetime
+import json
+import os
+import random
+import string
+import constants as cs
+import core.myconfig as rc
+import core.myemail as email
+import core.myrequest as request
+import model.model as mm
+import model.report as mr
+import util.others as others
+import re
 
+from core.myresponse import getRelyValues
+import traceback
+import core.mylog as log
 
 logging = log.track_log()
+
 summary_report = []
 single_start = datetime.datetime.now()
 single_end = datetime.datetime.now()
@@ -24,7 +29,7 @@ content = None
 code = None
 message = None
 result = None
-project_id = None
+project_id = 2258
 quote_id = None
 project_name = None
 confirm_id = None
@@ -41,6 +46,10 @@ income_id = None
 balance = None
 withdraw_id = None
 pro_withdraw_id = None
+collect_data = {}
+pass_result = 0
+fail_result = 0
+skip_result = 0
 
 
 class ApiTest:
@@ -57,58 +66,84 @@ class ApiTest:
         :param filename: 用例文件名称
         :return: 测试结果的报告模板
         """
-        global summary_report, single_start, single_end
+        global summary_report, single_start, single_end, pass_result, fail_result, skip_result
         report_title = cs.REPORT_TITLE
-        rc.get_config(filename)
-        case_list = eval(rc.get_title_list())
-        all_result = len(case_list)
-        pass_result = 0
-        fail_result = 0
+        case_names = rc.get_casename(filename)[0]
+        case_lists = rc.get_casename(filename)[1]
+        all_result = len(case_names)
         total_start = others.get_now()[0]
 
-        for i in range(0, all_result):
-            title = case_list[i]
-            name = rc.get_data(title, key=cs.NAME)
-            method = rc.get_data(title, key=cs.METHOD)
-            code = rc.get_data(title, key=cs.CODE)
-            api_url = rc.get_data(title, key=cs.URL)
-            url = cs.BASEURL + api_url
-            headers = eval(rc.get_data(title, key=cs.HEADERS))
-            _data = eval(rc.get_data(title, key='data'))
-            data = json.dumps(_data, indent=4, sort_keys=False, ensure_ascii=False)
-            single_start = others.get_now()[0]
-            actual_code = request.api(method, url, data, headers)
-            single_end = others.get_now()[0]
-            expect_code = code
-            run_time = str(others.get_mills(single_start, single_end)) + 'ms'
+        try:
+            for i in range(0, all_result):
+                case_list = case_lists['steps'][i]
+                name = case_names[i]
+                method = case_list['caseMethod']
+                expect_code = case_list['assertions']['body']['code']
+                headers = case_list['request']['headers']
+                api_url = case_list['caseUrl']
+                url = cs.BASEURL + api_url
+                _data = case_list['request']['body']
 
-            if actual_code != expect_code:
-                logging.info("接口测试失败")
-                test_status = "失败"
-                fail_result = fail_result + 1
-                log_message = "预期code:%s \n" %expect_code + "实际code:%s \n" % actual_code + "预期结果和实际结果不一致"
-            else:
-                logging.info("接口测试成功")
-                test_status = "成功"
-                pass_result = pass_result + 1
-                log_message = "预期code:%s\n" %expect_code + "实际code:%s\n" % actual_code + "预期结果和实际结果相同"
-            summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, log_message)
+                if len(collect_data) > 0:
+                    str_data = str(case_list)
+                    match_object = re.findall('.*?([\u4E00-\u9FA5]+\.[\\w]+)', str_data)
+                    if len(match_object) == 0:
+                        pass
+                    else:
+
+                        for i in match_object:
+                            collect_response = collect_data[i.split('.')[0]]
+                            actual_value = i.split('.')[1]
+                            replace_value = getRelyValues.get_dict(collect_response, actual_value)
+                            str_data = str_data.replace(i, str(replace_value))
+                            data_json = eval(str_data)
+                            headers = data_json['request']['headers']
+                            api_url = data_json['caseUrl']
+                            url = cs.BASEURL + api_url
+                            _data = data_json['request']['body']
+                else:
+                    pass
+
+                data = json.dumps(_data, indent=4, sort_keys=False, ensure_ascii=False)
+                data = data.encode('utf-8')
+                single_start = others.get_now()[0]
+                actual_response = request.api(method, url, data, headers)
+                single_end = others.get_now()[0]
+                actual_code = actual_response['code']
+                collect_data[name] = actual_response
+                run_time = str(others.get_mills(single_start, single_end)) + 's'
+
+                if actual_code != expect_code:
+                    logging.info("接口测试失败")
+                    test_status = "失败"
+                    fail_result = fail_result + 1
+                    message_log = "预期code:%s \n" % expect_code + "实际code:%s \n" % actual_code + "预期结果和实际结果不一致"
+                else:
+                    logging.info("接口测试成功")
+                    test_status = "成功"
+                    pass_result = pass_result + 1
+                    message_log = "预期code:%s\n" % expect_code + "实际code:%s\n" % actual_code + "预期结果和实际结果相同"
+                summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, message_log)
+        except Exception as e:
+            logging.error(e)
 
         total_end = others.get_now()[0]
-        total_run_time = str(others.get_mills(total_start, total_end)) + 'ms'
-        skip_result = all_result-(pass_result + fail_result)
+        total_run_time = str(others.get_mills(total_start, total_end)) + 's'
+        skip_result = all_result - (pass_result + fail_result)
         report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
                                       total_run_time)
         return report_model
 
+
+
     def build_report(self, filename):
         test_report = self.execute_case(filename)
         self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                  test_report.fail_test, test_report.skip_test, test_report.total_run_time)
+                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time)
 
     def send_email(self, reportfile):
         reports = os.listdir(reportfile)
-        reports.sort(key=lambda fn: os.path.getatime(reportfile+'/'+fn))
+        reports.sort(key=lambda fn: os.path.getatime(reportfile + '/' + fn))
         file = os.path.join(reportfile, reports[-1])
         email.email(file)
 
@@ -119,321 +154,149 @@ class ProProjectRegression:
     def __init__(self):
         pass
 
-    def execute_case_proproject(self, filename):
+    def execute_case_regression(self, filename):
         """
         :param filename: 用例文件名称
         :return: 测试结果的报告模板
-        企业项目发布流程回归测试
+
         """
-        global summary_report, single_start, single_end, content, message, result, code
+        global summary_report, message, result, code
         global project_id, quote_id, project_name, confirm_id, sub_projectId, contract_id, plan_id
         global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id, income_id
-        global balance, withdraw_id, pro_withdraw_id
+        global balance, withdraw_id, pro_withdraw_id, pass_result, fail_result, skip_result
 
-        report_title = cs.PRO_REPORT_TITLE
-        rc.get_config(filename)
-        case_list = eval(rc.get_title_list())
-        all_result = len(case_list)
-        pass_result = 0
-        fail_result = 0
+        report_title = cs.TEST_REPORT_TITLE
+        case_names = rc.get_casename(filename)[0]
+        case_lists = rc.get_casename(filename)[1]
+        all_result = len(case_names)
         total_start = others.get_now()[0]
         project_name = "测试项目" + ''.join(random.sample(string.ascii_letters + string.digits, 4))
         delivery_time = str(others.get_future(60))
+        caseScenario = case_lists['scenarioName']
 
-        for i in range(0, all_result):
-            title = case_list[i]
-            number = str(rc.get_data(title, key=cs.NUMBER))
-            name = str(rc.get_data(title, key=cs.NAME))
-            data = eval(rc.get_data(title, key=cs.DATA))
-            api_url = str(rc.get_data(title, key=cs.URL))
-            method = str(rc.get_data(title, key=cs.METHOD))
-            headers = eval(rc.get_data(title, key=cs.HEADERS))
-            url = cs.BASEURL + api_url
-
-            if number == '1':
-                data['projectName'] = project_name
-                data['deliveryTime'] = delivery_time
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    project_id = content['result']['projectId']
-                else:
-                    pass
-            if number == '2':
-                url = url % project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '3':
-                data['projectId'] = project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '4':
-                url = url %project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    quote_id = content["result"]["quoteInfo"]["id"]
-                else:
-                    pass
-            if number == '5':
-                data['id'] = quote_id
-                data['projectId'] = project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '6':
-                data['id'] = quote_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '7':
-                data['id'] = quote_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '8':
-                project_id = project_id
-                quote_id = quote_id
-                url = url % (quote_id,project_id)
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '9':
-                data['id'] = project_id
-                data['projectName'] = project_name + "子项目"
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '10':
-                data['projectId'] = project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    confirm_id = content['result']
-                else:
-                    pass
-            if number == '11':
-                project_id = project_id
-                url = url % project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '12':
-                url = url % confirm_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    sub_projectId = content['result']['projectId']
-                else:
-                    pass
-            if number == '13':
-                data['confirmId'] = confirm_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '14':
-                data['projectId'] = sub_projectId
-                data['planStartTime'] = str(others.get_now())[2]
-                data['planEndTime'] = delivery_time
-                data['vProjectId'] = cs.VPROJECT_ID
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '15':
-                data['projectId'] = sub_projectId
-                data['planStartTime'] = str(others.get_now())[2]
-                data['planEndTime'] = delivery_time
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '16':
-                data['projectId'] = sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '17':
-                url = url % sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '18':
-                url = url % sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    contract_id = content['result']['contractId']
-                else:
-                    pass
-            if number == '19':
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '20':
-                url = url % contract_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '21':
-                url = url % sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    plan_id = content['result']['planList'][0]['id']
-                else:
-                    pass
-            if number == '22':
-                data['projectId'] = sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '23':
-                data['projectId'] = sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '24':
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    qiniu_token = content['result']['token']
-                    qiniu_key = content['result']['key']
-                else:
-                    pass
-            # if number == '24':
-            #     single_start = others.get_now()[0]
-            #     url = 'https://upload.qiniup.com/'
-            #     content = request.get_mfd(method=method, url=url, data=data, headers=headers)
-            #     single_end = others.get_now()[0]
-            #     if content.get('code') == 0:
-            #         qiniu_hash = content.get('hash')
-            #         qiniu_upkey = content.get('key')
-            #     else:
-            #         pass
-            if number == '26':
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    asset_id = content['result']['resourceList'][0]['id']
-                else:
-                    pass
-            if number == '27':
-                data['assetId'] = asset_id
-                data['planId'] = plan_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '28':
-                data['projectId'] = sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '29':
-                data['contractId'] = contract_id
-                data['planId'] = plan_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '30':
-                data['proProjectId'] = sub_projectId
-                data['planId'] = plan_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '31':
-                url = url % sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '32':
-                url = url % sub_projectId
-                data['proProjectId'] = sub_projectId
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '33':
-                data['projectId'] = project_id
-                data['productList'][0]['id'] = asset_id
-                data['productList'][0]['assetId'] = asset_id
-                data['productList'][0]['proProjectId'] = project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '34':
-                data['projectId'] = project_id
-                data['reportList'][0]['id'] = asset_id
-                data['reportList'][0]['assetId'] = asset_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '35':
-                data['projectId'] = project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '108117':
-                    content['message'] = 'success'
-                    content['result'] = '异常操作流程：error code-108117项目没有设置账期和收款金额，不能开启账期'
-                else:
-                    pass
-            if number == '36':
-                data['id'] = project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '37':
-                data['projectId'] = project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '38':
-                url = url % project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '39':
-                data['vProjectId'] = cs.VPROJECT_ID
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '40':
-                url = url % cs.VPROJECT_ID
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    income_id = content['result'][0]['id']
-                else:
-                    pass
-            if number == '41':
-                data['id'] = income_id
-                data['vProjectId'] = cs.VPROJECT_ID
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '42':
-                data['projectIds'][0] = sub_projectId
-                data['vProjectId'] = cs.VPROJECT_ID
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '43':
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    balance = content['result']['balance']
-                else:
-                    pass
-            if number == '44':
-                if balance > 100:
-                    content = request.get_message(method=method, url=url, data=data, headers=headers)
-                    if content['code'] == '0':
-                        withdraw_id = content['result']['withdrawId']
-                    else:
+        try:
+            for i in range(0, all_result):
+                case_list = case_lists['steps'][i]
+                name = case_names[i]
+                method = case_list['caseMethod']
+                expect_body = case_list['assertions']['body']
+                expect_code = expect_body['code']
+                expect_assert = None
+                if len(expect_body) == 2:
+                    expect_assert = expect_body['assert']
+                assert_len = 0
+                str_data = str(case_list)
+                if len(collect_data) > 0:
+                    match_object = re.findall('.*?([\u4E00-\u9FA5]+\.[\\w]+)', str_data)
+                    expect_assert_name = str(expect_assert).split(":")[0]
+                    if expect_assert_name in match_object:
+                       match_object.remove(expect_assert_name)
+                    if len(match_object) == 0:
                         pass
-                else:
-                    pass
-            if number == '45':
-                url = url % withdraw_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '46':
-                data['proProjectIds'][0] = sub_projectId
-                data['withdrawId'] = withdraw_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '47':
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                if content['code'] == '0':
-                    rows = len(content['result']['list'])
-                    for row in range(rows):
-                        if content['result']['list'][row]['projectName'] == project_name + "子项目":
-                            pro_withdraw_id = content['result']['list'][row]['projectWithdrawId']
-                else:
-                    pass
-            if number == '48':
-                url = url % pro_withdraw_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '49':
-                url = url % pro_withdraw_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-            if number == '50':
-                url = url % project_id
-                content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
-                # if content['result']['projectStatus'] == 8:
-                #     logging.info("企业项目完结")
-            try:
-                if content != None:
-                    if content['result'] != None:
-                        code = content['code']
-                        message = content['message']
-                        result = content['result']
                     else:
-                        code = content['code']
-                        message = content['message']
-                        result = None
+                        for i in match_object:
+                            collect_response = collect_data[i.split('.')[0]]
+                            res_code = getRelyValues.get_dict(collect_response, 'code')
+                            if int(res_code) > 0:
+                                continue
+                            actual_value = i.split('.')[1]
+                            replace_value = getRelyValues.get_dict(collect_response, actual_value)
+                            str_data = str_data.replace(i, str(replace_value))
+                            data_json = eval(str_data)
+                            headers = data_json['request']['headers']
+                            api_url = data_json['caseUrl']
+                            url = cs.BASEURL + api_url
+                            _data = data_json['request']['body']
                 else:
-                    message = None
+                    pass
+                str_data = str_data.replace('发布企业项目.projectName', project_name)
+                str_data = str_data.replace('发布企业项目.deliveryTime', delivery_time)
+                data_json = eval(str_data)
+                headers = data_json['request']['headers']
+                api_url = data_json['caseUrl']
+                url = cs.BASEURL + api_url
+                _data = data_json['request']['body']
+                data = json.dumps(_data, indent=4, sort_keys=False, ensure_ascii=False)
+                data = data.encode('utf-8')
+                actual_response = request.get_message(method, url, data, headers)
+                collect_data[name] = actual_response
 
-                if message == 'success':
-                    logging.info("企业项目发布流程回归测试通过:%s" % name)
-                    test_status = "成功"
-                    pass_result = pass_result + 1
-                    log_message = "result:%s\n" % result
-                else:
-                    logging.info("企业项目发布流程回归测试失败:%s" % name)
-                    test_status = "失败"
-                    fail_result = fail_result + 1
-                    log_message = "code:%s\n" % code + "message:%s\n" % message + "result:%s\n" % result
+                if expect_assert is not None:
+                    assert_object = re.findall('.*?([\u4E00-\u9FA5]+\.[\\w]+)', expect_assert)
+                    for k in assert_object:
+                        res_str = k.split('.')[1]
+                        assert_replace_value = getRelyValues.get_dict(actual_response, res_str)
+                        k = expect_assert.replace(k, str(assert_replace_value))
+                        assert_list = k.split(":")
+                        assert_len = len(set(assert_list))
 
-            except Exception as e:
-                logging.error("无返回结果%s" % e)
-                log_message = e
-            run_time = str(content['run_time'])+'s'
-            summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, log_message)
+                try:
+                    if actual_response is not None:
+                        if actual_response['result'] != None:
+                            actual_code = actual_response['code']
+                            actual_message = actual_response['message']
+                            actual_result = actual_response['result']
+                            actual_status_code = None
+                        else:
+                            actual_code = actual_response['code']
+                            actual_message = actual_response['message']
+                            actual_result = None
+                            if actual_code == -1:
+                                actual_status_code = actual_response['status_code']
+                            else:
+                                actual_status_code = None
+
+                    if actual_status_code is not None:
+                        logging.info("回归测试失败:%s" % name)
+                        test_status = "失败"
+                        fail_result = fail_result + 1
+                        log_message = "code:%s\n" % actual_status_code
+
+                    elif actual_code == expect_code and expect_assert is None:
+                        logging.info("回归测试通过:%s" % name)
+                        test_status = "成功"
+                        pass_result = pass_result + 1
+                        log_message = "code:%s\n" % actual_code + "message:%s\n" % actual_message + "result:%s\n" % actual_result
+
+                    elif assert_len == 1:
+                        logging.info("回归测试通过:%s" % name)
+                        test_status = "成功"
+                        pass_result = pass_result + 1
+                        log_message = "code:%s\n" % actual_code + "message:%s\n" % actual_message + "result:%s\n" % actual_result
+
+                    else:
+                        logging.info("回归测试失败:%s" % name)
+                        test_status = "失败"
+                        fail_result = fail_result + 1
+                        if assert_len > 1:
+                            actual_result = "实际结果:%s\n" % k[0] + "预期结果:%s\n" % k[2]
+                        log_message = "code:%s\n" % actual_code + "message:%s\n" % actual_message + "result:%s\n" % actual_result
+
+                except Exception as e:
+                    logging.error("无返回结果%s" % e)
+                    traceback.print_exc()
+
+                run_time = str(actual_response['run_time']) + 'ms'
+                summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time, test_status, log_message)
+        except Exception as e:
+            logging.error(e)
+            traceback.print_exc()
 
         total_end = others.get_now()[0]
         total_run_time = str(others.get_mills(total_start, total_end)) + 's'
-        skip_result = all_result-(pass_result + fail_result)
+
         report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
                                       total_run_time)
+
         return report_model
 
-    def build_report_proproject(self, filename):
-        test_report = self.execute_case_proproject(filename)
+    def build_report_regression(self, filename):
+        test_report = self.execute_case_regression(filename)
         self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                test_report.fail_test, test_report.skip_test, test_report.total_run_time)
+                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time,email)
 
-    def send_email_proproject(self, reportfile):
+    def send_email_regression(self, reportfile):
         reports = os.listdir(reportfile)
-        reports.sort(key=lambda fn: os.path.getatime(reportfile+'/'+fn))
+        reports.sort(key=lambda fn: os.path.getatime(reportfile + '/' + fn))
         file = os.path.join(reportfile, reports[-1])
         email.email(file)
-
-
-

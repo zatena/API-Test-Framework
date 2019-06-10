@@ -8,6 +8,8 @@ import json
 import shutil
 import time
 
+from model.htmlparser import MyHTMLParser
+
 result = {
     "testPass": 1,
     "testResult": [
@@ -47,13 +49,16 @@ class Report:
 
     testResultList = []
 
-    def sum_result(self,serviceName, serviceUrl, methodName, description, spendTime, status, logMessage):
+    def sum_result(self,scenario, serviceName, methodName, description, spendTime, status, logMessage):
         log = []
         testResultDict = {}
         log.append(logMessage)
+
+        # 汇总测试结果
         testResultDict["log"] = log
+        testResultDict["scenario"] = scenario
         testResultDict["serviceName"] = serviceName
-        testResultDict["serviceUrl"] = serviceUrl
+        # testResultDict["serviceUrl"] = serviceUrl
         testResultDict["methodName"] = methodName
         testResultDict["description"] = description
         testResultDict["spendTime"] = spendTime
@@ -61,11 +66,9 @@ class Report:
         self.testResultList.append(testResultDict)
         return self.testResultList
 
-
-    def build_report(self, testResult, testName, testPass, testFail, testSkip, totalTime):
+    def build_report(self, testResult, testName, testPass, testFail, testSkip, totalTime,email):
 
         reportResult = {}
-
         reportResult["testPass"] = testPass
         reportResult["testResult"] = testResult
         reportResult["testName"] = testName
@@ -73,10 +76,23 @@ class Report:
         reportResult["testFail"] = testFail
         reportResult["beginTime"] = time.strftime("%Y-%m-%d %H:%M:%S")
         reportResult["totalTime"] = totalTime
-        reportResult["testSkip"] = testSkip
+        reportResult["testSkip"] = len(testResult)-testPass-testFail
+        reportResult["testCoverage"] = str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%'
 
         # 写入测试报告
         self.write_report(reportResult, testName)
+
+        htmlparser = MyHTMLParser()
+        htmltrs = htmlparser.reporthtmlparser(testResult,'')
+
+        report = htmlparser.report_html.replace("${case_list}",htmltrs)\
+            .replace("${filterAll}",str(len(testResult)))\
+            .replace("${filterOk}",str(testPass))\
+            .replace("${filterFail}",str(testFail))\
+            .replace("${filterSkip}",str(len(testResult)-testPass-testFail))\
+            .replace("${filterCoverage}",str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%')
+        email.email(report)
+
 
     def write_report(self, reportResult, testName):
         reportHtmlFileName = testName + ".html"

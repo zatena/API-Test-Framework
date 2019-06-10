@@ -2,12 +2,11 @@
 # -*- coding: UTF-8 -*-
 # 通用包：常量
 
+import importlib
 import os
-import importlib, sys
+import sys
 importlib.reload(sys)
 import time
-import random
-import string
 
 BASEURL = "http://47.93.82.56:8080"
 
@@ -20,6 +19,7 @@ CASE_PATH = os.getcwd()+'/case/项目状态扩展优化.ini'
 REPORT_TITLE = "接口自动化测试报告" + time.strftime('%Y%m%d',time.localtime(time.time()))
 PRO_REPORT_TITLE = "企业项目流程回归测试"
 COMMON_REPORT_TITLE = "普通项目流程回归测试"
+TEST_REPORT_TITLE = "大平台业务接口自动化测试报告"
 
 # 测试结果常量
 
@@ -40,7 +40,7 @@ MAIL_HOST = 'smtp2525.sendcloud.net'
 MAIL_USER = 'tezign_send'
 MAIL_PASS = 'hhIksYtHPnH2l7dj'
 
-MAIL_SENDER = 'zhengjingjing@tezign.com'
+MAIL_SENDER = 'dev@send.tezign.co'
 MAIL_RECEIVER = 'zhengjingjing@tezign.com'
 SUBJECT = '接口自动化测试报告'
 

@@ -1,3 +1,14 @@
+from html.parser import HTMLParser
+
+
+
+
+
+
+
+class MyHTMLParser(HTMLParser):
+
+    report_html = """
 <html>
 <head>
     <meta charset="utf-8">
@@ -6967,76 +6978,7 @@
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>报告汇总</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-sm-6 b-r" style="height:350px">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">用例名称:</label>
-                                    <div class="col-sm-5">
-                                        <span class="form-control" id="testName"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">用例总数:</label>
-                                    <div class="col-sm-5">
-                                        <span class="form-control" id="testAll"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">用例通过:</label>
-                                    <div class="col-sm-5">
-                                        <span class="form-control" id="testPass"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label text-danger">用例失败:</label>
-                                    <div class="col-sm-5">
-                                        <span class="form-control text-danger" id="testFail"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label text-warning">用例跳过:</label>
-                                    <div class="col-sm-5">
-                                        <span class="form-control text-warning" id="testSkip"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">开始时间:</label>
-                                    <div class="col-sm-5">
-                                        <span class="form-control" id="beginTime"></span>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label text-navy">运行时间:</label>
-                                    <div class="col-sm-5">
-                                        <span class="form-control" id="totalTime"></span>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="col-sm-6">
-                            <div style="height:350px" id="echarts-map-chart"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="row">
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
@@ -7053,30 +6995,25 @@
                 </div>
                 <div class="ibox-content">
                     <div class="input-group panel-heading" style="width: 100%; background-color: #1ab394; margin-bottom: 10px; text-align: left; font-family: Consolas;">
-                        <label style="color: snow">测试接口:</label>
-                        <select class="chosen-select form-control" data-placeholder="----------" style="width: 300px;" name="filterClass" id="filterClass">
-                            <option value="">----------</option>
-                        </select>
-                        <label style="color: snow">结果:</label>
-                        <select class="chosen-select form-control" data-placeholder="----------" style="width: 300px;" name="filterResult" id="filterResult">
-                            <option value="">----------</option>
-                        </select>
+
                         <div style="float: right">
                             <label class="form-control">
-                                <span class="text-navy">用例数: </span><span class="text-navy b-r" id="filterAll"></span><span> | </span>
-                                <span style="color: green">成功: </span><span style="color: green" id="filterOk"></span><span> | </span>
-                                <span class="text-danger">失败: </span><span class="text-danger" id="filterFail"></span><span> | </span>
-                                <span class="text-warning">跳过: </span><span class="text-warning" id="filterSkip"></span>
+                                <span class="text-navy">用例数: </span><span class="text-navy b-r" id="filterAll">${filterAll}</span><span> | </span>
+                                <span style="color: green">成功: </span><span style="color: green" id="filterOk">${filterOk}</span><span> | </span>
+                                <span class="text-danger">失败: </span><span class="text-danger" id="filterFail">${filterFail}</span><span> | </span>
+                                <span class="text-warning">跳过: </span><span class="text-warning" id="filterSkip">${filterSkip}</span><span> | </span>
+                                <span class="text-navy">通过率: </span><span class="text-danger" id="filterCoverage">${filterCoverage}</span>
                             </label>
                         </div>
                     </div>
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>编号</th><th>测试接口</th><th>接口路径</th><th>测试方法</th><th>用例描述</th><th>耗时</th><th>结果</th><th>操作</th>
+                            <th>编号</th><th>测试场景概要</th><th>测试接口</th><th>测试方法</th><th>用例描述</th><th>耗时</th><th>结果</th>
                         </tr>
                         </thead>
                         <tbody id="detailBody">
+                             ${case_list}
                         </tbody>
                     </table>
                 </div>
@@ -7084,208 +7021,47 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.min.js"></script>
-<script src="https://cdn.bootcss.com/chosen/1.8.2/chosen.jquery.js"></script>
-<script type="text/javascript">
-	function $childNode(o) {
-	    return window.frames[o]
-	}
-	function animationHover(o, e) {
-	    o = $(o), o.hover(function () {
-	        o.addClass("animated " + e)
-	    }, function () {
-	        window.setTimeout(function () {
-	            o.removeClass("animated " + e)
-	        }, 2e3)
-	    })
-	}
-	function WinMove() {
-	    var o = "[class*=col]", e = ".ibox-title", i = "[class*=col]";
-	    $(o).sortable({
-	        handle: e,
-	        connectWith: i,
-	        tolerance: "pointer",
-	        forcePlaceholderSize: !0,
-	        opacity: .8
-	    }).disableSelection()
-	}
-	var $parentNode = window.parent.document;
-	if ($(".tooltip-demo").tooltip({
-	        selector: "[data-toggle=tooltip]",
-	        container: "body"
-	    }), $(".modal").appendTo("body"), $("[data-toggle=popover]").popover(), $(".collapse-link").click(function () {
-	        var o = $(this).closest("div.ibox"), e = $(this).find("i"), i = o.find("div.ibox-content");
-	        i.slideToggle(200), e.toggleClass("fa-chevron-up").toggleClass("fa-chevron-down"), o.toggleClass("").toggleClass("border-bottom"), setTimeout(function () {
-	            o.resize(), o.find("[id^=map-]").resize()
-	        }, 50)
-	    }), $(".close-link").click(function () {
-	        var o = $(this).closest("div.ibox");
-	        o.remove()
-	    }), top == this) {
-	}
-</script>
-<script type="text/javascript">
-    var resultData = {"testPass": 0, "testResult": [], "testName": "\u63a5\u53e3\u81ea\u52a8\u5316\u6d4b\u8bd5\u62a5\u544a20190326", "testAll": 0, "testFail": 0, "beginTime": "2019-03-26 17:36:33", "totalTime": "0.031ms", "testSkip": 0};
-
-    function clickRow(obj){
-        $("#detailBody").children("tr").attr("style","font-family: Consolas");
-        $(obj).attr("style","font-family: Consolas; background-color: #b0d877");
-    }
-
-    function details(obj) {
-        if ($(obj).text() == '展开') {
-            var len = $(obj).parent().parent().children().length;
-            var detailLog = "";
-            var logs = resultData["testResult"][parseInt($(obj).attr("buttonIndex"))]["log"];
-            $(obj).text("收缩");
-            $(obj).removeClass("btn-primary");
-            $(obj).addClass("btn-danger");
-            $.each(logs, function (i, n) {
-                detailLog = detailLog + "<p>" + n + "</p>";
-            });
-            $(obj).parent().parent().after("<tr><td colspan='" + len + "'><div style='font-family: Consolas;font-size:12px'>" + detailLog + "</div></td></tr>");
-        } else if ($(obj).text() == '收缩') {
-            $(obj).parent().parent().next().remove();
-            $(obj).text("展开");
-            $(obj).removeClass("btn-danger");
-            $(obj).addClass("btn-primary");
-        }
-
-    }
-    $(function () {
-        $("#testName").text(resultData["testName"]);
-        $("#testPass").text(resultData["testPass"]);
-        $("#testFail").text(resultData["testFail"]);
-        $("#testSkip").text(resultData["testSkip"]);
-        $("#testAll").text(resultData["testAll"]);
-        $("#beginTime").text(resultData["beginTime"]);
-        $("#totalTime").text(resultData["totalTime"]);
-        $("#filterAll").text(resultData["testAll"]);
-        $("#filterOk").text(resultData["testPass"]);
-        $("#filterFail").text(resultData["testFail"]);
-        $("#filterSkip").text(resultData["testSkip"]);
-        var classNames = [];
-        var results = [];
-        $.each(resultData["testResult"], function (i, n) {
-            if (classNames.indexOf(n["serviceName"]) == -1) {
-                classNames.push(n["serviceName"]);
-            }
-            if (results.indexOf(n["status"]) == -1) {
-                results.push(n["status"]);
-            }
-        });
-
-        $.each(classNames, function (i, n) {
-            $("#filterClass").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
-        });
-        $.each(results, function (i, n) {
-            $("#filterResult").append("<option value='" + n + "' hassubinfo='true'>" + n + "</option>");
-        });
-
-        $("#filterClass").chosen({search_contains: true});
-        $("#filterResult").chosen({search_contains: true});
-
-        function generateResult(serviceName, caseResult) {
-            $("#detailBody").children().remove();
-            var filterAll = 0;
-            var filterOk = 0;
-            var filterFail = 0;
-            var filterSkip = 0;
-            $.each(resultData["testResult"], function (i, n) {
-                if ((serviceName == "" || n["serviceName"] == serviceName) && (caseResult == "" || n["status"] == caseResult)) {
-                    filterAll += 1;
-                    var status = "";
-                    if (n["status"] == '成功') {
-                        filterOk += 1;
-                        status = "<td><span class='text-navy'>成功</span></td>";
-                    } else if (n["status"] == '失败') {
-                        filterFail += 1;
-                        status = "<td><span class='text-danger'>失败</span></td>";
-                    } else if (n["status"] == '跳过') {
-                        filterSkip += 1;
-                        status = "<td><span class='text-warning'>跳过</span></td>";
-                    } else {
-                        status = "<td><span>" + n["status"] + "</span></td>";
-                    }
-                    var tr = "<tr style='font-family: Consolas'>" +
-                        "<td>" + (i + 1) + "</td>" +
-                        "<td>" + n["serviceName"] + "</td>" +
-                        "<td>" + n["serviceUrl"] + "</td>" +
-                        "<td>" + n["methodName"] + "</td>" +
-                        "<td>" + n["description"] + "</td>" +
-                        "<td>" + n["spendTime"] + "</td>" +
-                        status + "<td><button type='button' onclick='details(this)' buttonIndex='" + i + "' class='btn btn-primary btn-xs' style='margin-bottom: 0px'>展开</button></td></tr>"
-                    $("#detailBody").append(tr);
-                }
-            });
-            $("#filterAll").text(filterAll);
-            $("#filterOk").text(filterOk);
-            $("#filterFail").text(filterFail);
-            $("#filterSkip").text(filterSkip);
-        }
-
-        generateResult("", "");
-
-        $("#filterClass").on('change', function () {
-            var serviceName = $("#filterClass").val();
-            var caseResult = $("#filterResult").val();
-            generateResult(serviceName, caseResult);
-        });
-
-        $("#filterResult").on('change', function () {
-            var serviceName = $("#filterClass").val();
-            var caseResult = $("#filterResult").val();
-            generateResult(serviceName, caseResult);
-        });
-
-        //$(".chosen-select").trigger("chosen:updated");
-
-        function pie() {
-            var option = {
-                title: {
-                    text: '测试用例运行结果',
-                    subtext: '',
-                    x: 'center'
-                },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
-                },
-                legend: {
-                    orient: 'vertical',
-                    left: 'left',
-                    data: ['失败', '跳过', '成功']
-                },
-                series: [
-                    {
-                        name: '运行结果',
-                        type: 'pie',
-                        radius: '55%',
-                        center: ['50%', '60%'],
-                        data: [
-                            {value: resultData["testFail"], name: '失败'},
-                            {value: resultData["testSkip"], name: '跳过'},
-                            {value: resultData["testPass"], name: '成功'}
-                        ],
-                        itemStyle: {
-                            emphasis: {
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowColor: 'rgba(0, 0, 0, 0.5)'
-                            }
-                        }
-                    }
-                ]
-            };
-            var chart = echarts.init(document.getElementById("echarts-map-chart"));
-            chart.setOption(option);
-        }
-
-        pie();
-    });
-
-</script>
 </body>
 </html>
+"""
+
+
+    #构造方法,定义data数组用来存储html中的数据
+    def __init__(self):
+        HTMLParser.__init__(self)
+        self.data = []
+
+    #覆盖starttag方法,可以进行一些打印操作
+    def handle_starttag(self, tag, attrs):
+        pass
+
+
+    def reporthtmlparser(self, reportResults, trs=None):
+
+        i = 0
+        for report in reportResults:
+         i = i+1
+         log = self.reporthtmllog(report['log'],'')
+         status = self.reportstatus(report['status']);
+         trs += "<tr style='font-family: Consolas'><td>" + str(i) + "</td><td>" + report['scenario'] + "</td><td>" + report['serviceName'] + "</td><td>" + report['methodName'] + "</td><td>" + report['description'] + "</td><td>" + report['spendTime'] + "</td><td>"+report['status'] + "</td></tr>"\
+                " <tr style='display:"+status+"'""><td colspan='" + str(8) + "'><div style='font-family: Consolas;font-size:12px'>" + log + "</div></td></tr>"
+        return trs
+
+    def reporthtmllog(self,logs,logstr=None):
+        for log in logs:
+          logstr += "<p>" + log + "</p>"
+        return logstr
+
+    def reportstatus(self,status):
+        if status == '失败':
+            return ''
+        return 'none'
+
+    #覆盖endtag方法
+    def handle_endtag(self, tag):
+        pass
+
+    #覆盖handle_data方法,用来处理获取的html数据,这里保存在data数组
+    def handle_data(self, data):
+        if data.count('\n') == 0:
+            self.data.append(data)
