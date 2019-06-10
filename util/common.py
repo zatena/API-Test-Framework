@@ -16,7 +16,6 @@ import model.report as mr
 import util.others as others
 import re
 
-from core.myhtmlparser import MyHTMLParser
 from core.myresponse import getRelyValues
 import traceback
 import core.mylog as log

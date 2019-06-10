@@ -8,7 +8,7 @@ import json
 import shutil
 import time
 
-from core.myhtmlparser import MyHTMLParser
+from model.htmlparser import MyHTMLParser
 
 result = {
     "testPass": 1,

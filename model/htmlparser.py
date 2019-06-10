@@ -7042,8 +7042,9 @@ class MyHTMLParser(HTMLParser):
         for report in reportResults:
          i = i+1
          log = self.reporthtmllog(report['log'],'')
+         status = self.reportstatus(report['status']);
          trs += "<tr style='font-family: Consolas'><td>" + str(i) + "</td><td>" + report['scenario'] + "</td><td>" + report['serviceName'] + "</td><td>" + report['methodName'] + "</td><td>" + report['description'] + "</td><td>" + report['spendTime'] + "</td><td>"+report['status'] + "</td></tr>"\
-                 " <tr><td colspan='" + str(8) + "'><div style='font-family: Consolas;font-size:12px'>" + log + "</div></td></tr>"
+                " <tr style='display:"+status+"'""><td colspan='" + str(8) + "'><div style='font-family: Consolas;font-size:12px'>" + log + "</div></td></tr>"
         return trs
 
     def reporthtmllog(self,logs,logstr=None):
@@ -7051,7 +7052,10 @@ class MyHTMLParser(HTMLParser):
           logstr += "<p>" + log + "</p>"
         return logstr
 
-
+    def reportstatus(self,status):
+        if status == '失败':
+            return ''
+        return 'none'
 
     #覆盖endtag方法
     def handle_endtag(self, tag):

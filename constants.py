@@ -40,7 +40,7 @@ MAIL_HOST = 'smtp2525.sendcloud.net'
 MAIL_USER = 'tezign_send'
 MAIL_PASS = 'hhIksYtHPnH2l7dj'
 
-MAIL_SENDER = 'zhengjingjing@tezign.com'
+MAIL_SENDER = 'dev@send.tezign.co'
 MAIL_RECEIVER = 'zhengjingjing@tezign.com'
 SUBJECT = '接口自动化测试报告'
 

@@ -10,25 +10,22 @@ import re
 reportFile = cs.REPORT_PATH
 
 ProRegTest = common.ProProjectRegression()
-#
-casePath = os.getcwd()+'/case/tezig_sharinggroup.json'
-# casePath = os.getcwd()+'/case'
-#
-# dirs = os.listdir(casePath)
-#
-# for i in dirs:
-#     if re.match("tezign_*", i):
-#         caseFile = os.path.join(casePath, i)
-#
-#         """1. 执行测试用例生成测试报告"""
-#         ProRegTest.build_report_regression(caseFile)
-# #
-#         """3. 发送测试报告"""
+
+casePath = os.getcwd()+'/case'
+
+dirs = os.listdir(casePath)
+
+for i in dirs:
+    if re.match("tezign_*", i):
+        caseFile = os.path.join(casePath, i)
+
+        """1. 执行测试用例
+           2. 生成测试报告
+           3. 发送报告邮件
+        """
+        ProRegTest.build_report_regression(caseFile)
 
 
-
-ProRegTest.build_report_regression(casePath)
-# ProRegTest.send_email_regression(reportFile)
 
 
 
