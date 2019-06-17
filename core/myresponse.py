@@ -13,8 +13,9 @@ class getRelyValues:
         """
         获取请求数据
         :param dic1: 存储数据
-        :param values: 指定的关键字
-        :return: 指定关键字的值
+        :param values: 关键字
+        :param index: 关键字的顺序
+        :return: 关键字的值
         """
         global values1, va
         values1 = values
