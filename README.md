@@ -1,26 +1,2 @@
-Automation for SOP
-
-This repo try to do api automation for sop by some python libs
-
-
-Installation and dependence
-
-Need python3 to run the automation scripts, also need some other libs, such as:
-
-$ pip3 install -r requirements.txt
-
-
-You can run the "run_regression_" scripts, and the report.html will be created automatically
-
-
-git clone git@git.tezign.com:Tester/API-Test-Framework.git
-whoami 
-pwd
-#åˆ‡æ¢æˆè™šæ‹Ÿç¯å¢ƒå¹¶æ„å»ºä¾èµ–
-virtualenv -p /usr/bin/python3 venv
-source venv/bin/activate
-pip3 install -r requirements.txt
-# æ‰§è¡Œå›å½’æµ‹è¯•è„šæœ¬
-python3 run_regression.py
-
-
+ëh™«b¢wè­#N¬­êh¶¼­¡Ú¦&®¶‰š¶*'~Šì¢–ò²‰§+a¢ybnÂ'²Ö¥•«b¢v§u×©zw^ÇyçiÊØhŸ{h®éí…æ®¶‰š¶*'±Êâ¦Û–Ê'yçl¢g¨¶«–&ì²ç!jÊb§x§²Ö¥–ºŞªè«zg§¶ËqµŠ.q©ëº{az»§­è+zË"¢{®*m±©İ¶«zš+¶f—¥•·œ­æ­yÖ®¶‰š¶'–\ Š×%¢w ŠØ"¶×³Š	Ü¢dŞ²×«üÈMë-¶¦{
++’­Âš*pvø«¶æ¥z{éşë+ı¸§şœ­†‰÷½éï²‹«qëŞÿÛŠÚrØ¯j×©ŠâËZ–Zëz«¢­éÛ-ÆÚr¶'Ş»§­è+zË"¢zr
