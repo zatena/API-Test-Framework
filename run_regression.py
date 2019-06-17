@@ -16,7 +16,7 @@ casePath = os.getcwd()+'/case'
 dirs = os.listdir(casePath)
 
 for i in dirs:
-    if re.match("tezign_*", i):
+    if re.match("tezigc_*", i):
         caseFile = os.path.join(casePath, i)
 
         """1. 执行测试用例
