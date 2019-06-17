@@ -49,13 +49,16 @@ class Report:
 
     testResultList = []
 
-    def sum_result(self,scenario, serviceName, methodName, description, spendTime, status, logMessage):
-        log = []
+    def sum_result(self,scenario, serviceName, methodName, description, spendTime, status, requestlog, resulttlog):
+        request_log = []
+        result_log = []
         testResultDict = {}
-        log.append(logMessage)
+        request_log.append(requestlog)
+        result_log.append(resulttlog)
 
         # 汇总测试结果
-        testResultDict["log"] = log
+        testResultDict["requestLog"] = request_log
+        testResultDict["resultLog"] = result_log
         testResultDict["scenario"] = scenario
         testResultDict["serviceName"] = serviceName
         # testResultDict["serviceUrl"] = serviceUrl
@@ -80,18 +83,18 @@ class Report:
         reportResult["testCoverage"] = str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%'
 
         # 写入测试报告
-        self.write_report(reportResult, testName)
-
-        htmlparser = MyHTMLParser()
-        htmltrs = htmlparser.reporthtmlparser(testResult,'')
-
-        report = htmlparser.report_html.replace("${case_list}",htmltrs)\
-            .replace("${filterAll}",str(len(testResult)))\
-            .replace("${filterOk}",str(testPass))\
-            .replace("${filterFail}",str(testFail))\
-            .replace("${filterSkip}",str(len(testResult)-testPass-testFail))\
-            .replace("${filterCoverage}",str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%')
-        email.email(report)
+        # self.write_report(reportResult, testName)
+        #
+        # htmlparser = MyHTMLParser()
+        # htmltrs = htmlparser.reporthtmlparser(testResult,'')
+        #
+        # report = htmlparser.report_html.replace("${case_list}",htmltrs) \
+        #     .replace("${filterAll}",str(len(testResult))) \
+        #     .replace("${filterOk}",str(testPass)) \
+        #     .replace("${filterFail}",str(testFail)) \
+        #     .replace("${filterSkip}",str(len(testResult)-testPass-testFail)) \
+        #     .replace("${filterCoverage}",str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%')
+        # email.email(report)
 
 
     def write_report(self, reportResult, testName):

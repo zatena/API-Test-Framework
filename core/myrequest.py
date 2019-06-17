@@ -76,7 +76,7 @@ def get_message(method, url, data, headers):
         response['run_time'] = round(run_time * 1000, 3)
         return response
     except Exception as e:
-        logging.error("*******************请求发生异常*******************\n %s" % e)
+        logging.error("请求发生异常\n %s" % e)
         traceback.print_exc()
 
 
@@ -98,3 +98,10 @@ def get_mfd(method, url, data, headers):
     except Exception as e:
         logging.error("请求失败%s" % e)
         traceback.print_exc()
+
+
+if __name__ == '__main__':
+
+    str = "获取合同计划.1.contractId"
+
+    print(str.split(".")[2]);

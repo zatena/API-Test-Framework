@@ -7025,13 +7025,12 @@ class MyHTMLParser(HTMLParser):
 </html>
 """
 
-
-    #构造方法,定义data数组用来存储html中的数据
+    # 构造方法,定义data数组用来存储html中的数据
     def __init__(self):
         HTMLParser.__init__(self)
         self.data = []
 
-    #覆盖starttag方法,可以进行一些打印操作
+    # 覆盖starttag方法,可以进行一些打印操作
     def handle_starttag(self, tag, attrs):
         pass
 
@@ -7041,10 +7040,12 @@ class MyHTMLParser(HTMLParser):
         i = 0
         for report in reportResults:
          i = i+1
-         log = self.reporthtmllog(report['log'],'')
+         requestLog = self.reporthtmllog(report['requestLog'],'')
+         resultLog = self.reporthtmllog(report['resultLog'],'')
          status = self.reportstatus(report['status']);
-         trs += "<tr style='font-family: Consolas'><td>" + str(i) + "</td><td>" + report['scenario'] + "</td><td>" + report['serviceName'] + "</td><td>" + report['methodName'] + "</td><td>" + report['description'] + "</td><td>" + report['spendTime'] + "</td><td>"+report['status'] + "</td></tr>"\
-                " <tr style='display:"+status+"'""><td colspan='" + str(8) + "'><div style='font-family: Consolas;font-size:12px'>" + log + "</div></td></tr>"
+         re_color = self.reportstatusColor(report['status']);
+         trs += "<tr style='font-family: Consolas'><td>" + str(i) + "</td><td>" + report['scenario'] + "</td><td>" + report['serviceName'] + "</td><td>" + report['methodName'] + "</td><td>" + report['description'] + "</td><td>" + report['spendTime'] + "</td><td style='color:"+re_color+"'"">"+report['status'] + "</td></tr>"\
+                " <tr style='display:"+status+"'""><td colspan='" + str(8) + "'><div style='font-family: Consolas;font-size:12px'>" + resultLog + "</div></td></tr>"
         return trs
 
     def reporthtmllog(self,logs,logstr=None):
@@ -7057,11 +7058,16 @@ class MyHTMLParser(HTMLParser):
             return ''
         return 'none'
 
-    #覆盖endtag方法
+    def reportstatusColor(self,status):
+        if status == '失败':
+            return 'red'
+        return ''
+
+    # 覆盖endtag方法
     def handle_endtag(self, tag):
         pass
 
-    #覆盖handle_data方法,用来处理获取的html数据,这里保存在data数组
+    # 覆盖handle_data方法,用来处理获取的html数据,这里保存在data数组
     def handle_data(self, data):
         if data.count('\n') == 0:
             self.data.append(data)
