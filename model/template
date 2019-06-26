@@ -7094,6 +7094,7 @@
             $(obj).parent().parent().after("<tr><td colspan='" + len + "'><div style='font-family: Consolas;font-size:12px'>" + requestLog + "</div></td></tr>");
         } else if ($(obj).text() == '收缩') {
             $(obj).parent().parent().next().remove();
+            $(obj).parent().parent().next().remove();
             $(obj).text("展开");
             $(obj).removeClass("btn-danger");
             $(obj).addClass("btn-primary");
