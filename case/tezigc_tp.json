@@ -1,0 +1,415 @@
+
+{
+    "scenarioName": "TP Dashboard面板接口",
+    "steps": [
+            {
+                "caseName": "获取组员信息",
+                "caseUrl": "/dept/getTpUsers",
+                "caseMethod": "get",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {}
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "统计项目面板数据",
+                "caseUrl": "/tp/dashboard/projectNumInfo",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+	                    "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "查看对接中的项目信息",
+                "caseUrl": "/tp/dashboard/findDockingProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "对接中第一个项目添加备注信息",
+                "caseUrl": "/tp/dashboard/update/remark",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "id": "查看对接中的项目信息.1.projectId",
+	                    "tpRemark": "这是备注信息：对接中第一个项目添加备注信息"
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "查看执行中的项目信息",
+                "caseUrl": "/tp/dashboard/findExecutingProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "查看结款中的项目信息",
+                "caseUrl": "/tp/dashboard/findPaymentProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "查看已完结的项目信息",
+                "caseUrl": "/tp/dashboard/findFinishProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "执行中项目完结情况选择'项目终止'",
+                "caseUrl": "/tp/dashboard/findExecutingProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "finishStatusList": ["1"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "执行中项目完结情况选择'正常完结'",
+                "caseUrl": "/tp/dashboard/findExecutingProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "finishStatusList": ["2"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "执行中项目操作选择'收票'",
+                "caseUrl": "/tp/dashboard/findPaymentProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "operateStatusList": ["1"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "执行中项目操作选择'开启账期'",
+                "caseUrl": "/tp/dashboard/findPaymentProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "operateStatusList": ["2"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "执行中项目操作选择'结账'",
+                "caseUrl": "/tp/dashboard/findPaymentProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "operateStatusList": ["3"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "已完结项目完结情况选择'项目终止'",
+                "caseUrl": "/tp/dashboard/findFinishProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "finishStatusList": ["1"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "已完结项目完结情况选择'项目作废'",
+                "caseUrl": "/tp/dashboard/findFinishProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "finishStatusList": ["3"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "已完结项目完结情况选择'正常完结'",
+                "caseUrl": "/tp/dashboard/findFinishProject",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "pageNum": 1,
+                        "pageSize": 10,
+                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"],
+                        "finishStatusList": ["2"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "取消查看全部组员项目信息",
+                "caseUrl": "/tp/dashboard/projectNumInfo",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "Referer": "https://top.tezign.com/v3/dashboard",
+                        "Origin": "https://top.tezign.com",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "tpUserIdList": []
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+            {
+                "caseName": "选择查看一个组员项目信息",
+                "caseUrl": "/tp/dashboard/projectNumInfo",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                        "X-Top-User-Id": "1",
+                        "Referer": "https://top.tezign.com/v3/dashboard",
+                        "Origin": "https://top.tezign.com",
+                        "service-name": "top2"
+                    },
+                    "body": {
+                        "tpUserIdList": ["获取组员信息.2.id"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            }
+    ]
+}

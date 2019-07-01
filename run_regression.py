@@ -12,7 +12,6 @@ reportFile = cs.REPORT_PATH
 ProRegTest = common.ProProjectRegression()
 
 
-
 # casePath = os.getcwd()+'/case'
 # dirs = os.listdir(casePath)
 #
