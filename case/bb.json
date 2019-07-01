@@ -1,0 +1,65 @@
+
+{
+       "scenarioName": "其他测试",
+       "steps": [
+              {
+                     "caseName": "对接中签单信息",
+                     "caseUrl": "/dashboard/findDockingProject",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageNum":1,
+                                   "pageSize":10,
+                                   "topUserIdList":[1,4,42]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "assert":"对接签单信息.total:100"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查看业务面板",
+                     "caseUrl": "/dashboa/vprojectInfo?topUserIds=&startTime=2019-06-01&endTime=2019-06-30",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              }
+
+
+
+       ]
+}
+
+
+
+
+
+
+
+
+
+

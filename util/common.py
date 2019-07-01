@@ -50,6 +50,7 @@ collect_data = {}
 pass_result = 0
 fail_result = 0
 skip_result = 0
+dict_list = []
 
 
 class ApiTest:
@@ -94,7 +95,7 @@ class ApiTest:
                         for i in match_object:
                             collect_response = collect_data[i.split('.')[0]]
                             actual_value = i.split('.')[1]
-                            replace_value = getRelyValues.get_dict(collect_response, actual_value,1)
+                            replace_value = getRelyValues.get_dict(collect_response, actual_value, 1, dict_list)
                             str_data = str_data.replace(i, str(replace_value))
                             data_json = eval(str_data)
                             headers = data_json['request']['headers']
@@ -160,10 +161,10 @@ class ProProjectRegression:
         :return: 测试结果的报告模板
 
         """
-        global summary_report, message, result, code
-        global project_id, quote_id, project_name, confirm_id, sub_projectId, contract_id, plan_id
-        global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id, income_id
-        global balance, withdraw_id, pro_withdraw_id, pass_result, fail_result, skip_result
+        global summary_report, message, result, code, pass_result, fail_result, skip_result
+        # global project_id, quote_id, project_name, confirm_id, sub_projectId, contract_id, plan_id
+        # global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id, income_id
+        # global balance, withdraw_id, pro_withdraw_id
 
         report_title = cs.TEST_REPORT_TITLE
         case_names = rc.get_casename(filename)[0]
@@ -197,13 +198,13 @@ class ProProjectRegression:
                     else:
                         for i in match_object:
                             collect_response = collect_data[i.split('.')[0]]
-                            res_code = getRelyValues.get_dict(collect_response, 'code',1)
+                            res_code = getRelyValues.get_dict(collect_response, 'code', 1, dict_list)
                             if int(res_code) > 0:
                                 continue
 
                             value_index = i.split('.')[1]
                             actual_value = i.split('.')[2]
-                            replace_value = getRelyValues.get_dict(collect_response, actual_value,int(value_index))
+                            replace_value = getRelyValues.get_dict(collect_response, actual_value,int(value_index), dict_list)
                             str_data = str_data.replace(i, str(replace_value))
                             data_json = eval(str_data)
                             headers = data_json['request']['headers']
@@ -212,11 +213,11 @@ class ProProjectRegression:
                             _data = data_json['request']['body']
                 else:
                     pass
-                str_data = str_data.replace('发布企业项目.projectName', project_name)
-                str_data = str_data.replace('发布企业项目.deliveryTime', delivery_time)
-                str_data = str_data.replace('提交确认函.projectName', project_name + '子项目')
-                str_data = str_data.replace('发布项目计划.planStartTime', str(others.get_now())[2])
-                str_data = str_data.replace('发布项目计划.planEndTime', delivery_time)
+                # str_data = str_data.replace('发布企业项目.projectName', project_name)
+                # str_data = str_data.replace('发布企业项目.deliveryTime', delivery_time)
+                # str_data = str_data.replace('提交确认函.projectName', project_name + '子项目')
+                # str_data = str_data.replace('发布项目计划.planStartTime', str(others.get_now())[2])
+                # str_data = str_data.replace('发布项目计划.planEndTime', delivery_time)
                 data_json = eval(str_data)
                 headers = data_json['request']['headers']
                 api_url = data_json['caseUrl']
@@ -226,12 +227,12 @@ class ProProjectRegression:
                 data = data.encode('utf-8')
                 actual_response = request.get_message(method, url, data, headers)
                 collect_data[name] = actual_response
-                res_str =""
+                res_str = ""
                 if expect_assert is not None:
                     assert_object = re.findall('.*?([\u4E00-\u9FA5]+\.[\\w]+)', expect_assert)
                     for k in assert_object:
                         res_str = k.split('.')[1]
-                        assert_replace_value = getRelyValues.get_dict(actual_response, res_str,1)
+                        assert_replace_value = getRelyValues.get_dict(actual_response, res_str, 1, dict_list)
                         k = expect_assert.replace(k, str(assert_replace_value))
                         assert_list = k.split(":")
                         assert_len = len(set(assert_list))
@@ -240,55 +241,69 @@ class ProProjectRegression:
                     if actual_response is not None:
                         if actual_response['result'] != None:
                             actual_code = actual_response['code']
-                            # actual_message = actual_response['message']
-                            # actual_result = actual_response['result']
                             actual_status_code = None
                         else:
                             actual_code = actual_response['code']
-                            # actual_message = actual_response['message']
-                            # actual_result = None
                             if actual_code == -1:
                                 actual_status_code = actual_response['status_code']
+                            elif actual_code == 1:
+                                actual_status_code = actual_code
                             else:
                                 actual_status_code = None
 
-                    if actual_status_code is not None:
-                        logging.info("回归测试失败:%s" % name)
-                        test_status = "失败"
-                        fail_result = fail_result + 1
-                        request_log_message = "输入值:%s\n" % request_data
-                        result_log_message = "输出结果:%s\n" % actual_status_code
+                        if actual_status_code is not None:
+                            logging.info("回归测试失败:%s" % name)
+                            test_status = "失败"
+                            fail_result = fail_result + 1
+                            request_log_message = "输入值: %s\n" % request_data
 
-                    elif actual_code == expect_code and expect_assert is None:
-                        logging.info("回归测试通过:%s" % name)
-                        test_status = "成功"
-                        pass_result = pass_result + 1
-                        request_log_message = "输入值:%s\n" % request_data
-                        result_log_message = "输出结果:%s\n" % actual_response
+                        # elif actual_response['code']==1:
+                            # logging.info("回归测试失败:%s" % name)
+                            # test_status = "失败"
+                            # fail_result = fail_result + 1
+                            # request_log_message = "输入值:%s\n" % request_data
+                            # result_log_message = "输出结果:%s\n" % actual_response
 
-                    elif assert_len == 1:
-                        logging.info("回归测试通过:%s" % name)
-                        test_status = "成功"
-                        pass_result = pass_result + 1
-                        request_log_message = "输入值:%s\n" % request_data
-                        result_log_message = "输出结果:%s\n" % actual_response
+                        elif actual_code == expect_code and expect_assert is None:
+                            logging.info("回归测试通过:%s" % name)
+                            test_status = "成功"
+                            pass_result = pass_result + 1
+                            request_log_message = "输入值: %s\n" % request_data
 
-                    else:
-                        logging.info("回归测试失败:%s" % name)
-                        test_status = "失败"
-                        fail_result = fail_result + 1
-                        actual_result = ''
-                        if assert_len > 1:
-                            actual_result = res_str+" 实际结果:%s\n" % k[0] + "预期结果:%s\n" % k[2]
-                        request_log_message = "输入值:%s\n" % request_data
-                        result_log_message = "输出结果:%s\n" % actual_result
+                        elif assert_len == 1:
+                            logging.info("回归测试通过:%s" % name)
+                            test_status = "成功"
+                            pass_result = pass_result + 1
+                            request_log_message = "输入值: %s\n" % request_data
+
+                        else:
+                            logging.info("回归测试失败:%s" % name)
+                            test_status = "失败"
+                            fail_result = fail_result + 1
+                            # actual_result = ''
+                            if assert_len > 1:
+                                actual_result = res_str + "预期结果:%s\n" % assert_list[1] + " 实际结果:%s\n" % assert_list[0]
+                                request_log_message = "输入值: %s\n" % request_data
+                                result_log_message = "输出结果: 预判值错误, %s\n" % actual_result
+                                run_time = str(actual_response['run_time']) + 'ms'
+                                summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time, test_status, request_log_message, result_log_message)
+                                continue
+                            else:
+                                request_log_message = "输入值: %s\n" % request_data
+                    # else:
+                    #     if name.endswith('下载'):
 
                 except Exception as e:
                     logging.error("无返回结果%s" % e)
                     traceback.print_exc()
 
                 run_time = str(actual_response['run_time']) + 'ms'
+                del actual_response['run_time']
+                result_log_message = "输出结果:%s\n" % actual_response
+                # if len(url) > 50:
+                #     url = url[0, 30]
                 summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time, test_status, request_log_message, result_log_message)
+
         except Exception as e:
             logging.error(e)
             traceback.print_exc()
@@ -304,7 +319,7 @@ class ProProjectRegression:
     def build_report_regression(self, filename):
         test_report = self.execute_case_regression(filename)
         self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time,email)
+                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time, email)
 
     def send_email_regression(self, reportfile):
         reports = os.listdir(reportfile)

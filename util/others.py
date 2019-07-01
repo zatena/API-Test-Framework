@@ -5,7 +5,9 @@
 from __future__ import division
 import datetime
 import os
+import core.mylog as log
 
+logging = log.track_log()
 testdata = None
 
 def get_now():
@@ -37,3 +39,20 @@ def get_filename(filepath):
         if file == '.jpg':
             testdata = file
     return testdata
+
+# def result_pass(name, pass_result, request_data, actual_response):
+#     logging.info("回归测试通过:%s" % name)
+#     test_status = "成功"
+#     pass_result = pass_result + 1
+#     request_log_message = "输入值:%s\n" % request_data
+#     result_log_message = "输出结果:%s\n" % actual_response
+#     return(test_status, pass_result, request_log_message, result_log_message)
+#
+# def result_fail(name, fail_result, request_data, actual_response):
+#     logging.info("回归测试失败:%s" % name)
+#     test_status = "失败"
+#     fail_result = fail_result + 1
+#     request_log_message = "输入值:%s\n" % request_data
+#     result_log_message = "输出结果:%s\n" % actual_response
+#     return(test_status, fail_result, request_log_message, result_log_message)
+

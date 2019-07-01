@@ -79,7 +79,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "新建分享列表.id",
+                                   "id": "新建分享列表.1.id",
                                    "name": "创意方测试列表副本",
                                    "description": ""
                             },
@@ -123,7 +123,7 @@
               },
               {
                      "caseName": "确认待删除分享列表",
-                     "caseUrl": "/sharing/group/validatePower?businessId=获取复制分享列表.id&businessType=1",
+                     "caseUrl": "/sharing/group/validatePower?businessId=获取复制分享列表.1.id&businessType=1",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -144,7 +144,7 @@
               },
               {
                      "caseName": "删除复制的分享列表",
-                     "caseUrl": "/sharing/group/delete?groupId=获取复制分享列表.id",
+                     "caseUrl": "/sharing/group/delete?groupId=获取复制分享列表.1.id",
                      "caseMethod": "POST",
                      "request": {
                             "body": {
@@ -165,7 +165,7 @@
               },
               {
                      "caseName": "创意方默认分类展示",
-                     "caseUrl": "/sharing/group/category/list?groupId=新建分享列表.id",
+                     "caseUrl": "/sharing/group/category/list?groupId=新建分享列表.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -186,7 +186,7 @@
               },
               {
                      "caseName": "查询创意方列表详情",
-                     "caseUrl": "/sharing/group/get?groupId=新建分享列表.id",
+                     "caseUrl": "/sharing/group/get?groupId=新建分享列表.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -213,7 +213,7 @@
                             "body": {
                                    "name": "A分类",
                                    "description": "待删除",
-                                   "groupId": "新建分享列表.id"
+                                   "groupId": "新建分享列表.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -257,9 +257,9 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "groupId": "新建分享列表.id",
-                                   "designerId": "查询待添加的创意方.id",
-                                   "categoryId": "新建分类.id"
+                                   "groupId": "新建分享列表.1.id",
+                                   "designerId": "查询待添加的创意方.1.id",
+                                   "categoryId": "新建分类.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -303,9 +303,9 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "groupId": "新建分享列表.id",
-                                   "designerId": "查询另一个待添加的创意方.id",
-                                   "categoryId": "新建分类.id"
+                                   "groupId": "新建分享列表.1.id",
+                                   "designerId": "查询另一个待添加的创意方.1.id",
+                                   "categoryId": "新建分类.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -323,7 +323,7 @@
               },
               {
                      "caseName": "查看所有已添加的创意方",
-                     "caseUrl": "/sharing/group/category/designerList?groupId=新建分享列表.id&categoryId=新建分类.id&pageNum=1&pageSize=10",
+                     "caseUrl": "/sharing/group/category/designerList?groupId=新建分享列表.1.id&categoryId=新建分类.1.id&pageNum=1&pageSize=10",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -344,7 +344,7 @@
               },
               {
                      "caseName": "查看当前创意方排序",
-                     "caseUrl": "/sharing/group/sortDesignerList?groupId=新建分享列表.id&categoryId=新建分类.id",
+                     "caseUrl": "/sharing/group/sortDesignerList?groupId=新建分享列表.1.id&categoryId=新建分类.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -369,9 +369,9 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "categoryId": "新建分类.id",
-                                   "groupId": "新建分享列表.id",
-                                   "designerIds": "查询待添加的创意方.id,查询另一个待添加的创意方.id"
+                                   "categoryId": "新建分类.1.id",
+                                   "groupId": "新建分享列表.1.id",
+                                   "designerIds": "查询待添加的创意方.1.id,查询另一个待添加的创意方.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -410,7 +410,7 @@
               },
               {
                      "caseName": "编辑创意方信息-获取案例标签",
-                     "caseUrl": "/designer/portfolioTag?designerId=查询待添加的创意方.id",
+                     "caseUrl": "/designer/portfolioTag?designerId=查询待添加的创意方.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -431,7 +431,7 @@
               },
               {
                      "caseName": "编辑创意方信息-获取印象反馈",
-                     "caseUrl": "/impression/operation/review/map?designerId=查询待添加的创意方.id",
+                     "caseUrl": "/impression/operation/review/map?designerId=查询待添加的创意方.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -515,7 +515,7 @@
               },
               {
                      "caseName": "编辑创意方信息-获取个人已有能力标签",
-                     "caseUrl": "/impression/operation/creativeability?designerId=查询待添加的创意方.id",
+                     "caseUrl": "/impression/operation/creativeability?designerId=查询待添加的创意方.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -536,7 +536,7 @@
               },
               {
                      "caseName": "编辑创意方信息-获取创意方综合印象",
-                     "caseUrl": "/impression/operation/map?designerId=查询待添加的创意方.id",
+                     "caseUrl": "/impression/operation/map?designerId=查询待添加的创意方.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -557,7 +557,7 @@
               },
               {
                      "caseName": "编辑创意方信息-获取创意方能力详情",
-                     "caseUrl": "/sharing/group/designer?categoryId=新建分类.id&designerId=查询待添加的创意方.id",
+                     "caseUrl": "/sharing/group/designer?categoryId=新建分类.1.id&designerId=查询待添加的创意方.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -582,10 +582,10 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "添加创意方.id",
-                                   "groupId": "新建分享列表.id",
-                                   "categoryId": "新建分类.id",
-                                   "designerId": "查询待添加的创意方.id",
+                                   "id": "添加创意方.1.id",
+                                   "groupId": "新建分享列表.1.id",
+                                   "categoryId": "新建分类.1.id",
+                                   "designerId": "查询待添加的创意方.1.id",
                                    "name": "向天歌",
                                    "description": "美女",
                                    "portfolioIds": "2339,2340,2343,2347,2416",
@@ -644,7 +644,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body":{
-                                   "designerId": "查询待添加的创意方.id",
+                                   "designerId": "查询待添加的创意方.1.id",
                                    "creativityAbilityList": [{
                                           "dictId": "120",
                                           "dictName": "海报／平面广告",
@@ -680,7 +680,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "designerId": "查询待添加的创意方.id",
+                                   "designerId": "查询待添加的创意方.1.id",
                                    "impressionTypeDictIds": "32",
                                    "type": 1
                             },
@@ -700,7 +700,7 @@
               },
               {
                      "caseName": "获取创意方唯一编码",
-                     "caseUrl": "/designer/info?designerId=查询待添加的创意方.id",
+                     "caseUrl": "/designer/info?designerId=查询待添加的创意方.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -725,7 +725,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "uid": "获取创意方唯一编码.uid",
+                                   "uid": "获取创意方唯一编码.1.uid",
                                    "expression": 0,
                                    "understand": 0,
                                    "teamwork": 0,
@@ -757,7 +757,7 @@
               },
               {
                      "caseName": "获取案例初始排序",
-                     "caseUrl": "/sharing/group/designer?categoryId=新建分类.id&designerId=查询待添加的创意方.id",
+                     "caseUrl": "/sharing/group/designer?categoryId=新建分类.1.id&designerId=查询待添加的创意方.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -782,10 +782,10 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "添加创意方.id",
-                                   "groupId": "新建分享列表.id",
-                                   "categoryId": "新建分类.id",
-                                   "designerId": "查询待添加的创意方.id",
+                                   "id": "添加创意方.1.id",
+                                   "groupId": "新建分享列表.1.id",
+                                   "categoryId": "新建分类.1.id",
+                                   "designerId": "查询待添加的创意方.1.id",
                                    "name": "向天歌",
                                    "description": "美女",
                                    "portfolioIds": "2343,2339,2340,2347,2416",
@@ -844,10 +844,10 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "添加创意方.id",
-                                   "groupId": "新建分享列表.id",
-                                   "categoryId": "新建分类.id",
-                                   "designerId": "查询待添加的创意方.id",
+                                   "id": "添加创意方.1.id",
+                                   "groupId": "新建分享列表.1.id",
+                                   "categoryId": "新建分类.1.id",
+                                   "designerId": "查询待添加的创意方.1.id",
                                    "name": "向天歌",
                                    "description": "美女",
                                    "portfolioIds": "2339,2340,2343,2347,2416",
@@ -927,7 +927,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id":"新建分享列表.id"
+                                   "id":"新建分享列表.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -950,7 +950,7 @@
                      "request": {
                             "body": {
                                    "permissionCluster": 0,
-                                   "businessId": "新建分享列表.id"
+                                   "businessId": "新建分享列表.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -972,7 +972,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "businessId":"新建分享列表.id"
+                                   "businessId":"新建分享列表.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -990,7 +990,7 @@
               },
               {
                      "caseName": "非列表创建者查看该列表",
-                     "caseUrl": "/sharing/group/category/designerList?groupId=新建分享列表.id&categoryId=新建分类.id&pageNum=1&pageSize=10",
+                     "caseUrl": "/sharing/group/category/designerList?groupId=新建分享列表.1.id&categoryId=新建分类.1.id&pageNum=1&pageSize=10",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -999,7 +999,7 @@
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
                                    "X-Top-User-Id": "145",
-                                   "X-Top-Token": "24955b943a517e9ec587b14516a9ffab"
+                                   "X-Top-Token": "bef73f85aca861b9bf0b7c1ecc67236e"
                             }
                      },
                      "assertions": {
@@ -1015,7 +1015,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "新建分享列表.id",
+                                   "id": "新建分享列表.1.id",
                                    "name": "创意方测试列表",
                                    "description": "测试无敌"
                             },
@@ -1023,7 +1023,7 @@
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
                                    "X-Top-User-Id": "145",
-                                   "X-Top-Token": "24955b943a517e9ec587b14516a9ffab"
+                                   "X-Top-Token": "bef73f85aca861b9bf0b7c1ecc67236e"
                             }
                      },
                      "assertions": {
@@ -1040,7 +1040,7 @@
                      "request": {
                             "body": {
                                    "permissionCluster": 1,
-                                   "businessId": "新建分享列表.id"
+                                   "businessId": "新建分享列表.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -1062,7 +1062,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "新建分享列表.id",
+                                   "id": "新建分享列表.1.id",
                                    "name": "创意方测试列表",
                                    "description": "测试无敌啊"
                             },
@@ -1070,7 +1070,7 @@
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
                                    "X-Top-User-Id": "145",
-                                   "X-Top-Token": "24955b943a517e9ec587b14516a9ffab"
+                                   "X-Top-Token": "bef73f85aca861b9bf0b7c1ecc67236e"
                             }
                      },
                      "assertions": {
@@ -1082,7 +1082,7 @@
               },
               {
                      "caseName": "分享列表",
-                     "caseUrl": "/sharing/group/sharing?groupId=新建分享列表.id",
+                     "caseUrl": "/sharing/group/sharing?groupId=新建分享列表.1.id",
                      "caseMethod": "POST",
                      "request": {
                             "body": {
@@ -1103,12 +1103,31 @@
               },
               {
                      "caseName": "查看分享链接",
-                     "caseUrl": "/proSearch/public/sharing/group?code=分享列表.key",
+                     "caseUrl": "/proSearch/public/sharing/group?code=分享列表.1.key",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
-                                   "permissionCluster": 1,
-                                   "businessId": "新建分享列表.id"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "删除创意方",
+                     "caseUrl": "/sharing/group/deleteDesigner",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "groupId": "新建分享列表.1.id",
+                                   "categoryId": "新建分类.1.id",
+                                   "designerId": "查询待添加的创意方.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -1121,6 +1140,95 @@
                             "status": 200,
                             "body": {
                                    "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "删除后列表数量检查",
+                     "caseUrl": "/sharing/group/category/designerList?groupId=新建分享列表.1.id&categoryId=新建分类.1.id&pageNum=1&pageSize=10",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0",
+                                   "assert":"删除后列表数量检查.total:1"
+                            }
+                     }
+              },
+              {
+                     "caseName": "删除分类",
+                     "caseUrl": "/sharing/group/category/delete?categoryId=新建分类.1.id&groupId=新建分享列表.1.id",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "删除分享列表",
+                     "caseUrl": "/sharing/group/delete?groupId=新建分享列表.1.id",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "确认分享列表已删除",
+                     "caseUrl": "/sharing/group/list",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "groupName": "创意方测试列表",
+                                   "pageNum": 1,
+                                   "pageSize": 10
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0",
+                                   "assert":"确认分享列表已删除.total:0"
                             }
                      }
               }

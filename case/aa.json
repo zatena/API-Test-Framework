@@ -180,8 +180,6 @@
 #     content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
 # if number == '14':
 #     data['projectId'] = sub_projectId
-#     data['planStartTime'] = str(others.get_now())[2]
-#     data['planEndTime'] = delivery_time
 #     data['vProjectId'] = cs.VPROJECT_ID
 #     content = request.get_message(method=method, url=url, data=json.dumps(data), headers=headers)
 # if number == '15':
@@ -360,6 +358,44 @@
 <th>接口路径</th>
 
 "<td>" + n["serviceUrl"] + "</td>" +
+
+
+
+
+{
+"caseName": "主项目时间筛选的下载",
+"caseUrl": "/dashboard/export?X-Top-User-Id=1&X-Top-Token=3076785b83df9e43165411f5d0234bc4&service-name=top2&leaderType=1&exportDateType=3&startTime=2019-06-01%2000:00:00&endTime=2019-07-31%2023:59:59&topUserIdList=1,4,42",
+"caseMethod": "GET",
+"request": {
+"body": {
+},
+"headers":{
+}
+},
+"assertions": {
+"status": 200,
+"body": {
+"code" : "0"
+}
+}
+},
+{
+"caseName": "项目预计完成时间筛选的下载",
+"caseUrl": "/dashboard/export?X-Top-User-Id=1&X-Top-Token=3076785b83df9e43165411f5d0234bc4&service-name=top2&leaderType=1&exportDateType=1&startTime=2019-06-01%2000:00:00&endTime=2019-07-31%2023:59:59&topUserIdList=1,4,42",
+"caseMethod": "GET",
+"request": {
+"body": {
+},
+"headers":{
+}
+},
+"assertions": {
+"status": 200,
+"body": {
+"code" : "0"
+}
+}
+}
 
 
 

@@ -24,3 +24,8 @@ pip3 install -r requirements.txt
 python3 run_regression.py
 
 
+case开发注意事项：
+获取新添加人才列表.1.total:2
+1是想获取的第几个total
+2是实际的结果的索引
+

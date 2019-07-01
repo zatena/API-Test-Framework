@@ -1,0 +1,413 @@
+
+{
+       "scenarioName": "简单测试",
+       "steps": [
+              {
+                     "caseName": "获取签单",
+                     "caseUrl": "/vprojects?startTime=&endTime=&alterStartTime=&alterEndTime=&keyword=%E8%8D%AF%E6%98%8E%E5%BA%B7%E5%BE%B7%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96KV%E8%AE%BE%E8%AE%A1&invoiceTitle=&invoiceAmount=&signConfirmType=1&relatStatus=&invoiceStatus=&incomeStatus=&payStatusList=&operateLimitTime=0&tagIds=&operateId=&pageSize=10&pageNum=1",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "签单添加收款",
+                     "caseUrl": "/finance/income/add",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body":{
+                                   "money": 2000,
+                                   "payType": 9,
+                                   "receiveTime": "2019-06-09",
+                                   "projectIdList": [],
+                                   "vProjectId": "获取签单.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取签单收入信息",
+                     "caseUrl": "/finance/income/list/获取签单.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "修改签单收款",
+                     "caseUrl": "/finance/income/add",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "vProjectId": "获取签单.1.id",
+                                   "money": 2000,
+                                   "payType": 1,
+                                   "receiveTime": 1554768000000,
+                                   "remark": null,
+                                   "projectIdList": [],
+                                   "id": "获取签单收入信息.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "给创意方结款",
+                     "caseUrl": "/finance/pay/direct",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectIds": [2476],
+                                   "vProjectId": "获取签单.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取创意方账号",
+                     "caseUrl": "/wallet/withdraw/getWithdrawList?status=-1&page=1&perpageNum=10",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "2316",
+                                   "X-Token": "ee1bf32fb3a5471ef9693757b96cef53"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "创意方提现",
+                     "caseUrl": "/wallet/withdraw/submit/accountId=获取创意方账号.1.accountId&price=100&type=1",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+
+                            },
+
+                            "headers":{
+                                   "Content-Type":"application/x-www-form-urlencoded",
+                                   "X-User-Id": "2316",
+                                   "X-Token": "ee1bf32fb3a5471ef9693757b96cef53"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取提现账号相关项目记录",
+                     "caseUrl": "/withdraw/getProjectTradingRecord?withdrawId=创意方提现.1.withdrawId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "2316",
+                                   "X-Token": "ee1bf32fb3a5471ef9693757b96cef53"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "同意创意方提现",
+                     "caseUrl": "/withdraw/agreeWithdraw",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "proProjectIds": [2476],
+                                   "projectIds": [],
+                                   "withdrawId": "创意方提现.1.withdrawId"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "message":"success"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取提现记录表",
+                     "caseUrl": "/withdraw/list",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "status": null,
+                                   "pageNum": 1,
+                                   "orderBy": 0,
+                                   "orderType": 1,
+                                   "companyChecked": null,
+                                   "projectType": 0
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "message":"success"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取提现项目交易记录",
+                     "caseUrl": "/withdraw/getSelectProjectTradingRecord?projectWithdrawId=获取提现记录表.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "message":"success"
+                            }
+                     }
+              },
+              {
+                     "caseName": "标记为已打款",
+                     "caseUrl": "/withdraw/payWithdraw?projectWithdrawId=获取提现记录表.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "message":"success"
+                            }
+                     }
+              },
+              {
+                     "caseName": "项目完结",
+                     "caseUrl": "/pro/getProjectDetail?projectId=发布企业项目.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "assert":"项目完结.status:8"
+                            }
+                     }
+              }
+
+
+              {
+                     "caseName": "发布企业项目",
+                     "caseUrl": "/pro/top/submit",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "industry": "1002",
+                                   "projectName": "待作废",
+                                   "deliveryContent": "原图",
+                                   "budget": 2000,
+                                   "country": 1,
+                                   "province": 114,
+                                   "city": 117,
+                                   "projectStatus": null,
+                                   "otherMsg": "测试",
+                                   "companyName": null,
+                                   "companyInfo": null,
+                                   "companyUrl": null,
+                                   "designerStyle": "233",
+                                   "customStyle": "",
+                                   "designerType": "",
+                                   "animation": null,
+                                   "graphic": null,
+                                   "illustration": null,
+                                   "ui": null,
+                                   "publishType": 2,
+                                   "processMode": 1,
+                                   "quoteTime": 3,
+                                   "isRemote": 1,
+                                   "resourceIds": "",
+                                   "resources": [],
+                                   "designerRequireInfo": {
+                                          "remark": ""
+                                   },
+                                   "companyId": "100",
+                                   "projectPublishTypeBeanList": [{
+                                          "materielName": "长图",
+                                          "materielDescription": "长图180cmx360cm",
+                                          "node": {
+                                                 "id": 3,
+                                                 "name": "插画",
+                                                 "edit": false,
+                                                 "unit": "0",
+                                                 "units": null,
+                                                 "node": {
+                                                        "id": 25,
+                                                        "name": "商业插画",
+                                                        "edit": false,
+                                                        "unit": "0",
+                                                        "units": null,
+                                                        "node": {
+                                                               "id": 121,
+                                                               "name": "广告商业插画",
+                                                               "edit": false,
+                                                               "unit": "张",
+                                                               "units": ["张"]
+                                                        }
+                                                 }
+                                          },
+                                          "isRange": 0,
+                                          "amount": 1,
+                                          "unit": "张",
+                                          "id": 121
+                                   }],
+                                   "deliveryTask": "1、长图（广告商业插画）（1张）\n长图180cmx360cm",
+                                   "projectBackground": "产品目标是高增长",
+                                   "deliveryTime": "2019-09-30",
+                                   "paymentDay": "60",
+                                   "modifyBudgetType": 2
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+
+
+       ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

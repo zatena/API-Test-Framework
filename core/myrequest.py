@@ -68,10 +68,12 @@ def get_message(method, url, data, headers):
 
         run_time = result.elapsed.total_seconds()
         response_code = result.status_code
-        response_result['run_time'] = round(run_time * 1000, 3)
         if response_code > 200:
             response_result['status_code'] = response_code
+            response_result['run_time'] = round(run_time * 1000, 3)
             return response_result
+        elif response_code == 200 and result is None:
+            return result
         response = result.json()
         response['run_time'] = round(run_time * 1000, 3)
         return response
@@ -99,9 +101,3 @@ def get_mfd(method, url, data, headers):
         logging.error("请求失败%s" % e)
         traceback.print_exc()
 
-
-if __name__ == '__main__':
-
-    str = "获取合同计划.1.contractId"
-
-    print(str.split(".")[2]);

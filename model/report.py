@@ -83,7 +83,7 @@ class Report:
         reportResult["testCoverage"] = str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%'
 
         # 写入测试报告
-        # self.write_report(reportResult, testName)
+        self.write_report(reportResult, testName)
         #
         # htmlparser = MyHTMLParser()
         # htmltrs = htmlparser.reporthtmlparser(testResult,'')

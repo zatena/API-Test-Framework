@@ -9,7 +9,9 @@ logging = log.track_log()
 
 class getRelyValues:
 
-    def get_dict(dict1, values, index):
+
+
+    def get_dict(dict1, values, index,dictList):
         """
         获取请求数据
         :param dic1: 存储数据
@@ -20,35 +22,35 @@ class getRelyValues:
         global values1, va
         values1 = values
         # 把字典的key和values变成数组
-        i = 0
+
         for k, v in dict1.items():
-            i = +1
             if k == values:
                 va = v
-                if index == i:
-                    return va
+                dictList.append(va)
+                continue
 
             # 判断类型是不是list
             elif list is type(v):
-                getRelyValues.get_list(v,index)
+                getRelyValues.get_list(v,index,dictList)
 
             elif type(v) is dict:
-                getRelyValues.get_dict(v, values1,index)
+                getRelyValues.get_dict(v, values1,index,dictList)
 
             else:
                 # print(str(k) + ":----" + str(v))
                 pass
 
-        return va
 
-    def get_list(list1,index):
+        return dictList[index-1]
+
+    def get_list(list1,index,dictList):
 
         for i in list1:
             if list is type(i):
-                getRelyValues.get_list(i,index)
+                getRelyValues.get_list(i,index,dictList)
 
             elif dict is type(i):
-                getRelyValues.get_dict(i, values1,index)
+                getRelyValues.get_dict(i, values1,index,dictList)
             else:
                 pass
 

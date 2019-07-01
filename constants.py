@@ -3,10 +3,11 @@
 # 通用包：常量
 
 import importlib
+import time
 import os
 import sys
 importlib.reload(sys)
-import time
+
 
 BASEURL = "http://47.93.82.56:8080"
 
