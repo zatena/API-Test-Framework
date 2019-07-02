@@ -124,8 +124,7 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code" : "0",
-                                   "assert":"查看全部组员项目信息.dockingNum:5"
+                                   "code" : "0"
                             }
                      }
               },
@@ -150,7 +149,7 @@
                             "status": 200,
                             "body": {
                                    "code" : "0",
-                                   "assert":"对接签单信息.total:5"
+                                   "assert":"对接中签单信息.1.total:5"
                             }
                      }
               },
@@ -160,7 +159,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "virtualProjectId": "对接签单信息.5.orderId",
+                                   "virtualProjectId": "对接中签单信息.5.orderId",
                                    "expectedFinishTime": "2019-08-23"
                             },
                             "headers":{
@@ -183,7 +182,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "virtualProjectId": "对接签单信息.5.orderId",
+                                   "virtualProjectId": "对接中签单信息.5.orderId",
                                    "expectedFinishTime": "2019-07-15"
                             },
                             "headers":{
@@ -230,7 +229,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id":"执行中签单信息.1.projectId",
+                                   "id":"执行中签单信息.0.projectId",
                                    "remark":"测试"
                             },
                             "headers":{
@@ -253,7 +252,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id":"执行中签单信息.1.projectId",
+                                   "id":"执行中签单信息.0.projectId",
                                    "remark":"备注初始值"
                             },
                             "headers":{
@@ -325,7 +324,7 @@
                      "request": {
                             "body": {
                                    "industry": "1002",
-                                   "projectName": "待作废",
+                                   "projectName": "新的待作废项目",
                                    "deliveryContent": "原图",
                                    "budget": 2000,
                                    "country": 1,
@@ -466,8 +465,7 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code" : "0",
-                                   "assert":"查看全部组员项目信息.dockingNum:0"
+                                   "code" : "0"
                             }
                      }
               },

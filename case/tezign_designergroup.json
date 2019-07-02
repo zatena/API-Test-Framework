@@ -52,7 +52,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "groupId": "新建一级人才分类.0.id",
+                                   "groupId": "新建一级人才分类.1.id",
                                    "secondGroupId": null,
                                    "name": "A组",
                                    "description": "测试人才"
@@ -73,7 +73,7 @@
               },
               {
                      "caseName": "复制二级人才分组",
-                     "caseUrl": "/collection/group/copyGroup/新建二级人才分组.0.id",
+                     "caseUrl": "/collection/group/copyGroup/新建二级人才分组.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -120,7 +120,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "designerId": "查询待添加的设计师.0.id",
+                                   "designerId": "查询待添加的设计师.1.id",
                                    "managementComment": "运营评语：良好"
                             },
                             "headers": {
@@ -143,9 +143,9 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "parentGroupId": "新建一级人才分类.0.id",
-                                   "groupId": "新建二级人才分组.0.id",
-                                   "designerId": "查询待添加的设计师.0.id"
+                                   "parentGroupId": "新建一级人才分类.1.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -163,7 +163,7 @@
               },
               {
                      "caseName": "获取新添加人才列表",
-                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.0.id&secondGroupId=新建二级人才分组.0.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
+                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -185,7 +185,7 @@
               },
               {
                      "caseName": "案例全选",
-                     "caseUrl": "/collection/group/getDesignerPortfolioSort?designerId=查询待添加的设计师.0.id&groupId=新建二级人才分组.0.id",
+                     "caseUrl": "/collection/group/getDesignerPortfolioSort?designerId=查询待添加的设计师.1.id&groupId=新建二级人才分组.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -210,8 +210,8 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "groupId": "新建二级人才分组.0.id",
-                                   "designerId": "查询待添加的设计师.0.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id",
                                    "portfolioIds": [2343, 2416, 2347, 2340, 2339]
                             },
                             "headers": {
@@ -234,8 +234,8 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "groupId": "新建二级人才分组.0.id",
-                                   "designerId": "查询待添加的设计师.0.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id",
                                    "portfolioIds": [2416, 2347, 2343, 2340, 2339]
                             },
                             "headers": {
@@ -254,7 +254,7 @@
               },
               {
                      "caseName": "获取排序后的人才列表",
-                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.0.id&secondGroupId=新建二级人才分组.0.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
+                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -279,7 +279,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "获取新添加人才列表.0.id",
+                                   "id": "获取新添加人才列表.1.id",
                                    "businessIdentify": 1
                             },
                             "headers": {
@@ -302,7 +302,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "designerId": "查询待添加的设计师.0.id",
+                                   "designerId": "查询待添加的设计师.1.id",
                                    "businessComment": "业务反馈良好"
                             },
                             "headers": {
@@ -347,9 +347,9 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "parentGroupId": "新建一级人才分类.0.id",
-                                   "groupId": "新建二级人才分组.0.id",
-                                   "designerId": "查询待添加的另一个设计师.0.id"
+                                   "parentGroupId": "新建一级人才分类.1.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的另一个设计师.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -367,7 +367,7 @@
               },
               {
                      "caseName": "获取新添加人才列表",
-                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.0.id&secondGroupId=新建二级人才分组.0.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
+                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -388,7 +388,7 @@
               },
               {
                      "caseName": "获取人才排序",
-                     "caseUrl": "/collection/group/findSortTopDesignerGroup?parentGroupId=新建一级人才分类.0.id&groupId=新建二级人才分组.0.id",
+                     "caseUrl": "/collection/group/findSortTopDesignerGroup?parentGroupId=新建一级人才分类.1.id&groupId=新建二级人才分组.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -413,9 +413,9 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "groupId": "新建一级人才分类.0.id",
-                                   "secondGroupId": "新建二级人才分组.0.id",
-                                   "designerIdSortList": ["查询待添加的另一个设计师.0.id", "查询待添加的设计师.0.id"]
+                                   "groupId": "新建一级人才分类.1.id",
+                                   "secondGroupId": "新建二级人才分组.1.id",
+                                   "designerIdSortList": ["查询待添加的另一个设计师.1.id", "查询待添加的设计师.1.id"]
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -437,9 +437,9 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "parentGroupId": "新建一级人才分类.0.id",
-                                   "groupId": "新建二级人才分组.0.id",
-                                   "designerId": "查询待添加的设计师.0.id"
+                                   "parentGroupId": "新建一级人才分类.1.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id"
                             },
                             "headers": {
                                    "Content-Type": "application/json",
@@ -457,7 +457,7 @@
               },
               {
                      "caseName": "删除二级分组",
-                     "caseUrl": "/collection/group/delTopGroup?groupId=新建一级人才分类.0.id&secondGroupId=新建二级人才分组.0.id",
+                     "caseUrl": "/collection/group/delTopGroup?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -478,7 +478,7 @@
               },
               {
                      "caseName": "删除一级分类",
-                     "caseUrl": "/collection/group/top/deleteTopCollectionGroup?groupId=新建一级人才分类.0.id",
+                     "caseUrl": "/collection/group/top/deleteTopCollectionGroup?groupId=新建一级人才分类.1.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {

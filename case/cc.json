@@ -74,7 +74,7 @@
                      "request": {
                             "body": {
                                    "industry": "1002",
-                                   "projectName": "一项目",
+                                   "projectName": "企业项目",
                                    "deliveryContent": "原图",
                                    "budget": 2000,
                                    "country": 1,

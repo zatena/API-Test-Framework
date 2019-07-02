@@ -26,7 +26,7 @@ ProRegTest = common.ProProjectRegression()
 #         ProRegTest.build_report_regression(caseFile)
 
 
-casePath = os.getcwd()+'/case/tezign_designergroup.json'
+casePath = os.getcwd()+'/case/tezign_sharinggroup.json'
 ProRegTest.build_report_regression(casePath)
 
 

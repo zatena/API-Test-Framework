@@ -69,7 +69,8 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code": "0"
+                                   "code": "0",
+                                   "assert":"查询新增创意方列表.1.total:1"
                             }
                      }
               },
@@ -255,6 +256,30 @@
                      "caseName": "添加创意方",
                      "caseUrl": "/sharing/group/addDesigner",
                      "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "groupId": "新建分享列表.1.id",
+                                   "designerId": "查询待添加的创意方.1.id",
+                                   "categoryId": "新建分类.1.id"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取新加创意方列表编号",
+                     "caseUrl": "/sharing/group/category/designerList?groupId=新建分享列表.1.id&categoryId=新建分类.1.id&pageNum=1&pageSize=10",
+                     "caseMethod": "GET",
                      "request": {
                             "body": {
                                    "groupId": "新建分享列表.1.id",
@@ -582,7 +607,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "添加创意方.1.id",
+                                   "id": "获取新加创意方列表编号.1.id",
                                    "groupId": "新建分享列表.1.id",
                                    "categoryId": "新建分类.1.id",
                                    "designerId": "查询待添加的创意方.1.id",
@@ -782,7 +807,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "添加创意方.1.id",
+                                   "id": "获取新加创意方列表编号.1.id",
                                    "groupId": "新建分享列表.1.id",
                                    "categoryId": "新建分类.1.id",
                                    "designerId": "查询待添加的创意方.1.id",
@@ -844,7 +869,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id": "添加创意方.1.id",
+                                   "id": "获取新加创意方列表编号.1.id",
                                    "groupId": "新建分享列表.1.id",
                                    "categoryId": "新建分类.1.id",
                                    "designerId": "查询待添加的创意方.1.id",
@@ -1161,7 +1186,7 @@
                             "status": 200,
                             "body": {
                                    "code": "0",
-                                   "assert":"删除后列表数量检查.total:1"
+                                   "assert":"删除后列表数量检查.1.total:1"
                             }
                      }
               },
@@ -1228,7 +1253,7 @@
                             "status": 200,
                             "body": {
                                    "code": "0",
-                                   "assert":"确认分享列表已删除.total:0"
+                                   "assert":"确认分享列表已删除.1.total:0"
                             }
                      }
               }
