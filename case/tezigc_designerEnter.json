@@ -1,0 +1,787 @@
+
+{
+       "scenarioName": "创意方常用接口",
+       "steps": [
+           {
+               "caseName": "创意方登陆",
+                "caseUrl": "/user/login?username=15700000007&password=111111qq",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+           {
+                "caseName": "商业案例选择服务品牌搜索",
+                "caseUrl": "/general/public/tag/brand?dictIds=&search=",
+                "caseMethod": "get",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                        "X-User-Id": "2421",
+                        "Referer": "https://www.tezign.com/designer/",
+                        "Origin": "https://www.tezign.com"
+                    },
+                    "body": {
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+           {
+                "caseName": "新建案例保存",
+                "caseUrl": "/portfolio/manager/save",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                        "X-User-Id": "2421"
+                    },
+                    "body": {
+                        "name": "",
+                        "isCommercial": 1,
+                        "brandList": [{
+                            "dictId": 10079,
+                            "name": "DDB 恒美 上海",
+                            "brandId": 10079,
+                            "brandName": "DDB 恒美 上海"
+                        }],
+                        "industryList": [{
+                            "dictId": 3,
+                            "name": "金融",
+                            "industryId": 3,
+                            "industryName": "金融"
+                        }, {
+                            "dictId": 3001,
+                            "name": "银行",
+                            "type": null,
+                            "industryId": 3001,
+                            "industryName": "银行"
+                        }],
+                        "styleList": [{
+                            "dictId": 1,
+                            "name": "简约",
+                            "type": null,
+                            "styleId": 1,
+                            "styleName": "简约"
+                        }],
+                        "pmList": [{
+                            "dictId": 110,
+                            "name": "吉祥物／IP",
+                            "type": null,
+                            "creativeId": 110,
+                            "creativeName": "吉祥物／IP"
+                        }],
+                        "uiList": [],
+                        "chList": [],
+                        "dhList": [],
+                        "otherList": [],
+                        "projectScale": "2",
+                        "isPm": 1,
+                        "projectPeriod": "2",
+                        "finishTime": "2019-06-19",
+                        "isPersonal": 1,
+                        "isPublic": 1
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+           {
+               "caseName": "案例图片key",
+               "caseUrl": "/user/qiniu/getUploadToken?extension=jpg",
+               "caseMethod": "get",
+               "request": {
+                   "headers": {
+                       "Content-Type": "application/json;charset=UTF-8",
+                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                       "X-User-Id": "2421"
+                   },
+                   "body": {}
+               },
+               "assertions": {
+                   "status": 200,
+                   "body": {
+                       "code": "0"
+                   }
+               }
+           },
+           {
+               "caseName": "添加案例图片",
+               "caseUrl": "/user/qiniu/file/add",
+               "caseMethod": "post",
+               "request": {
+                   "headers": {
+                       "Content-Type": "application/json;charset=UTF-8",
+                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                       "X-User-Id": "2421"
+                   },
+                   "body": {
+                        "resourceList": [{
+                            "name": "20140821153723_4wZBz.jpg",
+                            "path": "案例图片key.1.key.jpg",
+                            "size": 250759,
+                            "type": "image/jpeg"
+                        }]
+                    }
+               },
+               "assertions": {
+                   "status": 200,
+                   "body": {
+                       "code": "0"
+                   }
+               }
+           },
+           {
+                "caseName": "编辑案例信息",
+                "caseUrl": "/portfolio/manager/savedetail",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                        "X-User-Id": "2421"
+                    },
+                "body": {
+                    "id": "新建案例保存.1.id",
+                    "designerId": 1252,
+                    "name": "ces测试案例名称2",
+                    "description": "测试背景2",
+                    "isPm": 1,
+                    "isUi": 0,
+                    "isCh": 0,
+                    "isDh": 0,
+                    "isOther": 0,
+                    "isH5": 0,
+                    "isMovie": 0,
+                    "isCreative": 0,
+                    "isSolid": 0,
+                    "projectScale": 2,
+                    "projectPeriod": 2,
+                    "isCommercial": 1,
+                    "isPersonal": 1,
+                    "teamRole": null,
+                    "isPublic": 1,
+                    "finishTime": "2019-06-19",
+                    "sort": 0,
+                    "number": null,
+                    "assetNumber": null,
+                    "creativeTypeNumber": null,
+                    "styleTypeNumber": null,
+                    "cover": {
+                        "id": 74032,
+                        "createTime": null,
+                        "updateTime": null,
+                        "createUser": null,
+                        "updateUser": null,
+                        "status": null,
+                        "name": "",
+                        "url": "https://file.tezign.com/9c8466ae0d1b78009b0798395ea7d47e?e=1561609228&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TNjEiu-IpKPt3ZQZVX05H4ta-yo=",
+                        "type": ".jpg",
+                        "size": 0,
+                        "md5": "9c8466ae0d1b78009b0798395ea7d47e"
+                    },
+                    "coverAssetId": 74032,
+                    "assets": null,
+                    "assetList": [{
+                        "sId": "1561605092005",
+                        "name": "添加案例图片.1.name",
+                        "preview": "blob:https://www.tezign.com/2c1056d7-8fb7-4d81-bc4e-0d769ad91aa6",
+                        "process": false,
+                        "assetId": "添加案例图片.1.id",
+                        "assetText": "",
+                        "assetType": 0,
+                        "description": "",
+                        "percent": "1.00",
+                        "thunderUrl": "添加案例图片.1.url",
+                        "id": 63555,
+                        "portfolioId": 2445,
+                        "idx": null,
+                        "assetUrl": null,
+                        "assetSize": "添加案例图片.1.size",
+                        "thumbAssetId": null,
+                        "thumbUrl": null,
+                        "isCover": null,
+                        "sort": 0,
+                        "assetStatus": null
+                    }],
+                    "industry": null,
+                    "isComplete": null,
+                    "isInfoComplete": null,
+                    "brandList": [{
+                        "id": 728,
+                        "designerId": null,
+                        "brandId": 10079,
+                        "brandName": "DDB 恒美 上海",
+                        "brandUrl": "https://static.tezign.com/eImg/logo/20131229/20131229214159_92289.png"
+                    }],
+                    "industryList": [{
+                        "id": 1163,
+                        "designerId": null,
+                        "industryId": 3,
+                        "industryName": "金融"
+                    }, {
+                        "id": 1164,
+                        "designerId": null,
+                        "industryId": 3001,
+                        "industryName": "银行"
+                    }],
+                    "styleList": null,
+                    "pmList": [{
+                        "id": 1322,
+                        "designerId": null,
+                        "portfolioId": 2445,
+                        "type": 1,
+                        "creativeId": 110,
+                        "creativeName": "吉祥物／IP"
+                    }],
+                    "uiList": [],
+                    "chList": [],
+                    "dhList": [],
+                    "otherList": [],
+                    "h5List": [],
+                    "movieList": [],
+                    "creativeList": [],
+                    "solidList": [],
+                    "creativeTypeList": [{
+                        "id": 1322,
+                        "designerId": null,
+                        "portfolioId": 2445,
+                        "type": 1,
+                        "creativeId": 110,
+                        "creativeName": "吉祥物／IP"
+                    }],
+                    "createTime": null,
+                    "hasVideo": false,
+                    "origin": null,
+                    "_assetList": [{
+                        "sId": "1561605092005",
+                        "name": "20140821153723_4wZBz.jpg",
+                        "preview": "blob:https://www.tezign.com/2c1056d7-8fb7-4d81-bc4e-0d769ad91aa6",
+                        "process": false,
+                        "assetId": 74029,
+                        "assetText": "",
+                        "assetType": 0,
+                        "description": "",
+                        "percent": "1.00",
+                        "thunderUrl": "https://file.tezign.com/3fc1582dd0874c6020c40a59a6329f7a.jpg?e=1564283492&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:nRoGMudf3oGT-CgYKi35YB1bz5Q=",
+                        "id": 63555,
+                        "portfolioId": 2445,
+                        "idx": null,
+                        "assetUrl": null,
+                        "assetSize": 250759,
+                        "thumbAssetId": null,
+                        "thumbUrl": null,
+                        "isCover": null,
+                        "sort": 0,
+                        "assetStatus": null
+                    }]
+                }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+           {
+                "caseName": "案例信息最终保存",
+                "caseUrl": "/portfolio/manager/savedetail",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                        "X-User-Id": "2421"
+                    },
+                    "body": {
+                        "id": "新建案例保存.1.id",
+                        "designerId": 1252,
+                        "name": "ces测试案例名称2",
+                        "description": "测试背景2",
+                        "isPm": 1,
+                        "isUi": 0,
+                        "isCh": 0,
+                        "isDh": 0,
+                        "isOther": 0,
+                        "isH5": 0,
+                        "isMovie": 0,
+                        "isCreative": 0,
+                        "isSolid": 0,
+                        "projectScale": 2,
+                        "projectPeriod": 2,
+                        "isCommercial": 1,
+                        "isPersonal": 1,
+                        "teamRole": null,
+                        "isPublic": 1,
+                        "finishTime": "2019-06-19",
+                        "sort": 0,
+                        "number": null,
+                        "assetNumber": null,
+                        "creativeTypeNumber": null,
+                        "styleTypeNumber": null,
+                        "cover": {
+                            "id": 74032,
+                            "name": "",
+                            "path": "https://file.tezign.com/9c8466ae0d1b78009b0798395ea7d47e?e=1561609228&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TNjEiu-IpKPt3ZQZVX05H4ta-yo=",
+                            "url": "https://file.tezign.com/9c8466ae0d1b78009b0798395ea7d47e?e=1561610241&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:hmEOFnUlO5I833wmsi1CKD1_0vs=",
+                            "type": ".jpg",
+                            "size": null,
+                            "md5": "9c8466ae0d1b78009b0798395ea7d47e",
+                            "thunder": null,
+                            "thunderUrl": null,
+                            "description": null,
+                            "sort": null,
+                            "portfolioId": null,
+                            "thumbnail": null
+                        },
+                        "coverAssetId": null,
+                        "assets": null,
+                        "assetList": [{
+                            "sId": "1561606653887",
+                            "name": "timg4.jpg",
+                            "preview": "blob:https://www.tezign.com/7a963c4e-d3c7-4bd0-9c5d-16aa9f08e6dc",
+                            "process": false,
+                            "assetId": 74039,
+                            "assetText": "",
+                            "assetType": 0,
+                            "description": "",
+                            "percent": "1.00",
+                            "thunderUrl": "https://file.tezign.com/035181e6e5817e34d56356d7c2360fb5.jpg?e=1564285054&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:kWqarxJVKsnGevDHvsV7wq4utN8="
+                        }],
+                        "industry": null,
+                        "isComplete": null,
+                        "isInfoComplete": null,
+                        "brandList": [{
+                            "id": 731,
+                            "designerId": null,
+                            "brandId": 10079,
+                            "brandName": "DDB 恒美 上海",
+                            "brandUrl": "https://static.tezign.com/eImg/logo/20131229/20131229214159_92289.png"
+                        }],
+                        "industryList": [{
+                            "id": 1169,
+                            "designerId": null,
+                            "industryId": 3,
+                            "industryName": "金融"
+                        }, {
+                            "id": 1170,
+                            "designerId": null,
+                            "industryId": 3001,
+                            "industryName": "银行"
+                        }],
+                        "styleList": null,
+                        "pmList": [{
+                            "id": 1325,
+                            "designerId": null,
+                            "portfolioId": 2448,
+                            "type": 1,
+                            "creativeId": 110,
+                            "creativeName": "吉祥物／IP"
+                        }],
+                        "uiList": [],
+                        "chList": [],
+                        "dhList": [],
+                        "otherList": [],
+                        "h5List": [],
+                        "movieList": [],
+                        "creativeList": [],
+                        "solidList": [],
+                        "creativeTypeList": [{
+                            "id": 1325,
+                            "designerId": null,
+                            "portfolioId": 2448,
+                            "type": 1,
+                            "creativeId": 110,
+                            "creativeName": "吉祥物／IP"
+                        }],
+                        "createTime": null,
+                        "hasVideo": false,
+                        "origin": null,
+                        "_assetList": [{
+                            "sId": "1561606653887",
+                            "name": "timg4.jpg",
+                            "preview": "blob:https://www.tezign.com/7a963c4e-d3c7-4bd0-9c5d-16aa9f08e6dc",
+                            "process": true,
+                            "assetId": null,
+                            "assetText": "",
+                            "assetType": 0,
+                            "description": "",
+                            "percent": "1.00"
+                        }]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },
+           {
+               "caseName": "删除案例",
+               "caseUrl": "/portfolio/manager/delete?portfolioId=新建案例保存.1.id",
+               "caseMethod": "post",
+               "request": {
+                   "headers": {
+                       "Content-Type": "application/json;charset=UTF-8",
+                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                       "X-User-Id": "2421"
+                   },
+                   "body": {}
+               },
+               "assertions": {
+                   "status": 200,
+                   "body": {
+                       "code": "0"
+                   }
+               }
+           },
+           {
+               "caseName": "查看创意方个人信息",
+               "caseUrl": "/user/designer/info/get",
+               "caseMethod": "get",
+               "request": {
+                   "headers": {
+                       "Content-Type": "application/json;charset=UTF-8",
+                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                       "X-User-Id": "2421"
+                   },
+                   "body": {}
+               },
+               "assertions": {
+                   "status": 200,
+                   "body": {
+                       "code": "0"
+                   }
+               }
+           },
+           {
+               "caseName": "编辑更新个人资料和创意能力",
+                "caseUrl": "/user/designer/info/save",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/json;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                                "workStatus": "4",
+                                "workHours": "2",
+                                "workExperience": "3",
+                                "selfInfo": "cesces ce",
+                                "otherUrl": "asas@sas.com",
+                                "behanceUrl": "https://www.cnblogs.com/cudy/p/10482171.html",
+                                "dribbbleUrl": "https://www.cnblogs.com/cudy/p/10482171.html",
+                                "designStyle": "商业,极简,活泼",
+                                "skillFields": "1,3,15,14",
+                                "customSkillFields": "",
+                                "projectScale": 4,
+                                "projectBrands": "测试",
+                                "famousBrandScale": 2,
+                                "famousBrands": "cs,abc",
+                                "awardsList": [{
+                                    "id": 146,
+                                    "designerId": null,
+                                    "dicId": null,
+                                    "description": "美国 IDEA 奖",
+                                    "year": "2016"
+                                }, {
+                                    "id": null,
+                                    "dicId": 104,
+                                    "description": "伦敦国际奖",
+                                    "year": 2018
+                                }],
+                                "languagesList": [{
+                                    "id": null,
+                                    "dicId": 5,
+                                    "description": "日语",
+                                    "level": 2
+                                }, {
+                                    "id": null,
+                                    "dicId": 3,
+                                    "description": "英语",
+                                    "level": 2
+                                }, {
+                                    "id": null,
+                                    "dicId": 8,
+                                    "description": "阿拉伯语",
+                                    "level": 3
+                                }]
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+           },
+           {
+               "caseName": "更新个人票税方案",
+                "caseUrl": "/user/ticket/saveReview",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/json;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                                "designerType": 1,
+                                "personBillType": 1,
+                                "designerChangeReason": "cesces ce"
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+           },
+           {
+               "caseName": "选择性别和编辑个人经历信息",
+                "caseUrl": "/user/designer",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/json;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                                "sex": 1,
+                                "projectStory": "[{\"name\":\"测试\",\"role\":\"CTO\",\"startY\":2018,\"startM\":1,\"still\":\"1\",\"des\":\"反反复复\"}]",
+                                "workStory": "[{\"company\":\"Facebook\",\"title\":\"测试凤双飞\",\"startY\":2015,\"startM\":1,\"endY\":2018,\"endM\":5,\"still\":\"0\",\"des\":\"测试\"}]",
+                                "studyStory": "[{\"college\":\"ces \",\"major\":\"ces \",\"degree\":\"博士\",\"startY\":2017,\"startM\":3,\"still\":\"1\",\"des\":\"ces \"},{\"college\":\"打点\",\"major\":\"打点\",\"degree\":\"硕士\",\"startY\":2019,\"startM\":1,\"still\":\"1\",\"des\":\"大大\"}]"
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+           },
+           {
+               "caseName": "编辑更新服务类目",
+                "caseUrl": "/user/designer/creative/saveRateCreativeTag",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/json;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                                    "creativeTagList": [{
+                                    "id": 1,
+                                    "dictId": 1,
+                                    "icon": "tz-graphic",
+                                    "name": "平面设计",
+                                    "type": 1,
+                                    "unit": null,
+                                    "unitInfo": null,
+                                    "model": null,
+                                    "lowAmount": null,
+                                    "maxAmount": null,
+                                    "amount": null,
+                                    "description": null,
+                                    "checked": true,
+                                    "next": [{
+                                        "id": 19471,
+                                        "dictId": 100,
+                                        "icon": null,
+                                        "name": "Logo／VI",
+                                        "type": 1,
+                                        "unit": 0,
+                                        "unitInfo": "",
+                                        "model": 0,
+                                        "lowAmount": null,
+                                        "maxAmount": null,
+                                        "amount": null,
+                                        "description": "",
+                                        "checked": true,
+                                        "next": [{
+                                            "id": 19472,
+                                            "dictId": 10005,
+                                            "icon": null,
+                                            "name": "Logo设计",
+                                            "type": 1,
+                                            "unit": 2,
+                                            "unitInfo": "",
+                                            "model": 0,
+                                            "lowAmount": "2222",
+                                            "maxAmount": 33333,
+                                            "amount": null,
+                                            "description": "",
+                                            "checked": true,
+                                            "next": [],
+                                            "_error": null,
+                                            "_errors": {},
+                                            "_errorVisible": true
+                                        }, {
+                                            "id": 19473,
+                                            "dictId": 10010,
+                                            "icon": null,
+                                            "name": "VI设计",
+                                            "type": 1,
+                                            "unit": 4,
+                                            "unitInfo": "",
+                                            "model": 0,
+                                            "lowAmount": 333,
+                                            "maxAmount": 44444,
+                                            "amount": null,
+                                            "description": "",
+                                            "checked": true,
+                                            "next": [],
+                                            "_error": null,
+                                            "_errors": {},
+                                            "_errorVisible": true
+                                        }],
+                                        "_complete": true
+                                    }]
+                                }]
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+           {
+               "caseName": "编辑更新推送设置",
+                "caseUrl": "/user/designer",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/json;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                                "isRemote": 1,
+                                "isOffice": 1,
+                                "isBusy": 0,
+                                "lowestCommon": "1",
+                                "lowestAnimation": 10,
+                                "typeCh": 0,
+                                "typeDh": 0,
+                                "chData": "{\"content\":{}}",
+                                "typePm": 1,
+                                "pmData": "{\"content\":{}}",
+                                "typeUi": 0,
+                                "uiData": "{\"type\":{}}",
+                                "designBill": 0,
+                                "designBillType": 4,
+                                "isPrepay": null,
+                                "country": 1,
+                                "province": 160,
+                                "city": 161,
+                                "hasNormalLevel": 1,
+                                "hasOtherLevel": 0
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+           {
+               "caseName": "编辑更新通知设置",
+                "caseUrl": "/user/setting?emailProjectRejected=&emailProjectChecked=&emailProjectQuote=&emailNewProject=2&emailQuoteViewed=0&emailQuoteNotSelected=1&emailConfirmed=1&emailWebMsg=1",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+           },
+           {
+               "caseName": "修改密码",
+                "caseUrl": "/user/pwd?oldPassword=111111qq&password=qq111111",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+           },
+           {
+               "caseName": "修改回原密码",
+                "caseUrl": "/user/pwd?oldPassword=qq111111&password=111111qq",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
+                                "X-User-Id": "2421"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+           }
+
+       ]
+}

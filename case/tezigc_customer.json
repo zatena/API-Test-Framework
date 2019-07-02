@@ -1,0 +1,1195 @@
+
+{
+       "scenarioName": "普通客户流程",
+       "steps": [
+              {
+                     "caseName": "登陆",
+                     "caseUrl": "/user/login?username=15700000012&password=111111qq",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+              {
+                     "caseName": "上传身份证图片",
+                     "caseUrl": "/user/qiniu/file/add",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430"
+                            },
+                            "body": {
+                                   "resourceList": [{
+                                          "name": "timg5.jpg",
+                                          "path": "cb879566cffd6a7d0b732c4ba0752c60.jpg",
+                                          "size": 48542,
+                                          "type": "image/jpeg"
+                                          }]
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+              {
+                     "caseName":"提交实名认证信息",
+                     "caseUrl": "/user/identity/customer/person/submit",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bfn",
+                                   "X-User-Id": "2430",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body": {
+                                   "identityCode": "513436200006049719",
+                                   "userName": "测试",
+                                   "validityTime": "2022-06-24",
+                                   "fileList": [{
+                                           "id": 73535,
+                                           "name": "timg3.jpg",
+                                           "path": "672b36d58a12eb4b7309d091d3a8dcec.jpg",
+                                           "url": "https://file.tezign.com/672b36d58a12eb4b7309d091d3a8dcec.jpg?e=1562983272&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:Pij2vjICAJgDMPr-_F1FSdhDFwk=",
+                                           "type": "image/jpeg",
+                                           "size": 173002,
+                                           "md5": null,
+                                           "thunder": "https://file.tezign.com/672b36d58a12eb4b7309d091d3a8dcec.jpg?imageView2/1/w/300/h/300/q/100&e=1562983272&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:IO8KfPSworfnmyfnbdiB7aT2mhQ=",
+                                           "description": null,
+                                           "sort": null,
+                                           "sId": 1560304870668,
+                                           "thunderUrl": "https://file.tezign.com/672b36d58a12eb4b7309d091d3a8dcec.jpg?imageView2/1/w/300/h/300/q/100&e=1562983272&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:IO8KfPSworfnmyfnbdiB7aT2mhQ=",
+                                           "assetId": 73535
+                                   }, {
+                                           "id": 73536,
+                                           "name": "timg2.jpg",
+                                           "path": "b939335cafcff80cc8c13a410eda46d9.jpg",
+                                           "url": "https://file.tezign.com/b939335cafcff80cc8c13a410eda46d9.jpg?e=1562983276&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:gyV2S5NaU6RHKLusUDbBnac4cVk=",
+                                           "type": "image/jpeg",
+                                           "size": 62770,
+                                           "md5": null,
+                                           "thunder": "https://file.tezign.com/b939335cafcff80cc8c13a410eda46d9.jpg?imageView2/1/w/300/h/300/q/100&e=1562983276&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:ZdWOKZGcv2ezL521XNZrbS_t0hc=",
+                                           "description": null,
+                                           "sort": null,
+                                           "sId": 1560304876185,
+                                           "thunderUrl": "https://file.tezign.com/b939335cafcff80cc8c13a410eda46d9.jpg?imageView2/1/w/300/h/300/q/100&e=1562983276&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:ZdWOKZGcv2ezL521XNZrbS_t0hc=",
+                                           "assetId": 73536
+                                   }]
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "后台审核客户个人实名认证",
+                     "caseUrl": "/identity/customer/audit",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "X-Top-User-Id": "1",
+                                   "service-name": "top2"
+                            },
+                            "body": {
+                                   "personType": 0,
+                                   "identityId": "144",
+                                   "auditStatus": "2"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "上传项目附件",
+                     "caseUrl": "/user/qiniu/file/add",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430"
+                            },
+                            "body": {
+                                   	"resourceList": [{
+		                           "name": "timg3.jpg",
+                                           "type": "image/jpeg",
+                                           "size": 173002,
+                                           "pdf2pic": false,
+                                           "path": "fc655bf4e9e51a6efb8272163cadb7ff.jpg"
+                                    }]
+                            }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "初次保存项目信息",
+                     "caseUrl": "/project/saveDraft",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body":
+                            {
+                                "typeUi": 0,
+                                "uiData": "{\"type\":{\"icon\":false,\"app\":false,\"web\":false,\"html5\":false},\"content\":{\"page\":false,\"home\":false,\"subject\":false,\"other\":\"\"},\"num\":\"\"}",
+                                "typePm": 0,
+                                "pmData": "{\"content\":{\"logo\":false,\"usage\":false,\"poster\":false,\"vi\":false,\"infographic\":false,\"package\":false,\"book\":false,\"word\":false,\"ppt\":false,\"other\":\"\"}}",
+                                "typeCh": 0,
+                                "chData": "{\"content\":{\"pic\":false,\"app\":false,\"ad\":false,\"other\":\"\"},\"num\":\"\"}",
+                                "typeDh": 0,
+                                "dhData": "{\"content\":{\"brand\":false,\"product\":false,\"conference\":false,\"crowdfunding\":false,\"function\":false,\"other\":\"\"},\"num\":\"\",\"refer\":\"\"}",
+                                "elementContent": "{\"element\":\"\",\"ui\":{\"flow\":false,\"proto\":false,\"page\":false,\"func\":false,\"other\":\"\"}}",
+                                "isRemote": 1,
+                                "designBill": 0,
+                                "resourceIds": "[]",
+                                "industry": "",
+                                "designStyle": "",
+                                "projectPublishTypeBeanList": [{
+                                    "id": 1,
+                                    "name": "平面设计",
+                                    "description": "",
+                                    "unit": 0,
+                                    "type": 0,
+                                    "isCustom": 0,
+                                    "checked": 1
+                                }],
+                                "company": "6666dede",
+                                "companyInfo": "eeded",
+                                "companyUrl": "",
+                                "channel": 20,
+                                "channelInfo": "",
+                                "phone": "登陆.1.phone",
+                                "email": "",
+                                "position": "",
+                                "userName": ""
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "保存项目信息",
+                     "caseUrl": "/project/saveDraft",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body":{
+                                    "typeUi": 0,
+                                    "uiData": "{\"type\":{\"icon\":false,\"app\":false,\"web\":false,\"html5\":false},\"content\":{\"page\":false,\"home\":false,\"subject\":false,\"other\":\"\"},\"num\":\"\"}",
+                                    "typePm": 1,
+                                    "pmData": "{\"content\":{\"logo\":false,\"usage\":false,\"poster\":false,\"vi\":false,\"infographic\":false,\"package\":false,\"book\":false,\"word\":false,\"ppt\":false,\"other\":\"\"}}",
+                                    "typeCh": 0,
+                                    "chData": "{\"content\":{\"pic\":false,\"app\":false,\"ad\":false,\"other\":\"\"},\"num\":\"\"}",
+                                    "typeDh": 0,
+                                    "dhData": "{\"content\":{\"brand\":false,\"product\":false,\"conference\":false,\"crowdfunding\":false,\"function\":false,\"other\":\"\"},\"num\":\"\",\"refer\":\"\"}",
+                                    "elementContent": "{\"element\":\"有一些核心元素，如 Logo\",\"ui\":{\"flow\":false,\"proto\":false,\"page\":false,\"func\":false,\"other\":\"\"}}",
+                                    "isRemote": 1,
+                                    "designBill": 0,
+                                    "resourceIds": "[73869]",
+                                    "industry": "1001,1002",
+                                    "designStyle": "极简",
+                                    "projectPublishTypeBeanList": [{
+                                        "id": 1,
+                                        "name": "平面设计",
+                                        "description": "",
+                                        "unit": 0,
+                                        "type": 0,
+                                        "isCustom": 0,
+                                        "checked": 1
+                                    }, {
+                                        "id": 9,
+                                        "name": "品牌形象",
+                                        "description": "Logo | VI | 吉祥物 ",
+                                        "unit": 0,
+                                        "type": 0,
+                                        "isCustom": 0,
+                                        "checked": 1
+                                    }, {
+                                        "id": 49,
+                                        "name": "Logo设计",
+                                        "description": "",
+                                        "unit": 2,
+                                        "type": 0,
+                                        "isCustom": 0,
+                                        "checked": 1,
+                                        "amount": "1"
+                                    }],
+                                    "company": "6666dede",
+                                    "companyInfo": "eeded",
+                                    "companyUrl": "111@1.com",
+                                    "channel": 20,
+                                    "channelInfo": "",
+                                    "phone": "登陆.1.phone",
+                                    "email": "QQ@q.com",
+                                    "position": "发布者信息",
+                                    "userName": "测试发布者信息",
+                                    "budget": 2,
+                                    "projectId": "初次保存项目信息.1.projectId",
+                                    "stage": 2,
+                                    "targetUser": "新闻",
+                                    "name": "测试项目姓名1",
+                                    "startTime": 2,
+                                    "proTimes": 2,
+                                    "country": 1,
+                                    "province": 2,
+                                    "city": 3,
+                                    "otherMsg": "测试补充信息选填"
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "生成项目订单",
+                     "caseUrl": "/project/order",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body": {
+                                    "typeUi": 0,
+                                    "uiData": "{\"type\":{\"icon\":false,\"app\":false,\"web\":false,\"html5\":false},\"content\":{\"page\":false,\"home\":false,\"subject\":false,\"other\":\"\"},\"num\":\"\"}",
+                                    "typePm": 1,
+                                    "pmData": "{\"content\":{\"logo\":false,\"usage\":false,\"poster\":false,\"vi\":false,\"infographic\":false,\"package\":false,\"book\":false,\"word\":false,\"ppt\":false,\"other\":\"\"}}",
+                                    "typeCh": 0,
+                                    "chData": "{\"content\":{\"pic\":false,\"app\":false,\"ad\":false,\"other\":\"\"},\"num\":\"\"}",
+                                    "typeDh": 0,
+                                    "dhData": "{\"content\":{\"brand\":false,\"product\":false,\"conference\":false,\"crowdfunding\":false,\"function\":false,\"other\":\"\"},\"num\":\"\",\"refer\":\"\"}",
+                                    "elementContent": "{\"element\":\"有一些核心元素，如 Logo\",\"ui\":{\"flow\":false,\"proto\":false,\"page\":false,\"func\":false,\"other\":\"\"}}",
+                                    "isRemote": 1,
+                                    "designBill": 0,
+                                    "resourceIds": "[73869]",
+                                    "industry": "1001,1002",
+                                    "designStyle": "极简",
+                                    "projectPublishTypeBeanList": [{
+                                        "id": 1,
+                                        "name": "平面设计",
+                                        "description": "",
+                                        "unit": 0,
+                                        "type": 0,
+                                        "isCustom": 0,
+                                        "checked": 1
+                                    }, {
+                                        "id": 9,
+                                        "name": "品牌形象",
+                                        "description": "Logo | VI | 吉祥物 ",
+                                        "unit": 0,
+                                        "type": 0,
+                                        "isCustom": 0,
+                                        "checked": 1
+                                    }, {
+                                        "id": 49,
+                                        "name": "Logo设计",
+                                        "description": "",
+                                        "unit": 2,
+                                        "type": 0,
+                                        "isCustom": 0,
+                                        "checked": 1,
+                                        "amount": "1"
+                                    }],
+                                    "company": "6666dede",
+                                    "companyInfo": "eeded",
+                                    "companyUrl": "111@1.com",
+                                    "channel": 20,
+                                    "channelInfo": "",
+                                    "phone": "登陆.1.phone",
+                                    "email": "QQ@q.com",
+                                    "position": "发布者信息",
+                                    "userName": "测试发布者信息",
+                                    "budget": 2,
+                                    "projectId": "初次保存项目信息.1.projectId",
+                                    "stage": 2,
+                                    "targetUser": "新闻",
+                                    "name": "测试项目姓名1",
+                                    "startTime": 2,
+                                    "proTimes": 2,
+                                    "country": 1,
+                                    "province": 2,
+                                    "city": 3,
+                                    "otherMsg": "测试补充信息选填",
+                                    "serviceModel": 1
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+
+              },
+              {
+                     "caseName": "选择普通项目订单的发布费用",
+                     "caseUrl": "/project/order/getInfo?orderId=生成项目订单.1.result",
+                     "caseMethod": "get",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body": {
+
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "支付发布费用",
+                     "caseUrl": "/pay/rightInterest/publish?orderId=生成项目订单.1.result",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "后台审核项目",
+                     "caseUrl": "/project/auditProject/初次保存项目信息.1.projectId",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1"
+                            },
+                            "body": {
+                                   "status": 3,
+                                   "reason": "",
+                                   "planStatus": "",
+                                   "quoteTime": 24
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "定向推送：选择创意方列表",
+                     "caseUrl": "/designer/activeList",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1"
+                            },
+                            "body": {
+                                   "key": ""
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "后台定向推送单个创意方",
+                     "caseUrl": "/quote/pushing/target/初次保存项目信息.1.projectId/1246",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "1"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "创意方登陆",
+                     "caseUrl": "/user/login?username=15700000001&password=111111",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type":"application/x-www-form-urlencoded;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+              {
+                     "caseName": "进入报价填写页",
+                     "caseUrl": "/project/choosing/getQuoteByProjectIdUserId?projectId=初次保存项目信息.1.projectId&userId=1246",
+                     "caseMethod": "get",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                                   "X-User-Id": "2406"
+                            },
+                            "body": {}
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "创意方提交报价",
+                     "caseUrl": "/project/choosing/submit?userId=1246&projectId=初次保存项目信息.1.projectId&contactMethod=1&email=111111%40www.com&phone=15700000001&price=10000&expectedIncome=900000&duration=1&issue1=%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3cececeeeeeeeeeecece&nickname=%E6%B5%8B%E8%AF%95%E5%85%AC%E5%8F%B8%E4%BE%9B%E5%BA%94%E5%95%86&portfolioIds=%5B%7B%22id%22%3A2410%2C%22name%22%3A%22%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B5%22%2C%22isCommercial%22%3A1%2C%22brandList%22%3A%5B%7B%22id%22%3A692%2C%22designerId%22%3Anull%2C%22brandId%22%3A10156%2C%22brandName%22%3A%22VML+%E5%8C%97%E4%BA%AC%22%2C%22brandUrl%22%3A%22https%3A%2F%2Fstatic.tezign.com%2FeImg%2Flogo%2F20170407%2F20170407184800_75691.png%22%7D%5D%2C%22industryName%22%3A%22%E6%8F%92%E7%94%BB+%2F+%E6%BC%AB%E7%94%BB+%7C+%E5%8C%85%E8%A3%85%E6%8F%92%E7%94%BB+%7C+APP%2F%E7%BD%91%E9%A1%B5%E6%8F%92%E7%94%BB+%7C+%E9%87%91%E8%9E%8D+%7C+%E9%93%B6%E8%A1%8C%22%2C%22hasVideo%22%3Afalse%2C%22cover%22%3A%22https%3A%2F%2Ffile.tezign.com%2F5c32b1cfc7b8cc3d0c30f195bced9b34%3Fe%3D1561373612%26token%3DRow5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W%3Ah9J_MpgRfJSvgRf2klX_x5QzuFc%3D%22%2C%22des%22%3A%22%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%22%2C%22num%22%3A1%2C%22time%22%3A%222019-01-02%22%2C%22number%22%3A1%7D%5D&otherFiles=%5B%5D&otherUrlList=%5B%5D",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                                   "X-User-Id": "2406"
+                            },
+                            "body": {
+
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                  "caseName": "后台推荐创意方",
+                  "caseUrl": "/projects/quote/recommend",
+                  "caseMethod": "post",
+                  "request": {
+                      "headers": {
+                       "Content-Type": "application/json;charset=UTF-8",
+                       "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                       "service-name": "top2",
+                       "X-Top-User-Id": "1"
+                   },
+                      "body": {
+                       "quoteId": "进入报价填写页.1.id",
+                       "recommendScore": 1000000,
+                       "type": "高效类型"
+                   }
+               },
+                  "assertions": {
+                   "status": 200,
+                   "body": {
+                       "code": "0"
+                   }
+               }
+           },
+           {
+            "caseName": "客户设置某个报价为候选人",
+            "caseUrl": "/project/choosing/setCandidate?projectId=初次保存项目信息.1.projectId&quoteId=进入报价填写页.1.id",
+            "caseMethod": "post",
+            "request": {
+                "headers": {
+                     "Content-Type": "application/json;charset=UTF-8",
+                    "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                    "X-User-Id": "2430",
+                    "Origin": "https://www.tezign.com",
+                    "Referer": "https://www.tezign.com/client/",
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                },
+                "body": {
+                }
+            },
+            "assertions": {
+                "status": 200,
+                "body": {
+                    "code": "0"
+                }
+            }
+           },
+           {
+            "caseName": "客户确认合作",
+            "caseUrl": "/project/choosing/confirm?projectId=初次保存项目信息.1.projectId&quoteId=进入报价填写页.1.id",
+            "caseMethod": "post",
+            "request": {
+                "headers": {
+                     "Content-Type": "application/json;charset=UTF-8",
+                    "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                    "X-User-Id": "2430",
+                    "Origin": "https://www.tezign.com",
+                    "Referer": "https://www.tezign.com/client/",
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                },
+                "body": {
+                }
+            },
+            "assertions": {
+                "status": 200,
+                "body": {
+                    "code": "0"
+                }
+            }
+        },
+           {
+            "caseName": "创意方确认报价单",
+            "caseUrl": "/project/choosing/quotation/confirm?projectId=初次保存项目信息.1.projectId",
+            "caseMethod": "get",
+            "request": {
+                "headers": {
+                     "Content-Type": "application/json;charset=UTF-8",
+                    "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                    "X-User-Id": "2406",
+                    "Origin": "https://www.tezign.com",
+                    "Referer": "https://www.tezign.com/client/",
+                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                },
+                "body": {
+                }
+            },
+            "assertions": {
+                "status": 200,
+                "body": {
+                    "code": "0"
+                }
+            }
+        },
+           {
+                "caseName": "创意方进入合同管理",
+                "caseUrl": "/project/contract/v2.0/init?project_id=初次保存项目信息.1.projectId",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                         "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                        "X-User-Id": "2406",
+                        "Origin": "https://www.tezign.com",
+                        "Referer": "https://www.tezign.com/client/",
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                    },
+                    "body": {
+                            "designFee": 0,
+                            "periodCount": 3,
+                            "periods": [{
+                                "periodNo": 1,
+                                "fee": 0
+                            }],
+                            "customerReplyDay": 2,
+                            "customerReplyModifyDay": 2,
+                            "customerReplyDefaultDay": 10,
+                            "customerPlanPercent": "",
+                            "designerReplyDay": 2,
+                            "designerReplyRefuseDay": 2,
+                            "violateNoTakeDay": 3,
+                            "violateSuspendDay": 3,
+                            "deliverDelayLimitDay": 5,
+                            "deadTimeLimitDay": 5,
+                            "unpayLimitAmount": 3,
+                            "violateSuspendReplyDay": 3,
+                            "terminateLimitDay": 10,
+                            "payInvoiceTitle": "",
+                            "payInterest": 3
+                        }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                    }
+                }
+           },
+           {
+                "caseName": "创意方制定项目计划",
+                "caseUrl": "/project/contract/v2.0/task?project_id=初次保存项目信息.1.projectId",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                         "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                        "X-User-Id": "2406",
+                        "Origin": "https://www.tezign.com",
+                        "Referer": "https://www.tezign.com/client/",
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                    },
+                    "body": {
+                            "isEdit": false,
+                            "description": "海报份",
+                            "requiredDay": 2,
+                            "isFocused": false,
+                            "_description": "海报份",
+                            "_requiredDay": 2,
+                            "periodId": "创意方进入合同管理.1.id"
+                        }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                    }
+                }
+           },
+           {
+                "caseName": "创意方保存最终合同",
+                "caseUrl": "/project/contract/v2.0/init?project_id=初次保存项目信息.1.projectId",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                         "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                        "X-User-Id": "2406",
+                        "Origin": "https://www.tezign.com",
+                        "Referer": "https://www.tezign.com/client/",
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                    },
+                    "body": {
+                            "contractId": "创意方进入合同管理.1.contractId",
+                            "firstParty": null,
+                            "firstPartyAddress": null,
+                            "firstPartyTel": null,
+                            "firstPartyEmail": null,
+                            "secondParty": "测试公司",
+                            "secondPartyAddress": null,
+                            "secondPartyTel": "1",
+                            "secondPartyEmail": "1q@q.com",
+                            "deliverDelayLimitDay": 5,
+                            "deadTimeLimitDay": 5,
+                            "unpayLimitAmount": 3,
+                            "designFee": 60000,
+                            "extra": null,
+                            "sureStatus": 1,
+                            "sureTime": null,
+                            "status": 1,
+                            "periodCount": null,
+                            "periods": [{
+                                "id": "创意方进入合同管理.1.id",
+                                "periodNo": 1,
+                                "fee": "20000",
+                                "task": [{
+                                    "isEdit": false,
+                                    "description": "海报份",
+                                    "requiredDay": 2,
+                                    "isFocused": false,
+                                    "_requiredDay": 2,
+                                    "_description": "海报份",
+                                    "periodId": "创意方进入合同管理.1.id",
+                                    "id": "创意方制定项目计划.1.id"
+                                }],
+                                "requiredDay": 2,
+                                "feeFocused": false
+                            }],
+                            "projectName": "正常项目",
+                            "ticketId": null,
+                            "ticket": null,
+                            "terminateLimitDay": 10,
+                            "auths": null,
+                            "constraints": [{
+                                "id": 1370,
+                                "description": "乙方提交作品后，甲方若变更需求，项目工作量需要重新评估，导致原项目终止",
+                                "limitLow": "20",
+                                "limitLarge": "30",
+                                "type": 1,
+                                "status": 1
+                            }, {
+                                "id": 1371,
+                                "description": "甲方对乙方提交的作品不满意，若不需要乙方继续修改，要求直接终止项目",
+                                "limitLow": "22",
+                                "limitLarge": "33",
+                                "type": 1,
+                                "status": 1
+                            }, {
+                                "id": 1372,
+                                "description": "甲方要求乙方修改后，若依旧对作品不满意，要求终止项目",
+                                "limitLow": "33",
+                                "limitLarge": "44",
+                                "type": 1,
+                                "status": 1
+                            }],
+                            "contentBeenList": [{
+                                "isEdit": false,
+                                "description": "源文件3个",
+                                "isFocused": true,
+                                "_description": "源文件3个",
+                                "contractId": 578,
+                                "id": 246
+                            }],
+                            "firstPartyAddressDetail": null,
+                            "firstPartyCountry": null,
+                            "firstPartyProvince": null,
+                            "firstPartyCity": null,
+                            "secondPartyAddressDetail": "册测试",
+                            "secondPartyCountry": 1,
+                            "secondPartyProvince": 2,
+                            "secondPartyCity": 3,
+                            "customerReplyDay": 2,
+                            "customerReplyModifyDay": 2,
+                            "customerReplyDefaultDay": 10,
+                            "customerPlanPercent": "20",
+                            "designerReplyDay": 2,
+                            "designerReplyRefuseDay": 2,
+                            "violateNoTakeDay": 3,
+                            "violateSuspendDay": 3,
+                            "violateSuspendReplyDay": 3,
+                            "payInvoiceType": "1",
+                            "payInvoicePoint": "3",
+                            "payInvoiceTitle": "测试呃呃测呃呃",
+                            "payInterest": 3,
+                            "confirmTime": 1561359152011,
+                            "requiredDay": 0
+                        }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                    }
+                }
+           },
+           {
+                     "caseName": "创意方提交合同给客户",
+                     "caseUrl": "/project/contract/v2.0/submit?project_id=初次保存项目信息.1.projectId",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                                   "X-User-Id": "2406"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+           },
+           {
+                "caseName": "客户添加合同信息",
+                "caseUrl": "/project/contract/v2.0?project_id=初次保存项目信息.1.projectId",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                        "X-User-Id": "2430",
+                        "Origin": "https://www.tezign.com",
+                        "Referer": "https://www.tezign.com/client/",
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                    },
+                    "body": {
+                            "firstParty": "测测侧",
+                            "firstPartyTel": "15700000012",
+                            "firstPartyCountry": 1,
+                            "firstPartyProvince": 2,
+                            "firstPartyCity": 3,
+                            "firstPartyAddressDetail": "地址",
+                            "firstPartyEmail": "qq@w.com"
+                        }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                    }
+                }
+           },
+           {
+                "caseName": "客户确认合同",
+                "caseUrl": "/project/contract/v2.0/confirm?project_id=初次保存项目信息.1.projectId",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                         "Content-Type": "application/json;charset=UTF-8",
+                        "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                        "X-User-Id": "2430",
+                        "Origin": "https://www.tezign.com",
+                        "Referer": "https://www.tezign.com/client/",
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                    },
+                    "body": {
+                        }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                    }
+                }
+           },
+           {
+                     "caseName": "后台添加客户支付记录的打款凭证",
+                     "caseUrl": "/user/qiniu/file/add",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "X-Top-User-Id": "1"
+                            },
+                            "body": {
+                                    "resourceList": [{
+                                        "name": "timg4.jpg",
+                                        "type": "image/jpeg",
+                                        "size": 26500,
+                                        "pdf2pic": false,
+                                        "path": "60dffdfef74ba049e40f53e272160914.jpg"
+                                    }]
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+           },
+           {
+                     "caseName": "后台添加客户支付记录",
+                     "caseUrl": "/project/payOffline/初次保存项目信息.1.projectId",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "X-Top-User-Id": "1",
+                                   "service-name": "top2"
+                            },
+                            "body": {
+                                    "reason": "cescs",
+                                    "groupType": 2,
+                                    "resourceIds": "后台添加客户支付记录的打款凭证.1.id"
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+           },
+           {
+                     "caseName": "创意方进入提交本阶段作品页",
+                     "caseUrl": "/project/delivery/list?project_id=初次保存项目信息.1.projectId",
+                     "caseMethod": "get",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                                   "X-User-Id": "2406"
+                            },
+                            "body": {
+
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+           },
+           {
+                     "caseName": "创意方提交作品",
+                     "caseUrl": "/project/delivery/submitWork?plan_id=创意方进入提交本阶段作品页.1.id",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                                   "X-User-Id": "2406"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+           {
+                     "caseName": "客户确认作品",
+                     "caseUrl": "/project/delivery/confirmWork?plan_id=创意方进入提交本阶段作品页.1.id",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+           {
+                     "caseName": "客户评价",
+                     "caseUrl": "/project/evaluation/create",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/client/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
+                                   "X-User-Id": "2430"
+                            },
+                            "body": {
+                                    "projectId": "初次保存项目信息.1.projectId",
+                                    "design": 5,
+                                    "working": 5,
+                                    "communication": 5,
+                                    "impression": 5,
+                                    "recommend": false,
+                                    "comment": "cesces ces",
+                                    "remark": "",
+                                    "impressionList": [{
+                                        "id": null,
+                                        "dictId": 2,
+                                        "reviewDimen": 1,
+                                        "scoreDimen": 2,
+                                        "term": 1,
+                                        "name": "有独立观点",
+                                        "type": 1,
+                                        "sort": 2,
+                                        "customized": 0,
+                                        "checked": true
+                                    }, {
+                                        "id": null,
+                                        "dictId": 13,
+                                        "reviewDimen": 1,
+                                        "scoreDimen": 5,
+                                        "term": 1,
+                                        "name": "经验丰富",
+                                        "type": 1,
+                                        "sort": 13,
+                                        "customized": 0,
+                                        "checked": true
+                                    }, {
+                                        "id": null,
+                                        "dictId": 19,
+                                        "reviewDimen": 2,
+                                        "scoreDimen": 4,
+                                        "term": 1,
+                                        "name": "沟通顺畅",
+                                        "type": 1,
+                                        "sort": 19,
+                                        "customized": 0,
+                                        "checked": true
+                                    }, {
+                                        "id": null,
+                                        "dictId": 20,
+                                        "reviewDimen": 2,
+                                        "scoreDimen": 4,
+                                        "term": 1,
+                                        "name": "理解力强",
+                                        "type": 1,
+                                        "sort": 20,
+                                        "customized": 0,
+                                        "checked": true
+                                    }, {
+                                        "id": null,
+                                        "dictId": 24,
+                                        "reviewDimen": 3,
+                                        "scoreDimen": 4,
+                                        "term": 1,
+                                        "name": "认真细心",
+                                        "type": 1,
+                                        "sort": 24,
+                                        "customized": 0,
+                                        "checked": true
+                                    }, {
+                                        "id": null,
+                                        "dictId": 25,
+                                        "reviewDimen": 3,
+                                        "scoreDimen": 4,
+                                        "term": 1,
+                                        "name": "响应及时",
+                                        "type": 1,
+                                        "sort": 25,
+                                        "customized": 0,
+                                        "checked": true
+                                    }]
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+           {
+                     "caseName": "创意方申请提现",
+                     "caseUrl": "/wallet/withdraw/submit?accountId=94&price=1000&type=2",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
+                                   "X-User-Id": "2406"
+                            },
+                            "body": {
+
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+           },
+           {
+                     "caseName": "后台同意打款申请",
+                     "caseUrl": "/withdraw/agreeWithdraw",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "X-Top-User-Id": "1",
+                                   "service-name": "top2"
+                            },
+                            "body": {
+                                    "proProjectIds": [],
+                                    "projectIds": ["初次保存项目信息.1.projectId"],
+                                    "withdrawId": "创意方申请提现.1.withdrawId"
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+           }
+
+       ]
+}
