@@ -205,7 +205,7 @@ class ProProjectRegression:
 
                             value_index = i.split('.')[1]
                             actual_value = i.split('.')[2]
-                            replace_value = getRelyValues.get_dict_value(getRelyValues, collect_response, actual_value,int(value_index), dict_list)
+                            replace_value = getRelyValues.get_dict_value(getRelyValues, collect_response, actual_value, int(value_index), dict_list)
                             str_data = str_data.replace(i, str(replace_value))
                             data_json = eval(str_data)
                             headers = data_json['request']['headers']
@@ -224,11 +224,9 @@ class ProProjectRegression:
                 api_url = data_json['caseUrl']
                 url = cs.BASEURL + api_url
                 _data = data_json['request']['body']
-                print(_data)
                 data = json.dumps(_data, indent=4, sort_keys=False, ensure_ascii=False)
                 data = data.encode('utf-8')
                 actual_response = request.get_message(method, url, data, headers)
-                print(actual_response)
                 collect_data[name] = actual_response
                 res_str = ""
                 if expect_assert is not None:
