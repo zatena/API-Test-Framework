@@ -1202,7 +1202,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "contractId": "获取合同计划.1.id",
+                                   "contractId": "获取项目计划.1.contractId",
                                    "planId": "获取项目计划.1.id"
                             },
                             "headers":{
@@ -1456,7 +1456,7 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code" : "108117"
+                                   "code" : "0"
                             }
                      }
               },
@@ -1612,10 +1612,33 @@
               },
               {
                      "caseName": "获取创意方账号",
-                     "caseUrl": "/user",
+                     "caseUrl": "/wallet/withdraw/getWithdrawList?status=-1&page=1&perpageNum=10",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
+                            },
+
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "2316",
+                                   "X-Token": "ee1bf32fb3a5471ef9693757b96cef53"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "签署协议",
+                     "caseUrl": "/general/agreement/signAgreement",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageName": "WITHDRAW_PAGE",
+                                   "agreementIdList": [3]
                             },
 
                             "headers":{
@@ -1633,7 +1656,7 @@
               },
               {
                      "caseName": "创意方提现",
-                     "caseUrl": "/wallet/withdraw/submit?accountId=获取创意方账号.1.account_id&price=100&type=1",
+                     "caseUrl": "/wallet/withdraw/submit?accountId=获取创意方账号.1.accountId&price=1000&type=1",
                      "caseMethod": "POST",
                      "request": {
                             "body": {
@@ -1650,51 +1673,6 @@
                             "status": 200,
                             "body": {
                                    "code" : "0"
-                            }
-                     }
-              },
-              {
-                     "caseName": "获取提现账号相关项目记录",
-                     "caseUrl": "/withdraw/getProjectTradingRecord?withdrawId=创意方提现.1.withdrawId",
-                     "caseMethod": "GET",
-                     "request": {
-                            "body": {
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "X-User-Id": "2316",
-                                   "X-Token": "ee1bf32fb3a5471ef9693757b96cef53"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code" : "0"
-                            }
-                     }
-              },
-              {
-                     "caseName": "同意创意方提现",
-                     "caseUrl": "/withdraw/agreeWithdraw",
-                     "caseMethod": "POST",
-                     "request": {
-                            "body": {
-                                   "proProjectIds": ["设计师查看确认函.1.projectId"],
-                                   "projectIds": [],
-                                   "withdrawId": "创意方提现.1.withdrawId"
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "service-name":"top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code" : "0",
-                                   "assert": "同意创意方提现.message:success"
                             }
                      }
               },
@@ -1721,14 +1699,86 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code" : "0",
-                                   "assert": "获取提现记录表.message:success"
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查看交易记录",
+                     "caseUrl": "/withdraw/getProjectTradingRecord?withdrawId=获取提现记录表.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "同意创意方提现",
+                     "caseUrl": "/withdraw/agreeWithdraw",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "proProjectIds": ["设计师查看确认函.1.projectId"],
+                                   "projectIds": [],
+                                   "withdrawId": "获取提现记录表.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+
+              {
+                     "caseName": "获取项目交易",
+                     "caseUrl": "/withdraw/list",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "status": null,
+                                   "pageNum": 1,
+                                   "orderBy": 0,
+                                   "orderType": 1,
+                                   "companyChecked": null,
+                                   "projectType": 0
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
                             }
                      }
               },
               {
                      "caseName": "获取提现项目交易记录",
-                     "caseUrl": "/withdraw/getSelectProjectTradingRecord?projectWithdrawId=获取提现记录表.1.id",
+                     "caseUrl": "/withdraw/getSelectProjectTradingRecord?projectWithdrawId=获取项目交易.1.projectWithdrawId",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -1743,14 +1793,13 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code" : "0",
-                                   "assert": "获取提现项目交易记录.message:success"
+                                   "code" : "0"
                             }
                      }
               },
               {
                      "caseName": "标记为已打款",
-                     "caseUrl": "/withdraw/payWithdraw?projectWithdrawId=获取提现记录表.1.id",
+                     "caseUrl": "/withdraw/payWithdraw?projectWithdrawId=获取项目交易.1.projectWithdrawId",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -1765,8 +1814,7 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code" : "0",
-                                   "assert": "标记为已打款.message:success"
+                                   "code" : "0"
                             }
                      }
               },
@@ -1788,7 +1836,7 @@
                             "status": 200,
                             "body": {
                                    "code" : "0",
-                                   "assert":"项目完结.1.status:8"
+                                   "assert":"项目完结.1.projectStatus:8"
                             }
                      }
               }

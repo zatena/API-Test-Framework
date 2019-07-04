@@ -29,23 +29,7 @@ content = None
 code = None
 message = None
 result = None
-project_id = 2258
-quote_id = None
-project_name = None
-confirm_id = None
-sub_projectId = None
-contract_id = None
-plan_id = None
-qiniu_token = None
-qiniu_hash = None
-qiniu_key = None
-qiniu_upkey = None
 delivery_name = others.get_filename(cs.DELIVERY_PATH)
-asset_id = None
-income_id = None
-balance = None
-withdraw_id = None
-pro_withdraw_id = None
 collect_data = {}
 pass_result = 0
 fail_result = 0
@@ -163,9 +147,6 @@ class ProProjectRegression:
 
         """
         global summary_report, message, result, code, pass_result, fail_result, skip_result
-        # global project_id, quote_id, project_name, confirm_id, sub_projectId, contract_id, plan_id
-        # global qiniu_token, qiniu_hash, qiniu_key, qiniu_upkey, delivery_name, asset_id, income_id
-        # global balance, withdraw_id, pro_withdraw_id
 
         report_title = cs.TEST_REPORT_TITLE
         case_names = rc.get_casename(filename)[0]
@@ -241,8 +222,8 @@ class ProProjectRegression:
 
                 try:
                     if actual_response is not None:
-                        if actual_response['result'] != None:
-                            actual_code = actual_response['code']
+                        actual_code = actual_response['code']
+                        if actual_response['result'] is not None:
                             actual_status_code = None
                         else:
                             actual_code = actual_response['code']
@@ -275,7 +256,6 @@ class ProProjectRegression:
                             logging.info("回归测试失败:%s" % name)
                             test_status = "失败"
                             fail_result = fail_result + 1
-                            # actual_result = ''
                             if assert_len > 1:
                                 actual_result = res_str + "预期结果:%s\n" % assert_list[1] + " 实际结果:%s\n" % assert_list[0]
                                 request_log_message = "输入值: %s\n" % request_data

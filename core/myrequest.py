@@ -36,7 +36,6 @@ def api(method, url, data, headers):
         if method.upper() == "GET":
             result = requests.get(url, headers=headers)
         response = result.json()
-        # code = response.get('code')
         return response
     except Exception as e:
         logging.error("请求失败%s" % e)

@@ -16,7 +16,7 @@ ProRegTest = common.ProProjectRegression()
 # dirs = os.listdir(casePath)
 #
 # for i in dirs:
-#     if re.match("tezig_*", i):
+#     if re.match("tezign_*", i):
 #         caseFile = os.path.join(casePath, i)
 #
 #         """1. 执行测试用例
@@ -26,7 +26,7 @@ ProRegTest = common.ProProjectRegression()
 #         ProRegTest.build_report_regression(caseFile)
 
 
-casePath = os.getcwd()+'/case/tezign_sharinggroup.json'
+casePath = os.getcwd()+'/case/tezign_acdashboard.json'
 ProRegTest.build_report_regression(casePath)
 
 

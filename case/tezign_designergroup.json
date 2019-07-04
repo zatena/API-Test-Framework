@@ -3,6 +3,27 @@
        "scenarioName": "优选人才库测试",
        "steps": [
               {
+                     "caseName": "后台用户登录",
+                     "caseUrl": "/topUser/login",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "email": "admin@tezign.com",
+                                   "password": "111111"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
                      "caseName": "获取优选人才列表",
                      "caseUrl": "/collection/group/grouplist?type=1",
                      "caseMethod": "GET",
@@ -12,8 +33,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -35,8 +56,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -60,8 +81,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -81,8 +102,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -103,8 +124,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -126,8 +147,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -150,8 +171,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -171,8 +192,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -193,8 +214,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -217,8 +238,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -241,8 +262,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -262,8 +283,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -285,8 +306,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -308,8 +329,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -330,8 +351,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -354,8 +375,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -375,8 +396,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -396,8 +417,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -420,8 +441,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -444,8 +465,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -465,8 +486,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -486,8 +507,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {

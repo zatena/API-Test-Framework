@@ -84,7 +84,7 @@ class Report:
 
         # 写入测试报告
         self.write_report(reportResult, testName)
-        #
+
         # htmlparser = MyHTMLParser()
         # htmltrs = htmlparser.reporthtmlparser(testResult,'')
         #

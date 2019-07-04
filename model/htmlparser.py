@@ -1,11 +1,6 @@
 from html.parser import HTMLParser
 
 
-
-
-
-
-
 class MyHTMLParser(HTMLParser):
 
     report_html = """
