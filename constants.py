@@ -42,7 +42,7 @@ MAIL_USER = 'tezign_send'
 MAIL_PASS = 'hhIksYtHPnH2l7dj'
 
 MAIL_SENDER = 'dev@send.tezign.co'
-MAIL_RECEIVER = 'zhengjingjing@tezign.com'
+MAIL_RECEIVER = ['zhengjingjing@tezign.com', 'cuiguoen@tezign.com']
 SUBJECT = '接口自动化测试报告'
 
 # 数据库常量
