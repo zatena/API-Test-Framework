@@ -275,8 +275,8 @@ class ProProjectRegression:
                 run_time = str(actual_response['run_time']) + 'ms'
                 del actual_response['run_time']
                 result_log_message = "输出结果:%s\n" % actual_response
-                # if len(url) > 50:
-                #     url = url[0:30]
+                if len(url) > 120:
+                    url = url[0:110]
                 summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time, test_status, request_log_message, result_log_message)
 
         except Exception as e:

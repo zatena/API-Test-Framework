@@ -28,8 +28,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                        "X-User-Id": "2421",
+                        "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id",
                         "Referer": "https://www.tezign.com/designer/",
                         "Origin": "https://www.tezign.com"
                     },
@@ -50,8 +50,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                        "X-User-Id": "2421"
+                        "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id"
                     },
                     "body": {
                         "name": "",
@@ -114,8 +114,8 @@
                "request": {
                    "headers": {
                        "Content-Type": "application/json;charset=UTF-8",
-                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                       "X-User-Id": "2421"
+                       "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id"
                    },
                    "body": {}
                },
@@ -133,8 +133,8 @@
                "request": {
                    "headers": {
                        "Content-Type": "application/json;charset=UTF-8",
-                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                       "X-User-Id": "2421"
+                       "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id"
                    },
                    "body": {
                         "resourceList": [{
@@ -159,8 +159,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                        "X-User-Id": "2421"
+                        "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id"
                     },
                 "body": {
                     "id": "新建案例保存.1.id",
@@ -312,8 +312,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                        "X-User-Id": "2421"
+                        "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id"
                     },
                     "body": {
                         "id": "新建案例保存.1.id",
@@ -446,8 +446,8 @@
                "request": {
                    "headers": {
                        "Content-Type": "application/json;charset=UTF-8",
-                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                       "X-User-Id": "2421"
+                       "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id"
                    },
                    "body": {}
                },
@@ -465,8 +465,8 @@
                "request": {
                    "headers": {
                        "Content-Type": "application/json;charset=UTF-8",
-                       "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                       "X-User-Id": "2421"
+                       "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id"
                    },
                    "body": {}
                },
@@ -484,8 +484,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/json;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                 "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                                 "workStatus": "4",
@@ -547,8 +547,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/json;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                                 "designerType": 1,
@@ -571,8 +571,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/json;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                                 "sex": 1,
@@ -596,8 +596,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/json;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                                     "creativeTagList": [{
@@ -685,8 +685,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/json;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                                 "isRemote": 1,
@@ -726,8 +726,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                             }
@@ -747,8 +747,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                             }
@@ -768,8 +768,8 @@
                      "request": {
                             "headers": {
                                 "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-                                "X-Token": "6b105ea888e2e9cd7dc8191cfe0f2bb5",
-                                "X-User-Id": "2421"
+                                "X-Token": "创意方登陆.1.token",
+                                "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                             }

@@ -3,14 +3,36 @@
     "scenarioName": "TP Dashboard面板接口",
     "steps": [
             {
+                     "caseName": "后台登陆",
+                     "caseUrl": "/topUser/login",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                    "service-name": "top2"
+                            },
+                            "body": {
+                                 "email": "admin@tezign.com",
+                                 "password": "111111"
+                          }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+            },
+            {
                 "caseName": "获取组员信息",
                 "caseUrl": "/dept/getTpUsers",
                 "caseMethod": "get",
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {}
@@ -29,8 +51,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -51,8 +73,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -75,8 +97,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -98,8 +120,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -122,8 +144,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -146,8 +168,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -170,8 +192,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -195,8 +217,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -220,8 +242,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -245,8 +267,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -270,8 +292,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -295,8 +317,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -320,8 +342,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -345,8 +367,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "service-name": "top2"
                     },
                     "body": {
@@ -370,8 +392,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "Referer": "https://top.tezign.com/v3/dashboard",
                         "Origin": "https://top.tezign.com",
                         "service-name": "top2"
@@ -394,8 +416,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                        "X-Top-User-Id": "1",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
                         "Referer": "https://top.tezign.com/v3/dashboard",
                         "Origin": "https://top.tezign.com",
                         "service-name": "top2"

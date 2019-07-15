@@ -27,8 +27,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430"
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id"
                             },
                             "body": {
                                    	"resourceList": [{
@@ -54,8 +54,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430",
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id",
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/client/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -110,8 +110,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430",
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id",
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/client/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -193,8 +193,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430",
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id",
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/client/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -278,8 +278,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430",
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id",
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/client/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -302,8 +302,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430",
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id",
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/client/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -319,15 +319,37 @@
                      }
               },
               {
+                     "caseName": "后台登陆",
+                     "caseUrl": "/topUser/login",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                    "service-name": "top2"
+                            },
+                            "body": {
+                                 "email": "admin@tezign.com",
+                                 "password": "111111"
+                          }
+                     },
+                     "assertions":{
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+              {
                      "caseName": "后台审核项目",
                      "caseUrl": "/project/auditProject/初次保存项目信息.1.projectId",
                      "caseMethod": "post",
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "X-Top-Token": "后台登陆.1.token",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1"
+                                   "X-Top-User-Id": "后台登陆.1.id"
                             },
                             "body": {
                                    "status": 3,
@@ -350,9 +372,9 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "X-Top-Token": "后台登陆.1.token",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1"
+                                   "X-Top-User-Id": "后台登陆.1.id"
                             },
                             "body": {
                                    "key": ""
@@ -372,9 +394,9 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
+                                   "X-Top-Token": "后台登陆.1.token",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "1"
+                                   "X-Top-User-Id": "后台登陆.1.id"
                             },
                             "body": {
                             }
@@ -418,8 +440,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/designer/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                                   "X-User-Id": "2406"
+                                   "X-Token": "创意方登陆.1.token",
+                                   "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {}
                      },
@@ -440,8 +462,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/designer/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                                   "X-User-Id": "2406"
+                                   "X-Token": "创意方登陆.1.token",
+                                   "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
 
@@ -460,10 +482,10 @@
                   "caseMethod": "post",
                   "request": {
                       "headers": {
-                       "Content-Type": "application/json;charset=UTF-8",
-                       "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                       "service-name": "top2",
-                       "X-Top-User-Id": "1"
+                            "Content-Type": "application/json;charset=UTF-8",
+                             "X-Top-Token": "后台登陆.1.token",
+                             "service-name": "top2",
+                             "X-Top-User-Id": "后台登陆.1.id"
                    },
                       "body": {
                        "quoteId": "进入报价填写页.1.id",
@@ -485,8 +507,8 @@
             "request": {
                 "headers": {
                      "Content-Type": "application/json;charset=UTF-8",
-                    "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                    "X-User-Id": "2430",
+                    "X-Token": "登陆.1.token",
+                    "X-User-Id": "登陆.1.id",
                     "Origin": "https://www.tezign.com",
                     "Referer": "https://www.tezign.com/client/",
                     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -508,8 +530,8 @@
             "request": {
                 "headers": {
                      "Content-Type": "application/json;charset=UTF-8",
-                    "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                    "X-User-Id": "2430",
+                    "X-Token": "登陆.1.token",
+                    "X-User-Id": "登陆.1.id",
                     "Origin": "https://www.tezign.com",
                     "Referer": "https://www.tezign.com/client/",
                     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -531,8 +553,8 @@
             "request": {
                 "headers": {
                      "Content-Type": "application/json;charset=UTF-8",
-                    "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                    "X-User-Id": "2406",
+                    "X-Token": "创意方登陆.1.token",
+                    "X-User-Id": "创意方登陆.1.id",
                     "Origin": "https://www.tezign.com",
                     "Referer": "https://www.tezign.com/client/",
                     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -554,8 +576,8 @@
                 "request": {
                     "headers": {
                          "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                        "X-User-Id": "2406",
+                        "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id",
                         "Origin": "https://www.tezign.com",
                         "Referer": "https://www.tezign.com/client/",
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -598,8 +620,8 @@
                 "request": {
                     "headers": {
                          "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                        "X-User-Id": "2406",
+                        "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id",
                         "Origin": "https://www.tezign.com",
                         "Referer": "https://www.tezign.com/client/",
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -628,8 +650,8 @@
                 "request": {
                     "headers": {
                          "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                        "X-User-Id": "2406",
+                        "X-Token": "创意方登陆.1.token",
+                        "X-User-Id": "创意方登陆.1.id",
                         "Origin": "https://www.tezign.com",
                         "Referer": "https://www.tezign.com/client/",
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -747,8 +769,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/designer/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                                   "X-User-Id": "2406"
+                                   "X-Token": "创意方登陆.1.token",
+                                    "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                             }
@@ -767,8 +789,8 @@
                 "request": {
                     "headers": {
                         "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                        "X-User-Id": "2430",
+                        "X-Token": "登陆.1.token",
+                        "X-User-Id": "登陆.1.id",
                         "Origin": "https://www.tezign.com",
                         "Referer": "https://www.tezign.com/client/",
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -797,8 +819,8 @@
                 "request": {
                     "headers": {
                          "Content-Type": "application/json;charset=UTF-8",
-                        "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                        "X-User-Id": "2430",
+                        "X-Token": "登陆.1.token",
+                        "X-User-Id": "登陆.1.id",
                         "Origin": "https://www.tezign.com",
                         "Referer": "https://www.tezign.com/client/",
                         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
@@ -820,8 +842,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                                   "X-Top-User-Id": "1"
+                                   "X-Top-Token": "后台登陆.1.token",
+                                   "X-Top-User-Id": "后台登陆.1.id"
                             },
                             "body": {
                                     "resourceList": [{
@@ -847,8 +869,8 @@
                      "request": {
                             "headers": {
                                    "Content-Type": "application/json;charset=UTF-8",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "后台登陆.1.token",
+                                   "X-Top-User-Id": "后台登陆.1.id",
                                    "service-name": "top2"
                             },
                             "body": {
@@ -874,8 +896,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/designer/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                                   "X-User-Id": "2406"
+                                   "X-Token": "创意方登陆.1.token",
+                                   "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
 
@@ -898,8 +920,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/designer/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                                   "X-User-Id": "2406"
+                                   "X-Token": "创意方登陆.1.token",
+                                   "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
                             }
@@ -921,8 +943,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/client/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430"
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id"
                             },
                             "body": {
                             }
@@ -944,8 +966,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/client/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "d3ddff5638a5a7a52eb1d96646f608bf",
-                                   "X-User-Id": "2430"
+                                   "X-Token": "登陆.1.token",
+                                   "X-User-Id": "登陆.1.id"
                             },
                             "body": {
                                     "projectId": "初次保存项目信息.1.projectId",
@@ -1042,8 +1064,8 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/designer/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Token": "2b5775c5798ceeb1367258723cd339d0",
-                                   "X-User-Id": "2406"
+                                   "X-Token": "创意方登陆.1.token",
+                                   "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
 
@@ -1066,14 +1088,38 @@
                                    "Origin": "https://www.tezign.com",
                                    "Referer": "https://www.tezign.com/",
                                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
-                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4",
-                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "后台登陆.1.token",
+                                   "X-Top-User-Id": "后台登陆.1.id",
                                    "service-name": "top2"
                             },
                             "body": {
                                     "proProjectIds": [],
                                     "projectIds": ["初次保存项目信息.1.projectId"],
                                     "withdrawId": "创意方申请提现.1.withdrawId"
+                                }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+           },
+           {
+                     "caseName": "后台标记为已打款",
+                     "caseUrl": "/withdraw/getSelectProjectTradingRecord?projectWithdrawId=创意方申请提现.1.withdrawId",
+                     "caseMethod": "get",
+                     "request": {
+                            "headers": {
+                                   "Content-Type": "application/json;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
+                                   "X-Top-Token": "后台登陆.1.token",
+                                   "X-Top-User-Id": "后台登陆.1.id",
+                                   "service-name": "top2"
+                            },
+                            "body": {
                                 }
                      },
                      "assertions": {
