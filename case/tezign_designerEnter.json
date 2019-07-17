@@ -4,7 +4,7 @@
        "steps": [
            {
                "caseName": "创意方登陆",
-                "caseUrl": "/user/login?username=15700000007&password=111111qq",
+                "caseUrl": "/user/login?username=15700001212&password=111111qq",
                      "caseMethod": "post",
                      "request": {
                             "headers": {
@@ -600,7 +600,7 @@
                                 "X-User-Id": "创意方登陆.1.id"
                             },
                             "body": {
-                                    "creativeTagList": [{
+                                "creativeTagList": [{
                                     "id": 1,
                                     "dictId": 1,
                                     "icon": "tz-graphic",
@@ -615,7 +615,7 @@
                                     "description": null,
                                     "checked": true,
                                     "next": [{
-                                        "id": 19471,
+                                        "id": 262114,
                                         "dictId": 100,
                                         "icon": null,
                                         "name": "Logo／VI",
@@ -629,7 +629,7 @@
                                         "description": "",
                                         "checked": true,
                                         "next": [{
-                                            "id": 19472,
+                                            "id": 262115,
                                             "dictId": 10005,
                                             "icon": null,
                                             "name": "Logo设计",
@@ -637,8 +637,8 @@
                                             "unit": 2,
                                             "unitInfo": "",
                                             "model": 0,
-                                            "lowAmount": "2222",
-                                            "maxAmount": 33333,
+                                            "lowAmount": "11",
+                                            "maxAmount": "222",
                                             "amount": null,
                                             "description": "",
                                             "checked": true,
@@ -647,7 +647,7 @@
                                             "_errors": {},
                                             "_errorVisible": true
                                         }, {
-                                            "id": 19473,
+                                            "id": 262116,
                                             "dictId": 10010,
                                             "icon": null,
                                             "name": "VI设计",
@@ -655,8 +655,60 @@
                                             "unit": 4,
                                             "unitInfo": "",
                                             "model": 0,
-                                            "lowAmount": 333,
-                                            "maxAmount": 44444,
+                                            "lowAmount": "11",
+                                            "maxAmount": "222",
+                                            "amount": null,
+                                            "description": "",
+                                            "checked": true,
+                                            "next": [],
+                                            "_error": null,
+                                            "_errors": {},
+                                            "_errorVisible": true
+                                        }],
+                                        "_complete": true
+                                    }, {
+                                        "id": 262061,
+                                        "dictId": 110,
+                                        "icon": null,
+                                        "name": "吉祥物／IP",
+                                        "type": 1,
+                                        "unit": 0,
+                                        "unitInfo": "",
+                                        "model": 0,
+                                        "lowAmount": null,
+                                        "maxAmount": null,
+                                        "amount": null,
+                                        "description": "",
+                                        "checked": true,
+                                        "next": [{
+                                            "id": 262062,
+                                            "dictId": 10030,
+                                            "icon": null,
+                                            "name": "吉祥物／IP设计",
+                                            "type": 1,
+                                            "unit": 2,
+                                            "unitInfo": "",
+                                            "model": 0,
+                                            "lowAmount": 1,
+                                            "maxAmount": 122222,
+                                            "amount": null,
+                                            "description": "",
+                                            "checked": true,
+                                            "next": [],
+                                            "_error": null,
+                                            "_errors": {},
+                                            "_errorVisible": true
+                                        }, {
+                                            "id": 262063,
+                                            "dictId": 10040,
+                                            "icon": null,
+                                            "name": "IP延展设计",
+                                            "type": 1,
+                                            "unit": 2,
+                                            "unitInfo": "",
+                                            "model": 0,
+                                            "lowAmount": 222,
+                                            "maxAmount": 222222,
                                             "amount": null,
                                             "description": "",
                                             "checked": true,
