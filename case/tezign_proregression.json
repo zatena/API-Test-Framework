@@ -27,70 +27,71 @@
            "caseUrl": "/pro/top/submit",
            "caseMethod": "POST",
            "request": {
-             "body": {
-               "industry": "1002",
-               "projectName": "企业项目",
-               "deliveryContent": "原图",
-               "budget": 2000,
-               "country": 1,
-               "province": 114,
-               "city": 117,
-               "projectStatus": null,
-               "otherMsg": "测试",
-               "companyName": null,
-               "companyInfo": null,
-               "companyUrl": null,
-               "designerStyle": "233",
-               "customStyle": "",
-               "designerType": "",
-               "animation": null,
-               "graphic": null,
-               "illustration": null,
-               "ui": null,
-               "publishType": 2,
-               "processMode": 1,
-               "quoteTime": 3,
-               "isRemote": 1,
-               "resourceIds": "",
-               "resources": [],
-               "designerRequireInfo": {
-                 "remark": ""
-               },
-               "companyId": "100",
-               "projectPublishTypeBeanList": [{
-                 "materielName": "长图",
-                 "materielDescription": "长图180cmx360cm",
-                 "node": {
-                   "id": 3,
-                   "name": "插画",
-                   "edit": false,
-                   "unit": "0",
-                   "units": null,
-                   "node": {
-                     "id": 25,
-                     "name": "商业插画",
-                     "edit": false,
-                     "unit": "0",
-                     "units": null,
-                     "node": {
-                       "id": 121,
-                       "name": "广告商业插画",
-                       "edit": false,
-                       "unit": "张",
-                       "units": ["张"]
-                     }
-                   }
-                 },
-                 "isRange": 0,
-                 "amount": 1,
-                 "unit": "张",
-                 "id": 121
-               }],
-               "deliveryTask": "1、长图（广告商业插画）（1张）\n长图180cmx360cm",
-               "projectBackground": "产品目标是高增长",
-               "deliveryTime": "2019-09-30",
-               "paymentDay": "60",
-               "modifyBudgetType": 2
+                         "body": {
+                               "industry": "1002",
+                               "projectName": "知名美食网站XX活动",
+                               "deliveryContent": "卡通形象，活泼可爱",
+                               "budget": 2000,
+                               "country": 1,
+                               "province": 114,
+                               "city": 117,
+                               "projectStatus": null,
+                               "otherMsg": "活动预热",
+                               "companyName": null,
+                               "companyInfo": null,
+                               "companyUrl": null,
+                               "designerStyle": "1500",
+                               "customStyle": "",
+                               "designerType": "",
+                               "animation": null,
+                               "graphic": null,
+                               "illustration": null,
+                               "ui": null,
+                               "publishType": 2,
+                               "processMode": 1,
+                               "quoteTime": 3,
+                               "isRemote": 1,
+                               "resourceIds": "",
+                               "resources": [],
+                               "designerRequireInfo": {
+                                 "remark": ""
+                               },
+                               "companyId": "4",
+                               "projectPublishTypeBeanList": [{
+                                 "materielName": "表情包设计",
+                                 "materielDescription": "git动态图",
+                                 "node": {
+                                   "id": 3,
+                                   "name": "插画",
+                                   "edit": false,
+                                   "unit": "0",
+                                   "units": null,
+                                   "node": {
+                                     "id": 27,
+                                     "name": "形象／IP插画",
+                                     "edit": false,
+                                     "unit": "0",
+                                     "units": null,
+                                     "node": {
+                                       "id": 130,
+                                       "name": "表情包",
+                                       "edit": false,
+                                       "unit": "套",
+                                       "units": ["个", "套"]
+                                     }
+                                   }
+                                 },
+                                 "isRange": 0,
+                                 "amount": "1",
+                                 "unit": "套",
+                                 "id": 130
+                               }],
+                               "deliveryTask": "1、表情包设计（表情包）（3套）\ngit动态图",
+                               "projectBackground": "目标人群：电商用户",
+                               "deliveryTime": "2019-12-30",
+                               "modifyBudgetType": 2,
+                               "paymentDay": "30",
+                               "searchContent": "表情包"
              },
              "headers":{
                "Content-Type":"application/json",
@@ -113,8 +114,8 @@
                      "request": {
                             "body": {
                                    "projectId": "发布企业项目.1.projectId",
-                                   "dockEndTime": "2019-09-30 15:15:45",
-                                   "recommendDesignerIds": "1154",
+                                   "dockEndTime": "2019-10-30 15:15:45",
+                                   "recommendDesignerIds": "25043",
                                    "remark": "remark"
                             },
                             "headers":{
@@ -137,7 +138,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "key": "向天歌",
+                                   "key": "卓乃江",
                                    "origin": null,
                                    "invitationOrigin": null,
                                    "status": "",
@@ -200,7 +201,7 @@
               },
               {
                      "caseName": "设计师登录",
-                     "caseUrl": "/user/login?username=10034002000&password=test111111",
+                     "caseUrl": "/user/login?username=11098765432&password=111111",
                      "caseMethod": "POST",
                      "request": {
                             "body": {
@@ -252,7 +253,7 @@
                             },
                             "headers":{
                                    "X-Token":"设计师登录.1.token",
-                                   "X-User-Id":"2316",
+                                   "X-User-Id": "设计师登录.1.id",
                                    "Content-Type":"application/json"
                             }
                      },
@@ -269,229 +270,54 @@
                      "caseMethod": "POST",
                      "request": {
                             "body":{
-                                   "id": "获取报价.5.id",
-                                   "projectId": "发布企业项目.1.projectId",
-                                   "designerId": "找到创意方.1.id",
-                                   "price": 10,
-                                   "concept": "测试：接口自动化-企业客户发布项目全流程回归测试，这一步是设计师对推送的项目进行报价，接下来准备选择设计师。",
-                                   "portfolioIds": "2340",
-                                   "otherFiles": "",
-                                   "otherUrls": null,
-                                   "priceMsg": "",
-                                   "quoteTime": "2019-05-22 18:06:18",
-                                   "quoteStatus": 1,
-                                   "designerBean": {
-                                          "id": "找到创意方.1.id",
-                                          "userId": 2316,
-                                          "nickname": "向天歌",
-                                          "email": null,
-                                          "phone": null,
-                                          "avatar": "https://static-test.tezign.com/8b6e4ae7338e06f6cf0046d755cc074e",
-                                          "location": "中国 上海 徐汇区",
-                                          "country": 1,
-                                          "province": 114,
-                                          "city": 117,
-                                          "isRemote": 0,
-                                          "lowest": 0,
-                                          "typeCh": 1,
-                                          "chData": null,
-                                          "typePm": 1,
-                                          "pmData": null,
-                                          "typeUi": 0,
-                                          "uiData": null,
-                                          "typeH5": 0,
-                                          "typeMovie": 0,
-                                          "typeCreative": 0,
-                                          "typeSolid": 0,
-                                          "studyStory": "[{}]",
-                                          "projectStory": "[{}]",
-                                          "workStory": "[{\"company\":\"特赞\",\"title\":\"设计师\",\"startY\":2015,\"startM\":11,\"endY\":2018,\"endM\":10,\"still\":\"0\",\"des\":\"设计师\"}]",
-                                          "isBusy": 0,
-                                          "otherUrl": null,
-                                          "dribbleUrl": null,
-                                          "behanceUrl": null,
-                                          "selfInfo": null,
-                                          "identityStatus": 2,
-                                          "identityTime": "2019-05-22 18:00:22",
-                                          "isBan": 0,
-                                          "cert": 0,
-                                          "certUrl": null,
-                                          "reviewList": null,
-                                          "impressionList": null,
-                                          "designerAwardsList": [],
-                                          "isCompany": 0,
-                                          "companyChecked": 0,
-                                          "companyId": 385,
-                                          "designerCompany": null,
-                                          "companyName": null,
-                                          "position": null
-                                   },
-                                   "portfolioBeanList": [{
-                                          "id": 2340,
-                                          "designerId": "找到创意方.1.id",
-                                          "name": "某旅行公司宣传画册",
-                                          "description": "独立完成的商业项目",
-                                          "isPm": 1,
-                                          "isUi": 0,
-                                          "isCh": 0,
-                                          "isDh": 0,
-                                          "isOther": 0,
-                                          "isH5": 0,
-                                          "isMovie": 0,
-                                          "isCreative": 0,
-                                          "isSolid": 0,
-                                          "projectScale": 4,
-                                          "projectPeriod": 3,
+                                   "projectId":"发布企业项目.1.projectId",
+                                   "coverBeanList": [{
+                                          "id": 37723,
+                                          "name": "北京双瑜座瑜伽会所品牌LOGO及VI",
                                           "isCommercial": 1,
-                                          "isPersonal": 1,
-                                          "teamRole": null,
-                                          "isPublic": 1,
-                                          "finishTime": "2018-07-20",
-                                          "sort": null,
-                                          "number": 2,
-                                          "assetNumber": 4,
-                                          "creativeTypeNumber": null,
-                                          "styleTypeNumber": 1,
-                                          "cover": {
-                                                 "id": 71135,
-                                                 "name": "e90441f674a7695e0c11253b13a216ac.jpg",
-                                                 "path": "https://file.tezign.com/9cf228881c9355742ec30ed2fa557e59.jpg",
-                                                 "url": "https://file.tezign.com/9cf228881c9355742ec30ed2fa557e59.jpg?e=1561197986&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:JZBKmACTy19M4heNOt8b3RM9FkY=",
-                                                 "type": "image/png",
-                                                 "size": 298567,
-                                                 "md5": "042bd7b5dd741ff67968dfe36c208ece",
-                                                 "thunder": null,
-                                                 "thunderUrl": "https://file.tezign.com/9cf228881c9355742ec30ed2fa557e59.jpg?imageView2/2/w/416/interlace/0/ignore-error/1&e=1561197986&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:Obs-NzDfZ1tVVyDpsmRS-FgdsUI=",
-                                                 "description": null,
-                                                 "sort": null,
-                                                 "portfolioId": 2340,
-                                                 "thumbnail": null
-                                          },
-                                          "coverAssetId": 71135,
-                                          "assets": null,
-                                          "assetList": null,
-                                          "industry": null,
-                                          "isComplete": null,
-                                          "isInfoComplete": null,
                                           "brandList": [{
-                                                 "id": 634,
+                                                 "id": 28685,
                                                  "designerId": null,
-                                                 "portfolioId": 2340,
                                                  "brandId": 0,
-                                                 "brandName": "悟道",
+                                                 "brandName": "北京双瑜座瑜伽会所",
                                                  "brandUrl": null
                                           }],
-                                          "industryList": [{
-                                                 "id": 1054,
-                                                 "portfolioId": 2340,
-                                                 "industryId": 3,
-                                                 "industryName": "金融"
+                                          "industryName": "平面设计 | Logo／VI | 消费",
+                                          "hasVideo": false,
+                                          "cover": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?e=1562930720&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:teE_JzgBZlR9vvQQO6znx1T_NIc=",
+                                          "des": "北京双瑜座瑜伽会所品牌LOGO及VI",
+                                          "num": 19,
+                                          "time": "2018-09-15",
+                                          "number": 19
+                                   }, {
+                                          "id": 37721,
+                                          "name": "高府通力品牌设计",
+                                          "isCommercial": 1,
+                                          "brandList": [{
+                                                 "id": 28683,
+                                                 "designerId": null,
+                                                 "brandId": 0,
+                                                 "brandName": "高府通力LOGO及VI设计",
+                                                 "brandUrl": null
                                           }],
-                                          "styleList": null,
-                                          "creativeTypeList": [{
-                                                 "id": 1208,
-                                                 "portfolioId": 2340,
-                                                 "type": 1,
-                                                 "creativeId": 130,
-                                                 "creativeName": "画册／书装"
-                                          }],
-                                          "createTime": 1540956652000,
-                                          "hasVideo": false
+                                          "industryName": "平面设计 | Logo／VI | Logo设计 | 消费 | 快消",
+                                          "hasVideo": false,
+                                          "cover": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?e=1562930720&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:rY1F5dd0znXOnItd6uwvOP-FdJQ=",
+                                          "des": "府通力品牌设计",
+                                          "num": 15,
+                                          "time": "2018-09-05",
+                                          "number": 15
                                    }],
                                    "otherFileList": [],
-                                   "markBean": {
-                                          "recommend": 0,
-                                          "star": 0,
-                                          "reviewed": 0,
-                                          "design": 0,
-                                          "working": 0,
-                                          "communication": 0,
-                                          "impression": 0,
-                                          "uid": null
-                                   },
-                                   "tag": null,
-                                   "isViewed": 0,
-                                   "detailQuoteUrl": null,
-                                   "finalAsset": null,
-                                   "finalAssetId": null,
-                                   "otherUrlList": [],
-                                   "isCandidate": 0,
-                                   "completeProjectCount": 0,
-                                   "quoteCount": 0,
-                                   "order": null,
-                                   "quotationStatus": 0,
-                                   "cooperateStatus": 0,
-                                   "quoteMatchingStatus": 1,
-                                   "userInfo": {
-                                          "id": "找到创意方.1.id",
-                                          "userId": "找到创意方.1.id",
-                                          "nickname": "向天歌",
-                                          "email": null,
-                                          "phone": null,
-                                          "avatar": "https://static-test.tezign.com/8b6e4ae7338e06f6cf0046d755cc074e",
-                                          "location": "中国 上海 徐汇区",
-                                          "country": 1,
-                                          "province": 114,
-                                          "city": 117,
-                                          "isRemote": 0,
-                                          "lowest": 0,
-                                          "typeCh": 1,
-                                          "chData": null,
-                                          "typePm": 1,
-                                          "pmData": null,
-                                          "typeUi": 0,
-                                          "uiData": null,
-                                          "typeH5": 0,
-                                          "typeMovie": 0,
-                                          "typeCreative": 0,
-                                          "typeSolid": 0,
-                                          "studyStory": "[{}]",
-                                          "projectStory": "[{}]",
-                                          "workStory": "[{\"company\":\"特赞\",\"title\":\"设计师\",\"startY\":2015,\"startM\":11,\"endY\":2018,\"endM\":10,\"still\":\"0\",\"des\":\"设计师\"}]",
-                                          "isBusy": 0,
-                                          "otherUrl": null,
-                                          "dribbleUrl": null,
-                                          "behanceUrl": null,
-                                          "selfInfo": null,
-                                          "identityStatus": 2,
-                                          "identityTime": "2019-05-22 18:00:22",
-                                          "isBan": 0,
-                                          "cert": 0,
-                                          "certUrl": null,
-                                          "reviewList": null,
-                                          "impressionList": null,
-                                          "designerAwardsList": [],
-                                          "isCompany": 0,
-                                          "companyChecked": 0,
-                                          "companyId": 385,
-                                          "designerCompany": null,
-                                          "companyName": null,
-                                          "position": null
-                                   },
-                                   "coverBeanList": [{
-                                          "id": 2340,
-                                          "name": "某旅行公司宣传画册",
-                                          "isCommercial": 1,
-                                          "brandList": [{
-                                                 "id": 634,
-                                                 "designerId": null,
-                                                 "brandId": 0,
-                                                 "brandName": "悟道",
-                                                 "brandUrl": null
-                                          }],
-                                          "industryName": "平面设计 | 画册／书装 | 金融",
-                                          "hasVideo": false,
-                                          "cover": "https://file.tezign.com/9cf228881c9355742ec30ed2fa557e59.jpg?e=1558523768&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:kzTkfGp5WfWSLUvFDYnNB1OFD-o=",
-                                          "des": "独立完成的商业项目",
-                                          "num": 2,
-                                          "time": "2018-07-20",
-                                          "number": 2
-                                   }],
-                                   "contactMethod": 3
+                                   "contactMethod": 3,
+                                   "concept": "测试：接口自动化-企业客户发布项目全流程回归测试，这一步是设计师对推送的项目进行报价，接下来准备选择设计师。",
+                                   "price": "10",
+                                   "portfolioIds": "37723,37721",
+                                   "otherFiles": ""
                             },
                             "headers":{
                                    "X-Token":"设计师登录.1.token",
-                                   "X-User-Id":"2316",
+                                   "X-User-Id": "设计师登录.1.id",
                                    "Content-Type":"application/json"
                             }
                      },
@@ -574,20 +400,20 @@
                      "caseUrl": "/pro/top/submitConfirmLetter",
                      "caseMethod": "POST",
                      "request": {
-                            "body": {
+                           "body": {
                                    "id": "发布企业项目.1.projectId",
                                    "status": 0,
-                                   "createTime": 1560477648000,
-                                   "updateTime": 1560477649000,
+                                   "createTime": 1563258348000,
+                                   "updateTime": 1563258348000,
                                    "createUser": null,
                                    "updateUser": null,
                                    "periodButton": true,
-                                   "publishId": 371,
+                                   "publishId": 108,
                                    "designerId": "找到创意方.1.id",
-                                   "companyId": 100,
-                                   "projectName": "子项目",
-                                   "deliveryContent": "原图",
-                                   "deliveryTask": "1、长图（广告商业插画）（1张）\n长图180cmx360cm",
+                                   "companyId": 4,
+                                   "projectName": "知名美食网站XX活动子项目",
+                                   "deliveryContent": "卡通形象，活泼可爱",
+                                   "deliveryTask": "1、表情包设计（表情包）（3套）\ngit动态图",
                                    "budget": 20,
                                    "isRemote": 1,
                                    "country": 1,
@@ -597,20 +423,20 @@
                                    "provinceStr": "上海",
                                    "cityStr": "徐汇区",
                                    "industry": "1002",
-                                   "designerStyle": "good",
+                                   "designerStyle": "活泼可爱",
                                    "resourceIds": "",
                                    "privateResourceIds": "",
-                                   "otherMsg": "测试",
-                                   "companyName": "复兴SOHO",
-                                   "companyInfo": "上海最牛叉的工作场所",
-                                   "companyUrl": "www.soho.com",
-                                   "projectStatus": 4,
+                                   "otherMsg": "活动预热",
+                                   "companyName": "特赞供给平台企业账号",
+                                   "companyInfo": "特赞提供设计、创意、营销、体验供给平台，全方位解决企业的营销创意需求。",
+                                   "companyUrl": "www.tezign.com",
+                                   "projectStatus": 3,
                                    "designerType": "",
                                    "customStyle": null,
-                                   "deliveryTime": 1565654400000,
+                                   "deliveryTime": 1577664000000,
                                    "pushType": 0,
-                                   "quoteEndTime": 1560736848000,
-                                   "expiredTime": 1562464848000,
+                                   "quoteEndTime": 1563517548000,
+                                   "expiredTime": 1565245548000,
                                    "submitTime": null,
                                    "checkedTime": null,
                                    "expiredReason": null,
@@ -620,7 +446,13 @@
                                    "proUiBean": null,
                                    "assetList": [],
                                    "privateAssetList": [],
-                                   "designerRequireInfo": null,
+                                   "designerRequireInfo": {
+                                     "dockEndTime": null,
+                                     "recommendDesignerIds": null,
+                                     "recommendDesignerNames": null,
+                                     "recommendDesignerList": null,
+                                     "remark": ""
+                                   },
                                    "remark": null,
                                    "cancelReason": null,
                                    "stopReason": null,
@@ -637,7 +469,7 @@
                                    "confirmTime": null,
                                    "designerNames": null,
                                    "modifyBudget": -1,
-                                   "paymentDay": 60,
+                                   "paymentDay": 30,
                                    "stopMoney": null,
                                    "payStatus": 0,
                                    "planStatus": 0,
@@ -647,53 +479,45 @@
                                    "proPaymentSign": null,
                                    "publishType": 2,
                                    "projectPublishTypeBeanList": [{
-                                          "unit": "张",
-                                          "materielName": "长图",
-                                          "materielDescription": "长图180cmx360cm",
-                                          "isRange": 0,
-                                          "amount": 1,
-                                          "minAmount": null,
-                                          "maxAmount": null,
-                                          "id": 121
+                                     "unit": "套",
+                                     "materielName": "表情包设计",
+                                     "materielDescription": "git动态图",
+                                     "isRange": 0,
+                                     "amount": 1,
+                                     "minAmount": null,
+                                     "maxAmount": null,
+                                     "id": 130
                                    }],
                                    "topUserId": 1,
-                                   "topUserName": "top_admin",
+                                   "topUserName": "管理员",
                                    "topUserPhone": null,
                                    "projectType": 2,
                                    "relationType": 1,
                                    "designerBillType": 1,
                                    "deliveryNode": null,
                                    "deliveryNodeList": [{
-                                          "description": "交付初稿",
-                                          "limitLow": "10",
-                                          "limitHigh": "20"
-                                   }, {
-                                          "description": "交付定稿，评审，修改",
-                                          "limitLow": "25",
-                                          "limitHigh": "50"
-                                   }, {
-                                          "description": "交付终稿，客户验收",
-                                          "limitLow": "50",
-                                          "limitHigh": "75"
+                                     "description": "终稿",
+                                     "limitLow": "99",
+                                     "limitHigh": "100"
                                    }],
                                    "projectParentId": 0,
                                    "paymentMoney": 0,
                                    "sureStatus": 0,
                                    "selfCheckInfo": {
-                                          "checkStatus": 0,
-                                          "checkTime": null,
-                                          "inviteStatus": 0,
-                                          "inviteToken": null,
-                                          "inviteUserName": null,
-                                          "inviteTime": null,
-                                          "designerName": null,
-                                          "projectName": null,
-                                          "projectType": null,
-                                          "companyName": null,
-                                          "projectStatus": null,
-                                          "projectUpdateTime": null,
-                                          "projectId": null,
-                                          "designerId": null
+                                     "checkStatus": 0,
+                                     "checkTime": null,
+                                     "inviteStatus": 0,
+                                     "inviteToken": null,
+                                     "inviteUserName": null,
+                                     "inviteTime": null,
+                                     "designerName": null,
+                                     "projectName": null,
+                                     "projectType": null,
+                                     "companyName": null,
+                                     "projectStatus": null,
+                                     "projectUpdateTime": null,
+                                     "projectId": null,
+                                     "designerId": null
                                    },
                                    "vprojectTagId": null,
                                    "vprojectName": null,
@@ -702,10 +526,10 @@
                                    "canOperateFlag": false,
                                    "pushStatus": 0,
                                    "processMode": 1,
-                                   "projectBackground": "产品目标是高增长",
+                                   "projectBackground": "目标人群：电商用户",
                                    "quoteTime": 3,
                                    "modifyBudgetType": 2,
-                                   "designerPaymentDay": 60,
+                                   "designerPaymentDay": 30,
                                    "designerQuotePrice": null,
                                    "designerOriginalBillType": 1,
                                    "resourceUrls": null,
@@ -714,28 +538,29 @@
                                    "projectManageFlag": 0,
                                    "resources": [],
                                    "designerStyleList": [{
-                                          "dictId": 233,
-                                          "name": "good"
+                                     "dictId": 1500,
+                                     "name": "活泼可爱"
                                    }],
                                    "autoOpenAccPeriodFlag": null,
-                                   "searchContent": "",
+                                   "searchContent": "表情包",
                                    "vprojectId": null,
                                    "_assetList": []
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "service-name":"top2",
-                                   "X-Top-User-Id": "后台用户登录.1.id",
-                                   "X-Top-Token": "后台用户登录.1.token"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
+                           },
+                           "headers":{
+                                 "Content-Type":"application/json",
+                                 "service-name":"top2",
+                                 "X-Top-User-Id": "后台用户登录.1.id",
+                                 "X-Top-Token": "后台用户登录.1.token"
+                           }
+                 },
+                 "assertions": {
+                             "status": 200,
+                             "body": {
                                    "code" : "0"
-                            }
-                     }
-              },
+                   }
+                 }
+           },
+
               {
                      "caseName": "发送确认函",
                      "caseUrl": "/pro/top/sureConfirmLetter",
@@ -744,7 +569,7 @@
                             "body": {
                                    "projectId": "发布企业项目.1.projectId",
                                    "designerId": "找到创意方.1.id",
-                                   "phone": "10034002000"
+                                   "phone": "11098765432"
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -828,7 +653,7 @@
                      "caseMethod": "GET",
                      "request": {
                             "body": {
-                                   "keyword":"%E8%8D%AF%E6%98%8E%E5%BA%B7%E5%BE%B7%E4%BC%81%E4%B8%9A%E6%96%87%E5%8C%96KV%E8%AE%BE%E8%AE%A1",
+                                   "keyword":"DMC-%E7%94%B5%E5%95%86%E4%B8%8A%E6%96%B0%E9%A1%B9%E7%9B%AE-%E5%A2%9E",
                                    "invoiceTitle":"",
                                    "signConfirmType":1,
                                    "pageSize":10,
@@ -880,66 +705,66 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "contractId": null,
-                                   "projectId":"设计师查看确认函.1.projectId",
-                                   "designerId": null,
-                                   "publishId": null,
-                                   "secondParty": null,
-                                   "secondPartyAddress": null,
-                                   "secondPartyTel": null,
-                                   "secondPartyEmail": null,
-                                   "deliverDelayLimitDay": null,
-                                   "putOffLimitDay": null,
-                                   "unpayLimitDay": null,
-                                   "stopLimitMonth": null,
-                                   "planCount": 1,
-                                   "designFee": null,
-                                   "extra": null,
-                                   "sureStatus": null,
-                                   "sureTime": null,
-                                   "status": null,
-                                   "planList": [{
-                                          "id": null,
-                                          "planId": null,
-                                          "contractId": null,
-                                          "planOrder": null,
-                                          "amount": 1000,
-                                          "planDay": null,
-                                          "paymentDay": null,
-                                          "planStatus": null,
-                                          "payStatus": null,
-                                          "stopAmount": null,
-                                          "stopRemark": null,
-                                          "stopTime": null,
-                                          "startTime": null,
-                                          "endTime": null,
-                                          "submitTime": null,
-                                          "taskList": [{
-                                                 "contractId": null,
-                                                 "planId": null,
-                                                 "taskId": null,
-                                                 "description": "原图",
-                                                 "requiredDay": null
-                                          }],
-                                          "updateUser": null,
-                                          "createUser": null,
-                                          "planStartTime": "2019-06-27",
-                                          "planEndTime": "2019-08-30",
-                                          "resourceList": null,
-                                          "copyStatus": 0,
-                                          "stealStatus": 0,
-                                          "packDownloadUrl": null
-                                   }],
-                                   "constraintList": [],
-                                   "workTimeList": [],
-                                   "payTimeList": [],
-                                   "detailAssetId": null,
-                                   "detailAssetUrl": null,
-                                   "detailAssetName": null,
-                                   "contractType": null,
-                                   "clientPay": 2000,
-                                   "designerPay": 1000,
-                                   "designerConfirmStatus": 1
+                              "contractId": null,
+                              "projectId": "设计师查看确认函.1.projectId",
+                              "designerId": null,
+                              "publishId": null,
+                              "secondParty": null,
+                              "secondPartyAddress": null,
+                              "secondPartyTel": null,
+                              "secondPartyEmail": null,
+                              "deliverDelayLimitDay": null,
+                              "putOffLimitDay": null,
+                              "unpayLimitDay": null,
+                              "stopLimitMonth": null,
+                              "planCount": 1,
+                              "designFee": null,
+                              "extra": null,
+                              "sureStatus": null,
+                              "sureTime": null,
+                              "status": null,
+                              "planList": [{
+                                "id": null,
+                                "planId": null,
+                                "contractId": null,
+                                "planOrder": null,
+                                "amount": 1000,
+                                "planDay": null,
+                                "paymentDay": null,
+                                "planStatus": null,
+                                "payStatus": null,
+                                "stopAmount": null,
+                                "stopRemark": null,
+                                "stopTime": null,
+                                "startTime": null,
+                                "endTime": null,
+                                "submitTime": null,
+                                "taskList": [{
+                                  "contractId": null,
+                                  "planId": null,
+                                  "taskId": null,
+                                  "description": "卡通形象，活泼可爱",
+                                  "requiredDay": null
+                                }],
+                                "updateUser": null,
+                                "createUser": null,
+                                "planStartTime": "2019-07-16",
+                                "planEndTime": "2019-12-30",
+                                "resourceList": null,
+                                "copyStatus": 0,
+                                "stealStatus": 0,
+                                "packDownloadUrl": null
+                              }],
+                              "constraintList": [],
+                              "workTimeList": [],
+                              "payTimeList": [],
+                              "detailAssetId": null,
+                              "detailAssetUrl": null,
+                              "detailAssetName": null,
+                              "contractType": null,
+                              "clientPay": 2000,
+                              "designerPay": 1000,
+                              "designerConfirmStatus": 1
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -961,32 +786,32 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "projectId": "设计师查看确认函.1.projectId",
-                                   "designerId": "找到创意方.1.id",
-                                   "modules": [{
-                                          "total": 10,
-                                          "list": [{
-                                                 "node": {
-                                                        "name": "插画／漫画",
-                                                        "edit": false,
-                                                        "unit": null,
-                                                        "units": null,
-                                                        "node": {
-                                                               "name": "广告商业插画",
-                                                               "edit": false,
-                                                               "unit": "张",
-                                                               "units": ["张"]
-                                                        }
-                                                 },
-                                                 "unit": "张",
-                                                 "total": 10,
-                                                 "amount": "1",
-                                                 "unitPrice": "10"
-                                          }]
-                                   }],
-                                   "remark": "",
-                                   "total": 10,
-                                   "paymentDay": 0
+                              "projectId": "设计师查看确认函.1.projectId",
+                              "designerId": "找到创意方.1.id",
+                              "modules": [{
+                                "total": 10,
+                                "list": [{
+                                  "node": {
+                                    "name": "插画／漫画",
+                                    "edit": false,
+                                    "unit": null,
+                                    "units": null,
+                                    "node": {
+                                      "name": "表情包",
+                                      "edit": false,
+                                      "unit": "套",
+                                      "units": ["个", "套"]
+                                    }
+                                  },
+                                  "unit": "套",
+                                  "total": 10,
+                                  "amount": "1",
+                                  "unitPrice": "10"
+                                }]
+                              }],
+                              "remark": "",
+                              "total": 10,
+                              "paymentDay": 0
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -1449,7 +1274,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "recipientAddress": "上海市徐汇区东湖路9号地产大厦7楼",
+                                   "recipientAddress": "上海市黄浦区宁波路 1 号 4 楼",
                                    "companyName": "上海特赞望信息科技有限公司",
                                    "companyTaxId": "91310113MA1GKK3B6R",
                                    "companyAddress": "上海市宝山区新二路999弄2号门753室",
@@ -1505,7 +1330,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "recipientAddress": "上海市徐汇区东湖路9号地产大厦7楼",
+                                   "recipientAddress": "上海市黄浦区宁波路 1 号 4 楼",
                                    "companyName": "上海特赞望信息科技有限公司",
                                    "companyTaxId": "91310113MA1GKK3B6R",
                                    "companyAddress": "上海市宝山区新二路999弄2号门753室",
@@ -1651,7 +1476,7 @@
               },
               {
                      "caseName": "获取创意方账号",
-                     "caseUrl": "/wallet/withdraw/getWithdrawList?status=-1&page=1&perpageNum=10",
+                     "caseUrl": "/wallet/withdraw/getAccountList?type=1",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -1677,7 +1502,7 @@
                      "request": {
                             "body": {
                                    "pageName": "WITHDRAW_PAGE",
-                                   "agreementIdList": [3]
+                                   "agreementIdList": [1]
                             },
 
                             "headers":{
@@ -1695,7 +1520,7 @@
               },
               {
                      "caseName": "创意方提现",
-                     "caseUrl": "/wallet/withdraw/submit?accountId=获取创意方账号.1.accountId&price=1000&type=1",
+                     "caseUrl": "/wallet/withdraw/submit?accountId=获取创意方账号.1.id&price=1000&type=1",
                      "caseMethod": "POST",
                      "request": {
                             "body": {

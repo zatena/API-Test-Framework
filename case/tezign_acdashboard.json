@@ -3,12 +3,54 @@
        "scenarioName": "AC Dashboard面板",
        "steps": [
               {
-                     "caseName": "后台用户登录",
+                     "caseName": "后台管理员登录",
                      "caseUrl": "/topUser/login",
                      "caseMethod": "POST",
                      "request": {
                             "body": {
                                    "email": "admin@tezign.com",
+                                   "password": "111111"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取业务组长和组员",
+                     "caseUrl": "/topAccount/teamList",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台管理员登录.1.id",
+                                   "X-Top-Token": "后台管理员登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "后台用户登录",
+                     "caseUrl": "/topUser/login",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "email": "获取业务组长和组员.1.email",
                                    "password": "111111"
                             },
                             "headers": {
@@ -46,7 +88,7 @@
               },
               {
                      "caseName": "切换查看业务面板时间",
-                     "caseUrl": "/dashboard/vprojectInfo?topUserIds=1,4,42&startTime=2019-06-01&endTime=2019-07-31",
+                     "caseUrl": "/dashboard/vprojectInfo?topUserIds=获取业务组长和组员.2.id,获取业务组长和组员.3.id&startTime=2019-06-01&endTime=2019-07-31",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -129,8 +171,8 @@
                      }
               },
               {
-                     "caseName": "查看全部组员项目信息",
-                     "caseUrl": "/dashboard/projectNumInfo?topUserIds=1,4,42",
+                     "caseName": "查看组员项目信息",
+                     "caseUrl": "/dashboard/projectNumInfo?topUserIds=获取业务组长和组员.2.id,获取业务组长和组员.3.id",
                      "caseMethod": "GET",
                      "request": {
                             "body": {
@@ -157,54 +199,7 @@
                             "body": {
                                    "pageNum":1,
                                    "pageSize":10,
-                                   "topUserIdList":[1,4,42]
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "service-name":"top2",
-                                   "X-Top-User-Id": "后台用户登录.1.id",
-                                   "X-Top-Token": "后台用户登录.1.token"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code" : "0",
-                                   "assert":"对接中签单信息.1.total:5"
-                            }
-                     }
-              },
-              {
-                     "caseName": "更新签单预计完成时间",
-                     "caseUrl": "/dashboard/updateExpectedFinishTimeById",
-                     "caseMethod": "POST",
-                     "request": {
-                            "body": {
-                                   "virtualProjectId": "对接中签单信息.5.orderId",
-                                   "expectedFinishTime": "2019-08-23"
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "service-name":"top2",
-                                   "X-Top-User-Id": "后台用户登录.1.id",
-                                   "X-Top-Token": "后台用户登录.1.token"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code" : "0"
-                            }
-                     }
-              },
-              {
-                     "caseName": "恢复签单预计完成时间初始值",
-                     "caseUrl": "/dashboard/updateExpectedFinishTimeById",
-                     "caseMethod": "POST",
-                     "request": {
-                            "body": {
-                                   "virtualProjectId": "对接中签单信息.5.orderId",
-                                   "expectedFinishTime": "2019-07-15"
+                                   "topUserIdList":["获取业务组长和组员.2.id","获取业务组长和组员.3.id"]
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -228,7 +223,53 @@
                             "body": {
                                    "pageNum":1,
                                    "pageSize":10,
-                                   "topUserIdList":[1,4,42]
+                                   "topUserIdList":["获取业务组长和组员.2.id","获取业务组长和组员.3.id"]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "更新签单预计完成时间",
+                     "caseUrl": "/dashboard/updateExpectedFinishTimeById",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "virtualProjectId": "执行中签单信息.1.orderId",
+                                   "expectedFinishTime": "2019-12-23"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "恢复签单预计完成时间初始值",
+                     "caseUrl": "/dashboard/updateExpectedFinishTimeById",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "virtualProjectId": "执行中签单信息.1.orderId",
+                                   "expectedFinishTime": "2019-08-15"
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -250,7 +291,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id":"执行中签单信息.0.projectId",
+                                   "id":"执行中签单信息.1.projectId",
                                    "remark":"测试"
                             },
                             "headers":{
@@ -273,7 +314,7 @@
                      "caseMethod": "POST",
                      "request": {
                             "body": {
-                                   "id":"执行中签单信息.0.projectId",
+                                   "id":"执行中签单信息.1.projectId",
                                    "remark":"备注初始值"
                             },
                             "headers":{
@@ -298,7 +339,7 @@
                             "body": {
                                    "pageNum":1,
                                    "pageSize":10,
-                                   "topUserIdList":[1,4,42]
+                                   "topUserIdList":["获取业务组长和组员.2.id","获取业务组长和组员.3.id"]
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -322,7 +363,7 @@
                             "body": {
                                    "pageNum":1,
                                    "pageSize":10,
-                                   "topUserIdList":[1,4,42]
+                                   "topUserIdList":["获取业务组长和组员.2.id","获取业务组长和组员.3.id"]
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -345,7 +386,7 @@
                      "request": {
                             "body": {
                                    "industry": "1002",
-                                   "projectName": "新的待作废项目",
+                                   "projectName": "待作废项目",
                                    "deliveryContent": "原图",
                                    "budget": 2000,
                                    "country": 1,
@@ -430,7 +471,7 @@
                             "body": {
                                    "pageNum":1,
                                    "pageSize":10,
-                                   "topUserIdList":[1,4,42]
+                                   "topUserIdList":["后台用户登录.1.id","获取业务组长和组员.2.id","获取业务组长和组员.3.id"]
                             },
                             "headers":{
                                    "Content-Type":"application/json",
@@ -472,27 +513,6 @@
               {
                      "caseName": "取消查看全部组员项目信息",
                      "caseUrl": "/dashboard/projectNumInfo?topUserIds=",
-                     "caseMethod": "GET",
-                     "request": {
-                            "body": {
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "service-name":"top2",
-                                   "X-Top-User-Id": "后台用户登录.1.id",
-                                   "X-Top-Token": "后台用户登录.1.token"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code" : "0"
-                            }
-                     }
-              },
-              {
-                     "caseName": "选择查看一个组员项目信息",
-                     "caseUrl": "/dashboard/projectNumInfo?topUserIds=42",
                      "caseMethod": "GET",
                      "request": {
                             "body": {

@@ -9,7 +9,7 @@ import sys
 importlib.reload(sys)
 
 
-BASEURL = "http://47.93.82.56:8080"
+BASEURL = "http://39.96.8.124:8080"
 
 REPORT_PATH = os.getcwd()+'/report'
 
@@ -42,7 +42,7 @@ MAIL_USER = 'tezign_send'
 MAIL_PASS = 'hhIksYtHPnH2l7dj'
 
 MAIL_SENDER = 'dev@send.tezign.co'
-MAIL_RECEIVER = ['zhengjingjing@tezign.com', 'cuiguoen@tezign.com']
+MAIL_RECEIVER = ['zhengjingjing@tezign.com', 'cuiguoen@tezign.com', 'yuanyongzhi@tezign.com', 'liumingyue@tezign.com', 'chengrui@tezign.com']
 SUBJECT = '接口自动化测试报告'
 
 # 数据库常量
