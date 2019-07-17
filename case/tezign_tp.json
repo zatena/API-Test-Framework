@@ -44,28 +44,7 @@
                      }
                 }
             },
-            {
-                "caseName": "统计项目面板数据",
-                "caseUrl": "/tp/dashboard/projectNumInfo",
-                "caseMethod": "post",
-                "request": {
-                    "headers": {
-                        "Content-Type": "application/json;charset=UTF-8",
-                        "X-Top-Token": "后台登陆.1.token",
-                        "X-Top-User-Id": "后台登陆.1.id",
-                        "service-name": "top2"
-                    },
-                    "body": {
-	                    "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"]
-                    }
-                },
-                "assertions": {
-                    "status": 200,
-                    "body": {
-                        "code": "0"
-                     }
-                }
-            },
+
             {
                 "caseName": "查看对接中的项目信息",
                 "caseUrl": "/tp/dashboard/findDockingProject",
@@ -80,7 +59,7 @@
                     "body": {
                         "pageNum": 1,
                         "pageSize": 10,
-                        "tpUserIdList": ["1", "75", "142", "获取组员信息.4.id"]
+                        "tpUserIdList": ["75", "97", "136", "获取组员信息.4.id"]
                     }
                 },
                 "assertions": {
@@ -423,7 +402,28 @@
                         "service-name": "top2"
                     },
                     "body": {
-                        "tpUserIdList": ["获取组员信息.2.id"]
+                        "tpUserIdList": ["136"]
+                    }
+                },
+                "assertions": {
+                    "status": 200,
+                    "body": {
+                        "code": "0"
+                     }
+                }
+            },{
+                "caseName": "统计项目面板数据",
+                "caseUrl": "/tp/dashboard/projectNumInfo",
+                "caseMethod": "post",
+                "request": {
+                    "headers": {
+                        "Content-Type": "application/json;charset=UTF-8",
+                        "X-Top-Token": "后台登陆.1.token",
+                        "X-Top-User-Id": "后台登陆.1.id",
+                        "service-name": "top2"
+                    },
+                    "body": {
+	                    "tpUserIdList": ["75", "97", "136", "获取组员信息.4.id"]
                     }
                 },
                 "assertions": {

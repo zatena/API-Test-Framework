@@ -341,6 +341,28 @@
                      }
               },
               {
+                     "caseName": "创意方登陆",
+                     "caseUrl": "/user/login?username=15700001212&password=111111qq",
+                     "caseMethod": "post",
+                     "request": {
+                            "headers": {
+                                   "Content-Type":"application/x-www-form-urlencoded;charset=UTF-8",
+                                   "Origin": "https://www.tezign.com",
+                                   "Referer": "https://www.tezign.com/designer/",
+                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
+                            },
+                            "body": {
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+
+                            }
+                     }
+              },
+              {
                      "caseName": "后台审核项目",
                      "caseUrl": "/project/auditProject/初次保存项目信息.1.projectId",
                      "caseMethod": "post",
@@ -389,7 +411,7 @@
               },
               {
                      "caseName": "后台定向推送单个创意方",
-                     "caseUrl": "/quote/pushing/target/初次保存项目信息.1.projectId/1246",
+                     "caseUrl": "/quote/pushing/target/初次保存项目信息.1.projectId/创意方登陆.2.id",
                      "caseMethod": "post",
                      "request": {
                             "headers": {
@@ -408,31 +430,10 @@
                             }
                      }
               },
-              {
-                     "caseName": "创意方登陆",
-                     "caseUrl": "/user/login?username=15700000001&password=111111",
-                     "caseMethod": "post",
-                     "request": {
-                            "headers": {
-                                   "Content-Type":"application/x-www-form-urlencoded;charset=UTF-8",
-                                   "Origin": "https://www.tezign.com",
-                                   "Referer": "https://www.tezign.com/designer/",
-                                   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"
-                            },
-                            "body": {
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code": "0"
 
-                            }
-                     }
-              },
               {
                      "caseName": "进入报价填写页",
-                     "caseUrl": "/project/choosing/getQuoteByProjectIdUserId?projectId=初次保存项目信息.1.projectId&userId=1246",
+                     "caseUrl": "/project/choosing/getQuoteByProjectIdUserId?projectId=初次保存项目信息.1.projectId&userId=创意方登陆.2.id",
                      "caseMethod": "get",
                      "request": {
                             "headers": {
@@ -454,7 +455,7 @@
               },
               {
                      "caseName": "创意方提交报价",
-                     "caseUrl": "/project/choosing/submit?userId=1246&projectId=初次保存项目信息.1.projectId&contactMethod=1&email=111111%40www.com&phone=15700000001&price=10000&expectedIncome=900000&duration=1&issue1=%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3cececeeeeeeeeeecece&nickname=%E6%B5%8B%E8%AF%95%E5%85%AC%E5%8F%B8%E4%BE%9B%E5%BA%94%E5%95%86&portfolioIds=%5B%7B%22id%22%3A2410%2C%22name%22%3A%22%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B5%22%2C%22isCommercial%22%3A1%2C%22brandList%22%3A%5B%7B%22id%22%3A692%2C%22designerId%22%3Anull%2C%22brandId%22%3A10156%2C%22brandName%22%3A%22VML+%E5%8C%97%E4%BA%AC%22%2C%22brandUrl%22%3A%22https%3A%2F%2Fstatic.tezign.com%2FeImg%2Flogo%2F20170407%2F20170407184800_75691.png%22%7D%5D%2C%22industryName%22%3A%22%E6%8F%92%E7%94%BB+%2F+%E6%BC%AB%E7%94%BB+%7C+%E5%8C%85%E8%A3%85%E6%8F%92%E7%94%BB+%7C+APP%2F%E7%BD%91%E9%A1%B5%E6%8F%92%E7%94%BB+%7C+%E9%87%91%E8%9E%8D+%7C+%E9%93%B6%E8%A1%8C%22%2C%22hasVideo%22%3Afalse%2C%22cover%22%3A%22https%3A%2F%2Ffile.tezign.com%2F5c32b1cfc7b8cc3d0c30f195bced9b34%3Fe%3D1561373612%26token%3DRow5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W%3Ah9J_MpgRfJSvgRf2klX_x5QzuFc%3D%22%2C%22des%22%3A%22%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%22%2C%22num%22%3A1%2C%22time%22%3A%222019-01-02%22%2C%22number%22%3A1%7D%5D&otherFiles=%5B%5D&otherUrlList=%5B%5D",
+                     "caseUrl": "/project/choosing/submit?userId=创意方登陆.2.id&projectId=初次保存项目信息.1.projectId&contactMethod=1&email=111111%40www.com&phone=15700000001&price=10000&expectedIncome=900000&duration=1&issue1=%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3%E7%AE%80%E8%A6%81%E6%8F%8F%E8%BF%B0%E4%BD%A0%E5%AF%B9%E6%AD%A4%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%84%E6%83%B3cececeeeeeeeeeecece&nickname=%E6%B5%8B%E8%AF%95%E5%85%AC%E5%8F%B8%E4%BE%9B%E5%BA%94%E5%95%86&portfolioIds=%5B%7B%22id%22%3A2410%2C%22name%22%3A%22%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B5%22%2C%22isCommercial%22%3A1%2C%22brandList%22%3A%5B%7B%22id%22%3A692%2C%22designerId%22%3Anull%2C%22brandId%22%3A10156%2C%22brandName%22%3A%22VML+%E5%8C%97%E4%BA%AC%22%2C%22brandUrl%22%3A%22https%3A%2F%2Fstatic.tezign.com%2FeImg%2Flogo%2F20170407%2F20170407184800_75691.png%22%7D%5D%2C%22industryName%22%3A%22%E6%8F%92%E7%94%BB+%2F+%E6%BC%AB%E7%94%BB+%7C+%E5%8C%85%E8%A3%85%E6%8F%92%E7%94%BB+%7C+APP%2F%E7%BD%91%E9%A1%B5%E6%8F%92%E7%94%BB+%7C+%E9%87%91%E8%9E%8D+%7C+%E9%93%B6%E8%A1%8C%22%2C%22hasVideo%22%3Afalse%2C%22cover%22%3A%22https%3A%2F%2Ffile.tezign.com%2F5c32b1cfc7b8cc3d0c30f195bced9b34%3Fe%3D1561373612%26token%3DRow5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W%3Ah9J_MpgRfJSvgRf2klX_x5QzuFc%3D%22%2C%22des%22%3A%22%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%E6%A1%88%E4%BE%8B%22%2C%22num%22%3A1%2C%22time%22%3A%222019-01-02%22%2C%22number%22%3A1%7D%5D&otherFiles=%5B%5D&otherUrlList=%5B%5D",
                      "caseMethod": "post",
                      "request": {
                             "headers": {
