@@ -69,7 +69,7 @@ class Report:
         self.testResultList.append(testResultDict)
         return self.testResultList
 
-    def build_report(self, testResult, testName, testPass, testFail, testSkip, totalTime, email):
+    def build_report(self, testResult, testName, testPass, testFail, testSkip, totalTime):
 
         reportResult = {}
         reportResult["testPass"] = testPass
@@ -94,7 +94,9 @@ class Report:
             .replace("${filterFail}",str(testFail)) \
             .replace("${filterSkip}",str(len(testResult)-testPass-testFail)) \
             .replace("${filterCoverage}",str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%')
-        email.email(report)
+
+        return report
+        # email.email(report)
 
 
     def write_report(self, reportResult, testName):

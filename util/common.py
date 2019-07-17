@@ -293,8 +293,8 @@ class ProProjectRegression:
 
     def build_report_regression(self, filename):
         test_report = self.execute_case_regression(filename)
-        self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time, email)
+        return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
+                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time)
 
     def send_email_regression(self, reportfile):
         reports = os.listdir(reportfile)

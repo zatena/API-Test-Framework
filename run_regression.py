@@ -6,6 +6,7 @@ import os
 import constants as cs
 import util.common as common
 import re
+import core.myemail as email
 
 reportFile = cs.REPORT_PATH
 
@@ -14,6 +15,7 @@ ProRegTest = common.ProProjectRegression()
 
 casePath = os.getcwd()+'/case'
 dirs = os.listdir(casePath)
+report = None
 
 for i in dirs:
     if re.match("tezign_*", i):
@@ -23,7 +25,9 @@ for i in dirs:
            2. 生成测试报告
            3. 发送报告邮件
         """
-        ProRegTest.build_report_regression(caseFile)
+        report = ProRegTest.build_report_regression(caseFile)
+
+email.email(report)
 
 
 # casePath = os.getcwd()+'/case/tez_proregression.json'
