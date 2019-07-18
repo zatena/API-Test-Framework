@@ -30,7 +30,7 @@ for i in dirs:
 email.email(report)
 
 
-# casePath = os.getcwd()+'/case/tezi_proregression.json'
+# casePath = os.getcwd()+'/case/tezign_proregression.json'
 # ProRegTest.build_report_regression(casePath)
 
 

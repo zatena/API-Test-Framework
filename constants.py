@@ -17,7 +17,7 @@ DELIVERY_PATH = os.getcwd()+'/data'
 
 CASE_PATH = os.getcwd()+'/case/项目状态扩展优化.ini'
 
-REPORT_TITLE = "接口自动化测试报告" + time.strftime('%Y%m%d', time.localtime(time.time()))
+REPORT_TITLE = "大平台业务接口自动化测试报告" + time.strftime('%Y%m%d', time.localtime(time.time()))
 PRO_REPORT_TITLE = "企业项目流程回归测试"
 COMMON_REPORT_TITLE = "普通项目流程回归测试"
 TEST_REPORT_TITLE = "大平台业务接口自动化测试报告"
@@ -42,8 +42,11 @@ MAIL_USER = 'tezign_send'
 MAIL_PASS = 'hhIksYtHPnH2l7dj'
 
 MAIL_SENDER = 'dev@send.tezign.co'
-MAIL_RECEIVER = ['zhengjingjing@tezign.com']
-SUBJECT = '大平台主流程接口自动化测试报告'
+MAIL_RECEIVER = ['zhengjingjing@tezign.com', 'cuiguoen@tezign.com', 'yuanyongzhi@tezign.com', 'liumingyue@tezign.com',
+                 'chengrui@tezign.com', 'lihuawei@tezign.com', 'huangquan@tezign.com', 'dengyuncheng@tezign.com',
+                 'mazonghao@tezign.com', 'xuejingyi@tezign.com', 'huangqingjian@tezign.com', 'kangjun@tezign.com',
+                 'wangxiangyang@tezign.com', 'tushuixia@tezign.com']
+SUBJECT = '大平台业务接口自动化测试报告'
 
 # 数据库常量
 DB_HOST = '123.57.137.216'

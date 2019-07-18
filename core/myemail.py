@@ -14,7 +14,6 @@ logging = log.track_log()
 
 def email(reportfile):
 
-    # mail_file = open(reportfile,'rb').read()
     att = MIMEText(reportfile, 'html', 'utf-8')
     att['ContentType'] = 'application/octet-stream'
     att['Content-Disposition'] = 'attachment:filename="测试报告'
@@ -22,7 +21,7 @@ def email(reportfile):
     message = MIMEMultipart('related')
     message['From'] = cs.MAIL_SENDER
     message['To'] = ','.join(cs.MAIL_RECEIVER)
-    message['Subject'] = Header('接口自动化测试报告', 'utf-8')
+    message['Subject'] = Header('大平台业务接口自动化测试报告', 'utf-8')
     message.attach(att)
 
     try:
@@ -32,7 +31,7 @@ def email(reportfile):
         smtp.sendmail(cs.MAIL_SENDER, message['To'].split(','), message.as_string())
         logging.info("**********发送邮件成功**********")
     except smtplib.SMTPException as e:
-        logging.error("**********发送邮件失败:%s**********", e)
+        logging.error("**********发送邮件失败:**********\n %s", e)
     finally:
         smtp.quit()
 
