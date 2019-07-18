@@ -99,7 +99,7 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-/site
+/sitegi
 
 # mypy
 .mypy_cache/
