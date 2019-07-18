@@ -1,31 +1,69 @@
-Automation for SOP
+接口自动化框架说明
+=====
 
-This repo try to do api automation for sop by some python libs
+本接口测试框架服务于基于http请求的接口请求
+---------
 
+# 环境准备
 
-Installation and dependence
-
-Need python3 to run the automation scripts, also need some other libs, such as:
+`Python3`以上版本
 
 $ pip3 install -r requirements.txt
 
+# 当前服务对象
+特赞大平台业务
 
-You can run the "run_regression_" scripts, and the report.html will be created automatically
-
-
-git clone git@git.tezign.com:Tester/API-Test-Framework.git
-whoami 
-pwd
-#切换成虚拟环境并构建依赖
-virtualenv -p /usr/bin/python3 venv
-source venv/bin/activate
-pip3 install -r requirements.txt
-# 执行回归测试脚本
-python3 run_regression.py
+# git 构建地址 <br>
+[仓库地址](git clone git@git.tezign.com:Tester/API-Test-Framework.git "git clone git@git.tezign.com:Tester/API-Test-Framework.git")
 
 
-case开发注意事项：
-获取新添加人才列表.1.total:2
-1是想获取的第几个total
-2是实际的结果的索引
+# git shell command <br>
+whoami <br>
+pwd <br>
+virtualenv -p /usr/bin/python3 venv <br>
+source venv/bin/activate <br>
+pip3 install -r requirements.txt <br>
+python3 run_regression.py <br>
+
+## 接口用例开发注意事项：<br>
+### 数据依赖两种格式
+#### 第一种 预期结果判断，在本用例响应结果中判断
+项目完结.1.projectStatus:8 <br>
+* 1 获取的projectStatus实际位置顺序 <br>
+* 8 预期结果 <br>
+
+#### 第二种 用例应用，在其他用例的返回结果中取值，用到本用例
+* 以下数值为该数据在响应结果里的实际位置 <br>
+
+数据依赖存在于请求地址中表现为：<br>
+"caseUrl": "/withdraw/getProjectTradingRecord?withdrawId=获取提现记录表.1.id"<br>
+数据依赖存在于请求参数中表现为：<br>
+ "body": { <br>
+ "proProjectIds": ["设计师查看确认函.1.projectId"], <br>
+ "projectIds": [], <br>
+ "withdrawId": "获取提现记录表.1.id" <br>
+} <br>
+
+主要方法说明
+------
+
+#### 1. run_regression.py
+执行入口：执行所有以tezign**开始的json文件
+
+#### 2. util/common.py
+通用方法：执行用例，数据处理，解析和生成测试报告的方法
+
+#### 3. core
+底层方法
+
+#### 4. model
+执行结果处理，存储，生成报告的各类方法
+
+#### 5.constants.py
+常量方法：如测试数据、地址，邮件配置，数据库配置等常量的存储
+
+
+
+
+
 
