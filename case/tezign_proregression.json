@@ -29,7 +29,7 @@
            "request": {
                          "body": {
                                "industry": "1002",
-                               "projectName": "知名美食网站XX活动",
+                               "projectName": "知名电商网站双十一预热活动",
                                "deliveryContent": "卡通形象，活泼可爱",
                                "budget": 2000,
                                "country": 1,
@@ -411,7 +411,7 @@
                                    "publishId": 108,
                                    "designerId": "找到创意方.1.id",
                                    "companyId": 4,
-                                   "projectName": "知名美食网站XX活动子项目",
+                                   "projectName": "知名电商网站双十一预热活动子项目",
                                    "deliveryContent": "卡通形象，活泼可爱",
                                    "deliveryTask": "1、表情包设计（表情包）（3套）\ngit动态图",
                                    "budget": 20,
@@ -653,7 +653,7 @@
                      "caseMethod": "GET",
                      "request": {
                             "body": {
-                                   "keyword":"DMC-%E7%94%B5%E5%95%86%E4%B8%8A%E6%96%B0%E9%A1%B9%E7%9B%AE-%E5%A2%9E",
+                                   "keyword":"%E5%86%85%E6%8E%A8%E6%B5%B7%E6%8A%A5%E8%AE%BE%E8%AE%A1",
                                    "invoiceTitle":"",
                                    "signConfirmType":1,
                                    "pageSize":10,

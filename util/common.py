@@ -193,7 +193,6 @@ class ProProjectRegression:
                             api_url = data_json['caseUrl']
                             url = cs.BASEURL + api_url
                             _data = data_json['request']['body']
-                # else:
 
                 # str_data = str_data.replace('发布企业项目.projectName', project_name)
                 # str_data = str_data.replace('发布企业项目.deliveryTime', delivery_time)
@@ -265,8 +264,6 @@ class ProProjectRegression:
                                 continue
                             else:
                                 request_log_message = "输入值: %s\n" % request_data
-                    # else:
-                    #     if name.endswith('下载'):
 
                 except Exception as e:
                     logging.error("无返回结果%s" % e)
