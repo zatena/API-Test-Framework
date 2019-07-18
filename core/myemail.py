@@ -20,16 +20,16 @@ def email(reportfile):
     att['Content-Disposition'] = 'attachment:filename="测试报告'
 
     message = MIMEMultipart('related')
-    message['From'] = Header(cs.MAIL_SENDER,'utf-8')
-    message['To'] = Header(cs.MAIL_RECEIVER,'utf-8')
-    message['Subject'] = Header('接口自动化测试报告','utf-8')
+    message['From'] = cs.MAIL_SENDER
+    message['To'] = ','.join(cs.MAIL_RECEIVER)
+    message['Subject'] = Header('接口自动化测试报告', 'utf-8')
     message.attach(att)
 
     try:
         smtp = smtplib.SMTP()
         smtp.connect(cs.MAIL_HOST, 25)
         smtp.login(cs.MAIL_USER, cs.MAIL_PASS)
-        smtp.sendmail(cs.MAIL_SENDER, cs.MAIL_RECEIVER, message.as_string())
+        smtp.sendmail(cs.MAIL_SENDER, message['To'].split(','), message.as_string())
         logging.info("**********发送邮件成功**********")
     except smtplib.SMTPException as e:
         logging.error("**********发送邮件失败:%s**********", e)

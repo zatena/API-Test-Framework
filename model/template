@@ -7075,16 +7075,25 @@
     function details(obj) {
         if ($(obj).text() == '展开') {
             var len = $(obj).parent().parent().children().length;
-            var detailLog = "";
-            var logs = resultData["testResult"][parseInt($(obj).attr("buttonIndex"))]["log"];
+            var requestLog = "";
+            var resultLog = "";
+            var requestLogs = resultData["testResult"][parseInt($(obj).attr("buttonIndex"))]["requestLog"];
+            var resultLogs = resultData["testResult"][parseInt($(obj).attr("buttonIndex"))]["resultLog"];
+
             $(obj).text("收缩");
             $(obj).removeClass("btn-primary");
             $(obj).addClass("btn-danger");
-            $.each(logs, function (i, n) {
-                detailLog = detailLog + "<p>" + n + "</p>";
+            $.each(requestLogs, function (i, n) {
+                requestLog = requestLog + "<p>" + n + "</p>";
             });
-            $(obj).parent().parent().after("<tr><td colspan='" + len + "'><div style='font-family: Consolas;font-size:12px'>" + detailLog + "</div></td></tr>");
+            $.each(resultLogs, function (i, n) {
+                resultLog = resultLog + "<p>" + n + "</p>";
+            });
+
+            $(obj).parent().parent().after("<tr><td colspan='" + len + "'><div style='font-family: Consolas;font-size:12px'>" + resultLog + "</div></td></tr>");
+            $(obj).parent().parent().after("<tr><td colspan='" + len + "'><div style='font-family: Consolas;font-size:12px'>" + requestLog + "</div></td></tr>");
         } else if ($(obj).text() == '收缩') {
+            $(obj).parent().parent().next().remove();
             $(obj).parent().parent().next().remove();
             $(obj).text("展开");
             $(obj).removeClass("btn-danger");

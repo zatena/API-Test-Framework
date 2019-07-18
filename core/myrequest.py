@@ -36,7 +36,6 @@ def api(method, url, data, headers):
         if method.upper() == "GET":
             result = requests.get(url, headers=headers)
         response = result.json()
-        # code = response.get('code')
         return response
     except Exception as e:
         logging.error("请求失败%s" % e)
@@ -68,15 +67,17 @@ def get_message(method, url, data, headers):
 
         run_time = result.elapsed.total_seconds()
         response_code = result.status_code
-        response_result['run_time'] = round(run_time * 1000, 3)
         if response_code > 200:
             response_result['status_code'] = response_code
+            response_result['run_time'] = round(run_time * 1000, 3)
             return response_result
+        elif response_code == 200 and result is None:
+            return result
         response = result.json()
         response['run_time'] = round(run_time * 1000, 3)
         return response
     except Exception as e:
-        logging.error("*******************请求发生异常*******************\n %s" % e)
+        logging.error("请求发生异常\n %s" % e)
         traceback.print_exc()
 
 
@@ -98,3 +99,4 @@ def get_mfd(method, url, data, headers):
     except Exception as e:
         logging.error("请求失败%s" % e)
         traceback.print_exc()
+

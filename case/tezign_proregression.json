@@ -1,0 +1,1720 @@
+{
+       "scenarioName": "企业项目流程回归测试",
+       "steps": [
+              {
+                     "caseName": "后台用户登录",
+                     "caseUrl": "/topUser/login",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "email": "admin@tezign.com",
+                                   "password": "111111"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+           "caseName": "发布企业项目",
+           "caseUrl": "/pro/top/submit",
+           "caseMethod": "POST",
+           "request": {
+                         "body": {
+                               "industry": "1002",
+                               "projectName": "知名电商网站双十一预热活动",
+                               "deliveryContent": "卡通形象，活泼可爱",
+                               "budget": 2000,
+                               "country": 1,
+                               "province": 114,
+                               "city": 117,
+                               "projectStatus": null,
+                               "otherMsg": "活动预热",
+                               "companyName": null,
+                               "companyInfo": null,
+                               "companyUrl": null,
+                               "designerStyle": "1500",
+                               "customStyle": "",
+                               "designerType": "",
+                               "animation": null,
+                               "graphic": null,
+                               "illustration": null,
+                               "ui": null,
+                               "publishType": 2,
+                               "processMode": 1,
+                               "quoteTime": 3,
+                               "isRemote": 1,
+                               "resourceIds": "",
+                               "resources": [],
+                               "designerRequireInfo": {
+                                 "remark": ""
+                               },
+                               "companyId": "4",
+                               "projectPublishTypeBeanList": [{
+                                 "materielName": "表情包设计",
+                                 "materielDescription": "git动态图",
+                                 "node": {
+                                   "id": 3,
+                                   "name": "插画",
+                                   "edit": false,
+                                   "unit": "0",
+                                   "units": null,
+                                   "node": {
+                                     "id": 27,
+                                     "name": "形象／IP插画",
+                                     "edit": false,
+                                     "unit": "0",
+                                     "units": null,
+                                     "node": {
+                                       "id": 130,
+                                       "name": "表情包",
+                                       "edit": false,
+                                       "unit": "套",
+                                       "units": ["个", "套"]
+                                     }
+                                   }
+                                 },
+                                 "isRange": 0,
+                                 "amount": "1",
+                                 "unit": "套",
+                                 "id": 130
+                               }],
+                               "deliveryTask": "1、表情包设计（表情包）（3套）\ngit动态图",
+                               "projectBackground": "目标人群：电商用户",
+                               "deliveryTime": "2019-12-30",
+                               "modifyBudgetType": 2,
+                               "paymentDay": "30",
+                               "searchContent": "表情包"
+             },
+             "headers":{
+               "Content-Type":"application/json",
+               "service-name":"top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code" : "0"
+             }
+           }
+         },
+              {
+                     "caseName": "更新创意方要求信息",
+                     "caseUrl": "/pro/top/updateProjectDesignerRequire",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId": "发布企业项目.1.projectId",
+                                   "dockEndTime": "2019-10-30 15:15:45",
+                                   "recommendDesignerIds": "25043",
+                                   "remark": "remark"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "找到创意方",
+                     "caseUrl": "/designer/list",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "key": "卓乃江",
+                                   "origin": null,
+                                   "invitationOrigin": null,
+                                   "status": "",
+                                   "companyChecked": null,
+                                   "copyrightStatus": null,
+                                   "ban": null,
+                                   "isCert": null,
+                                   "remote": null,
+                                   "office": null,
+                                   "location": null,
+                                   "minScore": null,
+                                   "maxScore": null,
+                                   "remark": [null, null],
+                                   "designerTag": "",
+                                   "designerType": "",
+                                   "dictIdList": "",
+                                   "budget": "",
+                                   "portfolioCreativeType": {},
+                                   "isWorkAbroad": 0,
+                                   "isStudyAbroad": 0,
+                                   "isEliteSchool": 0,
+                                   "pageNum": 1,
+                                   "orderType": 1,
+                                   "orderBy": 0
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "项目定向推送给设计师",
+                     "caseUrl": "/match/pushAgain?designerIds=找到创意方.1.id&projectId=发布企业项目.1.projectId",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "设计师登录",
+                     "caseUrl": "/user/login?username=11098765432&password=111111",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/x-www-form-urlencoded"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "保存报价草稿",
+                     "caseUrl": "/project/proChoosing/saveDraft",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId": "发布企业项目.1.projectId",
+                                   "coverBeanList": [],
+                                   "otherFileList": [],
+                                   "contactMethod": 3,
+                                   "price": "10",
+                                   "portfolioIds": "",
+                                   "otherFiles": ""
+                            },
+                            "headers":{
+                                   "X-Token":"设计师登录.1.token",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "Content-Type":"application/json"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取报价",
+                     "caseUrl": "/project/proProject/designer/info/get?projectId=发布企业项目.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body":{
+                            },
+                            "headers":{
+                                   "X-Token":"设计师登录.1.token",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "Content-Type":"application/json"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "设计师报价",
+                     "caseUrl": "/project/proChoosing/submit",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body":{
+                                   "projectId":"发布企业项目.1.projectId",
+                                   "coverBeanList": [{
+                                          "id": 37723,
+                                          "name": "北京双瑜座瑜伽会所品牌LOGO及VI",
+                                          "isCommercial": 1,
+                                          "brandList": [{
+                                                 "id": 28685,
+                                                 "designerId": null,
+                                                 "brandId": 0,
+                                                 "brandName": "北京双瑜座瑜伽会所",
+                                                 "brandUrl": null
+                                          }],
+                                          "industryName": "平面设计 | Logo／VI | 消费",
+                                          "hasVideo": false,
+                                          "cover": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?e=1562930720&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:teE_JzgBZlR9vvQQO6znx1T_NIc=",
+                                          "des": "北京双瑜座瑜伽会所品牌LOGO及VI",
+                                          "num": 19,
+                                          "time": "2018-09-15",
+                                          "number": 19
+                                   }, {
+                                          "id": 37721,
+                                          "name": "高府通力品牌设计",
+                                          "isCommercial": 1,
+                                          "brandList": [{
+                                                 "id": 28683,
+                                                 "designerId": null,
+                                                 "brandId": 0,
+                                                 "brandName": "高府通力LOGO及VI设计",
+                                                 "brandUrl": null
+                                          }],
+                                          "industryName": "平面设计 | Logo／VI | Logo设计 | 消费 | 快消",
+                                          "hasVideo": false,
+                                          "cover": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?e=1562930720&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:rY1F5dd0znXOnItd6uwvOP-FdJQ=",
+                                          "des": "府通力品牌设计",
+                                          "num": 15,
+                                          "time": "2018-09-05",
+                                          "number": 15
+                                   }],
+                                   "otherFileList": [],
+                                   "contactMethod": 3,
+                                   "concept": "测试：接口自动化-企业客户发布项目全流程回归测试，这一步是设计师对推送的项目进行报价，接下来准备选择设计师。",
+                                   "price": "10",
+                                   "portfolioIds": "37723,37721",
+                                   "otherFiles": ""
+                            },
+                            "headers":{
+                                   "X-Token":"设计师登录.1.token",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "Content-Type":"application/json"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "后台更改设计师报价",
+                     "caseUrl": "/pro/updateQuote",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "quotePrice": 2000,
+                                   "id": "获取报价.5.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "候选设计师",
+                     "caseUrl": "/pro/updateQuote",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "id":"获取报价.5.id" ,
+                                   "recommendStatus": 1
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "推荐设计师",
+                     "caseUrl": "/pro/recommendQuote?ids=获取报价.5.id&projectId=发布企业项目.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "提交确认函",
+                     "caseUrl": "/pro/top/submitConfirmLetter",
+                     "caseMethod": "POST",
+                     "request": {
+                           "body": {
+                                   "id": "发布企业项目.1.projectId",
+                                   "status": 0,
+                                   "createTime": 1563258348000,
+                                   "updateTime": 1563258348000,
+                                   "createUser": null,
+                                   "updateUser": null,
+                                   "periodButton": true,
+                                   "publishId": 108,
+                                   "designerId": "找到创意方.1.id",
+                                   "companyId": 4,
+                                   "projectName": "知名电商网站双十一预热活动子项目",
+                                   "deliveryContent": "卡通形象，活泼可爱",
+                                   "deliveryTask": "1、表情包设计（表情包）（3套）\ngit动态图",
+                                   "budget": 20,
+                                   "isRemote": 1,
+                                   "country": 1,
+                                   "province": 114,
+                                   "city": 117,
+                                   "countryStr": "中国",
+                                   "provinceStr": "上海",
+                                   "cityStr": "徐汇区",
+                                   "industry": "1002",
+                                   "designerStyle": "活泼可爱",
+                                   "resourceIds": "",
+                                   "privateResourceIds": "",
+                                   "otherMsg": "活动预热",
+                                   "companyName": "特赞供给平台企业账号",
+                                   "companyInfo": "特赞提供设计、创意、营销、体验供给平台，全方位解决企业的营销创意需求。",
+                                   "companyUrl": "www.tezign.com",
+                                   "projectStatus": 3,
+                                   "designerType": "",
+                                   "customStyle": null,
+                                   "deliveryTime": 1577664000000,
+                                   "pushType": 0,
+                                   "quoteEndTime": 1563517548000,
+                                   "expiredTime": 1565245548000,
+                                   "submitTime": null,
+                                   "checkedTime": null,
+                                   "expiredReason": null,
+                                   "proAnimationBean": null,
+                                   "proGraphicBean": null,
+                                   "proIllustrationBean": null,
+                                   "proUiBean": null,
+                                   "assetList": [],
+                                   "privateAssetList": [],
+                                   "designerRequireInfo": {
+                                     "dockEndTime": null,
+                                     "recommendDesignerIds": null,
+                                     "recommendDesignerNames": null,
+                                     "recommendDesignerList": null,
+                                     "remark": ""
+                                   },
+                                   "remark": null,
+                                   "cancelReason": null,
+                                   "stopReason": null,
+                                   "tpUserId": null,
+                                   "tpUserInfo": null,
+                                   "tpRemark": null,
+                                   "canCompetitivePresentation": 0,
+                                   "scoreMin": 0,
+                                   "scoreMax": 5,
+                                   "appointIds": "0",
+                                   "reason": null,
+                                   "rematching": 0,
+                                   "changeDesigner": 0,
+                                   "confirmTime": null,
+                                   "designerNames": null,
+                                   "modifyBudget": -1,
+                                   "paymentDay": 30,
+                                   "stopMoney": null,
+                                   "payStatus": 0,
+                                   "planStatus": 0,
+                                   "failStatus": 0,
+                                   "advancePayment": 0,
+                                   "advancePaymentStatus": 0,
+                                   "proPaymentSign": null,
+                                   "publishType": 2,
+                                   "projectPublishTypeBeanList": [{
+                                     "unit": "套",
+                                     "materielName": "表情包设计",
+                                     "materielDescription": "git动态图",
+                                     "isRange": 0,
+                                     "amount": 1,
+                                     "minAmount": null,
+                                     "maxAmount": null,
+                                     "id": 130
+                                   }],
+                                   "topUserId": 1,
+                                   "topUserName": "管理员",
+                                   "topUserPhone": null,
+                                   "projectType": 2,
+                                   "relationType": 1,
+                                   "designerBillType": 1,
+                                   "deliveryNode": null,
+                                   "deliveryNodeList": [{
+                                     "description": "终稿",
+                                     "limitLow": "99",
+                                     "limitHigh": "100"
+                                   }],
+                                   "projectParentId": 0,
+                                   "paymentMoney": 0,
+                                   "sureStatus": 0,
+                                   "selfCheckInfo": {
+                                     "checkStatus": 0,
+                                     "checkTime": null,
+                                     "inviteStatus": 0,
+                                     "inviteToken": null,
+                                     "inviteUserName": null,
+                                     "inviteTime": null,
+                                     "designerName": null,
+                                     "projectName": null,
+                                     "projectType": null,
+                                     "companyName": null,
+                                     "projectStatus": null,
+                                     "projectUpdateTime": null,
+                                     "projectId": null,
+                                     "designerId": null
+                                   },
+                                   "vprojectTagId": null,
+                                   "vprojectName": null,
+                                   "vprojectIncomeAmount": null,
+                                   "accountName": null,
+                                   "canOperateFlag": false,
+                                   "pushStatus": 0,
+                                   "processMode": 1,
+                                   "projectBackground": "目标人群：电商用户",
+                                   "quoteTime": 3,
+                                   "modifyBudgetType": 2,
+                                   "designerPaymentDay": 30,
+                                   "designerQuotePrice": null,
+                                   "designerOriginalBillType": 1,
+                                   "resourceUrls": null,
+                                   "designerPay": null,
+                                   "modifyDesignerBudget": 1000,
+                                   "projectManageFlag": 0,
+                                   "resources": [],
+                                   "designerStyleList": [{
+                                     "dictId": 1500,
+                                     "name": "活泼可爱"
+                                   }],
+                                   "autoOpenAccPeriodFlag": null,
+                                   "searchContent": "表情包",
+                                   "vprojectId": null,
+                                   "_assetList": []
+                           },
+                           "headers":{
+                                 "Content-Type":"application/json",
+                                 "service-name":"top2",
+                                 "X-Top-User-Id": "后台用户登录.1.id",
+                                 "X-Top-Token": "后台用户登录.1.token"
+                           }
+                 },
+                 "assertions": {
+                             "status": 200,
+                             "body": {
+                                   "code" : "0"
+                   }
+                 }
+           },
+
+              {
+                     "caseName": "发送确认函",
+                     "caseUrl": "/pro/top/sureConfirmLetter",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId": "发布企业项目.1.projectId",
+                                   "designerId": "找到创意方.1.id",
+                                   "phone": "11098765432"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "设计师查看项目信息",
+                     "caseUrl": "/project/proProject/designer/info/get?projectId=发布企业项目.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "设计师查看确认函",
+                     "caseUrl": "/project/pro/public/confirmLetter/detail/发送确认函.1.result/false",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "设计师确认确认函",
+                     "caseUrl": "/project/pro/public/confirmLetter/confirm",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "confirmId": "发送确认函.1.result",
+                                   "noticeEmail": "test_des@tezign.com000"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取签单",
+                     "caseUrl": "/vprojects",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                                   "keyword":"%E5%86%85%E6%8E%A8%E6%B5%B7%E6%8A%A5%E8%AE%BE%E8%AE%A1",
+                                   "invoiceTitle":"",
+                                   "signConfirmType":1,
+                                   "pageSize":10,
+                                   "pageNum":1
+
+
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "项目关联签单",
+                     "caseUrl": "/project/updateVirtualProject",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "vprojectId": "获取签单.1.id",
+                                   "projectId": "设计师查看确认函.1.projectId",
+                                   "projectType": 1
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "发布项目计划",
+                     "caseUrl": "/pro/contract/info",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                              "contractId": null,
+                              "projectId": "设计师查看确认函.1.projectId",
+                              "designerId": null,
+                              "publishId": null,
+                              "secondParty": null,
+                              "secondPartyAddress": null,
+                              "secondPartyTel": null,
+                              "secondPartyEmail": null,
+                              "deliverDelayLimitDay": null,
+                              "putOffLimitDay": null,
+                              "unpayLimitDay": null,
+                              "stopLimitMonth": null,
+                              "planCount": 1,
+                              "designFee": null,
+                              "extra": null,
+                              "sureStatus": null,
+                              "sureTime": null,
+                              "status": null,
+                              "planList": [{
+                                "id": null,
+                                "planId": null,
+                                "contractId": null,
+                                "planOrder": null,
+                                "amount": 1000,
+                                "planDay": null,
+                                "paymentDay": null,
+                                "planStatus": null,
+                                "payStatus": null,
+                                "stopAmount": null,
+                                "stopRemark": null,
+                                "stopTime": null,
+                                "startTime": null,
+                                "endTime": null,
+                                "submitTime": null,
+                                "taskList": [{
+                                  "contractId": null,
+                                  "planId": null,
+                                  "taskId": null,
+                                  "description": "卡通形象，活泼可爱",
+                                  "requiredDay": null
+                                }],
+                                "updateUser": null,
+                                "createUser": null,
+                                "planStartTime": "2019-07-16",
+                                "planEndTime": "2019-12-30",
+                                "resourceList": null,
+                                "copyStatus": 0,
+                                "stealStatus": 0,
+                                "packDownloadUrl": null
+                              }],
+                              "constraintList": [],
+                              "workTimeList": [],
+                              "payTimeList": [],
+                              "detailAssetId": null,
+                              "detailAssetUrl": null,
+                              "detailAssetName": null,
+                              "contractType": null,
+                              "clientPay": 2000,
+                              "designerPay": 1000,
+                              "designerConfirmStatus": 1
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "补充报价明细",
+                     "caseUrl": "/project/proChoosing/quotation/complete",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                              "projectId": "设计师查看确认函.1.projectId",
+                              "designerId": "找到创意方.1.id",
+                              "modules": [{
+                                "total": 10,
+                                "list": [{
+                                  "node": {
+                                    "name": "插画／漫画",
+                                    "edit": false,
+                                    "unit": null,
+                                    "units": null,
+                                    "node": {
+                                      "name": "表情包",
+                                      "edit": false,
+                                      "unit": "套",
+                                      "units": ["个", "套"]
+                                    }
+                                  },
+                                  "unit": "套",
+                                  "total": 10,
+                                  "amount": "1",
+                                  "unitPrice": "10"
+                                }]
+                              }],
+                              "remark": "",
+                              "total": 10,
+                              "paymentDay": 0
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "确认报价单",
+                     "caseUrl": "/project/proChoosing/quotation/confirm?projectId=设计师查看确认函.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+
+
+              {
+                     "caseName": "获取合同计划",
+                     "caseUrl": "/project/proContract/info?projectId=设计师查看确认函.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查看电子合同",
+                     "caseUrl": "/project/proContract/elec/getCaStatus",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "确定项目计划",
+                     "caseUrl": "/project/proContract/confirm?contractId=获取合同计划.1.contractId",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取项目计划",
+                     "caseUrl": "/project/proDelivery/designer/plan/list?projectId=设计师查看确认函.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查看合规性信息",
+                     "caseUrl": "/project/proProject/selfCheck/info",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId":"设计师查看确认函.1.projectId"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "确认知晓合规性注意事项",
+                     "caseUrl": "/project/proProject/selfCheck/readTip",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId":"设计师查看确认函.1.projectId"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取七牛token和key",
+                     "caseUrl": "/user/qiniu/getUploadToken?extension=jpg",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "添加七牛返回结果到数据库",
+                     "caseUrl": "/user/qiniu/file/add",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body":  {
+                                   "resourceList": [{
+                                          "name": "3dcb80b0dcb3d70ec1293f4ff5056f1a.jpg",
+                                          "type": "image/jpeg",
+                                          "size": 270722,
+                                          "path": "55d7e37b4f2599a47eddf56b6ebb8d68.jpg"
+                                   }]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "上传的作品入库",
+                     "caseUrl": "/project/proDelivery/planFile/add",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "planId": "获取项目计划.1.id",
+                                   "assetId": "添加七牛返回结果到数据库.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "确认过合规性检查",
+                     "caseUrl": "/project/proProject/selfCheck/confirm",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId": "设计师查看确认函.1.projectId",
+                                   "assets": []
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "提交作品",
+                     "caseUrl": "/project/proDelivery/plan/submit",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "contractId": "获取项目计划.1.contractId",
+                                   "planId": "获取项目计划.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "客户确认提交作品",
+                     "caseUrl": "/pro/contract/plan/finish",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "planId": "获取项目计划.1.id",
+                                   "proProjectId": "设计师查看确认函.1.projectId"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取项目详情",
+                     "caseUrl": "/proProject/period/designer/detail?projectId=设计师查看确认函.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "提交项目评价",
+                     "caseUrl": "/pro/delivery/review/create?proProjectId=设计师查看确认函.1.projectId",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "proProjectId": "设计师查看确认函.1.projectId",
+                                   "design": 5,
+                                   "working": 5,
+                                   "communication": 4,
+                                   "impression": 4.7,
+                                   "recommend": true,
+                                   "comment": "优秀",
+                                   "remark": "",
+                                   "impressionList": [{
+                                          "reviewDimen": 1,
+                                          "name": "有创意",
+                                          "scoreDimen": 2,
+                                          "term": 1,
+                                          "id": null,
+                                          "dictId": 1,
+                                          "sort": 1,
+                                          "type": 1,
+                                          "customized": 0,
+                                          "checked": true
+                                   }, {
+                                          "reviewDimen": 2,
+                                          "name": "条理清晰",
+                                          "scoreDimen": 4,
+                                          "term": 1,
+                                          "id": null,
+                                          "dictId": 18,
+                                          "sort": 18,
+                                          "type": 1,
+                                          "customized": 0,
+                                          "checked": true
+                                   }, {
+                                          "reviewDimen": 3,
+                                          "name": "很有耐心",
+                                          "scoreDimen": 4,
+                                          "term": 1,
+                                          "id": null,
+                                          "dictId": 23,
+                                          "sort": 23,
+                                          "type": 1,
+                                          "customized": 0,
+                                          "checked": true
+                                   }]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "项目提交全部作品",
+                     "caseUrl": "/pro/finish/submit/product",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId": "发布企业项目.1.projectId",
+                                   "productList": [{
+                                          "id": "添加七牛返回结果到数据库.1.id",
+                                          "assetId": "添加七牛返回结果到数据库.1.id",
+                                          "assetType": 3,
+                                          "proProjectId": "发布企业项目.1.projectId",
+                                          "url": "https://file.tezign.com/55d7e37b4f2599a47eddf56b6ebb8d68.jpg",
+                                          "fileName": "3dcb80b0dcb3d70ec1293f4ff5056f1a.jpg",
+                                          "operateStatus": null,
+                                          "token": null,
+                                          "name": "3dcb80b0dcb3d70ec1293f4ff5056f1a.jpg"
+                                   }]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "提交结案报告",
+                     "caseUrl": "/pro/finish/submit/report",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectId": "发布企业项目.1.projectId",
+                                   "reportList": [{
+                                          "sId": "1554717838908_0",
+                                          "name": "3dcb80b0dcb3d70ec1293f4ff5056f1a.jpg",
+                                          "process": false,
+                                          "fileSize": 270722,
+                                          "del": false,
+                                          "upObservable": {
+                                                 "observer": {
+                                                        "isStopped": true
+                                                 }
+                                          },
+                                          "percent": "0.97",
+                                          "id": "添加七牛返回结果到数据库.1.id",
+                                          "path": "84015dc16edef19223b958d46b8f38c4.jpg",
+                                          "url": "https://file.tezign.com/84015dc16edef19223b958d46b8f38c4.jpg?e=1557396240&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:jL5QujUKTv-nuz4KNPs5m2TlbTY=",
+                                          "type": "image/jpeg",
+                                          "size": 270722,
+                                          "md5": null,
+                                          "thunder": "https://file.tezign.com/84015dc16edef19223b958d46b8f38c4.jpg?imageView2/1/w/300/h/300/q/100&e=1557396240&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:SwfOcPyJjeLKECEXV03ygnSKNjI=",
+                                          "description": null,
+                                          "sort": null,
+                                          "loading": false,
+                                          "assetId": "添加七牛返回结果到数据库.1.id"
+                                   }]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "未设置前不能开启账期",
+                     "caseUrl": "/pro/project/bill/notify",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "recipientAddress": "上海市黄浦区宁波路 1 号 4 楼",
+                                   "companyName": "上海特赞望信息科技有限公司",
+                                   "companyTaxId": "91310113MA1GKK3B6R",
+                                   "companyAddress": "上海市宝山区新二路999弄2号门753室",
+                                   "companyPhone": "021-31651626",
+                                   "companyBankName": "中国建设银行上海张江支行",
+                                   "companyBankAccountId": "31050161393600000869",
+                                   "recipientName": "n",
+                                   "recipientPhone": "n",
+                                   "projectId": "发布企业项目.1.projectId"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "108117"
+                            }
+                     }
+              },
+              {
+                     "caseName": "设置账期",
+                     "caseUrl": "/proProject/period/update",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "payStatus": 0,
+                                   "id": "发布企业项目.1.projectId",
+                                   "paymentDay": 60,
+                                   "paymentMoney": 2000
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "成功开启账期",
+                     "caseUrl": "/pro/project/bill/notify",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "recipientAddress": "上海市黄浦区宁波路 1 号 4 楼",
+                                   "companyName": "上海特赞望信息科技有限公司",
+                                   "companyTaxId": "91310113MA1GKK3B6R",
+                                   "companyAddress": "上海市宝山区新二路999弄2号门753室",
+                                   "companyPhone": "021-31651626",
+                                   "companyBankName": "中国建设银行上海张江支行",
+                                   "companyBankAccountId": "31050161393600000869",
+                                   "recipientName": "n",
+                                   "recipientPhone": "n",
+                                   "projectId": "发布企业项目.1.projectId"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "开启提前结款服务",
+                     "caseUrl": "/pro/operateAdvancePayment?projectId=发布企业项目.1.projectId&open=true",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "签单添加收款",
+                     "caseUrl": "/finance/income/add",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body":{
+                                   "money": 2000,
+                                   "payType": 9,
+                                   "receiveTime": "2019-06-09",
+                                   "projectIdList": [],
+                                   "vProjectId": "获取签单.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取签单收入信息",
+                     "caseUrl": "/finance/income/list/获取签单.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "修改签单收款",
+                     "caseUrl": "/finance/income/add",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "vProjectId": "获取签单.1.id",
+                                   "money": 2000,
+                                   "payType": 1,
+                                   "receiveTime": 1554768000000,
+                                   "remark": null,
+                                   "projectIdList": [],
+                                   "id": "获取签单收入信息.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "给创意方结款",
+                     "caseUrl": "/finance/pay/direct",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "projectIds": ["设计师查看确认函.1.projectId"],
+                                   "vProjectId": "获取签单.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取创意方账号",
+                     "caseUrl": "/wallet/withdraw/getAccountList?type=1",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "签署协议",
+                     "caseUrl": "/general/agreement/signAgreement",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageName": "WITHDRAW_PAGE",
+                                   "agreementIdList": [1]
+                            },
+
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "创意方提现",
+                     "caseUrl": "/wallet/withdraw/submit?accountId=获取创意方账号.1.id&price=1000&type=1",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+
+                            },
+
+                            "headers":{
+                                   "Content-Type":"application/x-www-form-urlencoded",
+                                   "X-User-Id": "设计师登录.1.id",
+                                   "X-Token": "设计师登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取提现记录表",
+                     "caseUrl": "/withdraw/list",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "status": null,
+                                   "pageNum": 1,
+                                   "orderBy": 0,
+                                   "orderType": 1,
+                                   "companyChecked": null,
+                                   "projectType": 0
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查看交易记录",
+                     "caseUrl": "/withdraw/getProjectTradingRecord?withdrawId=获取提现记录表.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "同意创意方提现",
+                     "caseUrl": "/withdraw/agreeWithdraw",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "proProjectIds": ["设计师查看确认函.1.projectId"],
+                                   "projectIds": [],
+                                   "withdrawId": "获取提现记录表.1.id"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+
+              {
+                     "caseName": "获取项目交易",
+                     "caseUrl": "/withdraw/list",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "status": null,
+                                   "pageNum": 1,
+                                   "orderBy": 0,
+                                   "orderType": 1,
+                                   "companyChecked": null,
+                                   "projectType": 0
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取提现项目交易记录",
+                     "caseUrl": "/withdraw/getSelectProjectTradingRecord?projectWithdrawId=获取项目交易.1.projectWithdrawId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "标记为已打款",
+                     "caseUrl": "/withdraw/payWithdraw?projectWithdrawId=获取项目交易.1.projectWithdrawId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "项目完结",
+                     "caseUrl": "/pro/getProjectDetail?projectId=发布企业项目.1.projectId",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "assert":"项目完结.1.projectStatus:8"
+                            }
+                     }
+              }
+
+
+
+
+       ]
+}
+
+
+
+
+
+
+
+

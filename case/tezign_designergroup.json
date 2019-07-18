@@ -1,0 +1,1459 @@
+
+{
+       "scenarioName": "优选人才库测试",
+       "steps": [
+              {
+                     "caseName": "后台用户登录",
+                     "caseUrl": "/topUser/login",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "email": "admin@tezign.com",
+                                   "password": "111111"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取优选人才列表",
+                     "caseUrl": "/collection/group/grouplist?type=1",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "新建一级人才分类",
+                     "caseUrl": "/collection/group/top/createOrUpdateTopCollectionGroup",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "name": "优选人才测试",
+                                   "description": ""
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "新建二级人才分组",
+                     "caseUrl": "/collection/group/saveTopSecondGroup",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "groupId": "新建一级人才分类.1.id",
+                                   "secondGroupId": null,
+                                   "name": "A组",
+                                   "description": "测试人才"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "复制二级人才分组",
+                     "caseUrl": "/collection/group/copyGroup/新建二级人才分组.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查询待添加的设计师",
+                     "caseUrl": "/designer/submitList",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "key":"卓乃江"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "添加运营评语",
+                     "caseUrl": "/collection/group/saveContent",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "designerId": "查询待添加的设计师.1.id",
+                                   "managementComment": "做过很多产品画册"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "添加人才",
+                     "caseUrl": "/collection/group/top/addTopDesigner",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "parentGroupId": "新建一级人才分类.1.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取新添加人才列表",
+                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0",
+                                   "assert":"获取新添加人才列表.1.total:1"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查看设计师案例",
+                     "caseUrl": "/collection/group/getDesignerPortfolioSort?designerId=查询待添加的设计师.1.id&groupId=新建二级人才分组.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "案例全选最多30个案例",
+                     "caseUrl": "/collection/group/sortDesignerPortAsset",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id",
+                                   "portfolioIds": [37719, 37720, 37721, 37723, 37716, 34783, 34677, 34500, 34499, 34498, 34381, 34330, 33638, 32514, 32513, 32390, 32507, 32508, 32510, 32512, 32384, 32388, 32382, 32320, 32247, null, null, null, null, null, null],
+                                   "sortAssetList": [{
+                                          "id": 37719,
+                                          "name": "杭州新美业有限公司折页设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/eee1fd404b487c39f54acc6ea0f9177b?e=1538025131&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:K5th6KFQtbxPeTD87FwMYWg_aNA=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:mHaThQX6NjXpEtMRf4ZRSGbmc-4=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/eee1fd404b487c39f54acc6ea0f9177b?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:DmVBIsFdf-B3IcGvGg4YZs79fNM=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37719,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 37720,
+                                          "name": "圣山石材品牌LOGO设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/ae6565e36d93e689f9773fe15a17d0a9?e=1538025329&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:d8o6JDd8Er3GMKCoItHJYSyQhcE=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:3dO6IHbaRuDkfbsz26Wd7X4A_TA=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/ae6565e36d93e689f9773fe15a17d0a9?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:99k0qw-SdLgeiGWOyapBv3o_UBA=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37720,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 37721,
+                                          "name": "高府通力品牌设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?e=1538025526&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TRSLKlsXpDIYTX48iQHg5HtiDak=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:iJeWHDzTcdGYGzygQ0HfH87x6NI=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TB5LknSlya4WVj1SKDWXEhY74zw=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37721,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 37723,
+                                          "name": "北京双瑜座瑜伽会所品牌LOGO及VI",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?e=1538026435&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:iGTIMeuUusl8P1holmoIDUL_CuY=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:J0VW8lnQNUkEnkZeZRolxdeeaeA=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:1Oer-PtvM0-V8qnvId_pZXdu0Z0=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37723,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 37716,
+                                          "name": "广州中善城装饰设计有限公司",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/a2789eb01e6f9b5559725453f65c53ca?e=1538024901&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:bYQ7zrgSg6MzNwm2vZi6SyFVGWk=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:a-5Mc9kkLkNcHlugBZlMGPpFlmI=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/a2789eb01e6f9b5559725453f65c53ca?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:Qm-iazNxJ-rSwl-c1XF2nDZElhk=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37716,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 34783,
+                                          "name": "天宝蜜柚柚子茶及柚子酒创意包装案列",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/91910b08e3ca737ac4ab9c66f704e1b0?e=1534131455&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:vsN_tBBm0yD552WSNM20UrtKZCk=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:PMFkwFDJvecHJiHYPpnrF_AmwVM=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/91910b08e3ca737ac4ab9c66f704e1b0?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:PZGi6eSiO0rAQVedcjI_u7P9YTk=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 34783,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 34677,
+                                          "name": "上海柯乾药业SI空间设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/857a0554395853c93784665895f9c519?e=1533889416&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:Y5B8h95RxpahkK9iSYuhyafwjdc=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:1ULB9ZKTxMnPjXfLzreNQLQ95Ug=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/857a0554395853c93784665895f9c519?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:WKpgHz8r2XNA0EpyO8B3a_Ljq1U=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 34677,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 34500,
+                                          "name": "左右家居装饰品牌设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/a8ab43eb946e9578c9a98137c7ad861a?e=1533715229&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:yPOxlRqgMd-MNE5uew0ZpN28aKI=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:LsA0x6HmAWiCUzj0bZAnZHIhUqg=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/a8ab43eb946e9578c9a98137c7ad861a?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:YHEFxBejKtUjwfzqwAUkfBm5-7I=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 34500,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 34499,
+                                          "name": "未来精英实习计划KV主视觉折页及海报",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/7e5553cf41b6afe01937c696b8b2ed9f?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:ZhYptQevZdNWLBh9wW86995IIcE=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/7e5553cf41b6afe01937c696b8b2ed9f?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:xuMEcROAL6NhW25BV6HRmpCbwvA=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 34499,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 34498,
+                                          "name": "智研品牌画册设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/bac5e2d94c1ad041946bbeaa4ad47700?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:afzFePQCty6BFG1beqKi_YgkA9I=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/bac5e2d94c1ad041946bbeaa4ad47700?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:cyc9O38BKRik7fuoHDROPaM1758=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 34498,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 34381,
+                                          "name": "喃呢湾品牌美容机构VIs设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/67385b47474f9b15e72c611b06aa9bfd?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:7da2eFehw2iXxbqJtczo6oUF-Y8=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/67385b47474f9b15e72c611b06aa9bfd?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:tkp_TcmnNpAJ97Lv0UYkUPou6WQ=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 34381,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 34330,
+                                          "name": "成都而立花艺生活馆",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/d3e954a32ee97574d3d79b9c6461fcac?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:gX7Q9TlSjJxH_GBdTDIrzHJ-ess=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/d3e954a32ee97574d3d79b9c6461fcac?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:SPoPCPcR403Fs8WQzADXtzs7GDU=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 34330,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 33638,
+                                          "name": "成都而立花艺",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/9eed20dab5352568d22404b0dfab1758.jpg?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:5_iSowMlbxHqxF82Jm6sBhg9vAg=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/9eed20dab5352568d22404b0dfab1758.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:WSqBUdMo9rcICNemme36ngd4CL4=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 33638,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32514,
+                                          "name": "Notepad design",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/4897e9f770b0a4d0e1b20b072944279d.jpg?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:pU98rOpdY2td3r3gzfBqOjsBGPY=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/4897e9f770b0a4d0e1b20b072944279d.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:JHk7N47_bmDDOZw4RyAaFd45JtY=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32514,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32513,
+                                          "name": "Cold chain brand album design",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/a3ea6af746359f7b854c6a2a347e1934?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:w1qc6dsS2lFeKdga-hs9Rf7b0vA=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/a3ea6af746359f7b854c6a2a347e1934?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:e9_Y8GGlAE4nYUeF1uKBuJS1PR4=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32513,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32390,
+                                          "name": "疫苗冷链环境监测平台产品画册",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/624399ac1ac37f7bd5bb1ba16de252d3?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:YOMNnu_4cYf0GORxT7iL3GZcvkM=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/624399ac1ac37f7bd5bb1ba16de252d3?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:doJXXlcXyXKo_KQ4fEhLZN7PGNo=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32390,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32507,
+                                          "name": "Blueberry picking festival ticket design",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/675d4e486f22f3abbf6b36cd44bb779c.jpg?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:gfXZ_0X6UTntq4C3H0pzi_ceYgk=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/675d4e486f22f3abbf6b36cd44bb779c.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:xyNK0N-HAiNtKT4P2uEf6gdlzC8=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32507,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32508,
+                                          "name": "Lanchao blueberry dried fruit design",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/8783e4ca7c451c0781383b40b353b8a8.jpg?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:3qsu_rrGeKhWlHo3hUVNij0K-d0=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/8783e4ca7c451c0781383b40b353b8a8.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:wds5hV5E1zgEDmWdhDD2PMOUC-g=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32508,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32510,
+                                          "name": "Design of blueberry lutein packaging scheme",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/c7c98672f9e9ac229d807657981f5bfa.jpg?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:Ib7V4v_NibG3EXkDOk3sA5Gmzq8=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/c7c98672f9e9ac229d807657981f5bfa.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:KKXe7pK6-RSQgFCJ_LfN6JJViEI=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32510,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32512,
+                                          "name": "Thanks very much",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/84f55ac7032580c0055eb05b8f188794?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:Y0hXFWrNb1JSGimEdXePGVT4reM=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/84f55ac7032580c0055eb05b8f188794?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:zUWFYEKA7SVNO3iyWzJF3pwRe0E=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32512,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32384,
+                                          "name": "福莱欧重工业产品品牌形象设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/8e71fb60820950a739e7b28d26b4a0ee?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:K_SNeNbYVgZXBCaWWBhUCrOAMIs=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/8e71fb60820950a739e7b28d26b4a0ee?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:4vYOL5XdK5U-TBqm3ggqVZBVJro=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32384,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32388,
+                                          "name": "蓝朝蓝莓节门票设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/261392b3d3159e2bb5153874d08ce2ca?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:seuzkbwPEgixZyyZIIqSy2CfgIc=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/261392b3d3159e2bb5153874d08ce2ca?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:7xuMNpCq7d_4xZbFvseSU5fLfh0=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32388,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32382,
+                                          "name": "福多喜餐饮品牌形象设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/71ea167c1f99fc0597773df72d55d6c5?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:OfbsRfcU2T7NSsIP3MR1RpMJz_Y=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/71ea167c1f99fc0597773df72d55d6c5?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:0tVO8fEiQ_BLiKcnG-KHL5Jr7Q0=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32382,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32320,
+                                          "name": "江苏省绿色建筑产业数研究院",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/3372239fa413ecf9559965fab1dd5b7a.jpg?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:tlLSz-YciRHPfbZJtYTgns8VDyI=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/3372239fa413ecf9559965fab1dd5b7a.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:laHvCa3b_viO0QcDSoOfTd7FGtE=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32320,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 32247,
+                                          "name": "柯乾（上海）医药技术有限公司",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/30e0168d03bd5aa84e281190a7f121fd.jpg?e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:CyaUpGQJ1HTmOcP1lrgPhX0Pg-4=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/30e0168d03bd5aa84e281190a7f121fd.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565420497&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:3h-EP873rJmX9B5NvKafhxwAy88=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 32247,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": null,
+                                          "name": "Chengdu Lili Flower Hall",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/97d843721cb8f5d3d9df196c3e367139.jpg?e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:qkLf0SGyWxcIP4ClWD0kG97QquM=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/97d843721cb8f5d3d9df196c3e367139.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:DNAlqx6k6JH4R6qq9Q8PlS2vW-8=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 10074583,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": true,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": null,
+                                          "name": "中善城LOGO",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/8589e8815cb8fb5502e8c71370a2a14f.jpg?e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:c6a8FejyjuJyKHVUEl3CpbY2GPw=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/8589e8815cb8fb5502e8c71370a2a14f.jpg?imageView2/2/h/300/interlace/0/ignore-error/1&e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:YgSZzuXYhlSXKceV0k_gXn7S_IQ=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 10074584,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": true,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": null,
+                                          "name": "传是记录摄影品牌设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:mk6e0oWdhAuE0aeCnpkXqrhTCRY=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?imageView2/2/h/300/interlace/0/ignore-error/1&e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:qBXuDPn6x0Qgf5RDu38b7n5FscI=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 10092690,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": true,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": null,
+                                          "name": "中美NLP学院品牌设计稿",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:mk6e0oWdhAuE0aeCnpkXqrhTCRY=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?imageView2/2/h/300/interlace/0/ignore-error/1&e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:qBXuDPn6x0Qgf5RDu38b7n5FscI=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 10092692,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": true,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": null,
+                                          "name": "小润鲜燕窝品牌方案设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:mk6e0oWdhAuE0aeCnpkXqrhTCRY=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?imageView2/2/h/300/interlace/0/ignore-error/1&e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:qBXuDPn6x0Qgf5RDu38b7n5FscI=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 10092693,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": true,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": null,
+                                          "name": "富安通达商业品牌设计（商用稿）",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:mk6e0oWdhAuE0aeCnpkXqrhTCRY=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://static-test.tezign.com/dbe19e75183f9be0d1745b4e12154e30.png!center300?imageView2/2/h/300/interlace/0/ignore-error/1&e=1562749341&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:qBXuDPn6x0Qgf5RDu38b7n5FscI=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 10092694,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": null,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": true,
+                                          "chose": true,
+                                          "delete": false
+                                   }]
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "1"
+                            }
+                     }
+              },
+              {
+                     "caseName": "案例排序",
+                     "caseUrl": "/collection/group/sortDesignerPortAsset",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                            "groupId": "新建二级人才分组.1.id",
+                            "designerId": "查询待添加的设计师.1.id",
+                            "portfolioIds": [37719,37720,37721,37723],
+                            "sortAssetList": [{
+                            "id": 37719,
+                            "name": "杭州新美业有限公司折页设计",
+                            "sourceName": null,
+                            "path": null,
+                            "url": "https://file.tezign.com/eee1fd404b487c39f54acc6ea0f9177b?e=1538025131&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:K5th6KFQtbxPeTD87FwMYWg_aNA=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:mHaThQX6NjXpEtMRf4ZRSGbmc-4=",
+                            "type": null,
+                            "size": null,
+                            "md5": null,
+                            "createTime": null,
+                            "description": null,
+                            "thunder": "https://file.tezign.com/eee1fd404b487c39f54acc6ea0f9177b?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:DmVBIsFdf-B3IcGvGg4YZs79fNM=",
+                            "copyrightStatus": null,
+                            "portfolioName": null,
+                            "portfolioId": 37719,
+                            "designerId": null,
+                            "teamName": null,
+                            "sort": null,
+                            "origin": null,
+                            "copyrightPortfolioLogs": null,
+                            "external": false,
+                            "chose": true,
+                            "delete": false
+                     }, {
+                            "id": 37720,
+                            "name": "圣山石材品牌LOGO设计",
+                            "sourceName": null,
+                            "path": null,
+                            "url": "https://file.tezign.com/ae6565e36d93e689f9773fe15a17d0a9?e=1538025329&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:d8o6JDd8Er3GMKCoItHJYSyQhcE=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:3dO6IHbaRuDkfbsz26Wd7X4A_TA=",
+                            "type": null,
+                            "size": null,
+                            "md5": null,
+                            "createTime": null,
+                            "description": null,
+                            "thunder": "https://file.tezign.com/ae6565e36d93e689f9773fe15a17d0a9?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:99k0qw-SdLgeiGWOyapBv3o_UBA=",
+                            "copyrightStatus": null,
+                            "portfolioName": null,
+                            "portfolioId": 37720,
+                            "designerId": null,
+                            "teamName": null,
+                            "sort": null,
+                            "origin": null,
+                            "copyrightPortfolioLogs": null,
+                            "external": false,
+                            "chose": true,
+                            "delete": false
+                     }, {
+                            "id": 37721,
+                            "name": "高府通力品牌设计",
+                            "sourceName": null,
+                            "path": null,
+                            "url": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?e=1538025526&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TRSLKlsXpDIYTX48iQHg5HtiDak=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:iJeWHDzTcdGYGzygQ0HfH87x6NI=",
+                            "type": null,
+                            "size": null,
+                            "md5": null,
+                            "createTime": null,
+                            "description": null,
+                            "thunder": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TB5LknSlya4WVj1SKDWXEhY74zw=",
+                            "copyrightStatus": null,
+                            "portfolioName": null,
+                            "portfolioId": 37721,
+                            "designerId": null,
+                            "teamName": null,
+                            "sort": null,
+                            "origin": null,
+                            "copyrightPortfolioLogs": null,
+                            "external": false,
+                            "chose": true,
+                            "delete": false
+                     }, {
+                            "id": 37723,
+                            "name": "北京双瑜座瑜伽会所品牌LOGO及VI",
+                            "sourceName": null,
+                            "path": null,
+                            "url": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?e=1538026435&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:iGTIMeuUusl8P1holmoIDUL_CuY=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:J0VW8lnQNUkEnkZeZRolxdeeaeA=",
+                            "type": null,
+                            "size": null,
+                            "md5": null,
+                            "createTime": null,
+                            "description": null,
+                            "thunder": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:1Oer-PtvM0-V8qnvId_pZXdu0Z0=",
+                            "copyrightStatus": null,
+                            "portfolioName": null,
+                            "portfolioId": 37723,
+                            "designerId": null,
+                            "teamName": null,
+                            "sort": null,
+                            "origin": null,
+                            "copyrightPortfolioLogs": null,
+                            "external": false,
+                            "chose": true,
+                            "delete": false
+                     }]
+              },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "案例恢复初始排序",
+                     "caseUrl": "/collection/group/sortDesignerPortAsset",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id",
+                                   "portfolioIds": [37723, 37721, 37720, 37719],
+                                   "sortAssetList": [{
+                                          "id": 37723,
+                                          "name": "北京双瑜座瑜伽会所品牌LOGO及VI",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?e=1538026435&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:iGTIMeuUusl8P1holmoIDUL_CuY=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:J0VW8lnQNUkEnkZeZRolxdeeaeA=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/92b3741f12370da39bcc71eb1495ce18?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:1Oer-PtvM0-V8qnvId_pZXdu0Z0=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37723,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 37721,
+                                          "name": "高府通力品牌设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?e=1538025526&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TRSLKlsXpDIYTX48iQHg5HtiDak=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:iJeWHDzTcdGYGzygQ0HfH87x6NI=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/cb49536e6c58593f454a1063cd552f48?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:TB5LknSlya4WVj1SKDWXEhY74zw=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37721,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 37720,
+                                          "name": "圣山石材品牌LOGO设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/ae6565e36d93e689f9773fe15a17d0a9?e=1538025329&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:d8o6JDd8Er3GMKCoItHJYSyQhcE=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:3dO6IHbaRuDkfbsz26Wd7X4A_TA=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/ae6565e36d93e689f9773fe15a17d0a9?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:99k0qw-SdLgeiGWOyapBv3o_UBA=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37720,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }, {
+                                          "id": 37719,
+                                          "name": "杭州新美业有限公司折页设计",
+                                          "sourceName": null,
+                                          "path": null,
+                                          "url": "https://file.tezign.com/eee1fd404b487c39f54acc6ea0f9177b?e=1538025131&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:K5th6KFQtbxPeTD87FwMYWg_aNA=&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:mHaThQX6NjXpEtMRf4ZRSGbmc-4=",
+                                          "type": null,
+                                          "size": null,
+                                          "md5": null,
+                                          "createTime": null,
+                                          "description": null,
+                                          "thunder": "https://file.tezign.com/eee1fd404b487c39f54acc6ea0f9177b?imageView2/2/h/300/interlace/0/ignore-error/1&e=1565077011&token=Row5pAqL337tQ0sVpci2GigRKMTbIdMan4VTtE0W:DmVBIsFdf-B3IcGvGg4YZs79fNM=",
+                                          "copyrightStatus": null,
+                                          "portfolioName": null,
+                                          "portfolioId": 37719,
+                                          "designerId": null,
+                                          "teamName": null,
+                                          "sort": 25043,
+                                          "origin": null,
+                                          "copyrightPortfolioLogs": null,
+                                          "external": false,
+                                          "chose": true,
+                                          "delete": false
+                                   }]
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+
+              {
+                     "caseName": "获取排序后的人才列表",
+                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "更新业务认证",
+                     "caseUrl": "/collection/group/updateBusinessIdentify",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "id": "获取新添加人才列表.5.id",
+                                   "businessIdentify": 1
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "保存业务评语",
+                     "caseUrl": "/collection/group/saveContent",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "designerId": "查询待添加的设计师.1.id",
+                                   "businessComment": "业务反馈良好"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "查询待添加的另一个设计师",
+                     "caseUrl": "/designer/submitList",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "key":"淡淡"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "添加另一个人才",
+                     "caseUrl": "/collection/group/top/addTopDesigner",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "parentGroupId": "新建一级人才分类.1.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的另一个设计师.1.id"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取新添加人才列表",
+                     "caseUrl": "/collection/group/getGroupDesignerList?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id&pageNum=1&pageSize=10&ifCooperation=&businessIdentify=",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "获取人才排序",
+                     "caseUrl": "/collection/group/findSortTopDesignerGroup?parentGroupId=新建一级人才分类.1.id&groupId=新建二级人才分组.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "调整人才排序",
+                     "caseUrl": "/collection/group/sortTopDesignerGroup",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "groupId": "新建一级人才分类.1.id",
+                                   "secondGroupId": "新建二级人才分组.1.id",
+                                   "designerIdSortList": ["查询待添加的另一个设计师.1.id", "查询待添加的设计师.1.id"]
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "删除人才",
+                     "caseUrl": "/collection/group/top/removeTopDesigner",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "parentGroupId": "新建一级人才分类.1.id",
+                                   "groupId": "新建二级人才分组.1.id",
+                                   "designerId": "查询待添加的设计师.1.id"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "删除二级分组",
+                     "caseUrl": "/collection/group/delTopGroup?groupId=新建一级人才分类.1.id&secondGroupId=新建二级人才分组.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "删除一级分类",
+                     "caseUrl": "/collection/group/top/deleteTopCollectionGroup?groupId=新建一级人才分类.1.id",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2",
+                                   "X-Top-User-Id": "后台用户登录.1.id",
+                                   "X-Top-Token": "后台用户登录.1.token"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              }
+
+       ]
+
+}
+
+
+
+
+
+
+
+
+
+

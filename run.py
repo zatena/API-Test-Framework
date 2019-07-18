@@ -11,7 +11,7 @@ reportFile = cs.REPORT_PATH
 
 ApiTest = common.ApiTest()
 
-caseFile = os.getcwd()+'/case/aa.json'
+caseFile = os.getcwd()+'/case/XX.json'
 
 """1. 执行测试用例"""
 # ApiTest.execute_case(caseFile)

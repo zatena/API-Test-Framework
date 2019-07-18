@@ -1,0 +1,383 @@
+
+{
+       "scenarioName": "其他测试",
+       "steps": [
+
+              {
+                     "caseName": "对接中签单信息",
+                     "caseUrl": "/dashboard/findDockingProject",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageNum":1,
+                                   "pageSize":10,
+                                   "topUserIdList":[1,4,42]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0",
+                                   "assert":"对接中签单信息.1.total:5"
+                            }
+                     }
+              },
+              {
+                     "caseName": "更新签单预计完成时间",
+                     "caseUrl": "/dashboard/updateExpectedFinishTimeById",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "virtualProjectId": "对接中签单信息.5.orderId",
+                                   "expectedFinishTime": "2019-08-23"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "恢复签单预计完成时间初始值",
+                     "caseUrl": "/dashboard/updateExpectedFinishTimeById",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "virtualProjectId": "对接中签单信息.5.orderId",
+                                   "expectedFinishTime": "2019-07-15"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "执行中签单信息",
+                     "caseUrl": "/dashboard/findExecutingProject",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageNum":1,
+                                   "pageSize":10,
+                                   "topUserIdList":[1,4,42]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "添加项目备注信息",
+                     "caseUrl": "/dashboard/project/remark/update",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "id":"执行中签单信息.0.projectId",
+                                   "remark":"测试"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "恢复项目备注信息",
+                     "caseUrl": "/dashboard/project/remark/update",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "id":"执行中签单信息.0.projectId",
+                                   "remark":"备注初始值"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "结款中签单信息",
+                     "caseUrl": "/dashboard/findPaymentProject",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageNum":1,
+                                   "pageSize":10,
+                                   "topUserIdList":[1,4,42]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "已完结签单信息",
+                     "caseUrl": "/dashboard/findFinishProject",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageNum":1,
+                                   "pageSize":10,
+                                   "topUserIdList":[1,4,42]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "发布企业项目",
+                     "caseUrl": "/pro/top/submit",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "industry": "1002",
+                                   "projectName": "新的待作废项目",
+                                   "deliveryContent": "原图",
+                                   "budget": 2000,
+                                   "country": 1,
+                                   "province": 114,
+                                   "city": 117,
+                                   "projectStatus": null,
+                                   "otherMsg": "测试",
+                                   "companyName": null,
+                                   "companyInfo": null,
+                                   "companyUrl": null,
+                                   "designerStyle": "233",
+                                   "customStyle": "",
+                                   "designerType": "",
+                                   "animation": null,
+                                   "graphic": null,
+                                   "illustration": null,
+                                   "ui": null,
+                                   "publishType": 2,
+                                   "processMode": 1,
+                                   "quoteTime": 3,
+                                   "isRemote": 1,
+                                   "resourceIds": "",
+                                   "resources": [],
+                                   "designerRequireInfo": {
+                                          "remark": ""
+                                   },
+                                   "companyId": "100",
+                                   "projectPublishTypeBeanList": [{
+                                          "materielName": "长图",
+                                          "materielDescription": "长图180cmx360cm",
+                                          "node": {
+                                                 "id": 3,
+                                                 "name": "插画",
+                                                 "edit": false,
+                                                 "unit": "0",
+                                                 "units": null,
+                                                 "node": {
+                                                        "id": 25,
+                                                        "name": "商业插画",
+                                                        "edit": false,
+                                                        "unit": "0",
+                                                        "units": null,
+                                                        "node": {
+                                                               "id": 121,
+                                                               "name": "广告商业插画",
+                                                               "edit": false,
+                                                               "unit": "张",
+                                                               "units": ["张"]
+                                                        }
+                                                 }
+                                          },
+                                          "isRange": 0,
+                                          "amount": 1,
+                                          "unit": "张",
+                                          "id": 121
+                                   }],
+                                   "deliveryTask": "1、长图（广告商业插画）（1张）\n长图180cmx360cm",
+                                   "projectBackground": "产品目标是高增长",
+                                   "deliveryTime": "2019-09-30",
+                                   "paymentDay": "60",
+                                   "modifyBudgetType": 2
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "未关联签单项目信息",
+                     "caseUrl": "/dashboard/findNotVProject",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "pageNum":1,
+                                   "pageSize":10,
+                                   "topUserIdList":[1,4,42]
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "作废项目",
+                     "caseUrl": "/dashboard/projectCancellation",
+                     "caseMethod": "POST",
+                     "request": {
+                            "body": {
+                                   "proProjectId": "未关联签单项目信息.1.projectId",
+                                   "cancelReason": "测试需要作废该项目"
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "取消查看全部组员项目信息",
+                     "caseUrl": "/dashboard/projectNumInfo?topUserIds=",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              },
+              {
+                     "caseName": "选择查看一个组员项目信息",
+                     "caseUrl": "/dashboard/projectNumInfo?topUserIds=42",
+                     "caseMethod": "GET",
+                     "request": {
+                            "body": {
+                            },
+                            "headers":{
+                                   "Content-Type":"application/json",
+                                   "service-name":"top2",
+                                   "X-Top-User-Id": "1",
+                                   "X-Top-Token": "3076785b83df9e43165411f5d0234bc4"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code" : "0"
+                            }
+                     }
+              }
+
+
+
+
+       ]
+}
+
+
+
+
+
+
+
+
+
+
