@@ -13,25 +13,28 @@ reportFile = cs.REPORT_PATH
 ProRegTest = common.ProProjectRegression()
 
 
-casePath = os.getcwd()+'/case'
-dirs = os.listdir(casePath)
-report = None
+# casePath = os.getcwd()+'/case'
+# dirs = os.listdir(casePath)
+# report = None
+# f = open(os.getcwd()+'/log/error.log', 'r+')
+# f.truncate()
 
-for i in dirs:
-    if re.match("tezign_*", i):
-        caseFile = os.path.join(casePath, i)
+# for i in dirs:
+#     if re.match("tezign_*", i):
+#         caseFile = os.path.join(casePath, i)
+#
+#         """1. 执行测试用例
+#            2. 生成测试报告
+#            3. 发送报告邮件
+#         """
+#         report = ProRegTest.build_report_regression(caseFile)
+#
+# email.email(report)
 
-        """1. 执行测试用例
-           2. 生成测试报告
-           3. 发送报告邮件
-        """
-        report = ProRegTest.build_report_regression(caseFile)
-
-email.email(report)
-
-
-# casePath = os.getcwd()+'/case/tezign_proregression.json'
-# ProRegTest.build_report_regression(casePath)
+f = open(os.getcwd()+'/log/error.log', 'r+')
+f.truncate()
+casePath = os.getcwd()+'/case/bb.json'
+ProRegTest.build_report_regression(casePath)
 
 
 

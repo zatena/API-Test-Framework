@@ -7,8 +7,12 @@ import os
 import json
 import shutil
 import time
-
+import traceback
+import core.mylog as log
 from model.htmlparser import MyHTMLParser
+
+
+logging = log.track_log()
 
 result = {
     "testPass": 1,
@@ -70,39 +74,41 @@ class Report:
         return self.testResultList
 
     def build_report(self, testResult, testName, testPass, testFail, testSkip, totalTime):
+        try:
+            reportResult = {}
+            reportResult["testPass"] = testPass
+            reportResult["testResult"] = testResult
+            reportResult["testName"] = testName
+            reportResult["testAll"] = len(testResult)
+            reportResult["testFail"] = testFail
+            reportResult["beginTime"] = time.strftime("%Y-%m-%d %H:%M:%S")
+            reportResult["totalTime"] = totalTime
+            reportResult["testSkip"] = len(testResult)-testPass-testFail
+            reportResult["testCoverage"] = str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%'
 
-        reportResult = {}
-        reportResult["testPass"] = testPass
-        reportResult["testResult"] = testResult
-        reportResult["testName"] = testName
-        reportResult["testAll"] = len(testResult)
-        reportResult["testFail"] = testFail
-        reportResult["beginTime"] = time.strftime("%Y-%m-%d %H:%M:%S")
-        reportResult["totalTime"] = totalTime
-        reportResult["testSkip"] = len(testResult)-testPass-testFail
-        reportResult["testCoverage"] = str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%'
+            # 写入测试报告
+            self.write_report(reportResult, testName)
 
-        # 写入测试报告
-        self.write_report(reportResult, testName)
+            htmlparser = MyHTMLParser()
+            htmltrs = htmlparser.reporthtmlparser(testResult,'')
 
-        htmlparser = MyHTMLParser()
-        htmltrs = htmlparser.reporthtmlparser(testResult,'')
+            report = htmlparser.report_html.replace("${case_list}",htmltrs) \
+                .replace("${filterAll}",str(len(testResult))) \
+                .replace("${filterOk}",str(testPass)) \
+                .replace("${filterFail}",str(testFail)) \
+                .replace("${filterSkip}",str(len(testResult)-testPass-testFail)) \
+                .replace("${filterCoverage}",str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%')
 
-        report = htmlparser.report_html.replace("${case_list}",htmltrs) \
-            .replace("${filterAll}",str(len(testResult))) \
-            .replace("${filterOk}",str(testPass)) \
-            .replace("${filterFail}",str(testFail)) \
-            .replace("${filterSkip}",str(len(testResult)-testPass-testFail)) \
-            .replace("${filterCoverage}",str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%')
-
-        return report
-        # email.email(report)
+            return report
+        except Exception as e:
+            logging.error("请求失败%s" % e)
+            traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 
 
     def write_report(self, reportResult, testName):
         reportHtmlFileName = testName + ".html"
         reportDirPath = os.path.dirname(os.path.realpath("report")) + "/report/"
-        template = open(os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + "/model/template", "r", encoding='UTF-8')
+        # template = open(os.path.abspath(os.path.dirname(os.path.dirname(__file__))) + "/model/template", "r", encoding='UTF-8')
         template = open(os.getcwd() + "/model/template", "r", encoding='UTF-8')
         reportHtml = open(reportHtmlFileName, "w", encoding='UTF-8')
         for s in template:

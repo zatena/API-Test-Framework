@@ -5,16 +5,22 @@
 import requests
 import traceback
 import core.mylog as log
+import os
 
 logging = log.track_log()
 
 result = ''
 results = ''
 
+# response_result = {
+#     "code": -1,
+#     "message": "error",
+#     "result": None,
+#     "status_code": None
+# }
+
 response_result = {
-    "code": -1,
-    "message": "error",
-    "result": None,
+    "status_result": None,
     "status_code": None
 }
 
@@ -39,7 +45,7 @@ def api(method, url, data, headers):
         return response
     except Exception as e:
         logging.error("请求失败%s" % e)
-        traceback.print_exc()
+        traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'w+'))
 
 
 def get_message(method, url, data, headers):
@@ -69,6 +75,7 @@ def get_message(method, url, data, headers):
         response_code = result.status_code
         if response_code > 200:
             response_result['status_code'] = response_code
+            response_result['status_result'] = result.text
             response_result['run_time'] = round(run_time * 1000, 3)
             return response_result
         elif response_code == 200 and result is None:
@@ -78,7 +85,7 @@ def get_message(method, url, data, headers):
         return response
     except Exception as e:
         logging.error("请求发生异常\n %s" % e)
-        traceback.print_exc()
+        traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 
 
 def get_mfd(method, url, data, headers):
@@ -98,5 +105,5 @@ def get_mfd(method, url, data, headers):
         return response
     except Exception as e:
         logging.error("请求失败%s" % e)
-        traceback.print_exc()
+        traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 

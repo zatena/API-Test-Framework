@@ -221,17 +221,30 @@ class ProProjectRegression:
 
                 try:
                     if actual_response is not None:
-                        actual_code = actual_response['code']
-                        if actual_response['result'] is not None:
-                            actual_status_code = None
-                        else:
-                            actual_code = actual_response['code']
-                            if actual_code == -1:
+                        if 'status_result' in actual_response:
+                            actual_code = actual_response['status_result'][0]
+                            if actual_code == -1 or -3:
                                 actual_status_code = actual_response['status_code']
                             elif actual_code == 1:
                                 actual_status_code = actual_code
                             else:
                                 actual_status_code = None
+                        else:
+                            actual_code = actual_response['code']
+                            actual_status_code = None
+
+                        # 原来response处理逻辑
+                        # if actual_response['result'] is not None:
+                        #     actual_code = actual_response['code']
+                        #     actual_status_code = None
+                        # else:
+                        #     actual_code = actual_response['code']
+                        #     if actual_code == -1 or -3:
+                        #         actual_status_code = actual_response['status_code']
+                        #     elif actual_code == 1:
+                        #         actual_status_code = actual_code
+                        #     else:
+                        #         actual_status_code = None
 
                         if actual_status_code is not None:
                             logging.info("回归测试失败:%s" % name)
@@ -260,25 +273,27 @@ class ProProjectRegression:
                                 request_log_message = "输入值: %s\n" % request_data
                                 result_log_message = "输出结果: 预判值错误, %s\n" % actual_result
                                 run_time = str(actual_response['run_time']) + 'ms'
-                                summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time, test_status, request_log_message, result_log_message)
+                                summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time,
+                                                                           test_status, request_log_message, result_log_message)
                                 continue
                             else:
                                 request_log_message = "输入值: %s\n" % request_data
 
                 except Exception as e:
                     logging.error("无返回结果%s" % e)
-                    traceback.print_exc()
+                    traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 
                 run_time = str(actual_response['run_time']) + 'ms'
                 del actual_response['run_time']
                 result_log_message = "输出结果:%s\n" % actual_response
                 if len(url) > 120:
                     url = url[0:110]
-                summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time, test_status, request_log_message, result_log_message)
+                summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time, test_status,
+                                                           request_log_message, result_log_message)
 
         except Exception as e:
             logging.error(e)
-            traceback.print_exc()
+            traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 
         total_end = others.get_now()[0]
         total_run_time = str(others.get_mills(total_start, total_end)) + 's'
