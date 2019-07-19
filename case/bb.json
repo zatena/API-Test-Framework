@@ -4,7 +4,7 @@
        "steps": [
               {
                      "caseName": "获取创意方分享列表",
-                     "caseUrl": "/sharing/group/list",
+                     "caseUrl": "/sharing/group/li",
                      "caseMethod": "POST",
                      "request": {
                             "body": {
@@ -29,7 +29,7 @@
               {
                      "caseName": "后台用户登录",
                      "caseUrl": "/topUser/login",
-                     "caseMethod": "GET",
+                     "caseMethod": "post",
                      "request": {
                             "body": {
                                    "email": "admin@tezign.com",

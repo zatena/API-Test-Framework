@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/util/common.py", line 308, in build_report_regression
+    test_report = self.execute_case_regression(filename)
+  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/util/common.py", line 152, in execute_case_regression
+    case_names = rc.get_casename(filename)[0]
+  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/core/myconfig.py", line 21, in get_casename
+    dic = json.load(f)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 296, in load
+    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 98 column 8 (char 3328)
