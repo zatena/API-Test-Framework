@@ -233,19 +233,6 @@ class ProProjectRegression:
                             actual_code = actual_response['code']
                             actual_status_code = None
 
-                        # 原来response处理逻辑
-                        # if actual_response['result'] is not None:
-                        #     actual_code = actual_response['code']
-                        #     actual_status_code = None
-                        # else:
-                        #     actual_code = actual_response['code']
-                        #     if actual_code == -1 or -3:
-                        #         actual_status_code = actual_response['status_code']
-                        #     elif actual_code == 1:
-                        #         actual_status_code = actual_code
-                        #     else:
-                        #         actual_status_code = None
-
                         if actual_status_code is not None:
                             logging.info("回归测试失败:%s" % name)
                             test_status = "失败"
@@ -282,7 +269,6 @@ class ProProjectRegression:
                 except Exception as e:
                     logging.error("无返回结果%s" % e)
                     traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
-
                 run_time = str(actual_response['run_time']) + 'ms'
                 del actual_response['run_time']
                 result_log_message = "输出结果:%s\n" % actual_response
@@ -304,9 +290,13 @@ class ProProjectRegression:
         return report_model
 
     def build_report_regression(self, filename):
-        test_report = self.execute_case_regression(filename)
-        return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time)
+        try:
+            test_report = self.execute_case_regression(filename)
+            return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
+                                        test_report.fail_test, test_report.skip_test, test_report.total_run_time)
+        except Exception as e:
+            logging.error(e)
+            traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 
     def send_email_regression(self, reportfile):
         reports = os.listdir(reportfile)

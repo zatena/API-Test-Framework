@@ -12,17 +12,17 @@ logging = log.track_log()
 result = ''
 results = ''
 
-# response_result = {
-#     "code": -1,
-#     "message": "error",
-#     "result": None,
-#     "status_code": None
-# }
-
 response_result = {
     "status_result": None,
     "status_code": None
 }
+
+timeout_Result= {
+        "code": -1,
+        "message": "请求超时，默认设置等待1秒",
+        "result": None,
+        "run_time": 112.339
+    }
 
 
 def api(method, url, data, headers):
@@ -70,7 +70,6 @@ def get_message(method, url, data, headers):
             result = requests.patch(url, data, headers=headers)
         if method.upper() == "OPTIONS":
             result = requests.options(url, headers=headers)
-
         run_time = result.elapsed.total_seconds()
         response_code = result.status_code
         if response_code > 200:
@@ -83,9 +82,10 @@ def get_message(method, url, data, headers):
         response = result.json()
         response['run_time'] = round(run_time * 1000, 3)
         return response
-    except Exception as e:
+    except requests.exceptions.RequestException as e:
         logging.error("请求发生异常\n %s" % e)
         traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
+        return timeout_Result
 
 
 def get_mfd(method, url, data, headers):
