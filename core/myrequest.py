@@ -82,10 +82,12 @@ def get_message(method, url, data, headers):
         response = result.json()
         response['run_time'] = round(run_time * 1000, 3)
         return response
-    except requests.exceptions.RequestException as e:
-        logging.error("请求发生异常\n %s" % e)
+    except requests.exceptions.RequestException:
         traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
         return timeout_Result
+    except Exception as e:
+        logging.error("请求发生异常\n %s" % e)
+        traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 
 
 def get_mfd(method, url, data, headers):
