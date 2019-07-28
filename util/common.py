@@ -35,6 +35,7 @@ pass_result = 0
 fail_result = 0
 skip_result = 0
 dict_list = []
+case_all_count = 0
 
 
 class ApiTest:
@@ -55,6 +56,7 @@ class ApiTest:
         report_title = cs.REPORT_TITLE
         case_names = rc.get_casename(filename)[0]
         case_lists = rc.get_casename(filename)[1]
+
         all_result = len(case_names)
         total_start = others.get_now()[0]
 
@@ -146,12 +148,13 @@ class ProProjectRegression:
         :return: 测试结果的报告模板
 
         """
-        global summary_report, message, result, code, pass_result, fail_result, skip_result
+        global summary_report, message, result, code, pass_result, fail_result, skip_result, case_all_count
 
         report_title = cs.TEST_REPORT_TITLE
         case_names = rc.get_casename(filename)[0]
         case_lists = rc.get_casename(filename)[1]
         all_result = len(case_names)
+        case_all_count = all_result + case_all_count
         total_start = others.get_now()[0]
         project_name = "测试项目" + ''.join(random.sample(string.ascii_letters + string.digits, 4))
         delivery_time = str(others.get_future(60))
@@ -284,7 +287,8 @@ class ProProjectRegression:
         total_end = others.get_now()[0]
         total_run_time = str(others.get_mills(total_start, total_end)) + 's'
 
-        report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
+        skip_result = case_all_count - pass_result - fail_result
+        report_model = mm.ReportModel(summary_report, report_title, case_all_count, pass_result, fail_result, skip_result,
                                       total_run_time)
 
         return report_model
@@ -292,7 +296,7 @@ class ProProjectRegression:
     def build_report_regression(self, filename):
         try:
             test_report = self.execute_case_regression(filename)
-            return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
+            return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.all_test, test_report.pass_test,
                                         test_report.fail_test, test_report.skip_test, test_report.total_run_time)
         except Exception as e:
             logging.error(e)

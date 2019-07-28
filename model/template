@@ -7179,10 +7179,10 @@
                     $("#detailBody").append(tr);
                 }
             });
-            $("#filterAll").text(filterAll);
+            $("#filterAll").text(resultData["testAll"]);
             $("#filterOk").text(filterOk);
             $("#filterFail").text(filterFail);
-            $("#filterSkip").text(filterSkip);
+            $("#filterSkip").text(resultData["testSkip"]);
 
         }
 

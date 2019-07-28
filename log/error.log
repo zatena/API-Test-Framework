@@ -1,16 +1,28 @@
 Traceback (most recent call last):
-  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/util/common.py", line 308, in build_report_regression
-    test_report = self.execute_case_regression(filename)
-  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/util/common.py", line 152, in execute_case_regression
-    case_names = rc.get_casename(filename)[0]
-  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/core/myconfig.py", line 21, in get_casename
-    dic = json.load(f)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 296, in load
-    parse_constant=parse_constant, object_pairs_hook=object_pairs_hook, **kw)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/__init__.py", line 348, in loads
-    return _default_decoder.decode(s)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/json/decoder.py", line 355, in raw_decode
-    raise JSONDecodeError("Expecting value", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 98 column 8 (char 3328)
+  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/core/myrequest.py", line 64, in get_message
+    result = requests.post(url, data, headers=headers, timeout=3)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1270, in _send_request
+    self.putheader(hdr, value)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1202, in putheader
+    values[i] = one_value.encode('latin-1')
+UnicodeEncodeError: 'latin-1' codec can't encode characters in position 0-1: ordinal not in range(256)
+Traceback (most recent call last):
+  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/util/common.py", line 277, in execute_case_regression
+    run_time = str(actual_response['run_time']) + 'ms'
+TypeError: 'NoneType' object is not subscriptable

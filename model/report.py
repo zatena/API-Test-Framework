@@ -73,18 +73,18 @@ class Report:
         self.testResultList.append(testResultDict)
         return self.testResultList
 
-    def build_report(self, testResult, testName, testPass, testFail, testSkip, totalTime):
+    def build_report(self, testResult, testName,testAll,testPass, testFail, testSkip, totalTime):
         try:
             reportResult = {}
             reportResult["testPass"] = testPass
             reportResult["testResult"] = testResult
             reportResult["testName"] = testName
-            reportResult["testAll"] = len(testResult)
+            reportResult["testAll"] = testAll
             reportResult["testFail"] = testFail
             reportResult["beginTime"] = time.strftime("%Y-%m-%d %H:%M:%S")
             reportResult["totalTime"] = totalTime
-            reportResult["testSkip"] = len(testResult)-testPass-testFail
-            reportResult["testCoverage"] = str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%'
+            reportResult["testSkip"] = testAll-testPass-testFail
+            reportResult["testCoverage"] = str(round((float(testPass) / float(testAll)*100),2)) + '%'
 
             # 写入测试报告
             self.write_report(reportResult, testName)
@@ -93,11 +93,11 @@ class Report:
             htmltrs = htmlparser.reporthtmlparser(testResult,'')
 
             report = htmlparser.report_html.replace("${case_list}",htmltrs) \
-                .replace("${filterAll}",str(len(testResult))) \
+                .replace("${filterAll}",str(testAll)) \
                 .replace("${filterOk}",str(testPass)) \
                 .replace("${filterFail}",str(testFail)) \
-                .replace("${filterSkip}",str(len(testResult)-testPass-testFail)) \
-                .replace("${filterCoverage}",str(round((float(testPass) / float(len(testResult)+testSkip)*100),2)) + '%')
+                .replace("${filterSkip}",str(testAll-testPass-testFail)) \
+                .replace("${filterCoverage}",str(round((float(testPass) / float(testAll)*100),2)) + '%')
 
             return report
         except Exception as e:
