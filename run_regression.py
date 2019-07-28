@@ -35,7 +35,7 @@ email.email(report)
 
 # f = open(os.getcwd()+'/log/error.log', 'r+')
 # f.truncate()
-# casePath = os.getcwd()+'/case/tezign_designergroup.json'
+# casePath = os.getcwd()+'/case/bb.json'
 # ProRegTest.build_report_regression(casePath)
 
 

@@ -3,36 +3,12 @@
        "scenarioName": "其他测试",
        "steps": [
               {
-                     "caseName": "获取创意方分享列表",
-                     "caseUrl": "/sharing/group/li",
-                     "caseMethod": "POST",
-                     "request": {
-                            "body": {
-                                   "pageNum":1,
-                                   "pageSize":10
-                            },
-                            "headers": {
-                                   "Content-Type": "application/json",
-                                   "service-name": "top2",
-                                   "X-Top-User-Id": "1",
-                                   "X-Top-Token": "046685abcf965a87337f432d86bb0dab"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code": "0"
-                            }
-                     }
-              },
-
-              {
                      "caseName": "后台用户登录",
                      "caseUrl": "/topUser/login",
                      "caseMethod": "post",
                      "request": {
                             "body": {
-                                   "email": "admin@tezign.com",
+                              "email": "admin@tezign.com",
                                    "password": "111111"
                             },
                             "headers": {
@@ -48,6 +24,28 @@
                      }
               },
               {
+           "caseName": "统计项目面板数据",
+           "caseUrl": "/tp/dashboard/projectNumInfo",
+           "caseMethod": "post",
+           "request": {
+             "headers": {
+               "Content-Type": "application/json;charset=UTF-8",
+               "X-Top-Token": "后台用户登录.1.token",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "service-name": "top2"
+             },
+             "body": {
+               "tpUserIdList": ["75", "97", "136"]
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+              {
                      "caseName": "获取优选人才列表",
                      "caseUrl": "/collection/group/grouplist?type=1",
                      "caseMethod": "GET",
@@ -57,8 +55,8 @@
                             "headers": {
                                    "Content-Type": "application/json",
                                    "service-name": "top2",
-                                   "X-Top-User-Id": "后台用户登录.1.id",
-                                   "X-Top-Token": "后台用户登录.1.token"
+                              "X-Top-User-Id": "后台用户登录.1.id",
+                              "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {
@@ -67,7 +65,29 @@
                                    "code": "0"
                             }
                      }
-              }
+              },
+              {
+           "caseName": "新建一级人才分类",
+           "caseUrl": "/collection/group/top/createOrUpdateTopCollectionGroup",
+           "caseMethod": "POST",
+           "request": {
+             "body": {
+
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         }
 
 
 
