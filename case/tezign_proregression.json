@@ -23,76 +23,98 @@
                      }
               },
               {
+           "caseName": "获取签单",
+           "caseUrl": "/vprojects?startTime=&endTime=&alterStartTime=&alterEndTime=&keyword=%E4%BA%92%E5%8A%A8%E5%90%A7%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A17%E6%9C%88%E9%9C%80%E6%B1%82&invoiceTitle=&invoiceAmount=&signConfirmType=1&relatStatus=&invoiceStatus=&incomeStatus=&payStatusList=&operateLimitTime=0&tagIds=&ownerId=&pageSize=10&pageNum=1",
+           "caseMethod": "GET",
+           "request": {
+             "body": {
+             },
+             "headers":{
+               "Content-Type":"application/json",
+               "service-name":"top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code" : "0"
+             }
+           }
+         },
+              {
            "caseName": "发布企业项目",
            "caseUrl": "/pro/top/submit",
            "caseMethod": "POST",
            "request": {
                          "body": {
-                               "industry": "1002",
-                               "projectName": "知名电商网站双十一预热活动",
-                               "deliveryContent": "卡通形象，活泼可爱",
-                               "budget": 2000,
-                               "country": 1,
-                               "province": 114,
-                               "city": 117,
-                               "projectStatus": null,
-                               "otherMsg": "活动预热",
-                               "companyName": null,
-                               "companyInfo": null,
-                               "companyUrl": null,
-                               "designerStyle": "1500",
-                               "customStyle": "",
-                               "designerType": "",
-                               "animation": null,
-                               "graphic": null,
-                               "illustration": null,
-                               "ui": null,
-                               "publishType": 2,
-                               "processMode": 1,
-                               "quoteTime": 3,
-                               "isRemote": 1,
-                               "resourceIds": "",
-                               "resources": [],
-                               "designerRequireInfo": {
-                                 "remark": ""
-                               },
-                               "companyId": "4",
-                               "projectPublishTypeBeanList": [{
-                                 "materielName": "表情包设计",
-                                 "materielDescription": "git动态图",
+                           "industry": "1001",
+                           "projectName": "知名网站UI设计图",
+                           "deliveryContent": "卡通形象，活泼可爱",
+                           "budget": 2000,
+                           "country": 1,
+                           "province": 114,
+                           "city": 117,
+                           "projectStatus": null,
+                           "otherMsg": "活动预热",
+                           "companyName": null,
+                           "companyInfo": null,
+                           "companyUrl": null,
+                           "designerStyle": "1500",
+                           "customStyle": "",
+                           "designerType": "",
+                           "animation": null,
+                           "graphic": null,
+                           "illustration": null,
+                           "ui": null,
+                           "publishType": 2,
+                           "processMode": 1,
+                           "quoteTime": 3,
+                           "isRemote": 1,
+                           "resourceIds": "",
+                           "resources": [],
+                           "designerRequireInfo": {
+                             "remark": ""
+                           },
+                           "vprojectId": "获取签单.1.id",
+                           "companyId": "4",
+                           "projectPublishTypeBeanList": [{
+                             "materielName": "表情包设计",
+                             "materielDescription": "gif动态图",
+                             "node": {
+                               "id": 3,
+                               "name": "插画",
+                               "edit": false,
+                               "unit": "0",
+                               "units": null,
+                               "node": {
+                                 "id": 27,
+                                 "name": "形象／IP插画",
+                                 "edit": false,
+                                 "unit": "0",
+                                 "units": null,
                                  "node": {
-                                   "id": 3,
-                                   "name": "插画",
+                                   "id": 130,
+                                   "name": "表情包",
                                    "edit": false,
-                                   "unit": "0",
-                                   "units": null,
-                                   "node": {
-                                     "id": 27,
-                                     "name": "形象／IP插画",
-                                     "edit": false,
-                                     "unit": "0",
-                                     "units": null,
-                                     "node": {
-                                       "id": 130,
-                                       "name": "表情包",
-                                       "edit": false,
-                                       "unit": "套",
-                                       "units": ["个", "套"]
-                                     }
-                                   }
-                                 },
-                                 "isRange": 0,
-                                 "amount": "1",
-                                 "unit": "套",
-                                 "id": 130
-                               }],
-                               "deliveryTask": "1、表情包设计（表情包）（1套）\ngit动态图",
-                               "projectBackground": "目标人群：电商用户",
-                               "deliveryTime": "2019-12-30",
-                               "modifyBudgetType": 2,
-                               "paymentDay": "30",
-                               "searchContent": "表情包"
-             },
+                                   "unit": "套",
+                                   "units": ["个", "套"]
+                                 }
+                               }
+                             },
+                             "isRange": 0,
+                             "amount": 1,
+                             "unit": "套",
+                             "id": 130
+                           }],
+                           "deliveryTask": "1、表情包设计（表情包）（1套）\ngif动态图",
+                           "projectBackground": "目标人群：电商用户",
+                           "deliveryTime": "2019-12-30",
+                           "modifyBudgetType": 2,
+                           "paymentDay": "30",
+                           "searchContent": "表情包"
+                         },
              "headers":{
                "Content-Type":"application/json",
                "service-name":"top2",
@@ -638,58 +660,6 @@
                                    "Content-Type":"application/json",
                                    "X-User-Id": "设计师登录.1.id",
                                    "X-Token": "设计师登录.1.token"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code" : "0"
-                            }
-                     }
-              },
-              {
-                     "caseName": "获取签单",
-                     "caseUrl": "/vprojects",
-                     "caseMethod": "GET",
-                     "request": {
-                            "body": {
-                                   "keyword":"%E5%86%85%E6%8E%A8%E6%B5%B7%E6%8A%A5%E8%AE%BE%E8%AE%A1",
-                                   "invoiceTitle":"",
-                                   "signConfirmType":1,
-                                   "pageSize":10,
-                                   "pageNum":1
-
-
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "service-name":"top2",
-                                   "X-Top-User-Id": "后台用户登录.1.id",
-                                   "X-Top-Token": "后台用户登录.1.token"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code" : "0"
-                            }
-                     }
-              },
-              {
-                     "caseName": "项目关联签单",
-                     "caseUrl": "/project/updateVirtualProject",
-                     "caseMethod": "POST",
-                     "request": {
-                            "body": {
-                                   "vprojectId": "获取签单.1.id",
-                                   "projectId": "设计师查看确认函.1.projectId",
-                                   "projectType": 1
-                            },
-                            "headers":{
-                                   "Content-Type":"application/json",
-                                   "service-name":"top2",
-                                   "X-Top-User-Id": "后台用户登录.1.id",
-                                   "X-Top-Token": "后台用户登录.1.token"
                             }
                      },
                      "assertions": {

@@ -1,4 +1,41 @@
 Traceback (most recent call last):
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1321, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/packages/six.py", line 686, in reraise
+    raise value
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 306, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='39.96.8.124', port=8080): Read timed out. (read timeout=3)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/core/myrequest.py", line 64, in get_message
     result = requests.post(url, data, headers=headers, timeout=3)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/api.py", line 112, in post
@@ -9,20 +46,12 @@ Traceback (most recent call last):
     resp = self.send(prep, **send_kwargs)
   File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/sessions.py", line 622, in send
     r = adapter.send(request, **kwargs)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/adapters.py", line 445, in send
-    timeout=timeout
-  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 600, in urlopen
-    chunked=chunked)
-  File "/Users/tezign_zjj/Library/Python/3.7/lib/python/site-packages/urllib3/connectionpool.py", line 354, in _make_request
-    conn.request(method, url, **httplib_request_kw)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1229, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1270, in _send_request
-    self.putheader(hdr, value)
-  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py", line 1202, in putheader
-    values[i] = one_value.encode('latin-1')
-UnicodeEncodeError: 'latin-1' codec can't encode characters in position 0-1: ordinal not in range(256)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/requests/adapters.py", line 526, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='39.96.8.124', port=8080): Read timed out. (read timeout=3)
 Traceback (most recent call last):
-  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/util/common.py", line 277, in execute_case_regression
-    run_time = str(actual_response['run_time']) + 'ms'
-TypeError: 'NoneType' object is not subscriptable
+  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/util/common.py", line 192, in execute_case_regression
+    replace_value = getRelyValues.get_dict_value(getRelyValues, collect_response, actual_value, int(value_index), dict_list)
+  File "/Users/tezign_zjj/PycharmProjects/API-Test-Framework/core/myresponse.py", line 15, in get_dict_value
+    result = result_list[int(index) - 1]
+IndexError: list index out of range

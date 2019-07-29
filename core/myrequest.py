@@ -19,9 +19,9 @@ response_result = {
 
 timeout_Result= {
         "code": -1,
-        "message": "请求超时，默认设置等待1秒",
+        "message": "请求超时，超过默认设置等待时间3秒",
         "result": None,
-        "run_time": 112.339
+        "run_time": 11242.339
     }
 
 
