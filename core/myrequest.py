@@ -61,9 +61,9 @@ def get_message(method, url, data, headers):
 
     try:
         if method.upper() == "POST":
-            result = requests.post(url, data, headers=headers, timeout=3)
+            result = requests.post(url, data, headers=headers, timeout=20)
         if method.upper() == "GET":
-            result = requests.get(url, data, headers=headers, timeout=3)
+            result = requests.get(url, data, headers=headers, timeout=20)
         if method.upper() == "PUT":
             result = requests.put(url, data, headers=headers)
         if method.upper() == "PATCH":
