@@ -61,9 +61,9 @@ def get_message(method, url, data, headers):
 
     try:
         if method.upper() == "POST":
-            result = requests.post(url, data, headers=headers, timeout=20)
+            result = requests.post(url, data, headers=headers, timeout=3)
         if method.upper() == "GET":
-            result = requests.get(url, data, headers=headers, timeout=20)
+            result = requests.get(url, data, headers=headers, timeout=3)
         if method.upper() == "PUT":
             result = requests.put(url, data, headers=headers)
         if method.upper() == "PATCH":
@@ -82,7 +82,7 @@ def get_message(method, url, data, headers):
         response = result.json()
         response['run_time'] = round(run_time * 1000, 3)
         return response
-    except requests.exceptions.RequestException:
+    except requests.ReadTimeout:
         traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
         return timeout_Result
     except Exception as e:
