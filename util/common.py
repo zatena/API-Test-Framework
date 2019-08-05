@@ -4,6 +4,7 @@
 
 import datetime
 import json
+import time
 import os
 import random
 import string
@@ -38,111 +39,14 @@ dict_list = []
 case_all_count = 0
 
 
-class ApiTest:
-    excReport = mr.Report()
-
-    """业务接口测试"""
-
-    def __init__(self):
-        pass
-
-    def execute_case(self, filename):
-
-        """
-        :param filename: 用例文件名称
-        :return: 测试结果的报告模板
-        """
-        global summary_report, single_start, single_end, pass_result, fail_result, skip_result
-        report_title = cs.REPORT_TITLE
-        case_names = rc.get_casename(filename)[0]
-        case_lists = rc.get_casename(filename)[1]
-
-        all_result = len(case_names)
-        total_start = others.get_now()[0]
-
-        try:
-            for i in range(0, all_result):
-                case_list = case_lists['steps'][i]
-                name = case_names[i]
-                method = case_list['caseMethod']
-                expect_code = case_list['assertions']['body']['code']
-                headers = case_list['request']['headers']
-                api_url = case_list['caseUrl']
-                url = cs.BASEURL + api_url
-                _data = case_list['request']['body']
-
-                if len(collect_data) > 0:
-                    str_data = str(case_list)
-                    match_object = re.findall('.*?([\u4E00-\u9FA5]+\.[\\w]+)', str_data)
-                    if len(match_object) == 0:
-                        pass
-                    else:
-
-                        for i in match_object:
-                            collect_response = collect_data[i.split('.')[0]]
-                            actual_value = i.split('.')[1]
-                            replace_value = getRelyValues.get_dict_value(getRelyValues, collect_response, actual_value, 1, dict_list)
-                            str_data = str_data.replace(i, str(replace_value))
-                            data_json = eval(str_data)
-                            headers = data_json['request']['headers']
-                            api_url = data_json['caseUrl']
-                            url = cs.BASEURL + api_url
-                            _data = data_json['request']['body']
-                else:
-                    pass
-
-                data = json.dumps(_data, indent=4, sort_keys=False, ensure_ascii=False)
-                data = data.encode('utf-8')
-                single_start = others.get_now()[0]
-                actual_response = request.api(method, url, data, headers)
-                single_end = others.get_now()[0]
-                actual_code = actual_response['code']
-                collect_data[name] = actual_response
-                run_time = str(others.get_mills(single_start, single_end)) + 's'
-
-                if actual_code != expect_code:
-                    logging.info("接口测试失败")
-                    test_status = "失败"
-                    fail_result = fail_result + 1
-                    message_log = "预期code:%s \n" % expect_code + "实际code:%s \n" % actual_code + "预期结果和实际结果不一致"
-                else:
-                    logging.info("接口测试成功")
-                    test_status = "成功"
-                    pass_result = pass_result + 1
-                    message_log = "预期code:%s\n" % expect_code + "实际code:%s\n" % actual_code + "预期结果和实际结果相同"
-                summary_report = self.excReport.sum_result(url, api_url, method, name, run_time, test_status, message_log)
-        except Exception as e:
-            logging.error(e)
-
-        total_end = others.get_now()[0]
-        total_run_time = str(others.get_mills(total_start, total_end)) + 's'
-        skip_result = all_result - (pass_result + fail_result)
-        report_model = mm.ReportModel(summary_report, report_title, all_result, pass_result, fail_result, skip_result,
-                                      total_run_time)
-        return report_model
-
-
-
-    def build_report(self, filename):
-        test_report = self.execute_case(filename)
-        self.excReport.build_report(test_report.sum_report, test_report.name, test_report.pass_test,
-                                    test_report.fail_test, test_report.skip_test, test_report.total_run_time)
-
-    def send_email(self, reportfile):
-        reports = os.listdir(reportfile)
-        reports.sort(key=lambda fn: os.path.getatime(reportfile + '/' + fn))
-        file = os.path.join(reportfile, reports[-1])
-        email.email(file)
-
-
-class ProProjectRegression:
+class regression:
     excReport = mr.Report()
     getRelyValues = getRelyValues()
 
     def __init__(self):
         pass
 
-    def execute_case_regression(self, filename):
+    def execute_case(self, filename):
         """
         :param filename: 用例文件名称
         :return: 测试结果的报告模板
@@ -209,7 +113,12 @@ class ProProjectRegression:
                 _data = data_json['request']['body']
                 data = json.dumps(_data, indent=4, sort_keys=False, ensure_ascii=False)
                 data = data.encode('utf-8')
-                actual_response = request.get_message(method, url, data, headers)
+                if 'caseSleep' in data_json:
+                    sleep_time = data_json['caseSleep']
+                    actual_response = request.get_message(method, url, data, headers)
+                    time.sleep(sleep_time)
+                else:
+                    actual_response = request.get_message(method, url, data, headers)
                 collect_data[name] = actual_response
                 res_str = ""
                 if expect_assert is not None:
@@ -273,7 +182,7 @@ class ProProjectRegression:
                     logging.error("无返回结果%s" % e)
                     traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
                 run_time = str(actual_response['run_time']) + 'ms'
-                del actual_response['run_time']
+                # del actual_response['run_time']
                 result_log_message = "输出结果:%s\n" % actual_response
                 if len(url) > 120:
                     url = url[0:110]
@@ -293,16 +202,16 @@ class ProProjectRegression:
 
         return report_model
 
-    def build_report_regression(self, filename):
+    def build_report(self, filename):
         try:
-            test_report = self.execute_case_regression(filename)
+            test_report = self.execute_case(filename)
             return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.all_test, test_report.pass_test,
                                         test_report.fail_test, test_report.skip_test, test_report.total_run_time)
         except Exception as e:
             logging.error(e)
             traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))
 
-    def send_email_regression(self, reportfile):
+    def send_email(self, reportfile):
         reports = os.listdir(reportfile)
         reports.sort(key=lambda fn: os.path.getatime(reportfile + '/' + fn))
         file = os.path.join(reportfile, reports[-1])
