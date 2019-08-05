@@ -12,6 +12,11 @@ class getRelyValues:
 
     def get_dict_value(self, dict1, values, index, dictList):
         result_list = self.get_dict(dict1, values, index, dictList)
+
+        if len(result_list) == 0:
+            logging.warn("依赖接口没返回值")
+            return
+
         result = result_list[int(index) - 1]
         dictList.clear()
         return result
