@@ -23,60 +23,16 @@
                             }
                      }
               },
-              {
-           "caseName": "统计项目面板数据",
-           "caseUrl": "/tp/dashboard/projectNumInfo",
-           "caseMethod": "post",
-           "request": {
-             "headers": {
-               "Content-Type": "application/json;charset=UTF-8",
-               "X-Top-Token": "后台用户登录.1.token",
-               "X-Top-User-Id": "后台用户登录.1.id",
-               "service-name": "top2"
-             },
-             "body": {
-               "tpUserIdList": ["75", "97", "136"]
-             }
-           },
-           "assertions": {
-             "status": 200,
-             "body": {
-               "code": "0"
-             }
-           }
-         },
-              {
-                     "caseName": "获取优选人才列表",
-                     "caseUrl": "/collection/group/grouplist?type=1",
-                     "caseMethod": "GET",
-                     "request": {
-                            "body": {
-                            },
-                            "headers": {
-                                   "Content-Type": "application/json",
-                                   "service-name": "top2",
-                              "X-Top-User-Id": "后台用户登录.1.id",
-                              "X-Top-Token": "后台用户登录.1.token"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code": "0"
-                            }
-                     }
-              },
-              {
-           "caseName": "新建一级人才分类",
-           "caseUrl": "/collection/group/top/createOrUpdateTopCollectionGroup",
-           "caseMethod": "POST",
+         {
+           "caseName": "确认作品前查看项目详情",
+           "caseUrl": "/proProject/period/designer/detail?projectId=10241",
+           "caseMethod": "GET",
            "request": {
              "body": {
-
              },
-             "headers": {
-               "Content-Type": "application/json",
-               "service-name": "top2",
+             "headers":{
+               "Content-Type":"application/json",
+               "service-name":"top2",
                "X-Top-User-Id": "后台用户登录.1.id",
                "X-Top-Token": "后台用户登录.1.token"
              }
@@ -84,10 +40,35 @@
            "assertions": {
              "status": 200,
              "body": {
-               "code": "0"
+               "code" : "0",
+               "assert":"确认作品前查看项目详情.1.planStatus:3"
+             }
+           }
+         },
+         {
+           "caseName": "客户确认提交作品",
+           "caseUrl": "/pro/contract/plan/finish",
+           "caseMethod": "POST",
+           "request": {
+             "body": {
+               "planId": 4043,
+               "proProjectId": 10241
+             },
+             "headers":{
+               "Content-Type":"application/json",
+               "service-name":"top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code" : "0"
              }
            }
          }
+
 
 
 
