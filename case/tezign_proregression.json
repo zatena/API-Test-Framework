@@ -23,112 +23,112 @@
                      }
               },
               {
-           "caseName": "获取签单",
-           "caseUrl": "/vprojects?startTime=&endTime=&alterStartTime=&alterEndTime=&keyword=%E4%BA%92%E5%8A%A8%E5%90%A7%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A17%E6%9C%88%E9%9C%80%E6%B1%82&invoiceTitle=&invoiceAmount=&signConfirmType=1&relatStatus=&invoiceStatus=&incomeStatus=&payStatusList=&operateLimitTime=0&tagIds=&ownerId=&pageSize=10&pageNum=1",
-           "caseMethod": "GET",
-           "request": {
-             "body": {
-             },
-             "headers":{
-               "Content-Type":"application/json",
-               "service-name":"top2",
-               "X-Top-User-Id": "后台用户登录.1.id",
-               "X-Top-Token": "后台用户登录.1.token"
-             }
-           },
-           "assertions": {
-             "status": 200,
-             "body": {
-               "code" : "0"
-             }
-           }
-         },
+                   "caseName": "获取签单",
+                   "caseUrl": "/vprojects?startTime=&endTime=&alterStartTime=&alterEndTime=&keyword=%E4%BA%92%E5%8A%A8%E5%90%A7%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A17%E6%9C%88%E9%9C%80%E6%B1%82&invoiceTitle=&invoiceAmount=&signConfirmType=1&relatStatus=&invoiceStatus=&incomeStatus=&payStatusList=&operateLimitTime=0&tagIds=&ownerId=&pageSize=10&pageNum=1",
+                   "caseMethod": "GET",
+                   "request": {
+                     "body": {
+                     },
+                     "headers":{
+                       "Content-Type":"application/json",
+                       "service-name":"top2",
+                       "X-Top-User-Id": "后台用户登录.1.id",
+                       "X-Top-Token": "后台用户登录.1.token"
+                     }
+                   },
+               "assertions": {
+                 "status": 200,
+                 "body": {
+                   "code" : "0"
+                      }
+                  }
+               },
               {
-           "caseName": "发布企业项目",
-           "caseUrl": "/pro/top/submit",
-           "caseMethod": "POST",
-           "request": {
-                         "body": {
-                           "industry": "1001",
-                           "projectName": "知名网站UI设计图",
-                           "deliveryContent": "卡通形象，活泼可爱",
-                           "budget": 2000,
-                           "country": 1,
-                           "province": 114,
-                           "city": 117,
-                           "projectStatus": null,
-                           "otherMsg": "活动预热",
-                           "companyName": null,
-                           "companyInfo": null,
-                           "companyUrl": null,
-                           "designerStyle": "1500",
-                           "customStyle": "",
-                           "designerType": "",
-                           "animation": null,
-                           "graphic": null,
-                           "illustration": null,
-                           "ui": null,
-                           "publishType": 2,
-                           "processMode": 1,
-                           "quoteTime": 3,
-                           "isRemote": 1,
-                           "resourceIds": "",
-                           "resources": [],
-                           "designerRequireInfo": {
-                             "remark": ""
-                           },
-                           "vprojectId": "获取签单.1.id",
-                           "companyId": "4",
-                           "projectPublishTypeBeanList": [{
-                             "materielName": "表情包设计",
-                             "materielDescription": "gif动态图",
-                             "node": {
-                               "id": 3,
-                               "name": "插画",
-                               "edit": false,
-                               "unit": "0",
-                               "units": null,
+                 "caseName": "发布企业项目",
+                 "caseUrl": "/pro/top/submit",
+                 "caseMethod": "POST",
+                 "request": {
+                   "body": {
+                             "industry": "1001",
+                             "projectName": "玩咖6月新包装设计",
+                             "deliveryContent": "卡通形象，活泼可爱",
+                             "budget": 2000,
+                             "country": 1,
+                             "province": 114,
+                             "city": 117,
+                             "projectStatus": null,
+                             "otherMsg": "活动预热",
+                             "companyName": null,
+                             "companyInfo": null,
+                             "companyUrl": null,
+                             "designerStyle": "1500",
+                             "customStyle": "",
+                             "designerType": "",
+                             "animation": null,
+                             "graphic": null,
+                             "illustration": null,
+                             "ui": null,
+                             "publishType": 2,
+                             "processMode": 1,
+                             "quoteTime": 3,
+                             "isRemote": 1,
+                             "resourceIds": "",
+                             "resources": [],
+                             "designerRequireInfo": {
+                               "remark": ""
+                             },
+                             "vprojectId": "获取签单.1.id",
+                             "companyId": "4",
+                             "projectPublishTypeBeanList": [{
+                               "materielName": "表情包设计",
+                               "materielDescription": "gif动态图",
                                "node": {
-                                 "id": 27,
-                                 "name": "形象／IP插画",
+                                 "id": 3,
+                                 "name": "插画",
                                  "edit": false,
                                  "unit": "0",
                                  "units": null,
                                  "node": {
-                                   "id": 130,
-                                   "name": "表情包",
+                                   "id": 27,
+                                   "name": "形象／IP插画",
                                    "edit": false,
-                                   "unit": "套",
-                                   "units": ["个", "套"]
+                                   "unit": "0",
+                                   "units": null,
+                                   "node": {
+                                     "id": 130,
+                                     "name": "表情包",
+                                     "edit": false,
+                                     "unit": "套",
+                                     "units": ["个", "套"]
+                                   }
                                  }
-                               }
-                             },
-                             "isRange": 0,
-                             "amount": 1,
-                             "unit": "套",
-                             "id": 130
-                           }],
-                           "deliveryTask": "1、表情包设计（表情包）（1套）\ngif动态图",
-                           "projectBackground": "目标人群：电商用户",
-                           "deliveryTime": "2019-12-30",
-                           "modifyBudgetType": 2,
-                           "paymentDay": "30",
-                           "searchContent": "表情包"
-                         },
-             "headers":{
-               "Content-Type":"application/json",
-               "service-name":"top2",
-               "X-Top-User-Id": "后台用户登录.1.id",
-               "X-Top-Token": "后台用户登录.1.token"
-             }
-           },
-           "assertions": {
-             "status": 200,
-             "body": {
-               "code" : "0"
-             }
-           }
-         },
+                               },
+                               "isRange": 0,
+                               "amount": 1,
+                               "unit": "套",
+                               "id": 130
+                             }],
+                             "deliveryTask": "1、表情包设计（表情包）（1套）\ngif动态图",
+                             "projectBackground": "目标人群：电商用户",
+                             "deliveryTime": "2019-12-30",
+                             "modifyBudgetType": 2,
+                             "paymentDay": "30",
+                             "searchContent": "表情包"
+                               },
+                   "headers":{
+                     "Content-Type":"application/json",
+                     "service-name":"top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code" : "0"
+                   }
+                 }
+               },
               {
                      "caseName": "更新创意方要求信息",
                      "caseUrl": "/pro/top/updateProjectDesignerRequire",
@@ -155,7 +155,7 @@
                      }
               },
               {
-                     "caseName": "找到创意方",
+                     "caseName": "创意方列表搜索创意方",
                      "caseUrl": "/designer/list",
                      "caseMethod": "POST",
                      "request": {
@@ -201,8 +201,26 @@
                      }
               },
               {
+                 "caseName": "设计师登录",
+                 "caseUrl": "/user/login?username=11098765432&password=111111",
+                 "caseMethod": "POST",
+                 "request": {
+                   "body": {
+                   },
+                   "headers": {
+                     "Content-Type": "application/x-www-form-urlencoded"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0"
+                   }
+                 }
+               },
+              {
                      "caseName": "项目定向推送给设计师",
-                     "caseUrl": "/match/pushAgain?designerIds=找到创意方.1.id&projectId=发布企业项目.1.projectId",
+                     "caseUrl": "/match/pushAgain?designerIds=设计师登录.2.id&projectId=发布企业项目.1.projectId",
                      "caseMethod": "POST",
                      "request": {
                             "body": {
@@ -218,24 +236,6 @@
                             "status": 200,
                             "body": {
                                    "code" : "0"
-                            }
-                     }
-              },
-              {
-                     "caseName": "设计师登录",
-                     "caseUrl": "/user/login?username=11098765432&password=111111",
-                     "caseMethod": "POST",
-                     "request": {
-                            "body": {
-                            },
-                            "headers": {
-                                   "Content-Type": "application/x-www-form-urlencoded"
-                            }
-                     },
-                     "assertions": {
-                            "status": 200,
-                            "body": {
-                                   "code": "0"
                             }
                      }
               },
@@ -344,7 +344,7 @@
                             }
                      },
                      "assertions": {
-                            "status": 200,
+                           "status": 200,
                             "body": {
                                    "code" : "0"
                             }
@@ -431,9 +431,9 @@
                                    "updateUser": null,
                                    "periodButton": true,
                                    "publishId": 108,
-                                   "designerId": "找到创意方.1.id",
+                                   "designerId": "设计师登录.2.id",
                                    "companyId": 4,
-                                   "projectName": "知名电商网站双十一预热活动子项目",
+                                   "projectName": "玩咖6月新包装设计子项目",
                                    "deliveryContent": "卡通形象，活泼可爱",
                                    "deliveryTask": "1、表情包设计（表情包）（3套）\ngit动态图",
                                    "budget": 20,
@@ -582,7 +582,6 @@
                    }
                  }
            },
-
               {
                      "caseName": "发送确认函",
                      "caseUrl": "/pro/top/sureConfirmLetter",
@@ -590,7 +589,7 @@
                      "request": {
                             "body": {
                                    "projectId": "发布企业项目.1.projectId",
-                                   "designerId": "找到创意方.1.id",
+                                   "designerId": "设计师登录.2.id",
                                    "phone": "11098765432"
                             },
                             "headers":{
@@ -757,7 +756,7 @@
                      "request": {
                             "body": {
                               "projectId": "设计师查看确认函.1.projectId",
-                              "designerId": "找到创意方.1.id",
+                              "designerId": "设计师登录.2.id",
                               "modules": [{
                                 "total": 10,
                                 "list": [{
@@ -816,8 +815,6 @@
                             }
                      }
               },
-
-
               {
                      "caseName": "获取合同计划",
                      "caseUrl": "/project/proContract/info?projectId=设计师查看确认函.1.projectId",
@@ -1056,6 +1053,7 @@
                      "caseName": "客户确认提交作品",
                      "caseUrl": "/pro/contract/plan/finish",
                      "caseMethod": "POST",
+                     "caseSleep": 20,
                      "request": {
                             "body": {
                                    "planId": "获取项目计划.1.id",
@@ -1076,7 +1074,7 @@
                      }
               },
               {
-                     "caseName": "获取项目详情",
+                     "caseName": "确认作品已确认交付",
                      "caseUrl": "/proProject/period/designer/detail?projectId=设计师查看确认函.1.projectId",
                      "caseMethod": "GET",
                      "request": {
@@ -1092,7 +1090,8 @@
                      "assertions": {
                             "status": 200,
                             "body": {
-                                   "code" : "0"
+                                   "code" : "0",
+                                   "assert":"确认作品已确认交付.1.planStatus:4"
                             }
                      }
               },
