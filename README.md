@@ -23,7 +23,7 @@ pwd <br>
 virtualenv -p /usr/bin/python3 venv <br>
 source venv/bin/activate <br>
 pip3 install -r requirements.txt <br>
-python3 run_regression.py <br>
+python3 run.py <br>
 
 ## 接口用例开发注意事项：<br>
 ### 数据依赖两种格式
@@ -47,7 +47,7 @@ python3 run_regression.py <br>
 主要方法说明
 ------
 
-#### 1. run_regression.py
+#### 1. run.py
 执行入口：执行所有以tezign**开始的json文件
 
 #### 2. util/common.py
