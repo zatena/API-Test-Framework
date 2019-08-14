@@ -22,6 +22,7 @@ def get_casename(filename):
     names = jsonpath.jsonpath(dic,'$..caseName')
     return names, dic
 
+
 def get_casedata(filename):
     """
     获取请求数据
@@ -35,6 +36,7 @@ def get_casedata(filename):
     data = jsonpath.jsonpath(data,'$..body')
     headers = jsonpath.jsonpath(data,'$..headers')
     return url, method, data, headers
+
 
 def get_config(filename):
     """

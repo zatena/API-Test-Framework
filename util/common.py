@@ -39,7 +39,8 @@ dict_list = []
 case_all_count = 0
 
 
-class regression:
+class MyRegression:
+
     excReport = mr.Report()
     getRelyValues = getRelyValues()
 
@@ -60,7 +61,7 @@ class regression:
         all_result = len(case_names)
         case_all_count = all_result + case_all_count
         total_start = others.get_now()[0]
-        project_name = "测试项目" + ''.join(random.sample(string.ascii_letters + string.digits, 4))
+        project_name = "企业测试项目" + ''.join(random.sample(string.ascii_letters + string.digits, 3))
         delivery_time = str(others.get_future(60))
         caseScenario = case_lists['scenarioName']
 
@@ -76,12 +77,18 @@ class regression:
                 if len(expect_body) == 2:
                     expect_assert = expect_body['assert']
                 assert_len = 0
+                if case_list['caseName'] == '发布企业项目':
+                    case_list['request']['body']['projectName'] = project_name
+                if case_list['caseName'] == '发布企业项目':
+                    case_list['request']['body']['deliveryTime'] = delivery_time
+                if case_list['caseName'] == '提交确认函':
+                    case_list['request']['body']['projectName'] = project_name + '子项目'
                 str_data = str(case_list)
                 if len(collect_data) > 0:
                     match_object = re.findall('.*?([\u4E00-\u9FA5]+\.[\d]\.[\\w]+)', str_data)
                     expect_assert_name = str(expect_assert).split(":")[0]
                     if expect_assert_name in match_object:
-                       match_object.remove(expect_assert_name)
+                        match_object.remove(expect_assert_name)
                     if len(match_object) == 0:
                         pass
                     else:
@@ -93,7 +100,9 @@ class regression:
 
                             value_index = i.split('.')[1]
                             actual_value = i.split('.')[2]
-                            replace_value = getRelyValues.get_dict_value(getRelyValues, collect_response, actual_value, int(value_index), dict_list)
+                            replace_value = getRelyValues.get_dict_value(getRelyValues, collect_response, actual_value,
+                                                                         int(value_index), dict_list)
+
                             str_data = str_data.replace(i, str(replace_value))
                             data_json = eval(str_data)
                             headers = data_json['request']['headers']
@@ -101,11 +110,6 @@ class regression:
                             url = cs.BASEURL + api_url
                             _data = data_json['request']['body']
 
-                # str_data = str_data.replace('发布企业项目.projectName', project_name)
-                # str_data = str_data.replace('发布企业项目.deliveryTime', delivery_time)
-                # str_data = str_data.replace('提交确认函.projectName', project_name + '子项目')
-                # str_data = str_data.replace('发布项目计划.planStartTime', str(others.get_now())[2])
-                # str_data = str_data.replace('发布项目计划.planEndTime', delivery_time)
                 data_json = eval(str_data)
                 headers = data_json['request']['headers']
                 api_url = data_json['caseUrl']
@@ -126,7 +130,8 @@ class regression:
                     for k in assert_object:
                         res_str = k.split('.')[2]
                         res_str_index = k.split('.')[1]
-                        assert_replace_value = getRelyValues.get_dict_value(getRelyValues, actual_response, res_str, res_str_index, dict_list)
+                        assert_replace_value = getRelyValues.get_dict_value(getRelyValues, actual_response, res_str,
+                                                                            res_str_index, dict_list)
                         k = expect_assert.replace(k, str(assert_replace_value))
                         assert_list = k.split(":")
                         assert_len = len(set(assert_list))
@@ -173,7 +178,8 @@ class regression:
                                 result_log_message = "输出结果: 预判值错误, %s\n" % actual_result
                                 run_time = str(actual_response['run_time']) + 'ms'
                                 summary_report = self.excReport.sum_result(caseScenario, url, method, name, run_time,
-                                                                           test_status, request_log_message, result_log_message)
+                                                                           test_status, request_log_message,
+                                                                           result_log_message)
                                 continue
                             else:
                                 request_log_message = "输入值: %s\n" % request_data
@@ -197,16 +203,17 @@ class regression:
         total_run_time = str(others.get_mills(total_start, total_end)) + 's'
 
         skip_result = case_all_count - pass_result - fail_result
-        report_model = mm.ReportModel(summary_report, report_title, case_all_count, pass_result, fail_result, skip_result,
-                                      total_run_time)
+        report_model = mm.ReportModel(summary_report, report_title, case_all_count, pass_result,
+                                      fail_result, skip_result, total_run_time)
 
         return report_model
 
     def build_report(self, filename):
         try:
             test_report = self.execute_case(filename)
-            return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.all_test, test_report.pass_test,
-                                        test_report.fail_test, test_report.skip_test, test_report.total_run_time)
+            return self.excReport.build_report(test_report.sum_report, test_report.name, test_report.all_test,
+                                               test_report.pass_test, test_report.fail_test, test_report.skip_test,
+                                               test_report.total_run_time)
         except Exception as e:
             logging.error(e)
             traceback.print_exc(file=open(os.getcwd()+'/log/error.log', 'a+'))

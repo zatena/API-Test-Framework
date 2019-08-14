@@ -20,7 +20,7 @@ def connect_db(host, user, password, db, charset='utf8'):
     :return: 连接
     """
     global con
-    if con == None:
+    if con is None:
         con = pymysql.connect(host=host, user=user, password=password, db=db, charset=charset,
                              cursorclass=pymysql.cursors.DictCursor)
     return con

@@ -10,7 +10,7 @@ import core.myemail as email
 
 reportFile = cs.REPORT_PATH
 
-regTest = common.regression()
+regTest = common.MyRegression()
 
 
 casePath = os.getcwd()+'/case'
@@ -35,7 +35,7 @@ email.email(report)
 
 # f = open(os.getcwd()+'/log/error.log', 'r+')
 # f.truncate()
-# casePath = os.getcwd()+'/case/tezign_designergroup.json'
+# casePath = os.getcwd()+'/case/bb.json'
 # regTest.build_report(casePath)
 
 
