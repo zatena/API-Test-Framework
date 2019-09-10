@@ -1,0 +1,459 @@
+
+{
+       "scenarioName": "招聘管理",
+       "steps": [
+              {
+                     "caseName": "后台用户登录",
+                     "caseUrl": "/topUser/login",
+                     "caseMethod": "post",
+                     "request": {
+                            "body": {
+                              "email": "admin@tezign.com",
+                                   "password": "111111"
+                            },
+                            "headers": {
+                                   "Content-Type": "application/json",
+                                   "service-name": "top2"
+                            }
+                     },
+                     "assertions": {
+                            "status": 200,
+                            "body": {
+                                   "code": "0"
+                            }
+                     }
+              },
+              {
+           "caseName": "获取职位列表",
+           "caseUrl": "/jobs/list?department=1,2,3,4&pageNum=1&pageSize=10",
+           "caseMethod": "get",
+           "request": {
+             "body": {
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+              {
+           "caseName": "查询研发部门职位列表",
+           "caseUrl": "/jobs/list?department=1&pageNum=1&pageSize=10",
+           "caseMethod": "get",
+           "request": {
+             "body": {
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0",
+               "assert":"查询研发部门职位列表.1.department:1"
+             }
+           }
+         },
+              {
+           "caseName": "职位列表全部刷新",
+           "caseUrl": "/jobs/refresh",
+           "caseMethod": "get",
+           "request": {
+             "body": {
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+               {
+                     "caseName": "创建一个新职位",
+                     "caseUrl": "/jobs/create",
+                     "caseMethod": "post",
+                     "request": {
+                       "body": {
+                     "name": "高级测试工程师",
+                     "department": 1,
+                     "experience": 4,
+                     "education": 3,
+                     "type": 1,
+                     "description": "测试",
+                     "require": "1. 3年工作经验\n2. 熟练掌握至少一门语言，搭建过自动化测试框架\n3. 熟练使用sql",
+                     "others": "暂无",
+                     "hot": 0,
+                     "opened": 0
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0"
+                   }
+                 }
+               },
+               {
+                 "caseName": "查看新建的职位",
+                 "caseUrl": "/jobs/list?department=1&pageNum=1&pageSize=10",
+                 "caseMethod": "get",
+                 "request": {
+                   "body": {
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0",
+                     "assert":"查看新建的职位.1.name:高级测试工程师"
+                   }
+                 }
+               },
+               {
+                 "caseName": "编辑职位",
+                 "caseUrl": "/jobs/update",
+                 "caseMethod": "post",
+                 "request": {
+                   "body":
+                   {
+                     "id": "查看新建的职位.1.id",
+                     "name": "高级大数据测试工程师",
+                     "department": 1,
+                     "experience": 4,
+                     "education": 3,
+                     "type": 1,
+                     "description": "测试",
+                     "require": "1. 3年工作经验\n2. 熟练掌握至少一门语言，搭建过自动化测试框架\n3. 熟练使用sql",
+                     "others": "暂无",
+                     "opened": 0,
+                     "hot": 0,
+                     "createTime": "2019-09-03T08:11:55.000+0000",
+                     "pubTime": null,
+                     "updateTime": "2019-09-03T08:15:58.000+0000"
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0"
+                   }
+                 }
+               },
+               {
+                 "caseName": "查看已编辑的职位",
+                 "caseUrl": "/jobs/list?department=1&pageNum=1&pageSize=10",
+                 "caseMethod": "get",
+                 "request": {
+                   "body": {
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0",
+                     "assert":"查看新建的职位.1.name:高级大数据测试工程师"
+                   }
+                 }
+               },
+               {
+                 "caseName": "发布职位",
+                 "caseUrl": "/jobs/open",
+                 "caseMethod": "post",
+                 "request": {
+                   "body": {
+                     "id": "查看新建的职位.1.id",
+                     "opened": 1
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0"
+                   }
+                 }
+               },
+               {
+                 "caseName": "设置为热门职位",
+                 "caseUrl": "/jobs/hot",
+                 "caseMethod": "post",
+                 "request": {
+                   "body": {
+                     "id": "查看新建的职位.1.id",
+                     "hot":1
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0"
+                   }
+                 }
+               },
+               {
+                 "caseName": "查看已编辑的职位",
+                 "caseUrl": "/jobs/list?department=1&pageNum=1&pageSize=10",
+                 "caseMethod": "get",
+                 "request": {
+                   "body": {
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0",
+                     "assert":"查看新建的职位.1.name:高级大数据测试工程师"
+                   }
+                 }
+               },
+               {
+                 "caseName": "取消热门设置",
+                 "caseUrl": "/jobs/hot",
+                 "caseMethod": "post",
+                 "request": {
+                   "body": {
+                     "id": "查看新建的职位.1.id",
+                     "hot":0
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0"
+                   }
+                 }
+               },
+               {
+                 "caseName": "关闭职位",
+                 "caseUrl": "/jobs/open",
+                 "caseMethod": "post",
+                 "request": {
+                   "body": {
+                     "id": "查看新建的职位.1.id",
+                     "opened": 0
+                   },
+                   "headers": {
+                     "Content-Type": "application/json",
+                     "service-name": "top2",
+                     "X-Top-User-Id": "后台用户登录.1.id",
+                     "X-Top-Token": "后台用户登录.1.token"
+                   }
+                 },
+                 "assertions": {
+                   "status": 200,
+                   "body": {
+                     "code": "0"
+                   }
+                 }
+               },
+         {
+           "caseName": "获取申请列表",
+           "caseUrl": "/jobs/apply/list?pageNum=1&pageSize=10&keyword=%E6%B5%8B%E8%AF%95",
+           "caseMethod": "get",
+           "request": {
+             "body": {
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+         {
+           "caseName": "查询未联系的申请",
+           "caseUrl": "/jobs/apply/list?pageNum=1&pageSize=10&keyword=&contacted=0",
+           "caseMethod": "get",
+           "request": {
+             "body": {
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+         {
+           "caseName": "标记为已联系",
+           "caseUrl": "/jobs/apply/contact",
+           "caseMethod": "post",
+           "request": {
+             "body": {
+               "id": "查询未联系的申请.1.id",
+               "contacted": 1
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+         {
+           "caseName": "查询已联系的申请",
+           "caseUrl": "/jobs/apply/list?pageNum=1&pageSize=10&keyword=&contacted=1",
+           "caseMethod": "get",
+           "request": {
+             "body": {
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+         {
+           "caseName": "修改备注",
+           "caseUrl": "/jobs/apply/remark",
+           "caseMethod": "post",
+           "request": {
+             "body": {
+               "id": "查询已联系的申请.1.id",
+               "remark": "测试"
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         },
+         {
+           "caseName": "标记为未联系",
+           "caseUrl": "/jobs/apply/contact",
+           "caseMethod": "post",
+           "request": {
+             "body": {
+               "id": "查询已联系的申请.1.id",
+               "contacted": 0
+             },
+             "headers": {
+               "Content-Type": "application/json",
+               "service-name": "top2",
+               "X-Top-User-Id": "后台用户登录.1.id",
+               "X-Top-Token": "后台用户登录.1.token"
+             }
+           },
+           "assertions": {
+             "status": 200,
+             "body": {
+               "code": "0"
+             }
+           }
+         }
+
+       ]
+}
+
+
+
+
+
+
+
+
+
+
