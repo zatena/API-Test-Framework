@@ -33,10 +33,6 @@ for i in dirs:
 
 email.email(report)
 
-# f = open(os.getcwd()+'/log/error.log', 'r+')
-# f.truncate()
-# casePath = os.getcwd()+'/case/bb.json'
-# regTest.build_report(casePath)
 
 
 
