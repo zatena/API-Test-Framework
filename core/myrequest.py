@@ -19,9 +19,9 @@ response_result = {
 
 timeout_Result= {
         "code": -1,
-        "message": "请求超时，超过默认设置等待时间3秒",
+        "message": "请求超时",
         "result": None,
-        "run_time": 11242.339
+        "run_time": 20000.000
     }
 
 
@@ -38,7 +38,7 @@ def api(method, url, data, headers):
 
     try:
         if method.upper() == "POST":
-            result = requests.post(url, data, headers=headers,)
+            result = requests.post(url, data, headers=headers)
         if method.upper() == "GET":
             result = requests.get(url, headers=headers)
         response = result.json()

@@ -42,10 +42,7 @@ MAIL_USER = 'tezign_send'
 MAIL_PASS = 'hhIksYtHPnH2l7dj'
 
 MAIL_SENDER = 'dev@send.tezign.co'
-MAIL_RECEIVER = ['zhengjingjing@tezign.com', 'cuiguoen@tezign.com', 'yuanyongzhi@tezign.com', 'liumingyue@tezign.com',
-                 'chengrui@tezign.com', 'lihuawei@tezign.com', 'mazonghao@tezign.com', 'huangquan@tezign.com',
-                 'dengyuncheng@tezign.com', 'xuejingyi@tezign.com', 'huangqingjian@tezign.com', 'kangjun@tezign.com',
-                 'wangxiangyang@tezign.com']
+MAIL_RECEIVER = ['zhengjingjing@tezign.com', 'cuiguoen@tezign.com']
 
 SUBJECT = '大平台业务接口自动化测试报告'
 
